@@ -8,10 +8,19 @@ enum States{players_turn, enemies_turn, waiting}
 func _ready() -> void:
 	for i in $"../enemies".get_children():
 		num_of_enemies += 1
-	print(num_of_enemies)
+
+	current_state = States.waiting
+	Events.connect("players_turn",_players_turn)
+	Events.connect("enemies_turn",_enemies_turn)
+	Events.connect("waiting_recharge", _recharging)
+func _recharging():
 	current_state = States.waiting
 
+
+func _players_turn():
+	current_state = States.players_turn
+
+func _enemies_turn():
+	current_state = States.enemies_turn
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if current_state == States.waiting:
-		Events.emit_signal("waiting_recharge")

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="burgerGame"
 run/main_scene="uid://c78n0yfbk1p4q"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Events="*uid://bpxwubhvtenre"
 PlayerStats="*uid://bv1qu2w8wuphd"
+EnemyAttacks="*uid://ddrc28mmsk11h"
 
 [display]
 

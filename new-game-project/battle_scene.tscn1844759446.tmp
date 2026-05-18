@@ -32,7 +32,6 @@ battle_logic_script = NodePath("../../BattleLogic")
 position = Vector2(835, 394)
 
 [node name="John_the_fraud" parent="enemies" unique_id=708042470 instance=ExtResource("4_5joda")]
-setted_speed = 20.0
 
 [node name="enemy_stats" parent="enemies/John_the_fraud" unique_id=1287744910 node_paths=PackedStringArray("battle_logic_script") instance=ExtResource("5_gf131")]
 battle_logic_script = NodePath("../../../BattleLogic")
