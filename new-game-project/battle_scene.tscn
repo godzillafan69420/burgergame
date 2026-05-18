@@ -2,7 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="1_fw8re"]
 [ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="1_r5l0u"]
-[ext_resource type="Script" uid="uid://b6w2l0wdpc3uk" path="res://scripts/ingame_stats.gd" id="3_5g7vw"]
+[ext_resource type="Script" uid="uid://bn04f33qgscnx" path="res://attack_button.gd" id="1_sl17i"]
+[ext_resource type="PackedScene" uid="uid://ctnf6wjt5kuvb" path="res://player_stats.tscn" id="3_gf131"]
 [ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/john_the_fraud.tscn" id="4_5joda"]
 [ext_resource type="PackedScene" uid="uid://bkiarse6ln4qp" path="res://enemy_stats.tscn" id="5_gf131"]
 
@@ -10,26 +11,21 @@
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=89355144]
 
+[node name="attack_button" type="Button" parent="UI" unique_id=2105450800]
+offset_left = 425.0
+offset_top = 572.0
+offset_right = 795.0
+offset_bottom = 665.0
+text = "attack"
+script = ExtResource("1_sl17i")
+
 [node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
 script = ExtResource("1_r5l0u")
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("1_fw8re")]
 position = Vector2(192, 400)
 
-[node name="player_stats" type="Node2D" parent="player" unique_id=824252534]
-script = ExtResource("3_5g7vw")
-
-[node name="HP" type="ProgressBar" parent="player/player_stats" unique_id=1497493233]
-offset_left = -71.0
-offset_top = 69.0
-offset_right = 117.0
-offset_bottom = 96.0
-
-[node name="SPD" type="ProgressBar" parent="player/player_stats" unique_id=1587257474]
-offset_left = -72.0
-offset_top = 102.0
-offset_right = 117.0
-offset_bottom = 129.0
+[node name="player_stats" parent="player" unique_id=576855214 instance=ExtResource("3_gf131")]
 
 [node name="enemies" type="Node2D" parent="." unique_id=1413379743]
 position = Vector2(835, 394)
@@ -37,3 +33,5 @@ position = Vector2(835, 394)
 [node name="John_the_fraud" parent="enemies" unique_id=708042470 instance=ExtResource("4_5joda")]
 
 [node name="enemy_stats" parent="enemies/John_the_fraud" unique_id=1287744910 instance=ExtResource("5_gf131")]
+
+[connection signal="button_down" from="UI/attack_button" to="UI/attack_button" method="_on_button_down"]

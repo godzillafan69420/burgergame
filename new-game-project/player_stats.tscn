@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ctnf6wjt5kuvb"]
+
+[ext_resource type="Script" uid="uid://b6w2l0wdpc3uk" path="res://scripts/ingame_stats.gd" id="1_ak0f0"]
+
+[node name="player_stats" type="Node2D" unique_id=576855214]
+script = ExtResource("1_ak0f0")
+
+[node name="HP" type="ProgressBar" parent="." unique_id=933205273]
+offset_left = -71.0
+offset_top = 69.0
+offset_right = 117.0
+offset_bottom = 96.0
+
+[node name="SPD" type="ProgressBar" parent="." unique_id=199320174]
+offset_left = -72.0
+offset_top = 102.0
+offset_right = 117.0
+offset_bottom = 129.0
