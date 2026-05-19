@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Events="*uid://bpxwubhvtenre"
 PlayerStats="*uid://bv1qu2w8wuphd"
 EnemyAttacks="*uid://ddrc28mmsk11h"
+ListOfStatusEffects="*uid://bdyltunepg0ya"
 
 [display]
 

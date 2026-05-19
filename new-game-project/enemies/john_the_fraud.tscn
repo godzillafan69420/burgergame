@@ -5,6 +5,7 @@
 
 [node name="John_the_fraud" type="Node2D" unique_id=708042470]
 script = ExtResource("1_2sr7e")
+attacks_name = Array[String](["poison", "punch", "kick"])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1828216997]
 texture = ExtResource("2_kjryd")

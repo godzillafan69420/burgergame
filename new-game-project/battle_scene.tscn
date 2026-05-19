@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ctnf6wjt5kuvb" path="res://player_stats.tscn" id="3_gf131"]
 [ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/john_the_fraud.tscn" id="4_5joda"]
 [ext_resource type="PackedScene" uid="uid://bkiarse6ln4qp" path="res://enemy_stats.tscn" id="5_gf131"]
+[ext_resource type="PackedScene" uid="uid://bons014fxsklb" path="res://status_effect_parent.tscn" id="5_x5h4l"]
 
 [node name="tutorial" type="Node2D" unique_id=1916832371]
 
@@ -24,6 +25,8 @@ script = ExtResource("1_r5l0u")
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("1_fw8re")]
 position = Vector2(192, 400)
+
+[node name="status_effect" parent="player" unique_id=1779726787 instance=ExtResource("5_x5h4l")]
 
 [node name="player_stats" parent="player" unique_id=576855214 node_paths=PackedStringArray("battle_logic_script") instance=ExtResource("3_gf131")]
 battle_logic_script = NodePath("../../BattleLogic")

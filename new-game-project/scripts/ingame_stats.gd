@@ -5,6 +5,9 @@ extends Node2D
 var HP: float
 var speed:float
 
+var def_stats: float = 0
+const MAX_DEF: float = 20
+
 @export var battle_logic_script: Node
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,11 +16,14 @@ func _ready() -> void:
 	$HP.max_value = HP
 	$HP.value = HP
 	Events.connect("damaged_player", _take_damage)
-
-
-func _take_damage(damage: int) -> void:
-	$HP.value -= damage
 	
+
+
+func _take_damage(damage: float) -> void:
+	$HP.value -= damage * ((MAX_DEF - def_stats)/MAX_DEF)
+	
+	
+
 	
 
 	
