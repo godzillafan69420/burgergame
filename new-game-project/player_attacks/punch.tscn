@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://c2tfvqo788kxy"]
 
-[ext_resource type="Script" uid="uid://b1wwgji6jiwrq" path="res://attack_base_moves.gd" id="1_s8un3"]
+[ext_resource type="Script" uid="uid://bn04f33qgscnx" path="res://scripts/base_for_cards.gd" id="1_s8un3"]
 
-[node name="punch_card" type="Button" unique_id=153198483]
-offset_left = -79.0
-offset_top = -100.0
-offset_right = 87.0
-offset_bottom = 95.0
-text = "attack"
+[node name="cards" type="Control" unique_id=941008407]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("1_s8un3")
-damage = 10.0
-energy = 2.0
+metadata/_custom_type_script = "uid://bn04f33qgscnx"
