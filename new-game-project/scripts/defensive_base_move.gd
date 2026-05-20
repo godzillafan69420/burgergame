@@ -13,7 +13,7 @@ func _stop_fighting():
 func _fight():
 	can_attack = true
 
-func _on_button_down() -> void:
+func _drop() -> void:
 	print("added effect")
 	Events.emit_signal("reduce_energy_by", energy)
 	if can_attack:

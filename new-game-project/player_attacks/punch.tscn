@@ -11,5 +11,3 @@ text = "attack"
 script = ExtResource("1_s8un3")
 damage = 10.0
 energy = 2.0
-
-[connection signal="button_down" from="." to="." method="_on_button_down"]
