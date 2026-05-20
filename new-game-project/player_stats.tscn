@@ -10,9 +10,3 @@ offset_left = -71.0
 offset_top = 69.0
 offset_right = 117.0
 offset_bottom = 96.0
-
-[node name="SPD" type="ProgressBar" parent="." unique_id=199320174]
-offset_left = -72.0
-offset_top = 102.0
-offset_right = 117.0
-offset_bottom = 129.0

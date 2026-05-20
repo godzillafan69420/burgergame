@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cf2owg0wjnpe2"]
+
+[ext_resource type="Script" uid="uid://d4c12ggebe1bf" path="res://scripts/effects.gd" id="1_vjtcb"]
+
+[node name="block_chance" type="Node" unique_id=800013498]
+script = ExtResource("1_vjtcb")
+type = "buff"
+target_stats = "def_stats"
+duration = 2
+Effect_strength = 10.0

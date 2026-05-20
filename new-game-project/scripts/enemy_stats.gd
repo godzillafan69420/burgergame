@@ -18,12 +18,4 @@ func _take_damage(damage: int) -> void:
 
 
 
-func _process(delta: float) -> void:
-	if battle_logic_script.current_state == battle_logic_script.States.waiting:
-		$SPD.value += get_parent().setted_speed * delta
-	if $SPD.value == 100:
-		get_parent().can_attack = true
-		Events.emit_signal("enemies_turn")
-		$SPD.value = 0
-
 		

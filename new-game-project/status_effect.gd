@@ -11,6 +11,8 @@ func _take_side_effects():
 	for i in get_children():
 		i._take_effect()
 	
-func _new_side_effects(effects):
-	var effect =ListOfStatusEffects.POISON_SCENE.instantiate()
-	add_child(effect)
+func _new_side_effects(effects:String):
+	
+	var new_effect =ListOfStatusEffects.get(effects).instantiate()
+	new_effect.player_ingame_stats = get_parent().get_parent().find_child("player_stats")
+	add_child(new_effect)

@@ -2,10 +2,13 @@
 
 [ext_resource type="Script" uid="uid://c4kqr3abi6wjh" path="res://scripts/enemy.gd" id="1_2sr7e"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_kjryd"]
+[ext_resource type="PackedScene" uid="uid://bkiarse6ln4qp" path="res://enemy_stats.tscn" id="3_4ytir"]
 
 [node name="John_the_fraud" type="Node2D" unique_id=708042470]
 script = ExtResource("1_2sr7e")
-attacks_name = Array[String](["poison", "punch", "kick"])
+attacks_name = Array[String](["kick", "punch"])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1828216997]
 texture = ExtResource("2_kjryd")
+
+[node name="enemy_stats" parent="." unique_id=1287744910 instance=ExtResource("3_4ytir")]

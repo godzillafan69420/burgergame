@@ -2,19 +2,20 @@ extends Node
 
 var num_of_enemies: int = 0
 var current_state
-enum States{players_turn, enemies_turn, waiting} 
+enum States{players_turn, enemies_turn, dialogue} 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in $"../enemies".get_children():
 		num_of_enemies += 1
 
-	current_state = States.waiting
+	current_state = States.players_turn
 	Events.connect("players_turn",_players_turn)
 	Events.connect("enemies_turn",_enemies_turn)
-	Events.connect("waiting_recharge", _recharging)
-func _recharging():
-	current_state = States.waiting
+	Events.connect("dialogue", _dialogue)
+	Events.emit_signal("players_turn")
+func _dialogue():
+	current_state = States.dialogue
 
 
 func _players_turn():

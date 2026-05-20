@@ -11,19 +11,18 @@ var attacks:Array[Dictionary] = []
 
 var can_attack: bool = false
 
+var damage_multiplier: float = 1
+
 func _ready() -> void:
 	Events.connect("enemies_turn",_attacked_player)
 	for i in attacks_name:
 		attacks.append(EnemyAttacks.get(i))
 	
 func _attacked_player():
-	
-	if !can_attack:
-		return
-	randomAttack = randi_range(0,attacks.size()-1)
-	Events.emit_signal("waiting_recharge")
-	
-	Events.emit_signal("damaged_player", attacks[randomAttack].get("damage"))
+	randomAttack = randi_range(0,attacks.size() -1)
+	Events.emit_signal("players_turn")
+	var damage =(attacks[randomAttack].get("damage")) * damage_multiplier
+	Events.emit_signal("damaged_player", damage)
 	
 	#yes kallum i used ai for this if statement lmao
 	if attacks[randomAttack].has("status_effects"):

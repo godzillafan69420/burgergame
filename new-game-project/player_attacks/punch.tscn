@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c2tfvqo788kxy"]
+
+[ext_resource type="Script" uid="uid://b1wwgji6jiwrq" path="res://attack_base_moves.gd" id="1_s8un3"]
+
+[node name="punch_card" type="Button" unique_id=153198483]
+offset_left = -79.0
+offset_top = -100.0
+offset_right = 87.0
+offset_bottom = 95.0
+text = "attack"
+script = ExtResource("1_s8un3")
+damage = 10.0
+energy = 2.0
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
