@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://86q275l1hhq0"]
+
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_42hh6"]
+
+[node name="ShopScene" type="Control" unique_id=1164084992]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=174240686]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(10.017863, 5.535115)
+texture = ExtResource("1_42hh6")
+
+[node name="TopFridge" type="HBoxContainer" parent="." unique_id=1223026909]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 23.000008
+offset_right = 1121.0
+offset_bottom = 63.000008
+scale = Vector2(3.3676763, 7.089876)
+
+[node name="Button" type="Button" parent="TopFridge" unique_id=433469865]
+layout_mode = 2
+text = "Item 1"
+
+[node name="Button2" type="Button" parent="TopFridge" unique_id=315503488]
+layout_mode = 2
+text = "item 2"
+
+[node name="Hide visibility then when buy upgrade turn off visibility" type="Button" parent="TopFridge" unique_id=1694525031]
+visible = false
+layout_mode = 2
+text = "item 3
+"
+
+[node name="BottomFridge" type="HBoxContainer" parent="." unique_id=1123443060]
+layout_mode = 0
+offset_left = 666.0
+offset_top = 433.0
+offset_right = 706.0
+offset_bottom = 473.0
+scale = Vector2(25.225834, 6.2280984)
+
+[node name="Button" type="Button" parent="BottomFridge" unique_id=645969996]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BottomFridge/Button" unique_id=1767355827]
+layout_mode = 0
+offset_left = 0.47570276
+offset_top = -2.0873146
+offset_right = 40.475704
+offset_bottom = 20.912685
+scale = Vector2(0.19467892, 0.33936703)
+text = "Price"
+
+[node name="Button2" type="Button" parent="BottomFridge" unique_id=1741400288]
+layout_mode = 2
