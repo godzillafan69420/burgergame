@@ -17,19 +17,21 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="punch" parent="UI/cards" unique_id=2040214685 instance=ExtResource("1_sl17i")]
+[node name="attack_button" parent="UI/cards" unique_id=1344766708 instance=ExtResource("1_sl17i")]
 layout_mode = 0
-offset_left = 435.0
-offset_top = 497.0
-offset_right = 582.0
-offset_bottom = 701.0
+offset_left = 421.0
+offset_top = 505.0
+offset_right = 587.0
+offset_bottom = 700.0
+damage = 2.0
+energy = 10.0
+effects = Array[String]([])
 
 [node name="end_turn_button" type="Button" parent="UI" unique_id=1552152923]
-offset_left = 1090.0
-offset_top = 506.0
-offset_right = 1256.0
-offset_bottom = 701.0
-pivot_offset = Vector2(-583, 97)
+offset_left = 663.0
+offset_top = 503.0
+offset_right = 829.0
+offset_bottom = 698.0
 text = "end turn"
 script = ExtResource("2_gf131")
 

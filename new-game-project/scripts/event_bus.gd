@@ -1,5 +1,7 @@
 extends Node
 
+signal card_selected(id)
+
 signal damaged_enemy(damage)
 signal damaged_player(damage)
 

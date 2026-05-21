@@ -1,4 +1,4 @@
-extends cards
+extends Node
 
 
 func _ready() -> void:
@@ -6,17 +6,19 @@ func _ready() -> void:
 	Events.connect("no_more_energy", _stop_fighting)
 
 func _stop_fighting():
-	can_attack =  false
+	pass
+	#can_attack =  false
 	
 
 
 func _fight():
-	can_attack = true
+	pass
+	#can_attack = true
 
 func _drop() -> void:
-	print("added effect")
-	Events.emit_signal("reduce_energy_by", energy)
-	if can_attack:
-		
-		for effect in effects: 
-			Events.emit_signal("give_side_effects", effect)
+	#print("added effect")
+	#Events.emit_signal("reduce_energy_by", energy)
+	#if can_attack:
+		pass
+		#for effect in effects: 
+			#Events.emit_signal("give_side_effects", effect)

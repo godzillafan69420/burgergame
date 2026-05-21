@@ -1,11 +1,27 @@
 [gd_scene format=3 uid="uid://c2tfvqo788kxy"]
 
-[ext_resource type="Script" uid="uid://bn04f33qgscnx" path="res://scripts/base_for_cards.gd" id="1_s8un3"]
+[ext_resource type="Script" uid="uid://b1wwgji6jiwrq" path="res://attack_base_moves.gd" id="1_s8un3"]
+[ext_resource type="PackedScene" uid="uid://dkrjnygfqjhc3" path="res://player_attacks/card_extensions.tscn" id="2_n7t67"]
 
-[node name="cards" type="Control" unique_id=941008407]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7t67"]
+size = Vector2(147, 203)
+
+[node name="punch" type="Panel" unique_id=2040214685]
+offset_left = -72.0
+offset_top = -103.0
+offset_right = 75.0
+offset_bottom = 101.0
 script = ExtResource("1_s8un3")
 metadata/_custom_type_script = "uid://bn04f33qgscnx"
+
+[node name="card_extensions" parent="." unique_id=1500978107 instance=ExtResource("2_n7t67")]
+layout_mode = 0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1737919751]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=522210378]
+position = Vector2(74.5, 102.5)
+shape = SubResource("RectangleShape2D_n7t67")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
