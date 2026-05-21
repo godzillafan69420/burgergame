@@ -2,30 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bn04f33qgscnx" path="res://scripts/base_for_cards.gd" id="1_v00yk"]
 
-[node name="drag_and_drop" type="Panel" unique_id=778124092]
+[node name="drag_and_drop" type="Panel" unique_id=1978095872]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 2.0
-offset_right = -1037.0
-offset_bottom = -366.06897
+offset_right = -1280.0
+offset_bottom = -720.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v00yk")
-
-[node name="name" type="Label" parent="." unique_id=798205862]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 16.0
-offset_right = 227.0
-offset_bottom = 56.0
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=713159994]
-position = Vector2(121, 92)
-
-[node name="discription" type="Label" parent="." unique_id=1785358700]
-layout_mode = 0
-offset_left = 14.0
-offset_top = 149.0
-offset_right = 229.0
-offset_bottom = 328.0
