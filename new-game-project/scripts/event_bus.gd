@@ -1,6 +1,10 @@
 extends Node
 
+# battle_logic
+
 signal card_selected(id)
+signal in_attack_area
+signal out_attack_area
 
 signal damaged_enemy(damage)
 signal damaged_player(damage)
