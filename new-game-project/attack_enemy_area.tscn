@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cmc6rvlg757io"]
+
+[ext_resource type="Script" uid="uid://cbw8y7pfff851" path="res://attack_enemy_area.gd" id="1_38x3b"]
+
+[node name="attack_enemy_area" type="Area2D" unique_id=1306510231]
+script = ExtResource("1_38x3b")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

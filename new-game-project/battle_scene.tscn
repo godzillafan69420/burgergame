@@ -6,6 +6,10 @@
 [ext_resource type="Script" uid="uid://bme11j2i2ndyn" path="res://scripts/end_turn_button.gd" id="2_gf131"]
 [ext_resource type="Script" uid="uid://c4jtsd8b6ntsy" path="res://energy_display.gd" id="3_sl17i"]
 [ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/john_the_fraud.tscn" id="4_5joda"]
+[ext_resource type="PackedScene" uid="uid://cmc6rvlg757io" path="res://attack_enemy_area.tscn" id="7_x5h4l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtmj2"]
+size = Vector2(1021, 462)
 
 [node name="tutorial" type="Node2D" unique_id=1916832371]
 
@@ -51,5 +55,11 @@ position = Vector2(835, 394)
 
 [node name="John_the_fraud" parent="enemies" unique_id=708042470 instance=ExtResource("4_5joda")]
 setted_speed = 20.0
+
+[node name="attack_enemy_area" parent="." unique_id=1306510231 instance=ExtResource("7_x5h4l")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_enemy_area" unique_id=1702704542]
+position = Vector2(714.5, 221)
+shape = SubResource("RectangleShape2D_vtmj2")
 
 [connection signal="button_down" from="UI/end_turn_button" to="UI/end_turn_button" method="_on_button_down"]
