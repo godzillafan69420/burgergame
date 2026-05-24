@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dxv4p7rjbhfkh"]
+
+[ext_resource type="Script" uid="uid://d4euqu7emj4i8" path="res://scripts/shop_item_card.gd" id="1_sd1vs"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_54tfs"]
+
+[node name="ShopItemCard" type="Control" unique_id=1634683499]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 150.0
+offset_bottom = 200.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_sd1vs")
+
+[node name="Background" type="TextureRect" parent="." unique_id=787241409]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_54tfs")
+expand_mode = 1
+stretch_mode = 5
+flip_v = true
+
+[node name="NameLabel" type="Label" parent="." unique_id=2096382299]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 152.0
+offset_right = 98.0
+offset_bottom = 175.0
+text = "Name"
+
+[node name="BuyButton" type="Button" parent="." unique_id=956547880]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 35.0
+offset_right = 115.0
+offset_bottom = 71.0
+
+[node name="PriceLabel" type="Label" parent="." unique_id=2062889375]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 41.0
+offset_right = 93.0
+offset_bottom = 90.0
+text = "Price
+"
