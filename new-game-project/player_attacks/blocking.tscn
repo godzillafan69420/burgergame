@@ -1,13 +1,30 @@
 [gd_scene format=3 uid="uid://cdcce5ajsg6bw"]
 
-[ext_resource type="Script" uid="uid://br5lcaloy3om3" path="res://scripts/defensive_base_move.gd" id="1_18cxb"]
+[ext_resource type="Script" uid="uid://b1wwgji6jiwrq" path="res://cards.gd" id="1_18cxb"]
 
-[node name="blocking" type="Button" unique_id=153198483]
-offset_left = -79.0
-offset_top = -100.0
-offset_right = 87.0
-offset_bottom = 95.0
-text = "block"
+[node name="blocking" type="Panel" unique_id=1124889161]
+offset_left = -74.0
+offset_top = -101.0
+offset_right = 73.0
+offset_bottom = 103.0
 script = ExtResource("1_18cxb")
-energy = 5.0
+damage = 0.0
 effects = Array[String](["blocking"])
+
+[node name="name" type="Label" parent="." unique_id=1257601127]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 142.0
+offset_bottom = 25.0
+theme_override_font_sizes/font_size = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2022460897]
+position = Vector2(71, 52)
+
+[node name="discription" type="Label" parent="." unique_id=1682083103]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 92.0
+offset_right = 145.0
+offset_bottom = 201.0

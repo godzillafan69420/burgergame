@@ -4,7 +4,6 @@ class_name cards
 
 var card_id: int = 0
 
-var not_in_position: bool = false
 
 var can_attack = false
 
@@ -29,28 +28,33 @@ const POSITION_OF_CARDS:Array = [
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and !selected_card and mouse_is_incard:
 		selected_card = true
-		not_in_position = true
 	if event.is_action_released("click") and selected_card and mouse_is_incard:
-		if !in_attack_area:
-			selected_card = false
-		
+		if in_attack_area and can_attack:
 			
-		
+			_drop()
+			
+		else:
+			selected_card = false
 
 func _drop() -> void:
 	Events.emit_signal("reduce_energy_by", energy)
-	if can_attack:
-		Events.emit_signal("damaged_enemy", damage)
+	if !can_attack:
+		return
+	Events.emit_signal("damaged_enemy", damage)
+	for effect in effects: 
+		Events.emit_signal("give_side_effects", effect)
+	queue_free()
+
 
 func _process(delta: float) -> void:
-	if in_attack_area and selected_card:
-			_drop()
-			queue_free()
-			
+	if position.x > 235 and position.x < 1000 and position.y > 44 and position.y < 400:
+		print("in area")
+		in_attack_area = true
+	else:
+		in_attack_area = false
 	if !selected_card:
 
 		position = POSITION_OF_CARDS[card_id]
-		not_in_position = false
 	else:
 		position = get_global_mouse_position() + Vector2(-100,-100)
 	
