@@ -23,19 +23,18 @@ texture = ExtResource("2_2e6ro")
 
 [node name="TopFridge" type="HBoxContainer" parent="." unique_id=1223026909]
 layout_mode = 0
-offset_left = 651.0
-offset_top = 18.0
-offset_right = 860.34314
-offset_bottom = 58.0
+offset_left = 313.0
+offset_top = 27.0
+offset_right = 522.34314
+offset_bottom = 67.0
 scale = Vector2(3.3676763, 7.089876)
 
 [node name="BottomFridge" type="HBoxContainer" parent="." unique_id=1123443060]
 layout_mode = 0
-offset_left = 248.00002
-offset_top = 430.0
-offset_right = 285.7391
-offset_bottom = 469.9801
-scale = Vector2(25.225834, 6.2280984)
+offset_left = 585.0
+offset_top = 473.0
+offset_right = 1218.0
+offset_bottom = 673.0
 theme_override_constants/separation = 50
 alignment = 1
 
