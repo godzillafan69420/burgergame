@@ -27,24 +27,24 @@ flip_v = true
 
 [node name="NameLabel" type="Label" parent="." unique_id=2096382299]
 layout_mode = 0
-offset_left = 51.0
+offset_left = 45.0
 offset_top = 152.0
-offset_right = 98.0
+offset_right = 92.0
 offset_bottom = 175.0
 text = "Name"
 
 [node name="BuyButton" type="Button" parent="." unique_id=956547880]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 35.0
-offset_right = 115.0
-offset_bottom = 71.0
+offset_left = 39.0
+offset_top = 30.0
+offset_right = 122.0
+offset_bottom = 66.0
 
 [node name="PriceLabel" type="Label" parent="." unique_id=2062889375]
 layout_mode = 0
-offset_left = 53.0
-offset_top = 41.0
-offset_right = 93.0
-offset_bottom = 90.0
+offset_left = 57.0
+offset_top = 33.0
+offset_right = 97.0
+offset_bottom = 82.0
 text = "Price
 "
