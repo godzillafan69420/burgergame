@@ -1,85 +1,97 @@
 extends Control
 
-# Preload your card scene so we can spawn it programmatically
 @export var card_scene: PackedScene = preload("res://ShopStuff/shop_item_card.tscn")
 
-# Node References based on your scene tree
 @onready var money_text = $MarginContainer/MoneyCounter/MoneyText
 @onready var card_container = $BottomFridge
 @onready var reroll_button = $MarginContainer/ActionMenu/Reroll
 
-# Economy Variables
-var player_gold: int = 25  # Starting cash for testing
 var reroll_cost: int = 5
 
-# A mock data item pool to dynamically generate distinct items
+# Items
 var item_pool = [
-	{"name": "Manji kick", "price": 4},
-	{"name": "Lapse blue", "price": 6},
-	{"name": "Nue", "price": 3},
-	{"name": "Lucky Dice", "price": 8},
-	{"name": "Resolute slash", "price": 5}
+	{"name": "Iron Shield", "price": 4, "type": "defense"},
+	{"name": "Steel Sword", "price": 6, "type": "attack"},
+	{"name": "Health Potion", "price": 3, "type": "utility"},
+	{"name": "Lucky Dice", "price": 8, "type": "buff"},
+	{"name": "Spiked Boots", "price": 5, "type": "passive"}
 ]
 
 func _ready() -> void:
-	# 1. Update the UI to display initial gold count
 	update_gold_ui()
 	
-	# 2. Wire up button signals directly in code
 	$MarginContainer/ActionMenu/NextStage.pressed.connect(_on_next_stage_pressed)
 	$MarginContainer/ActionMenu/Reroll.pressed.connect(_on_reroll_pressed)
 	
-	# 3. Wipe out whatever placeholder cards are in the editor and generate random ones
 	clear_shop_shelf()
-	generate_shop_cards(3) # Spawns 3 random cards
+	generate_shop_cards(3)
 
-#updates text to see if you are a pooron (poor moron)
 func update_gold_ui() -> void:
-	money_text.text = "$" + str(player_gold)
+	# Accesses global Player wallet
+	money_text.text = "$" + str(PlayerStats.player_gold)
 	
-	if player_gold < reroll_cost:
+	if PlayerStats.player_gold < reroll_cost:
 		reroll_button.disabled = true
-		reroll_button.text = "Reroll (hahaha Poor)"
+		reroll_button.text = "Reroll (Poor!)"
 	else:
 		reroll_button.disabled = false
 		reroll_button.text = "Reroll $" + str(reroll_cost)
 
-# Deletes all existing cards
 func clear_shop_shelf() -> void:
 	for child in card_container.get_children():
 		child.queue_free()
 
-# Makes new stuff
 func generate_shop_cards(amount: int) -> void:
 	for i in range(amount):
 		var card = card_scene.instantiate()
 		card_container.add_child(card)
 		
-		# Pick a random dictionary out of our item pool
 		var item_data = item_pool.pick_random()
 		
-		# Apply the name and price directly to your card labels
 		var name_label = card.get_node_or_null("NameLabel")
 		var price_label = card.get_node_or_null("PriceLabel")
+		var buy_button = card.get_node_or_null("BuyButton")
 		
 		if name_label: 
 			name_label.text = item_data["name"]
 		if price_label: 
 			price_label.text = str(item_data["price"]) + " Gold"
+			
+		# DYNAMIC ITEM BUY SIGNAL:
+		if buy_button:
+			buy_button.pressed.connect(func(): _on_item_purchased(item_data, card))
 
-# REROLL BUTTON LOGIC
+# BUY LOGIC
+func _on_item_purchased(item_data: Dictionary, card_node: Node) -> void:
+	var cost = item_data["price"]
+	
+	if PlayerStats.player_gold >= cost:
+		# 1. Deduct currency
+		PlayerStats.player_gold -= cost
+		
+		# 2. Append item payload dictionary directly to your global attack array
+		PlayerStats.attacks.append(item_data)
+		print("Successfully Bought! Global Inventory Contents: ", PlayerStats.attacks)
+		
+		# 3. Destroy card node instance cleanly from the shelf display
+		card_node.queue_free()
+		
+		# 4. Refresh display text balances
+		update_gold_ui()
+	else:
+		print("Not enough money to buy ", item_data["name"])
+
+# REROLL BUTTON
 func _on_reroll_pressed() -> void:
-	if player_gold >= reroll_cost:
-		player_gold -= reroll_cost
+	if PlayerStats.player_gold >= reroll_cost:
+		PlayerStats.player_gold -= reroll_cost
 		update_gold_ui()
 		
 		clear_shop_shelf()
-		# Wait exactly one frame layout cycle so Godot finishes deleting old nodes safely
 		await get_tree().process_frame 
 		generate_shop_cards(3)
 
-# NEXT STAGE BUTTON LOGIC
+# NEXT STAGE BUTTON
 func _on_next_stage_pressed() -> void:
-	print("Advancing to next stage...")
-	# Change this to the level select probably
+	print("Transitioning to encounter with items: ", PlayerStats.attacks)
 	get_tree().change_scene_to_file("res://battle_scene.tscn")
