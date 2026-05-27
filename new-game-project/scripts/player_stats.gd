@@ -5,3 +5,5 @@ var player_energy: float = 30
 
 var player_recovery: float = 10
 var player_defalt_def: int = 0
+
+var attacks: Array =[]

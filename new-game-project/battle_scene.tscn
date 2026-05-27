@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="1_fw8re"]
 [ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="1_r5l0u"]
-[ext_resource type="PackedScene" uid="uid://c2tfvqo788kxy" path="res://player_attacks/punch.tscn" id="1_sl17i"]
 [ext_resource type="Script" uid="uid://bme11j2i2ndyn" path="res://scripts/end_turn_button.gd" id="2_gf131"]
 [ext_resource type="Script" uid="uid://c4jtsd8b6ntsy" path="res://energy_display.gd" id="3_sl17i"]
 [ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/john_the_fraud.tscn" id="4_5joda"]
@@ -17,41 +16,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="punch" parent="UI/cards" unique_id=2040214685 instance=ExtResource("1_sl17i")]
-layout_mode = 0
-offset_left = 275.0
-offset_top = 493.0
-offset_right = 422.0
-offset_bottom = 697.0
-
-[node name="punch2" parent="UI/cards" unique_id=695755734 instance=ExtResource("1_sl17i")]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 499.0
-offset_right = 595.0
-offset_bottom = 703.0
-
-[node name="punch3" parent="UI/cards" unique_id=1789910979 instance=ExtResource("1_sl17i")]
-layout_mode = 0
-offset_left = 616.0
-offset_top = 510.0
-offset_right = 763.0
-offset_bottom = 714.0
-
-[node name="punch4" parent="UI/cards" unique_id=1592583861 instance=ExtResource("1_sl17i")]
-layout_mode = 0
-offset_left = 790.0
-offset_top = 510.0
-offset_right = 937.0
-offset_bottom = 714.0
-
-[node name="punch5" parent="UI/cards" unique_id=597036896 instance=ExtResource("1_sl17i")]
-layout_mode = 0
-offset_left = 106.0
-offset_top = 498.0
-offset_right = 253.0
-offset_bottom = 702.0
-
 [node name="end_turn_button" type="Button" parent="UI" unique_id=1552152923]
 offset_left = 1090.0
 offset_top = 506.0
@@ -62,10 +26,10 @@ text = "end turn"
 script = ExtResource("2_gf131")
 
 [node name="energy_display" type="Label" parent="UI" unique_id=1700585432]
-offset_left = 40.0
-offset_top = 33.0
-offset_right = 323.0
-offset_bottom = 110.0
+offset_left = 85.0
+offset_top = 29.0
+offset_right = 368.0
+offset_bottom = 106.0
 script = ExtResource("3_sl17i")
 
 [node name="BattleLogic" type="Node" parent="." unique_id=1136221329]

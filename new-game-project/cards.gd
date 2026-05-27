@@ -5,7 +5,7 @@ extends cards
 @export var card_name: String = "aksknfk"
 @export_multiline var discription: String  = "aksknfk"
 func _ready() -> void:
-	Events.connect("players_turn", _fight)
+	can_attack = true
 	Events.connect("no_more_energy", _stop_fighting)
 
 	$name.text = card_name
@@ -14,11 +14,6 @@ func _ready() -> void:
 func _stop_fighting():
 	can_attack =  false
 	
-
-	
-
-func _fight():
-	can_attack = true
 
 
 
