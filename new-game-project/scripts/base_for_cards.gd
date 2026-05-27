@@ -31,6 +31,7 @@ func _ready() -> void:
 			card_id = new_id
 		else:
 			new_id +=1
+	Events.connect("reduce_energy_by", _change_id)
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and !selected_card and mouse_is_incard:
 		selected_card = true
@@ -41,6 +42,17 @@ func _input(event: InputEvent) -> void:
 			
 		else:
 			selected_card = false
+
+func _change_id():
+	if get_parent().get_child_count() < 5:
+		var new_id =0
+		for i in range(get_parent().get_child_count()):
+			if get_parent().get_children()[i-1].card_id != card_id:
+				card_id = new_id
+			else:
+				
+				new_id +=1
+			
 
 func _drop() -> void:
 	Events.emit_signal("reduce_energy_by", energy)
@@ -54,13 +66,8 @@ func _drop() -> void:
 
 
 func _process(delta: float) -> void:
-	if get_parent().get_child_count() < 5:
-		var new_id = 0
-		for i in range(get_parent().get_child_count()):
-			if get_parent().get_children()[i-1].card_id != card_id:
-				card_id = new_id
-			else:
-				new_id +=1
+			
+				
 	if position.x > 235 and position.x < 1000 and position.y > 44 and position.y < 400:
 		print("in area")
 		in_attack_area = true
