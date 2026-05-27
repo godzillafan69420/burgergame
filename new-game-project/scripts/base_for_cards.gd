@@ -26,11 +26,11 @@ const POSITION_OF_CARDS:Array = [
 @export var effects: Array[String]
 func _ready() -> void:
 	var new_id = 0
-		for i in range(get_parent().get_child_count()):
-			if get_parent().get_children()[i-1].card_id != card_id:
-				card_id = new_id
-			else:
-				new_id +=1
+	for i in range(get_parent().get_child_count()):
+		if get_parent().get_children()[i-1].card_id != card_id:
+			card_id = new_id
+		else:
+			new_id +=1
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and !selected_card and mouse_is_incard:
 		selected_card = true
