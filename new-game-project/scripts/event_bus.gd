@@ -6,6 +6,9 @@ signal card_selected(id)
 signal in_attack_area
 signal out_attack_area
 
+signal update_id
+
+
 signal damaged_enemy(damage)
 signal damaged_player(damage)
 

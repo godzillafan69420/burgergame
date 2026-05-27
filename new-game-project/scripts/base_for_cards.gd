@@ -24,38 +24,22 @@ const POSITION_OF_CARDS:Array = [
 @export var energy: float = 10
 
 @export var effects: Array[String]
-func _ready() -> void:
-	var new_id = 0
-	for i in range(get_parent().get_child_count()):
-		if get_parent().get_children()[i-1].card_id != card_id:
-			card_id = new_id
-		else:
-			new_id +=1
-	Events.connect("reduce_energy_by", _change_id)
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and !selected_card and mouse_is_incard:
 		selected_card = true
 	if event.is_action_released("click") and selected_card and mouse_is_incard:
 		if in_attack_area and can_attack:
-			
 			_drop()
-			
+			Events.emit_signal("update_id")
 		else:
 			selected_card = false
 
-func _change_id():
-	if get_parent().get_child_count() < 5:
-		var new_id =0
-		for i in range(get_parent().get_child_count()):
-			if get_parent().get_children()[i-1].card_id != card_id:
-				card_id = new_id
-			else:
-				
-				new_id +=1
 			
 
 func _drop() -> void:
 	Events.emit_signal("reduce_energy_by", energy)
+	
 	if !can_attack:
 		return
 	Events.emit_signal("damaged_enemy", damage)
