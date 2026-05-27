@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://w1rd75tw6ylc" path="res://ShopStuff/shop_scene.gd" id="1_xduvy"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_2e6ro"]
-[ext_resource type="PackedScene" uid="uid://dxv4p7rjbhfkh" path="res://ShopStuff/shop_item_card.tscn" id="3_2e6ro"]
 
 [node name="ShopScene" type="Control" unique_id=1164084992]
 layout_mode = 3
@@ -23,10 +22,10 @@ texture = ExtResource("2_2e6ro")
 
 [node name="TopFridge" type="HBoxContainer" parent="." unique_id=1223026909]
 layout_mode = 0
-offset_left = 313.0
-offset_top = 27.0
-offset_right = 522.34314
-offset_bottom = 67.0
+offset_left = 414.0
+offset_top = 32.000008
+offset_right = 623.34314
+offset_bottom = 72.00001
 scale = Vector2(3.3676763, 7.089876)
 
 [node name="BottomFridge" type="HBoxContainer" parent="." unique_id=1123443060]
@@ -38,5 +37,48 @@ offset_bottom = 673.0
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="ShopItemCard" parent="BottomFridge" unique_id=1634683499 instance=ExtResource("3_2e6ro")]
+[node name="ShopUI" type="CanvasLayer" parent="." unique_id=951023335]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1043101220]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 61.0
+offset_top = 195.0
+offset_right = -1120.0
+offset_bottom = -301.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MoneyCounter" type="HBoxContainer" parent="MarginContainer" unique_id=1445721253]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MoneyIcon" type="TextureRect" parent="MarginContainer/MoneyCounter" unique_id=665169474]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("2_2e6ro")
+expand_mode = 1
+flip_v = true
+
+[node name="MoneyText" type="Label" parent="MarginContainer/MoneyCounter" unique_id=295939724]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "$25"
+
+[node name="ActionMenu" type="VBoxContainer" parent="MarginContainer" unique_id=144736176]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 15
+
+[node name="NextStage" type="Button" parent="MarginContainer/ActionMenu" unique_id=1862821819]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "Next"
+
+[node name="Reroll" type="Button" parent="MarginContainer/ActionMenu" unique_id=978897667]
+layout_mode = 2
+text = "Reroll $5"

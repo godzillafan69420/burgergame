@@ -1,57 +1,85 @@
 extends Control
 
-# Preload your shop item scene (the UI card/button template)
-const SHOP_ITEM_SCENE = preload("res://ShopStuff/shop_item_card.tscn") # Adjust to your actual path
+# Preload your card scene so we can spawn it programmatically
+@export var card_scene: PackedScene = preload("res://ShopStuff/shop_item_card.tscn")
 
-# 1. Define your items, prices, and their spawn weights (higher weight = more common)
-var item_pool = {
-	"health_potion": {"name": "Health Potion", "price": 50, "weight": 50},
-	"attack_buff": {"name": "Sharp Grindstone", "price": 100, "weight": 30},
-	"rare_sword": {"name": "Legendary Blade", "price": 500, "weight": 5},
-	"shield": {"name": "Iron Shield", "price": 150, "weight": 25}
-}
+# Node References based on your scene tree
+@onready var money_text = $MarginContainer/MoneyCounter/MoneyText
+@onready var card_container = $BottomFridge
+@onready var reroll_button = $MarginContainer/ActionMenu/Reroll
 
-# Reference to where you want to put the items
-# (Change this to an HBoxContainer or your Marker2D nodes)
-@onready var shop_container = $BottomFridge
+# Economy Variables
+var player_gold: int = 25  # Starting cash for testing
+var reroll_cost: int = 5
 
-func _ready():
-	randomize() # Essential in older versions, good practice to ensure true randomness
-	generate_shop_inventory(3) # Generate 3 random items
+# A mock data item pool to dynamically generate distinct items
+var item_pool = [
+	{"name": "Manji kick", "price": 4},
+	{"name": "Lapse blue", "price": 6},
+	{"name": "Nue", "price": 3},
+	{"name": "Lucky Dice", "price": 8},
+	{"name": "Resolute slash", "price": 5}
+]
 
-func generate_shop_inventory(number_of_items: int):
-	# Clear out any old items first
-	for child in shop_container.get_children():
-		child.queue_free()
-		
-	for i in range(number_of_items):
-		var chosen_item_key = get_random_item_by_weight()
-		var item_data = item_pool[chosen_item_key]
-		
-		# Instantiate the visual UI card
-		var item_instance = SHOP_ITEM_SCENE.instantiate()
-		
-		# Add it to the scene tree (Container automatically positions it)
-		shop_container.add_child(item_instance)
-		
-		# Pass the random data to the item card script so it updates its labels/textures
-		if item_instance.has_method("setup_item"):
-			item_instance.setup_item(item_data.name, item_data.price)
-
-# 2. Weighted Random Selection Algorithm
-func get_random_item_by_weight() -> String:
-	var total_weight = 0
-	for item in item_pool.values():
-		total_weight += item.weight
-		
-	# Pick a random number between 0 and the sum of all weights
-	var roll = randf_range(0, total_weight)
-	var current_weight_sum = 0
+func _ready() -> void:
+	# 1. Update the UI to display initial gold count
+	update_gold_ui()
 	
-	# Find which item "owns" the rolled number
-	for item_key in item_pool:
-		current_weight_sum += item_pool[item_key].weight
-		if roll <= current_weight_sum:
-			return item_key
-			
-	return item_pool.keys()[0] # Fallback just in case
+	# 2. Wire up button signals directly in code
+	$MarginContainer/ActionMenu/NextStage.pressed.connect(_on_next_stage_pressed)
+	$MarginContainer/ActionMenu/Reroll.pressed.connect(_on_reroll_pressed)
+	
+	# 3. Wipe out whatever placeholder cards are in the editor and generate random ones
+	clear_shop_shelf()
+	generate_shop_cards(3) # Spawns 3 random cards
+
+#updates text to see if you are a pooron (poor moron)
+func update_gold_ui() -> void:
+	money_text.text = "$" + str(player_gold)
+	
+	if player_gold < reroll_cost:
+		reroll_button.disabled = true
+		reroll_button.text = "Reroll (hahaha Poor)"
+	else:
+		reroll_button.disabled = false
+		reroll_button.text = "Reroll $" + str(reroll_cost)
+
+# Deletes all existing cards
+func clear_shop_shelf() -> void:
+	for child in card_container.get_children():
+		child.queue_free()
+
+# Makes new stuff
+func generate_shop_cards(amount: int) -> void:
+	for i in range(amount):
+		var card = card_scene.instantiate()
+		card_container.add_child(card)
+		
+		# Pick a random dictionary out of our item pool
+		var item_data = item_pool.pick_random()
+		
+		# Apply the name and price directly to your card labels
+		var name_label = card.get_node_or_null("NameLabel")
+		var price_label = card.get_node_or_null("PriceLabel")
+		
+		if name_label: 
+			name_label.text = item_data["name"]
+		if price_label: 
+			price_label.text = str(item_data["price"]) + " Gold"
+
+# REROLL BUTTON LOGIC
+func _on_reroll_pressed() -> void:
+	if player_gold >= reroll_cost:
+		player_gold -= reroll_cost
+		update_gold_ui()
+		
+		clear_shop_shelf()
+		# Wait exactly one frame layout cycle so Godot finishes deleting old nodes safely
+		await get_tree().process_frame 
+		generate_shop_cards(3)
+
+# NEXT STAGE BUTTON LOGIC
+func _on_next_stage_pressed() -> void:
+	print("Advancing to next stage...")
+	# Change this to the level select probably
+	get_tree().change_scene_to_file("res://battle_scene.tscn")
