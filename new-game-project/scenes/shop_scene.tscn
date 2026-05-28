@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dfqmngcugmkpx"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_42hh6"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Art/icon.svg" id="1_42hh6"]
 
 [node name="ShopScene" type="Control" unique_id=1164084992]
 layout_mode = 3

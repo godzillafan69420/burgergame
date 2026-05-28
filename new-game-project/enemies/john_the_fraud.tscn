@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ck6ewcnl8sg60"]
 
 [ext_resource type="Script" uid="uid://c4kqr3abi6wjh" path="res://scripts/enemy.gd" id="1_2sr7e"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_kjryd"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Art/icon.svg" id="2_kjryd"]
 [ext_resource type="PackedScene" uid="uid://bkiarse6ln4qp" path="res://enemy_stats.tscn" id="3_4ytir"]
 
 [node name="John_the_fraud" type="Node2D" unique_id=708042470]
