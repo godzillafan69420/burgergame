@@ -8,7 +8,10 @@ offset_top = -103.0
 offset_right = 75.0
 offset_bottom = 101.0
 script = ExtResource("1_s8un3")
+card_name = "Punch"
+discription = "do 25 damage"
 damage = 25.0
+energy = 5.0
 effects = Array[String](["blocking"])
 metadata/_custom_type_script = "uid://bn04f33qgscnx"
 

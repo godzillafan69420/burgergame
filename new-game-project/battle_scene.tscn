@@ -44,4 +44,6 @@ position = Vector2(835, 394)
 [node name="John_the_fraud" parent="enemies" unique_id=708042470 instance=ExtResource("4_5joda")]
 setted_speed = 20.0
 
+[node name="background" type="Sprite2D" parent="." unique_id=1824490579]
+
 [connection signal="button_down" from="UI/end_turn_button" to="UI/end_turn_button" method="_on_button_down"]

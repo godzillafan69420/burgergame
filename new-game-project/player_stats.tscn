@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b6w2l0wdpc3uk" path="res://scripts/ingame_stats.gd" id="1_ak0f0"]
 
-[node name="player_stats" type="Node2D" unique_id=576855214]
+[node name="player_stats" type="Node2D" unique_id=1366344397]
 script = ExtResource("1_ak0f0")
 
 [node name="HP" type="ProgressBar" parent="." unique_id=933205273]
