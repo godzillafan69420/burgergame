@@ -22,4 +22,3 @@ func setup_item(item_name: String, price: int):
 func _on_buy_button_pressed():
 	print("Player is trying to buy: ", current_item_name)
 	
-	
