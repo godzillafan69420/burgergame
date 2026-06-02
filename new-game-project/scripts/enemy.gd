@@ -1,6 +1,7 @@
 extends Node2D
 class_name enemy
 
+@export var id: int = 0
 
 @export var attacks_name:Array[String] = []
 @export var def_stats: int = 1
@@ -18,7 +19,13 @@ func _ready() -> void:
 	for i in attacks_name:
 		attacks.append(EnemyAttacks.get(i))
 	
-func _attacked_player():
+func _attacked_player(attack_id):
+	
+	if attack_id != id:
+		return
+		
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "global_position", $"../../player".position, 0.2)
 	randomAttack = randi_range(0,attacks.size() -1)
 	Events.emit_signal("players_turn")
 	var damage =(attacks[randomAttack].get("damage")) * damage_multiplier
