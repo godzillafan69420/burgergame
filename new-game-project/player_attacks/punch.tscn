@@ -1,19 +1,20 @@
 [gd_scene format=3 uid="uid://c2tfvqo788kxy"]
 
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Art/icon.svg" id="1_n7t67"]
 [ext_resource type="Script" uid="uid://b1wwgji6jiwrq" path="res://cards.gd" id="1_s8un3"]
 
-[node name="punch" type="Panel" unique_id=2040214685]
+[node name="punch" type="TextureRect" unique_id=95620961]
 offset_left = -72.0
 offset_top = -103.0
 offset_right = 75.0
 offset_bottom = 101.0
+texture = ExtResource("1_n7t67")
 script = ExtResource("1_s8un3")
 card_name = "Punch"
 discription = "do 25 damage"
 damage = 25.0
 energy = 5.0
 effects = Array[String](["blocking"])
-metadata/_custom_type_script = "uid://bn04f33qgscnx"
 
 [node name="name" type="Label" parent="." unique_id=1243870691]
 layout_mode = 0

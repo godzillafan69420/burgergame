@@ -1,4 +1,4 @@
-extends Panel
+extends TextureRect
 
 class_name cards
 
