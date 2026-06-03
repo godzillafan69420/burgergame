@@ -12,10 +12,10 @@ extends Control
 var reroll_cost: int = 5
 
 var upgrade_pool = [
-	{"name": "Abstract Joker", "type": "joker", "effect": "+3 Multiplier"},
-	{"name": "Golden Relic", "type": "relic", "effect": "+2 Gold per round"},
-	{"name": "Ice Shard", "type": "upgrade", "effect": "+5 Freeze damage"},
-	{"name": "Fiery Heart", "type": "joker", "effect": "1.5x Multiplier"},
+	{"name": "Placeholder", "type": "joker", "effect": "idk"},
+	{"name": "Placeholder2", "type": "relic", "effect": "+2 Gold per round"},
+	{"name": "Placeholder3", "type": "upgrade", "effect": "idk"},
+	{"name": "Placeholder4", "type": "joker", "effect": "idk"},
 	{"name": "Ancient Scroll", "type": "relic", "effect": "+1 Hand size"}
 ]
 
