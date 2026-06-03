@@ -34,10 +34,10 @@ grow_horizontal = 2
 
 [node name="BottomFridge" type="HBoxContainer" parent="." unique_id=1123443060]
 layout_mode = 0
-offset_left = 585.0
-offset_top = 473.0
-offset_right = 1218.0
-offset_bottom = 673.0
+offset_left = 260.0
+offset_top = 467.0
+offset_right = 893.0
+offset_bottom = 667.0
 theme_override_constants/separation = 50
 alignment = 1
 

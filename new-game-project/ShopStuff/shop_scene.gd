@@ -3,7 +3,8 @@ extends Control
 @export var card_scene: PackedScene = preload("res://ShopStuff/shop_item_card.tscn")
 
 @onready var money_text = $MarginContainer/MoneyCounter/MoneyText
-@onready var card_container = $BottomFridge
+@onready var top_fridge = $TopFridge        # Packs here
+@onready var bottom_fridge = $BottomFridge  # Attacks here
 @onready var PLS_WORK = $PackOpeningScene
 @onready var reroll_button = $MarginContainer/ActionMenu/Reroll
 @onready var next_stage_button = $MarginContainer/ActionMenu/NextStage
@@ -18,13 +19,16 @@ var upgrade_pool = [
 	{"name": "Ancient Scroll", "type": "relic", "effect": "+1 Hand size"}
 ]
 
-# Items
-var item_pool = [
-	{"name": "Iron Shield", "price": 4, "type": "defense"},
-	{"name": "Steel Sword", "price": 6, "type": "attack"},
-	{"name": "Health Potion", "price": 3, "type": "utility"},
-	{"name": "Lucky Dice", "price": 8, "type": "buff"},
-	{"name": "Spiked Boots", "price": 5, "type": "passive"},
+# Attack item pool you can change stuf fhere
+var regular_item_pool = [
+	{"name": "Manji Kick", "price": 4, "type": "defense"},
+	{"name": "Lapse blue", "price": 6, "type": "attack"},
+	{"name": "Punch", "price": 3, "type": "utility"},
+	{"name": "Kick", "price": 8, "type": "buff"},
+	{"name": "Tuff", "price": 5, "type": "passive"}
+]
+
+var pack_pool = [
 	{"name": "Buffoon Pack", "price": 6, "type": "pack"}
 ]
 
@@ -34,13 +38,12 @@ func _ready() -> void:
 	next_stage_button.pressed.connect(_on_next_stage_pressed)
 	reroll_button.pressed.connect(_on_reroll_pressed)
 	
-	# Connect the pack opening scene's choice signal back to this shop script
 	if PLS_WORK:
 		PLS_WORK.visible = false
 		PLS_WORK.item_chosen.connect(_on_pack_reward_claimed)
 	
-	clear_shop_shelf()
-	generate_shop_cards(3)
+	clear_shop_shelves()
+	generate_entire_shop()
 
 func update_gold_ui() -> void:
 	money_text.text = "$" + str(PlayerStats.player_gold)
@@ -52,28 +55,43 @@ func update_gold_ui() -> void:
 		reroll_button.disabled = false
 		reroll_button.text = "Reroll $" + str(reroll_cost)
 
-func clear_shop_shelf() -> void:
-	for child in card_container.get_children():
+func clear_shop_shelves() -> void:
+	# Clear top shelf
+	for child in top_fridge.get_children():
+		child.queue_free()
+	# Clear bottom shelf
+	for child in bottom_fridge.get_children():
 		child.queue_free()
 
-func generate_shop_cards(amount: int) -> void:
-	for i in range(amount):
-		var card = card_scene.instantiate()
-		card_container.add_child(card)
+func generate_entire_shop() -> void:
+	# 1. Spawn 2 random packs on the Top Fridge
+	for i in range(2):
+		if pack_pool.is_empty(): break
+		var pack_data = pack_pool.pick_random()
+		create_card_on_shelf(pack_data, top_fridge)
 		
-		var item_data = item_pool.pick_random()
+	# 2. Change ts number for multiple items in shop
+	for i in range(5):
+		if regular_item_pool.is_empty(): break
+		var item_data = regular_item_pool.pick_random()
+		create_card_on_shelf(item_data, bottom_fridge)
 		
-		var name_label = card.get_node_or_null("NameLabel")
-		var price_label = card.get_node_or_null("PriceLabel")
-		var buy_button = card.get_node_or_null("BuyButton")
 		
-		if name_label: 
-			name_label.text = item_data["name"]
-		if price_label: 
-			price_label.text = str(item_data["price"]) + " Gold"
-			
-		if buy_button:
-			buy_button.pressed.connect(func(): _on_item_purchased(item_data, card))
+func create_card_on_shelf(item_data: Dictionary, target_fridge: Node) -> void:
+	var card = card_scene.instantiate()
+	target_fridge.add_child(card)
+	
+	var name_label = card.get_node_or_null("NameLabel")
+	var price_label = card.get_node_or_null("PriceLabel")
+	var buy_button = card.get_node_or_null("BuyButton")
+	
+	if name_label: 
+		name_label.text = item_data["name"]
+	if price_label: 
+		price_label.text = str(item_data["price"]) + " Gold"
+		
+	if buy_button:
+		buy_button.pressed.connect(func(): _on_item_purchased(item_data, card))
 
 # BUY LOGIC
 func _on_item_purchased(item_data: Dictionary, card_node: Node) -> void:
@@ -94,29 +112,27 @@ func _on_item_purchased(item_data: Dictionary, card_node: Node) -> void:
 	else:
 		print("Not enough money to buy ", item_data["name"])
 
-# PACK OPENING SETUP
 func open_pack_screen() -> void:
 	if not PLS_WORK:
 		print("Error: PackOpeningScene node (PLS_WORK) is missing!")
 		return
 		
-	# 1. Hide the normal shop shelves so things don't look messy
-	card_container.visible = false
+	# Hide both rows when buying 
+	top_fridge.visible = false
+	bottom_fridge.visible = false
 	reroll_button.disabled = true
 	next_stage_button.disabled = true
 	
-	# 2. Tell the pack scene script to execute its custom generation layout
 	PLS_WORK.open_pack(upgrade_pool)
 
-# HANDLING REWARD SELECTION (Triggered via signal from PLS_WORK)
 func _on_pack_reward_claimed(chosen_data: Dictionary) -> void:
-	# 1. Add item payload directly to global attack array
 	PlayerStats.attacks.append(chosen_data)
 	print("Selected pack upgrade: ", chosen_data["name"])
 	print("Global Inventory Contents: ", PlayerStats.attacks)
 	
-	# 2. Return layout visibility to normal shop state
-	card_container.visible = true
+	# Bring back both rows after you picked the shit you want
+	top_fridge.visible = true
+	bottom_fridge.visible = true
 	next_stage_button.disabled = false
 	update_gold_ui()
 
@@ -126,9 +142,9 @@ func _on_reroll_pressed() -> void:
 		PlayerStats.player_gold -= reroll_cost
 		update_gold_ui()
 		
-		clear_shop_shelf()
+		clear_shop_shelves()
 		await get_tree().process_frame 
-		generate_shop_cards(3)
+		generate_entire_shop()
 
 # NEXT STAGE BUTTON
 func _on_next_stage_pressed() -> void:
