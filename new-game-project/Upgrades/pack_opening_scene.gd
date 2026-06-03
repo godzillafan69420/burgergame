@@ -26,18 +26,23 @@ func open_pack(upgrade_pool: Array) -> void:
 		choices.append(chosen_option)
 		pool_copy.erase(chosen_option) # Prevents duplicates
 		
-	# Instantiate the 3 option cards
+	# Instantiate the 3 option cards side-by-side inside choices_container
 	for option_data in choices:
 		var card = card_scene.instantiate()
 		choices_container.add_child(card)
 		
-		# Set up the card text using Kevin's method
-		if card.has_method("setup_item"):
-			card.setup_item(option_data["name"], 0) # 0 Gold / Free selection
+		# Safely access internal nodes using your fallback system
+		var name_label = card.get_node_or_null("NameLabel")
+		var price_label = card.get_node_or_null("PriceLabel")
+		var buy_button = card.get_node_or_null("BuyButton")
+		
+		if name_label:
+			name_label.text = option_data["name"]
+		if price_label:
+			price_label.text = "CHOOSE!" # Replaces price text since it's a pack reward
 			
-		# Connect the card's click directly to selecting this reward
-		if card.has_signal("clicked"):
-			card.clicked.connect(func(): _on_reward_selected(option_data))
+		if buy_button:
+			buy_button.pressed.connect(func(): _on_reward_selected(option_data))
 
 func _on_reward_selected(chosen_data: Dictionary) -> void:
 	# Tell the main shop system what item was chosen

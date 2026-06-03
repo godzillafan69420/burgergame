@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://w1rd75tw6ylc" path="res://ShopStuff/shop_scene.gd" id="1_xduvy"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Art/icon.svg" id="2_2e6ro"]
-[ext_resource type="PackedScene" uid="uid://dngabixq4uy1k" path="res://Upgrades/upgrade_pack.tscn" id="3_2e6ro"]
 [ext_resource type="Script" uid="uid://u4ks6kn82y6w" path="res://Upgrades/pack_opening_scene.gd" id="4_g0e1r"]
 
 [node name="ShopScene" type="Control" unique_id=1164084992]
@@ -23,14 +22,11 @@ scale = Vector2(10.017863, 5.535115)
 texture = ExtResource("2_2e6ro")
 
 [node name="TopFridge" type="HBoxContainer" parent="." unique_id=1223026909]
-layout_mode = 0
-offset_left = 388.0
-offset_top = 56.0
-offset_right = 538.0
-offset_bottom = 256.0
-
-[node name="UpgradePack" parent="TopFridge" unique_id=1634683499 instance=ExtResource("3_2e6ro")]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
 
 [node name="BottomFridge" type="HBoxContainer" parent="." unique_id=1123443060]
 layout_mode = 0
@@ -88,6 +84,7 @@ layout_mode = 2
 text = "Reroll $5"
 
 [node name="PackOpeningScene" type="Control" parent="." unique_id=1239548219]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

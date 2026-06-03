@@ -18,7 +18,7 @@ var upgrade_pool = [
 	{"name": "Ancient Scroll", "type": "relic", "effect": "+1 Hand size"}
 ]
 
-# Items (Added the Buffoon Pack here so it can spawn on shelves!)
+# Items
 var item_pool = [
 	{"name": "Iron Shield", "price": 4, "type": "defense"},
 	{"name": "Steel Sword", "price": 6, "type": "attack"},
@@ -34,15 +34,15 @@ func _ready() -> void:
 	next_stage_button.pressed.connect(_on_next_stage_pressed)
 	reroll_button.pressed.connect(_on_reroll_pressed)
 	
-	# Hide the pack opening overlay when the shop first opens
+	# Connect the pack opening scene's choice signal back to this shop script
 	if PLS_WORK:
 		PLS_WORK.visible = false
+		PLS_WORK.item_chosen.connect(_on_pack_reward_claimed)
 	
 	clear_shop_shelf()
 	generate_shop_cards(3)
 
 func update_gold_ui() -> void:
-	# Accesses global Player wallet
 	money_text.text = "$" + str(PlayerStats.player_gold)
 	
 	if PlayerStats.player_gold < reroll_cost:
@@ -72,7 +72,6 @@ func generate_shop_cards(amount: int) -> void:
 		if price_label: 
 			price_label.text = str(item_data["price"]) + " Gold"
 			
-		# DYNAMIC ITEM BUY SIGNAL:
 		if buy_button:
 			buy_button.pressed.connect(func(): _on_item_purchased(item_data, card))
 
@@ -81,91 +80,45 @@ func _on_item_purchased(item_data: Dictionary, card_node: Node) -> void:
 	var cost = item_data["price"]
 	
 	if PlayerStats.player_gold >= cost:
-		# 1. Deduct currency
 		PlayerStats.player_gold -= cost
 		update_gold_ui()
 		
-		# 2. Destroy the card node instance cleanly from the shelf display
 		card_node.queue_free()
 		
-		# 3. Check if they bought a regular item or a Pack
 		if item_data.get("type") == "pack":
 			print("Pack purchased! Opening reward selection...")
 			open_pack_screen()
 		else:
-			# Append item payload dictionary directly to your global attack array
 			PlayerStats.attacks.append(item_data)
 			print("Successfully Bought! Global Inventory Contents: ", PlayerStats.attacks)
 	else:
 		print("Not enough money to buy ", item_data["name"])
 
-# PACK OPENING REWARD SCREEN LOGIC
+# PACK OPENING SETUP
 func open_pack_screen() -> void:
 	if not PLS_WORK:
 		print("Error: PackOpeningScene node (PLS_WORK) is missing!")
 		return
 		
-	# Show the full-screen overlay and freeze standard shop menu buttons
-	PLS_WORK.visible = true
+	# 1. Hide the normal shop shelves so things don't look messy
+	card_container.visible = false
 	reroll_button.disabled = true
 	next_stage_button.disabled = true
 	
-	# Find where to put the cards inside your pack scene. 
-	# If you have an HBoxContainer named "ChoicesContainer" inside it, it will use that.
-	# Otherwise, it falls back to adding them directly to PLS_WORK.
-	var target_container = PLS_WORK.get_node_or_null("ChoicesContainer")
-	if not target_container:
-		target_container = PLS_WORK
-		
-	# Clear out any old choices from previous packs
-	for child in target_container.get_children():
-		if child is Control: # Protects background visual nodes if any
-			child.queue_free()
-			
-	# Pick 3 unique random choices from the upgrade pool
-	var pool_copy = upgrade_pool.duplicate()
-	var choices = []
-	for i in range(3):
-		if pool_copy.is_empty(): break
-		var chosen_option = pool_copy.pick_random()
-		choices.append(chosen_option)
-		pool_copy.erase(chosen_option) # Prevents duplicates within the same pack
-		
-	# Spawn the 3 reward cards
-	for option_data in choices:
-		var card = card_scene.instantiate()
-		target_container.add_child(card)
-		
-		var name_label = card.get_node_or_null("NameLabel")
-		var price_label = card.get_node_or_null("PriceLabel")
-		var buy_button = card.get_node_or_null("BuyButton")
-		
-		if name_label:
-			name_label.text = option_data["name"]
-		if price_label:
-			price_label.text = "CHOOSE!" # Replaces the price text since it's free now
-			
-		if buy_button:
-			buy_button.pressed.connect(func(): _on_pack_reward_selected(option_data, target_container))
+	# 2. Tell the pack scene script to execute its custom generation layout
+	PLS_WORK.open_pack(upgrade_pool)
 
-# HANDLING REWARD SELECTION
-func _on_pack_reward_selected(chosen_data: Dictionary, target_container: Node) -> void:
-	# 1. Save the selected item directly to inventory
+# HANDLING REWARD SELECTION (Triggered via signal from PLS_WORK)
+func _on_pack_reward_claimed(chosen_data: Dictionary) -> void:
+	# 1. Add item payload directly to global attack array
 	PlayerStats.attacks.append(chosen_data)
 	print("Selected pack upgrade: ", chosen_data["name"])
 	print("Global Inventory Contents: ", PlayerStats.attacks)
 	
-	# 2. Clear out the generated cards inside the pack overlay
-	for child in target_container.get_children():
-		if child is Control:
-			child.queue_free()
-			
-	# 3. Hide the pack selection screen overlay
-	PLS_WORK.visible = false
-	
-	# 4. Return shop buttons to normal
+	# 2. Return layout visibility to normal shop state
+	card_container.visible = true
 	next_stage_button.disabled = false
-	update_gold_ui() # Recalculates if player can still afford rerolls
+	update_gold_ui()
 
 # REROLL BUTTON
 func _on_reroll_pressed() -> void:
