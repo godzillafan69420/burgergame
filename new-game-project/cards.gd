@@ -21,9 +21,9 @@ func _can_attack():
 
 
 func _on_mouse_entered() -> void:
-	print("aosnfonaofn")
+
 	mouse_is_incard = true
 
 func _on_mouse_exited() -> void:
-	print("jacob is a bum")
+
 	mouse_is_incard=false

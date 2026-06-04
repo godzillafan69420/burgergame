@@ -8,6 +8,7 @@ signal out_attack_area
 
 signal update_id
 
+signal check_victory_conditions
 
 signal damaged_enemy(damage)
 signal damaged_player(damage)
