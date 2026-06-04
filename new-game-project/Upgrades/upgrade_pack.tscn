@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dngabixq4uy1k"]
 
 [ext_resource type="Script" uid="uid://b4r0poj5clthn" path="res://Upgrades/upgrade_pack.gd" id="1_4a2yq"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Art/icon.svg" id="2_7gnm0"]
+[ext_resource type="Texture2D" uid="uid://dmuv2bdye6k5i" path="res://Art/CardPack.png" id="2_7ev1l"]
 
 [node name="UpgradePack" type="Control" unique_id=1634683499]
 custom_minimum_size = Vector2(150, 200)
@@ -20,10 +20,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_7gnm0")
+texture = ExtResource("2_7ev1l")
 expand_mode = 1
 stretch_mode = 5
-flip_v = true
 
 [node name="NameLabel" type="Label" parent="." unique_id=2096382299]
 layout_mode = 0

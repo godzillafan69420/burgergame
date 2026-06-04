@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dxv4p7rjbhfkh"]
 
 [ext_resource type="Script" uid="uid://d4euqu7emj4i8" path="res://ShopStuff/shop_item_card.gd" id="1_sd1vs"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Art/icon.svg" id="2_54tfs"]
+[ext_resource type="Texture2D" uid="uid://qju8bivensgw" path="res://Art/CardTemplateTuff.png" id="2_sd1vs"]
 
 [node name="ShopItemCard" type="Control" unique_id=1634683499]
 custom_minimum_size = Vector2(150, 200)
@@ -20,10 +20,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_54tfs")
+texture = ExtResource("2_sd1vs")
 expand_mode = 1
 stretch_mode = 5
-flip_v = true
 
 [node name="NameLabel" type="Label" parent="." unique_id=2096382299]
 layout_mode = 0

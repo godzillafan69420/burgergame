@@ -3,7 +3,7 @@ extends Control
 # Signal emitted when the player successfully chooses an upgrade
 signal item_chosen(item_data: Dictionary)
 
-@export var card_scene: PackedScene = preload("res://ShopStuff/shop_item_card.tscn")
+@export var card_scene: PackedScene = preload("res://Upgrades/upgrade_pack.tscn")
 
 @onready var choices_container = $VBoxContainer/ChoicesContainer
 @onready var title_label = $VBoxContainer/PackTitleLabel
