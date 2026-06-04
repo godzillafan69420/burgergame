@@ -15,6 +15,10 @@ func _ready() -> void:
 	
 func _take_damage(damage: int) -> void:
 	$HP.value -= damage
+	if $HP.value <= 0:
+		Events.emit_signal("check_victory_conditions")
+		get_parent().queue_free()
+	
 
 
 

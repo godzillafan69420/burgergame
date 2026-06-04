@@ -20,9 +20,8 @@ var enemy_list: Node2D
 
 func _ready() -> void:
 	enemy_list = $"../enemies"
-	total_enemies = enemy_list.get_child_count()
 	card_list = $"../UI/cards"
-	
+	print(total_enemies)
 	card_list.child_order_changed.connect(_update_card_ids)
 	
 	num_of_cards = card_list.get_child_count()
@@ -33,6 +32,7 @@ func _ready() -> void:
 	Events.connect("players_turn", _players_turn)
 	Events.connect("enemies_turn", _enemies_turn)
 	Events.connect("dialogue", _dialogue)
+	Events.connect("check_victory_conditions", _check_victory)
 	
 	Events.emit_signal("players_turn")
 func _dialogue():
@@ -59,11 +59,14 @@ func _update_card_ids() -> void:
 	for index in range(children.size()):
 		children[index].card_id = index
 func _enemies_turn():
-	if enemy_id_turn < total_enemies:
-		enemy_id_turn +=1
-	else:
-		enemy_id_turn = 0
+	
+	print(total_enemies)
 	current_state = States.enemies_turn
 	num_of_cards = card_list.get_child_count()
 
+func _check_victory():
+	print("changingScene")
+	print(enemy_list.get_child_count()-1)
+	if enemy_list.get_child_count() -1 == 0:
+		get_tree().change_scene_to_file("res://ShopStuff/shop_scene.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.

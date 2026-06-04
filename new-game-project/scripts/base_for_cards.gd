@@ -53,7 +53,6 @@ func _process(delta: float) -> void:
 			
 				
 	if position.x > 235 and position.x < 1000 and position.y > 44 and position.y < 400:
-		print("in area")
 		in_attack_area = true
 	else:
 		in_attack_area = false
