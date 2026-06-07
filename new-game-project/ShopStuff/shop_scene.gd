@@ -10,7 +10,7 @@ extends Control
 @onready var next_stage_button = $MarginContainer/ActionMenu/NextStage
 
 var reroll_cost: int = 5
-
+#UPGRADS ALSO WHY IS CAPS LOCK ON
 var upgrade_pool = [
 	{"name": "Placeholder", "type": "joker", "effect": "idk"},
 	{"name": "Placeholder2", "type": "relic", "effect": "+2 Gold per round"},
@@ -27,7 +27,7 @@ var regular_item_pool = [
 	{"name": "Kick", "price": 8, "type": "buff"},
 	{"name": "Tuff", "price": 5, "type": "passive"}
 ]
-
+#NAMED BUFFOON PACK CUZ BALATRO
 var pack_pool = [
 	{"name": "Buffoon Pack", "price": 6, "type": "pack"}
 ]
@@ -50,7 +50,7 @@ func update_gold_ui() -> void:
 	
 	if PlayerStats.player_gold < reroll_cost:
 		reroll_button.disabled = true
-		reroll_button.text = "Reroll (Poor!)"
+		reroll_button.text = "Reroll (Haha pooron!)"
 	else:
 		reroll_button.disabled = false
 		reroll_button.text = "Reroll $" + str(reroll_cost)
@@ -104,17 +104,14 @@ func _on_item_purchased(item_data: Dictionary, card_node: Node) -> void:
 		card_node.queue_free()
 		
 		if item_data.get("type") == "pack":
-			print("Pack purchased! Opening reward selection...")
 			open_pack_screen()
 		else:
 			PlayerStats.attacks.append(item_data)
-			print("Successfully Bought! Global Inventory Contents: ", PlayerStats.attacks)
 	else:
 		print("Not enough money to buy ", item_data["name"])
 
 func open_pack_screen() -> void:
 	if not PLS_WORK:
-		print("Error: PackOpeningScene node (PLS_WORK) is missing!")
 		return
 		
 	# Hide both rows when buying 
@@ -127,7 +124,6 @@ func open_pack_screen() -> void:
 
 func _on_pack_reward_claimed(chosen_data: Dictionary) -> void:
 	PlayerStats.attacks.append(chosen_data)
-	print("Selected pack upgrade: ", chosen_data["name"])
 	print("Global Inventory Contents: ", PlayerStats.attacks)
 	
 	# Bring back both rows after you picked the shit you want

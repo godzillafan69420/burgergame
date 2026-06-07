@@ -10,4 +10,4 @@ var attacks: Array =[]
 var upgrades: Array = []
 
 # Global player wallet 
-var player_gold: int = 5000
+var player_gold: int = 5
