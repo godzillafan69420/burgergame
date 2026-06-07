@@ -9,7 +9,8 @@ const gap_size: float = 25
 const offset: float = 30
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for i in passives.size():
+	passives = PlayerStats.upgrades
+	for i in passives:
 		var toppings = Sprite2D.new()
 		toppings.position.y = i  * -gap_size - offset
 		toppings.texture = img

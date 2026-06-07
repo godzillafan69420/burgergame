@@ -2,7 +2,7 @@ extends Node
 
 
 var enemy_id_turn: int = 0
-var total_enemies:int = 1
+@export var total_enemies:int = 1
 const MAX_CARDS = 5
 
 var num_of_enemies: int = 0
@@ -63,10 +63,11 @@ func _enemies_turn():
 	print(total_enemies)
 	current_state = States.enemies_turn
 	num_of_cards = card_list.get_child_count()
-
+	
 func _check_victory():
-	print("changingScene")
-	print(enemy_list.get_child_count()-1)
+	var children = $"../enemies".get_children()
+	for index in range(children.size()):
+		children[index].id = index
 	if enemy_list.get_child_count() -1 == 0:
 		PlayerStats.player_gold +=5
 		get_tree().change_scene_to_file("res://ShopStuff/shop_scene.tscn")
