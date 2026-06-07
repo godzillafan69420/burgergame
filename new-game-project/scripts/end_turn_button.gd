@@ -12,7 +12,6 @@ func _ready() -> void:
 	enemy_list = $"../../enemies"
 	total_enemies = enemy_list.get_child_count()
 
-
 func _on_button_down() -> void:
 	total_enemies = enemy_list.get_child_count()
 	if enemy_id_turn < total_enemies:
@@ -20,5 +19,6 @@ func _on_button_down() -> void:
 	else:
 		enemy_id_turn = 1
 	Events.emit_signal("enemies_turn", enemy_id_turn)
+	print(enemy_id_turn)
 
 	

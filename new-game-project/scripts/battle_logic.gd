@@ -23,7 +23,6 @@ func _ready() -> void:
 	card_list = $"../UI/cards"
 	print(total_enemies)
 	card_list.child_order_changed.connect(_update_card_ids)
-	
 	num_of_cards = card_list.get_child_count()
 	for i in $"../enemies".get_children():
 		num_of_enemies += 1
