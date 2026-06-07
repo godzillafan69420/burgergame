@@ -68,5 +68,6 @@ func _check_victory():
 	print("changingScene")
 	print(enemy_list.get_child_count()-1)
 	if enemy_list.get_child_count() -1 == 0:
+		PlayerStats.player_gold +=5
 		get_tree().change_scene_to_file("res://ShopStuff/shop_scene.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
