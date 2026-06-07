@@ -123,8 +123,8 @@ func open_pack_screen() -> void:
 	PLS_WORK.open_pack(upgrade_pool)
 
 func _on_pack_reward_claimed(chosen_data: Dictionary) -> void:
-	PlayerStats.attacks.append(chosen_data)
-	print("Global Inventory Contents: ", PlayerStats.attacks)
+	PlayerStats.upgrades.append(chosen_data)
+	print("Global Inventory Contents: ", PlayerStats.upgrades)
 	
 	# Bring back both rows after you picked the shit you want
 	top_fridge.visible = true
