@@ -23,9 +23,10 @@ func _ready() -> void:
 		attacks.append(EnemyAttacks.get(i))
 	
 func _attacked_player(attack_id):
+	print("attacking" + str(id))
 	if attack_id != id:
 		return
-		
+	
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "global_position", $"../../player".position, 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	await get_tree().create_timer(0.2).timeout

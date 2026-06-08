@@ -24,9 +24,10 @@ func _ready() -> void:
 	print(total_enemies)
 	card_list.child_order_changed.connect(_update_card_ids)
 	num_of_cards = card_list.get_child_count()
-	for i in $"../enemies".get_children():
+	var children = $"../enemies".get_children()
+	for index in range(children.size()):
 		num_of_enemies += 1
-
+		children[index].id = index
 	current_state = States.players_turn
 	Events.connect("players_turn", _players_turn)
 	Events.connect("enemies_turn", _enemies_turn)
@@ -59,14 +60,10 @@ func _update_card_ids() -> void:
 		children[index].card_id = index
 func _enemies_turn():
 	
-	print(total_enemies)
 	current_state = States.enemies_turn
 	num_of_cards = card_list.get_child_count()
 	
 func _check_victory():
-	var children = $"../enemies".get_children()
-	for index in range(children.size()):
-		children[index].id = index
 	if enemy_list.get_child_count() -1 == 0:
 		PlayerStats.player_gold +=5
 		get_tree().change_scene_to_file("res://ShopStuff/shop_scene.tscn")
