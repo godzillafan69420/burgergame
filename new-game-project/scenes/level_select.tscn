@@ -13,31 +13,89 @@ grow_vertical = 2
 script = ExtResource("1_3shnc")
 
 [node name="TopScrollContainer" type="ScrollContainer" parent="." unique_id=861332106]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 13.0
-offset_right = 221.5
-offset_bottom = 41.166664
-scale = Vector2(6, 6)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 84.0
+grow_horizontal = 2
+horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TopScrollContainer" unique_id=514409502]
 layout_mode = 2
+theme_override_constants/separation = 27
 
 [node name="Card_Cambodia" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=300834043]
+custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
+mouse_filter = 1
+text = "Level 1/2"
 
 [node name="Card_Philippines" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=1987508733]
+custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
+mouse_filter = 1
+text = "Level 1"
 
 [node name="Card_Japan" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=730252866]
+custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
+mouse_filter = 1
+text = "Level 2"
+
+[node name="Card_Japan2" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=457798675]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+mouse_filter = 1
+text = "Level 2"
+
+[node name="Card_Japan3" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=1004589234]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+mouse_filter = 1
+text = "Level 2"
+
+[node name="Card_Japan4" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=1244864332]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+mouse_filter = 1
+text = "Level 2"
+
+[node name="Card_Japan5" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=2002289865]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+mouse_filter = 1
+text = "Level 2"
+
+[node name="Card_Japan6" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=2123252438]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+mouse_filter = 1
+text = "Level 2"
+
+[node name="Card_Japan7" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=939004353]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+mouse_filter = 1
+text = "Level 2"
+
+[node name="Card_Japan8" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=416532083]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+mouse_filter = 1
+text = "Level 2"
+
+[node name="Card_Japan9" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=1004976711]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+mouse_filter = 1
+text = "Level 2"
 
 [node name="MapScrollContainer" type="ScrollContainer" parent="." unique_id=1910810919]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 250.0
-offset_right = 1137.0
+offset_right = 1283.0
 offset_bottom = 714.0
 
 [node name="Control" type="Control" parent="MapScrollContainer" unique_id=1690691]
