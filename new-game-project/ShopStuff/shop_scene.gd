@@ -1,33 +1,35 @@
 extends Control
 
 @export var card_scene: PackedScene = preload("res://ShopStuff/shop_item_card.tscn")
+# NEW: Preload your separate upgrade pack visual style scene here
+@export var pack_scene: PackedScene = preload("res://Upgrades/upgrade_pack.tscn") 
 
 @onready var money_text = $MarginContainer/MoneyCounter/MoneyText
 @onready var top_fridge = $TopFridge        # Packs here
-@onready var bottom_fridge = $BottomFridge  # Attacks here
+@onready var bottom_fridge = $BottomFridge  # attacks here
 @onready var PLS_WORK = $PackOpeningScene
 @onready var reroll_button = $MarginContainer/ActionMenu/Reroll
 @onready var next_stage_button = $MarginContainer/ActionMenu/NextStage
 
 var reroll_cost: int = 5
-#UPGRADS ALSO WHY IS CAPS LOCK ON
+#upgradses tuff
 var upgrade_pool = [
-	{"name": "Placeholder", "type": "joker", "effect": "idk"},
-	{"name": "Placeholder2", "type": "relic", "effect": "+2 Gold per round"},
-	{"name": "Placeholder3", "type": "upgrade", "effect": "idk"},
-	{"name": "Placeholder4", "type": "joker", "effect": "idk"},
+	{"name": "placeholder", "type": "upgrad", "effect": "deez"},
+	{"name": "placeholder2", "type": "upgrade", "effect": "sigma"},
+	{"name": "placeholder3", "type": "upgrade", "effect": "yes"},
+	{"name": "placeholder4", "type": "joker", "effect": "ohio "},
 	{"name": "Ancient Scroll", "type": "relic", "effect": "+1 Hand size"}
 ]
 
-# Attack item pool you can change stuf fhere
+# 2 different item pools so they dont mix 
 var regular_item_pool = [
-	{"name": "Manji Kick", "price": 4, "type": "defense"},
-	{"name": "Lapse blue", "price": 6, "type": "attack"},
-	{"name": "Punch", "price": 3, "type": "utility"},
-	{"name": "Kick", "price": 8, "type": "buff"},
-	{"name": "Tuff", "price": 5, "type": "passive"}
+	{"name": "Iron Shield", "price": 4, "type": "defense"},
+	{"name": "Steel Sword", "price": 6, "type": "attack"},
+	{"name": "Health Potion", "price": 3, "type": "utility"},
+	{"name": "Lucky Dice", "price": 8, "type": "buff"},
+	{"name": "Spiked Boots", "price": 5, "type": "passive"}
 ]
-#NAMED BUFFOON PACK CUZ BALATRO
+
 var pack_pool = [
 	{"name": "Buffoon Pack", "price": 6, "type": "pack"}
 ]
@@ -50,35 +52,38 @@ func update_gold_ui() -> void:
 	
 	if PlayerStats.player_gold < reroll_cost:
 		reroll_button.disabled = true
-		reroll_button.text = "Reroll (Haha pooron!)"
+		reroll_button.text = "Reroll (HaHa Pooron!)"
 	else:
 		reroll_button.disabled = false
 		reroll_button.text = "Reroll $" + str(reroll_cost)
 
 func clear_shop_shelves() -> void:
-	# Clear top shelf
 	for child in top_fridge.get_children():
 		child.queue_free()
-	# Clear bottom shelf
 	for child in bottom_fridge.get_children():
 		child.queue_free()
 
 func generate_entire_shop() -> void:
-	# 1. Spawn 2 random packs on the Top Fridge
+	# 1. Spawn 2 random packs on the Top Fridge (Tells the generator to use the pack scene layout)
 	for i in range(2):
 		if pack_pool.is_empty(): break
 		var pack_data = pack_pool.pick_random()
-		create_card_on_shelf(pack_data, top_fridge)
+		create_card_on_shelf(pack_data, top_fridge, true) #true for the other layout
 		
-	# 2. Change ts number for multiple items in shop
+	# 2. Spawn 5 random regular items on the Bottom Fridge
 	for i in range(5):
 		if regular_item_pool.is_empty(): break
 		var item_data = regular_item_pool.pick_random()
-		create_card_on_shelf(item_data, bottom_fridge)
+		create_card_on_shelf(item_data, bottom_fridge, false) #flase is normal layout unc
+
+# Helper function that cleanly handles text setups and chooses the correct layout style
+func create_card_on_shelf(item_data: Dictionary, target_fridge: Node, is_pack: bool) -> void:
+	var card
+	if is_pack and pack_scene:
+		card = pack_scene.instantiate()
+	else:
+		card = card_scene.instantiate()
 		
-		
-func create_card_on_shelf(item_data: Dictionary, target_fridge: Node) -> void:
-	var card = card_scene.instantiate()
 	target_fridge.add_child(card)
 	
 	var name_label = card.get_node_or_null("NameLabel")
@@ -104,17 +109,20 @@ func _on_item_purchased(item_data: Dictionary, card_node: Node) -> void:
 		card_node.queue_free()
 		
 		if item_data.get("type") == "pack":
+			print("Pack purchased! Opening reward selection...")
 			open_pack_screen()
 		else:
 			PlayerStats.attacks.append(item_data)
+			print("Successfully Bought! Global Inventory Contents: ", PlayerStats.attacks)
 	else:
 		print("Not enough money to buy ", item_data["name"])
 
+# PACK OPENING SETUP
 func open_pack_screen() -> void:
 	if not PLS_WORK:
+		print("Error: PackOpeningScene node (PLS_WORK) is missing!")
 		return
 		
-	# Hide both rows when buying 
 	top_fridge.visible = false
 	bottom_fridge.visible = false
 	reroll_button.disabled = true
@@ -122,11 +130,12 @@ func open_pack_screen() -> void:
 	
 	PLS_WORK.open_pack(upgrade_pool)
 
+# HANDLING REWARD SELECTION (Via signal)
 func _on_pack_reward_claimed(chosen_data: Dictionary) -> void:
-	PlayerStats.upgrades.append(chosen_data)
-	print("Global Inventory Contents: ", PlayerStats.upgrades)
+	PlayerStats.attacks.append(chosen_data)
+	print("Selected pack upgrade: ", chosen_data["name"])
+	print("Global Inventory Contents: ", PlayerStats.attacks)
 	
-	# Bring back both rows after you picked the shit you want
 	top_fridge.visible = true
 	bottom_fridge.visible = true
 	next_stage_button.disabled = false
