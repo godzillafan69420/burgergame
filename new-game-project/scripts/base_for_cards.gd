@@ -31,21 +31,24 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and !selected_card and mouse_is_incard:
 		selected_card = true
 	if event.is_action_released("click") and selected_card and mouse_is_incard:
-		if in_attack_area and can_attack:
+		if in_attack_area and can_attack and (get_area_under_mouse() or get_area_under_mouse() == 0):
 			_drop()
 			Events.emit_signal("update_id")
+		elif in_attack_area and can_attack and AOE:
+			_drop()
+			Events.emit_signal("update_id")
+		elif get_area_under_mouse() == null and !AOE:
+			selected_card = false
 		else:
 			selected_card = false
-
 			
 
 func _drop() -> void:
-	Events.emit_signal("reduce_energy_by", energy)
+	
 	
 	if !can_attack:
 		return
-	if get_area_under_mouse() == null and !AOE:
-		return
+	Events.emit_signal("reduce_energy_by", energy)
 	if AOE:
 		Events.emit_signal("damaged_enemy", damage)
 	else:
@@ -59,9 +62,6 @@ func _drop() -> void:
 
 
 func _process(delta: float) -> void:
-			
-	print(get_area_under_mouse())
-
 	if position.x > 235 and position.x < 2000 and position.y > 44 and position.y < 400:
 		in_attack_area = true
 	else:

@@ -13,6 +13,7 @@ script = ExtResource("1_18cxb")
 card_name = "blocking"
 damage = 0.0
 effects = Array[String](["blocking"])
+AOE = true
 
 [node name="name" type="Label" parent="." unique_id=1257601127]
 layout_mode = 0
