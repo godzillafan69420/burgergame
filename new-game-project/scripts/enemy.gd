@@ -17,8 +17,10 @@ var can_attack: bool = false
 var damage_multiplier: float = 1
 
 func _ready() -> void:
+	
 	original_position = global_position
 	Events.connect("enemies_turn",_attacked_player)
+	
 	for i in attacks_name:
 		attacks.append(EnemyAttacks.get(i))
 	
@@ -44,3 +46,11 @@ func _attacked_player(attack_id):
 	var back_original = get_tree().create_tween()
 	back_original.tween_property(self, "global_position", original_position, 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	await get_tree().create_timer(0.2).timeout
+
+
+	
+
+	
+
+func _on_area_2d_mouse_entered() -> void:
+	print("in area")

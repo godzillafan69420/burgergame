@@ -25,6 +25,8 @@ const POSITION_OF_CARDS:Array = [
 
 @export var effects: Array[String]
 
+@export var AOE: bool
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and !selected_card and mouse_is_incard:
 		selected_card = true
@@ -42,17 +44,25 @@ func _drop() -> void:
 	
 	if !can_attack:
 		return
-	Events.emit_signal("damaged_enemy", damage)
+	if get_area_under_mouse() == null and !AOE:
+		return
+	if AOE:
+		Events.emit_signal("damaged_enemy", damage)
+	else:
+		Events.emit_signal("id_chosen",get_area_under_mouse(), damage)
 	for effect in effects: 
 		Events.emit_signal("give_side_effects", effect)
+	
+
 	queue_free()
 
 
 
 func _process(delta: float) -> void:
 			
-				
-	if position.x > 235 and position.x < 1000 and position.y > 44 and position.y < 400:
+	print(get_area_under_mouse())
+
+	if position.x > 235 and position.x < 2000 and position.y > 44 and position.y < 400:
 		in_attack_area = true
 	else:
 		in_attack_area = false
@@ -62,4 +72,17 @@ func _process(delta: float) -> void:
 	else:
 		position = get_global_mouse_position() + Vector2(-100,-100)
 	
+func get_area_under_mouse():
+	var space_state = get_world_2d().direct_space_state
+	var mouse_pos = get_global_mouse_position()
 	
+	var query = PhysicsPointQueryParameters2D.new()
+	query.position = mouse_pos
+	query.collide_with_areas = true   # Must be true to look for Area2Ds
+	query.collide_with_bodies = false # Ignore normal physics bodies
+	
+	var results = space_state.intersect_point(query)
+	if results.size() > 0:
+		var area = results[0]["collider"] as Area2D 
+		return area.get_parent().id# Returns the underlying Area2D
+	return null
