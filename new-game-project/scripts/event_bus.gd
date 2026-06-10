@@ -21,3 +21,5 @@ signal give_side_effects(effect)
 signal dialogue
 signal players_turn
 signal enemies_turn(attacking_enemy)
+
+signal id_chosen(id, damage)

@@ -21,7 +21,6 @@ var enemy_list: Node2D
 func _ready() -> void:
 	enemy_list = $"../enemies"
 	card_list = $"../UI/cards"
-	print(total_enemies)
 	card_list.child_order_changed.connect(_update_card_ids)
 	num_of_cards = card_list.get_child_count()
 	var children = $"../enemies".get_children()
@@ -33,11 +32,14 @@ func _ready() -> void:
 	Events.connect("enemies_turn", _enemies_turn)
 	Events.connect("dialogue", _dialogue)
 	Events.connect("check_victory_conditions", _check_victory)
+	Events.connect("attack_id", _spawn_attack_choice)
 	
 	Events.emit_signal("players_turn")
 func _dialogue():
 	current_state = States.dialogue
 
+func _spawn_attack_choice():
+	var choice = _spawn_attack_choice
 
 func _players_turn():
 	num_of_cards = card_list.get_child_count()
