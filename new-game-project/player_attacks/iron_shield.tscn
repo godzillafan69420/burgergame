@@ -1,20 +1,21 @@
-[gd_scene format=3 uid="uid://c2tfvqo788kxy"]
+[gd_scene format=3 uid="uid://w7aa4w0agndo"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Art/icon.svg" id="1_n7t67"]
-[ext_resource type="Script" uid="uid://b1wwgji6jiwrq" path="res://cards.gd" id="1_s8un3"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Art/icon.svg" id="1_yq1eq"]
+[ext_resource type="Script" uid="uid://b1wwgji6jiwrq" path="res://cards.gd" id="2_h6dac"]
 
-[node name="punch" type="TextureRect" unique_id=95620961]
+[node name="Iron Shield" type="TextureRect" unique_id=95620961]
 offset_left = -72.0
 offset_top = -103.0
 offset_right = 75.0
 offset_bottom = 101.0
-texture = ExtResource("1_n7t67")
-script = ExtResource("1_s8un3")
-card_name = "Punch"
-discription = "do 10 damage"
-damage = 10.0
+texture = ExtResource("1_yq1eq")
+script = ExtResource("2_h6dac")
+card_name = "Iron Shielf"
+discription = "block 75% of incoming attacks"
+damage = 0.0
 energy = 5.0
-effects = Array[String](["blocking"])
+effects = Array[String](["super_block"])
+AOE = true
 
 [node name="name" type="Label" parent="." unique_id=1243870691]
 layout_mode = 0

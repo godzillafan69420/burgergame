@@ -9,7 +9,7 @@ var num_of_enemies: int = 0
 var current_state
 enum States{players_turn, enemies_turn, dialogue} 
 
-var cards_can_spawn = ["blocking", "punch"]
+var cards_can_spawn = ["blocking", "punch", "iron_shield"]
 
 var num_of_cards
 
@@ -19,6 +19,9 @@ var enemy_list: Node2D
 
 
 func _ready() -> void:
+	for i in PlayerStats.attacks:
+		cards_can_spawn.append(i["name"])
+	print(cards_can_spawn)
 	enemy_list = $"../enemies"
 	card_list = $"../UI/cards"
 	card_list.child_order_changed.connect(_update_card_ids)

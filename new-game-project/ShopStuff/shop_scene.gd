@@ -14,7 +14,7 @@ extends Control
 var reroll_cost: int = 5
 #upgradses tuff
 var upgrade_pool = [
-	{"name": "placeholder", "type": "upgrad", "effect": "deez"},
+	{"name": "placeholder", "type": "upgrade", "effect": "deez"},
 	{"name": "placeholder2", "type": "upgrade", "effect": "sigma"},
 	{"name": "placeholder3", "type": "upgrade", "effect": "yes"},
 	{"name": "placeholder4", "type": "joker", "effect": "ohio "},
