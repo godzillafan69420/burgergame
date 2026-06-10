@@ -5,23 +5,23 @@ extends Control
 @export var pack_scene: PackedScene = preload("res://Upgrades/upgrade_pack.tscn") 
 
 @onready var money_text = $MarginContainer/MoneyCounter/MoneyText
-@onready var top_fridge = $TopFridge        # Packs go here!
-@onready var bottom_fridge = $BottomFridge  # Regular shop items go here!
+@onready var top_fridge = $TopFridge        # Packs here
+@onready var bottom_fridge = $BottomFridge  # attacks here
 @onready var PLS_WORK = $PackOpeningScene
 @onready var reroll_button = $MarginContainer/ActionMenu/Reroll
 @onready var next_stage_button = $MarginContainer/ActionMenu/NextStage
 
 var reroll_cost: int = 5
-
+#upgradses tuff
 var upgrade_pool = [
-	{"name": "Abstract Joker", "type": "joker", "effect": "+3 Multiplier"},
-	{"name": "Golden Relic", "type": "relic", "effect": "+2 Gold per round"},
-	{"name": "Ice Shard", "type": "upgrade", "effect": "+5 Freeze damage"},
-	{"name": "Fiery Heart", "type": "joker", "effect": "1.5x Multiplier"},
+	{"name": "placeholder", "type": "upgrad", "effect": "deez"},
+	{"name": "placeholder2", "type": "upgrade", "effect": "sigma"},
+	{"name": "placeholder3", "type": "upgrade", "effect": "yes"},
+	{"name": "placeholder4", "type": "joker", "effect": "ohio "},
 	{"name": "Ancient Scroll", "type": "relic", "effect": "+1 Hand size"}
 ]
 
-# Split into two separate pools so they never accidentally cross shelves!
+# 2 different item pools so they dont mix 
 var regular_item_pool = [
 	{"name": "Iron Shield", "price": 4, "type": "defense"},
 	{"name": "Steel Sword", "price": 6, "type": "attack"},
@@ -52,7 +52,7 @@ func update_gold_ui() -> void:
 	
 	if PlayerStats.player_gold < reroll_cost:
 		reroll_button.disabled = true
-		reroll_button.text = "Reroll (Poor!)"
+		reroll_button.text = "Reroll (HaHa Pooron!)"
 	else:
 		reroll_button.disabled = false
 		reroll_button.text = "Reroll $" + str(reroll_cost)
@@ -68,17 +68,16 @@ func generate_entire_shop() -> void:
 	for i in range(2):
 		if pack_pool.is_empty(): break
 		var pack_data = pack_pool.pick_random()
-		create_card_on_shelf(pack_data, top_fridge, true) # 'true' means use the booster pack layout!
+		create_card_on_shelf(pack_data, top_fridge, true) #true for the other layout
 		
 	# 2. Spawn 5 random regular items on the Bottom Fridge
 	for i in range(5):
 		if regular_item_pool.is_empty(): break
 		var item_data = regular_item_pool.pick_random()
-		create_card_on_shelf(item_data, bottom_fridge, false) # 'false' means use normal card layout!
+		create_card_on_shelf(item_data, bottom_fridge, false) #flase is normal layout unc
 
 # Helper function that cleanly handles text setups and chooses the correct layout style
 func create_card_on_shelf(item_data: Dictionary, target_fridge: Node, is_pack: bool) -> void:
-	# Instantiates the custom graphic layout scene depending on the row type
 	var card
 	if is_pack and pack_scene:
 		card = pack_scene.instantiate()

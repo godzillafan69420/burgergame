@@ -23,7 +23,7 @@ vertical_scroll_mode = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TopScrollContainer" unique_id=514409502]
 layout_mode = 2
-theme_override_constants/separation = 27
+theme_override_constants/separation = 200
 
 [node name="Card_Cambodia" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=300834043]
 custom_minimum_size = Vector2(300, 150)
@@ -94,21 +94,43 @@ text = "Level 2"
 [node name="MapScrollContainer" type="ScrollContainer" parent="." unique_id=1910810919]
 layout_mode = 0
 offset_left = 2.0
-offset_top = 250.0
+offset_top = 142.0
 offset_right = 1283.0
-offset_bottom = 714.0
+offset_bottom = 739.0
 
 [node name="Control" type="Control" parent="MapScrollContainer" unique_id=1690691]
-custom_minimum_size = Vector2(2000, 0)
+custom_minimum_size = Vector2(4000, 0)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="MapScrollContainer/Control" unique_id=601097119]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.028
-anchor_right = 0.028
-offset_left = 239.0
-offset_top = 76.0
-offset_right = 279.0
-offset_bottom = 116.0
+layout_mode = 0
+offset_left = 74.0
+offset_top = 138.0
+offset_right = 202.0
+offset_bottom = 266.0
+mouse_filter = 2
 texture = ExtResource("2_p0wlc")
+
+[node name="LeftButton" type="Button" parent="." unique_id=146044230]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 181.0
+offset_right = 448.0
+offset_bottom = 245.0
+text = "<"
+
+[node name="RightButton" type="Button" parent="." unique_id=1661235842]
+layout_mode = 0
+offset_left = 833.0
+offset_top = 184.0
+offset_right = 937.0
+offset_bottom = 248.0
+text = ">"
+
+[node name="PlayButton" type="Button" parent="." unique_id=594574671]
+layout_mode = 0
+offset_left = 1099.0
+offset_top = 552.0
+offset_right = 1274.8654
+offset_bottom = 614.0
+text = "Play"
