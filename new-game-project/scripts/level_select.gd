@@ -60,11 +60,11 @@ func _on_play_button_pressed():
 	print("Play button clicked! Entering Stage: ", current_level_node.name)
 	
 	if current_level_node.name == "Card_Cambodia":
-		# FIXED: Removed "/scenes" because battle_scene lives in your root directory
+	#VERY IMPORTANT IF YOU WANT TO ADD MORE LEVELS JS COPY AND PASTE YOU CAN CHANGE THE BUTTON NAMES IYW
 		get_tree().change_scene_to_file("res://battle_scene.tscn")
 		
 	elif current_level_node.name == "Card_Philippines":
-		# FIXED: Changed from the .gd script file to the actual .tscn scene file
+		
 		get_tree().change_scene_to_file("res://ShopStuff/shop_scene.tscn") 
 		
 	elif current_level_node.name == "Card_Japan":

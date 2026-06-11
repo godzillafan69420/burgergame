@@ -1,7 +1,6 @@
 extends Control
 
 @export var card_scene: PackedScene = preload("res://ShopStuff/shop_item_card.tscn")
-# NEW: Preload your separate upgrade pack visual style scene here
 @export var pack_scene: PackedScene = preload("res://Upgrades/upgrade_pack.tscn") 
 
 @onready var money_text = $MarginContainer/MoneyCounter/MoneyText
@@ -27,7 +26,8 @@ var regular_item_pool = [
 	{"name": "Steel Sword", "price": 6, "type": "attack"},
 	{"name": "Health Potion", "price": 3, "type": "utility"},
 	{"name": "Lucky Dice", "price": 8, "type": "buff"},
-	{"name": "Spiked Boots", "price": 5, "type": "passive"}
+	{"name": "Spiked Boots", "price": 5, "type": "passive"},
+	{"name": "ttuff", "price": 5, "type": "passive"}
 ]
 
 var pack_pool = [
@@ -58,22 +58,27 @@ func update_gold_ui() -> void:
 		reroll_button.text = "Reroll $" + str(reroll_cost)
 
 func clear_shop_shelves() -> void:
+	# FIXED: Added the top fridge back in so old packs get deleted!
 	for child in top_fridge.get_children():
 		child.queue_free()
 	for child in bottom_fridge.get_children():
 		child.queue_free()
 
 func generate_entire_shop() -> void:
-	# 1. Spawn 2 random packs on the Top Fridge (Tells the generator to use the pack scene layout)
+	var temp_pack_pool = pack_pool.duplicate()
+	var temp_item_pool = regular_item_pool.duplicate()
+
+	#Spawn 2 random packs on the Top Fridge (Tells the generator to use the pack scene layout)
 	for i in range(2):
-		if pack_pool.is_empty(): break
-		var pack_data = pack_pool.pick_random()
+		if temp_pack_pool.is_empty(): break
+		var pack_data = temp_pack_pool.pick_random()
 		create_card_on_shelf(pack_data, top_fridge, true) #true for the other layout
 		
-	# 2. Spawn 5 random regular items on the Bottom Fridge
+	#Spawn 5 random regular items on the Bottom Fridge
 	for i in range(5):
-		if regular_item_pool.is_empty(): break
-		var item_data = regular_item_pool.pick_random()
+		if temp_item_pool.is_empty(): break
+		var item_data = temp_item_pool.pick_random()
+		temp_item_pool.erase(item_data)
 		create_card_on_shelf(item_data, bottom_fridge, false) #flase is normal layout unc
 
 # Helper function that cleanly handles text setups and chooses the correct layout style
@@ -109,9 +114,11 @@ func _on_item_purchased(item_data: Dictionary, card_node: Node) -> void:
 		card_node.queue_free()
 		
 		if item_data.get("type") == "pack":
+			# FIXED: Removed pack_pool.erase(item_data) again so your master pool doesn't empty out!
 			print("Pack purchased! Opening reward selection...")
 			open_pack_screen()
 		else:
+			regular_item_pool.erase(item_data)
 			PlayerStats.attacks.append(item_data)
 			print("Successfully Bought! Global Inventory Contents: ", PlayerStats.attacks)
 	else:

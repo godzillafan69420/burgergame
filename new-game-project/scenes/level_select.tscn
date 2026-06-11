@@ -129,8 +129,8 @@ text = ">"
 
 [node name="PlayButton" type="Button" parent="." unique_id=594574671]
 layout_mode = 0
-offset_left = 1099.0
-offset_top = 552.0
-offset_right = 1274.8654
-offset_bottom = 614.0
+offset_left = 936.0
+offset_top = 418.0
+offset_right = 1282.8654
+offset_bottom = 559.0
 text = "Play"
