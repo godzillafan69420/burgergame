@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="burgerGame"
-run/main_scene="uid://c78n0yfbk1p4q"
+run/main_scene="uid://b0k5838nc0vb5"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Art/icon.svg"
 
