@@ -57,12 +57,16 @@ func _on_right_button_pressed():
 
 func _on_play_button_pressed():
 	var current_level_node = level_cards[current_level_index]
-	
-	# MASTER REGISTRY: This registers the active level based on the node's name!
 	print("Play button clicked! Entering Stage: ", current_level_node.name)
 	
-	# Match scene loading to your exact node names inside the HBoxContainer:
 	if current_level_node.name == "Card_Cambodia":
-		get_tree().change_scene_to_file("res://levels/cambodia.tscn")
+		# FIXED: Removed "/scenes" because battle_scene lives in your root directory
+		get_tree().change_scene_to_file("res://battle_scene.tscn")
+		
 	elif current_level_node.name == "Card_Philippines":
-		get_tree().change_scene_to_file("res://levels/philippines.tscn")
+		# FIXED: Changed from the .gd script file to the actual .tscn scene file
+		get_tree().change_scene_to_file("res://ShopStuff/shop_scene.tscn") 
+		
+	elif current_level_node.name == "Card_Japan":
+		# FIXED: Main root directory path
+		get_tree().change_scene_to_file("res://battle_scene.tscn")
