@@ -13,25 +13,25 @@ extends Control
 var reroll_cost: int = 5
 #upgradses tuff
 var upgrade_pool = [
-	{"name": "placeholder", "type": "upgrade", "effect": "deez"},
-	{"name": "placeholder2", "type": "upgrade", "effect": "sigma"},
-	{"name": "placeholder3", "type": "upgrade", "effect": "yes"},
-	{"name": "placeholder4", "type": "joker", "effect": "ohio "},
-	{"name": "Ancient Scroll", "type": "relic", "effect": "+1 Hand size"}
+	{"display_name": "placeholder","id": "placeholder", "type": "upgrade", "effect": "deez"},
+	{"display_name": "placeholder2","id": "placeholder2", "type": "upgrade", "effect": "sigma"},
+	{"display_name": "placeholder3","id": "placeholder3", "type": "upgrade", "effect": "yes"},
+	{"display_name": "placeholder4","id": "placeholder4", "type": "joker", "effect": "ohio "},
+	{"display_name": "Ancient Scroll","id": "Ancient Scroll", "type": "relic", "effect": "+1 Hand size"}
 ]
 
 # 2 different item pools so they dont mix 
 var regular_item_pool = [
-	{"name": "iron_shield", "price": 4, "type": "defense"},
-	{"name": "steel_sword", "price": 6, "type": "attack"},
-	{"name": "Health Potion", "price": 3, "type": "utility"},
-	{"name": "Lucky Dice", "price": 8, "type": "buff"},
-	{"name": "Spiked Boots", "price": 5, "type": "passive"},
-	{"name": "ttuff", "price": 5, "type": "passive"}
+	{"display_name": "Iron Shield","id": "iron_shield", "price": 4, "type": "defense"},
+	{"display_name": "Steel Sword","id": "steel_sword", "price": 6, "type": "attack"},
+	{"display_name": "Health Potion","id": "Health Potion", "price": 3, "type": "utility"},
+	{"display_name": "Lucky Dice","id": "Lucky Dice", "price": 8, "type": "buff"},
+	{"display_name": "Spiked Boots","id": "Spiked Boots", "price": 5, "type": "passive"},
+	{"display_name": "ttuff","id": "ttuff", "price": 5, "type": "passive"}
 ]
 
 var pack_pool = [
-	{"name": "Buffoon Pack", "price": 6, "type": "pack"}
+	{"display_name": "Buffoon Pack", "id": "Buffoon Pack", "price": 6, "type": "pack"}
 ]
 
 func _ready() -> void:
@@ -96,7 +96,7 @@ func create_card_on_shelf(item_data: Dictionary, target_fridge: Node, is_pack: b
 	var buy_button = card.get_node_or_null("BuyButton")
 	
 	if name_label: 
-		name_label.text = item_data["name"]
+		name_label.text = item_data["display_name"]
 	if price_label: 
 		price_label.text = str(item_data["price"]) + " Gold"
 		
