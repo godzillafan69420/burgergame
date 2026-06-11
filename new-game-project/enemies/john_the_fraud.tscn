@@ -9,7 +9,7 @@ size = Vector2(221, 206.5)
 
 [node name="John_the_fraud" type="Node2D" unique_id=708042470]
 script = ExtResource("1_2sr7e")
-attacks_name = Array[String](["kick", "punch"])
+attacks_name = Array[String](["kick", "punch", "poison"])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1828216997]
 position = Vector2(0, -37)
