@@ -20,6 +20,8 @@ func _ready() -> void:
 
 func _take_damage(damage: float) -> void:
 	$HP.value -= damage * ((MAX_DEF - def_stats)/MAX_DEF)
+	if $HP.value<=0:
+		get_tree().change_scene_to_file("res://scenes/deathScene.tscn")
 	
 
 

@@ -42,7 +42,8 @@ func _attacked_player(attack_id):
 		var all_effects = attacks[randomAttack]["status_effects"]
 		for effect in all_effects: 
 			Events.emit_signal("give_side_effects", effect)
-			
+	if get_tree() == null:
+		return
 	var back_original = get_tree().create_tween()
 	back_original.tween_property(self, "global_position", original_position, 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	await get_tree().create_timer(0.2).timeout

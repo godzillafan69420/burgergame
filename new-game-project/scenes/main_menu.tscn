@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://ru73m4ok7e3v"]
+
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Art/icon.svg" id="1_l6cm7"]
+
+[node name="main_menu" type="Node2D" unique_id=2012640209]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=550524115]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1407863908]
+offset_right = 1280.0
+offset_bottom = 719.0
+texture = ExtResource("1_l6cm7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=507507939]
+offset_left = 240.0
+offset_top = 48.0
+offset_right = 1233.0
+offset_bottom = 224.0
+theme_override_font_sizes/normal_font_size = 125
+text = "Burger game"
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=883469284]
+offset_left = 173.0
+offset_top = 301.0
+offset_right = 560.8069
+offset_bottom = 373.0
+text = "Play"
+
+[node name="Button2" type="Button" parent="CanvasLayer" unique_id=1997134882]
+offset_left = 173.0
+offset_top = 393.0
+offset_right = 560.8069
+offset_bottom = 465.0
+text = "Nothing"
+
+[node name="Button3" type="Button" parent="CanvasLayer" unique_id=2024521351]
+offset_left = 176.0
+offset_top = 474.0
+offset_right = 563.8069
+offset_bottom = 546.0
+text = "Nothing"
