@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://balspnmwbb0nl"]
+
+[ext_resource type="Script" uid="uid://cuyin37pmsqux" path="res://dialogue_manager/dialogues.gd" id="1_5a3in"]
+
+[node name="dialogues" type="Control" unique_id=702915050]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1283.0
+offset_bottom = 721.0
+script = ExtResource("1_5a3in")
+
+[node name="Name" type="RichTextLabel" parent="." unique_id=1137153328]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 319.0
+offset_right = 429.0
+offset_bottom = 364.0
+theme_override_font_sizes/normal_font_size = 25
+text = "test for "
+
+[node name="Panel" type="Panel" parent="." unique_id=571890078]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 362.0
+offset_right = 1281.0
+offset_bottom = 721.0
+
+[node name="paragraph" type="RichTextLabel" parent="Panel" unique_id=649981370]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 27.0
+offset_right = 868.0
+offset_bottom = 335.0
+theme_override_font_sizes/normal_font_size = 25
+text = "test for "
+
+[node name="protraits" type="TextureRect" parent="." unique_id=431114709]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 72.0
+offset_right = 1268.0
+offset_bottom = 685.0

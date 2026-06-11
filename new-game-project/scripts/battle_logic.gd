@@ -1,5 +1,6 @@
 extends Node
 
+var current_turn: int = 0
 
 var enemy_id_turn: int = 0
 @export var total_enemies:int = 1
@@ -9,7 +10,7 @@ var num_of_enemies: int = 0
 var current_state
 enum States{players_turn, enemies_turn, dialogue} 
 
-var cards_can_spawn = ["blocking", "punch", "steel_sword"]
+var cards_can_spawn = ["blocking", "punch"]
 
 var num_of_cards
 
@@ -19,6 +20,7 @@ var enemy_list: Node2D
 
 
 func _ready() -> void:
+	
 	for i in PlayerStats.attacks:
 		cards_can_spawn.append(i["name"])
 	print(cards_can_spawn)
@@ -45,10 +47,12 @@ func _spawn_attack_choice():
 	var choice = _spawn_attack_choice
 
 func _players_turn():
+	current_turn += 1
 	num_of_cards = card_list.get_child_count()
 	current_state = States.players_turn
 	
 	if num_of_cards < MAX_CARDS:
+		print(cards_can_spawn)
 		for i in range(MAX_CARDS - num_of_cards):
 			var card_choice = randi_range(0, cards_can_spawn.size() - 1)
 			var new_card = ListOfCards.get(cards_can_spawn[card_choice]).instantiate()

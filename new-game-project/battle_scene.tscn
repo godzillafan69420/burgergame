@@ -3,8 +3,26 @@
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="1_fw8re"]
 [ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="1_r5l0u"]
 [ext_resource type="Script" uid="uid://bme11j2i2ndyn" path="res://scripts/end_turn_button.gd" id="2_gf131"]
+[ext_resource type="PackedScene" uid="uid://balspnmwbb0nl" path="res://dialogue_manager/dialogues.tscn" id="3_irjls"]
 [ext_resource type="Script" uid="uid://c4jtsd8b6ntsy" path="res://energy_display.gd" id="3_sl17i"]
 [ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/john_the_fraud.tscn" id="4_5joda"]
+[ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="6_sl17i"]
+[ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="7_x5h4l"]
+[ext_resource type="Texture2D" uid="uid://c6s6s8ipmmmdt" path="res://Art/john_test.png" id="8_vtmj2"]
+
+[sub_resource type="Resource" id="Resource_irjls"]
+script = ExtResource("7_x5h4l")
+character_name = "John Kaisen"
+portrait = ExtResource("8_vtmj2")
+paragraphs = "tung tung tung impress"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_m1vkf"]
+script = ExtResource("7_x5h4l")
+character_name = "John Kaisen"
+portrait = ExtResource("8_vtmj2")
+paragraphs = "Kallum is a fraud"
+metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="tutorial" type="Node2D" unique_id=1916832371]
 
@@ -32,6 +50,9 @@ offset_right = 368.0
 offset_bottom = 106.0
 script = ExtResource("3_sl17i")
 
+[node name="dialogues" parent="UI" unique_id=702915050 instance=ExtResource("3_irjls")]
+visible = false
+
 [node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
 script = ExtResource("1_r5l0u")
 total_enemies = 3
@@ -48,5 +69,10 @@ id = 1
 setted_speed = 20.0
 
 [node name="background" type="Sprite2D" parent="." unique_id=1824490579]
+
+[node name="Dialogue" type="Node" parent="." unique_id=276630500]
+script = ExtResource("6_sl17i")
+at_when = 2
+dialogues = Array[ExtResource("7_x5h4l")]([SubResource("Resource_irjls"), SubResource("Resource_m1vkf")])
 
 [connection signal="button_down" from="UI/end_turn_button" to="UI/end_turn_button" method="_on_button_down"]
