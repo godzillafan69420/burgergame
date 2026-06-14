@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ppr0et1a5pn1"]
+
+[ext_resource type="Script" uid="uid://cd2hfdl70twre" path="res://audio_manager.gd" id="1_jisk1"]
+[ext_resource type="AudioStream" uid="uid://cn1x23oeojqdo" path="res://music/boss1(socrates maybe).mp3" id="2_op7ad"]
+[ext_resource type="PackedScene" uid="uid://ceci4fhh0g2hb" path="res://audio_oneshot.tscn" id="2_wby2p"]
+[ext_resource type="AudioStream" uid="uid://chh4u4klcqyok" path="res://music/boss2(mango maybe).mp3" id="3_wby2p"]
+[ext_resource type="AudioStream" uid="uid://c0vpomtpohdty" path="res://music/finalBossPleaseGiveInput.mp3" id="4_14skr"]
+[ext_resource type="AudioStream" uid="uid://cshtg41bktenk" path="res://music/freeCandy.mp3" id="5_k4pvn"]
+[ext_resource type="AudioStream" uid="uid://71nu4maphdxj" path="res://music/lastminutechange.mp3" id="6_fckgx"]
+[ext_resource type="AudioStream" uid="uid://b15k6iilly1he" path="res://music/levelSelect.mp3" id="7_86pii"]
+[ext_resource type="AudioStream" uid="uid://boerryrw1f2xi" path="res://music/mainMenu.mp3" id="8_mfnxe"]
+[ext_resource type="AudioStream" uid="uid://bengbmixyh3kw" path="res://music/mango67.mp3" id="9_astvc"]
+[ext_resource type="AudioStream" uid="uid://bupgnj4gaye7a" path="res://music/numb digger.mp3" id="10_ma34g"]
+
+[node name="audio_manager" type="Node" unique_id=224815698 node_paths=PackedStringArray("music", "sfx")]
+script = ExtResource("1_jisk1")
+music = NodePath("music")
+sfx = NodePath("sfx")
+audio_one_scene = ExtResource("2_wby2p")
+
+[node name="music" type="Node" parent="." unique_id=1244756397]
+
+[node name="Boss1(socratesMaybe)" type="AudioStreamPlayer" parent="music" unique_id=1244224550]
+stream = ExtResource("2_op7ad")
+
+[node name="Boss2(mangoMaybe)" type="AudioStreamPlayer" parent="music" unique_id=1881549085]
+stream = ExtResource("3_wby2p")
+
+[node name="FinalBossPleaseGiveInput" type="AudioStreamPlayer" parent="music" unique_id=994352068]
+stream = ExtResource("4_14skr")
+
+[node name="FreeCandy" type="AudioStreamPlayer" parent="music" unique_id=1116581445]
+stream = ExtResource("5_k4pvn")
+
+[node name="Lastminutechange" type="AudioStreamPlayer" parent="music" unique_id=2061703545]
+stream = ExtResource("6_fckgx")
+
+[node name="LevelSelect" type="AudioStreamPlayer" parent="music" unique_id=1200959558]
+stream = ExtResource("7_86pii")
+
+[node name="MainMenu" type="AudioStreamPlayer" parent="music" unique_id=651430141]
+stream = ExtResource("8_mfnxe")
+
+[node name="Mango67" type="AudioStreamPlayer" parent="music" unique_id=358705237]
+stream = ExtResource("9_astvc")
+
+[node name="NumbDigger" type="AudioStreamPlayer" parent="music" unique_id=1849837290]
+stream = ExtResource("10_ma34g")
+
+[node name="sfx" type="Node" parent="." unique_id=2134736088]

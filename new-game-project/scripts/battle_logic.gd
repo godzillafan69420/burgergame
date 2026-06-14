@@ -3,6 +3,7 @@ extends Node
 var current_turn: int = 0
 
 var enemy_id_turn: int = 0
+@export var music_name: String
 @export var total_enemies:int = 1
 const MAX_CARDS = 5
 
@@ -20,7 +21,7 @@ var enemy_list: Node2D
 
 
 func _ready() -> void:
-	
+	AudioManager.play(music_name)
 	for i in PlayerStats.attacks:
 		cards_can_spawn.append(i["id"])
 	print(cards_can_spawn)
