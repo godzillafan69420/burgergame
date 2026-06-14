@@ -1,20 +1,21 @@
-[gd_scene format=3 uid="uid://by3ty148jrvke"]
+[gd_scene format=3 uid="uid://brwdiqo720bhq"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Art/icon.svg" id="1_tnwh0"]
-[ext_resource type="Script" uid="uid://b1wwgji6jiwrq" path="res://cards.gd" id="2_86eg4"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Art/icon.svg" id="1_e0qg3"]
+[ext_resource type="Script" uid="uid://b1wwgji6jiwrq" path="res://cards.gd" id="2_q548j"]
 
-[node name="steel_sword" type="TextureRect" unique_id=95620961]
+[node name="corn_attack" type="TextureRect" unique_id=95620961]
 offset_left = -72.0
 offset_top = -103.0
 offset_right = 75.0
 offset_bottom = 101.0
-texture = ExtResource("1_tnwh0")
-script = ExtResource("2_86eg4")
-card_name = "Frying Pan"
-discription = "do 20 damage"
-damage = 20.0
-effects = Array[String](["super_block"])
+texture = ExtResource("1_e0qg3")
+script = ExtResource("2_q548j")
+card_name = "corn attack"
+discription = "50% chance of hitting 
+yourself"
+damage = 40.0
 AOE = true
+lucky = true
 
 [node name="name" type="Label" parent="." unique_id=1243870691]
 layout_mode = 0

@@ -4,6 +4,8 @@ extends Node2D
 
 var HP: float
 
+
+
 var def_stats: float = 0
 const MAX_DEF: float = 20
 

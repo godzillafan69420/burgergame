@@ -66,6 +66,7 @@ position = Vector2(835, 394)
 [node name="John_the_fraud" parent="enemies" unique_id=708042470 instance=ExtResource("4_5joda")]
 position = Vector2(-81, 0)
 id = 1
+setted_HP = 100.0
 setted_speed = 20.0
 
 [node name="background" type="Sprite2D" parent="." unique_id=1824490579]

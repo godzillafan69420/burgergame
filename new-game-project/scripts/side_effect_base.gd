@@ -3,7 +3,8 @@ extends Node
 class_name effects_base
 
 
-var types_of_effect = ["lethal", "buff"]
+var types_of_effect = ["lethal", "buff", "lucky"]
+
 
 @export var type = "lethal"
 @export var damage: float

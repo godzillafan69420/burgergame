@@ -22,10 +22,10 @@ var upgrade_pool = [
 
 # 2 different item pools so they dont mix 
 var regular_item_pool = [
-	{"display_name": "Iron Shield","id": "iron_shield", "price": 4, "type": "defense"},
-	{"display_name": "Steel Sword","id": "steel_sword", "price": 6, "type": "attack"},
-	{"display_name": "Health Potion","id": "Health Potion", "price": 3, "type": "utility"},
-	{"display_name": "Lucky Dice","id": "Lucky Dice", "price": 8, "type": "buff"},
+	{"display_name": "tin foil","id": "iron_shield", "price": 4, "type": "defense"},
+	{"display_name": "Frying Pan","id": "steel_sword", "price": 6, "type": "attack"},
+	{"display_name": "Science","id": "health_potion", "price": 3, "type": "utility"},
+	{"display_name": "corn canon","id": "corn_canon", "price": 8, "type": "buff"},
 	{"display_name": "Spiked Boots","id": "Spiked Boots", "price": 5, "type": "passive"},
 	{"display_name": "ttuff","id": "ttuff", "price": 5, "type": "passive"}
 ]

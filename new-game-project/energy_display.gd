@@ -2,6 +2,7 @@ extends Label
 
 var total_energy: float
 var total_regeneration: float
+
 func _ready() -> void:
 	total_energy = PlayerStats.player_energy
 	total_regeneration = PlayerStats.player_recovery

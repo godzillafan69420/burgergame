@@ -26,17 +26,26 @@ const POSITION_OF_CARDS:Array = [
 @export var effects: Array[String]
 
 @export var AOE: bool
+@export var lucky: bool = false
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and !selected_card and mouse_is_incard:
 		selected_card = true
 	if event.is_action_released("click") and selected_card and mouse_is_incard:
 		if in_attack_area and can_attack and (get_area_under_mouse() or get_area_under_mouse() == 0):
+			var chance = randf_range(0, 100)
 			_drop()
 			Events.emit_signal("update_id")
+			if lucky and chance > PlayerStats.luck:
+				Events.emit_signal("give_side_effects", "lucky_debuff")
 		elif in_attack_area and can_attack and AOE:
+			var chance = randf_range(0, 100)
 			_drop()
 			Events.emit_signal("update_id")
+			if lucky and chance > PlayerStats.luck:
+				Events.emit_signal("give_side_effects", "lucky_debuff")
+				
+			
 		elif get_area_under_mouse() == null and !AOE:
 			selected_card = false
 		else:

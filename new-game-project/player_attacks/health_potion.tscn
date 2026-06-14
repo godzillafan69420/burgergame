@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://wex5hmsarmin"]
+
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Art/icon.svg" id="1_h0nst"]
+[ext_resource type="Script" uid="uid://b1wwgji6jiwrq" path="res://cards.gd" id="2_fyqss"]
+
+[node name="health_potion" type="TextureRect" unique_id=95620961]
+offset_left = -72.0
+offset_top = -103.0
+offset_right = 75.0
+offset_bottom = 101.0
+texture = ExtResource("1_h0nst")
+script = ExtResource("2_fyqss")
+card_name = "Science!!"
+discription = "Using power of science 
+or something 
+food gets to regenerate
+heal 20 hp"
+damage = 0.0
+effects = Array[String](["heal"])
+AOE = true
+
+[node name="name" type="Label" parent="." unique_id=1243870691]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 142.0
+offset_bottom = 25.0
+theme_override_font_sizes/font_size = 10
+
+[node name="Sprite2D" type="TextureRect" parent="." unique_id=1485187383]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 52.0
+offset_right = 71.0
+offset_bottom = 52.0
+
+[node name="discription" type="Label" parent="." unique_id=1423348561]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 92.0
+offset_right = 145.0
+offset_bottom = 201.0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

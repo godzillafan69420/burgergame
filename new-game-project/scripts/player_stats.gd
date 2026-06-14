@@ -9,5 +9,6 @@ var player_defalt_def: int = 0
 var attacks: Array =[]
 var upgrades: Array = []
 
+var luck: int = 50 #percentage wise
 # Global player wallet 
 var player_gold: int = 5000

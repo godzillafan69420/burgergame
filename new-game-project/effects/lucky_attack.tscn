@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ql8jy20sh3qg"]
+
+[ext_resource type="Script" uid="uid://d4c12ggebe1bf" path="res://scripts/effects.gd" id="1_kn8cd"]
+
+[node name="lucky_debuff" type="Node" unique_id=800013498]
+script = ExtResource("1_kn8cd")
+damage = 30.0
+target_stats = "def_stats"
+duration = 2
+Effect_strength = 5.0
