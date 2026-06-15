@@ -14,14 +14,15 @@
 script = ExtResource("7_x5h4l")
 character_name = "John Kaisen"
 portrait = ExtResource("8_vtmj2")
-paragraphs = "tung tung tung impress"
+paragraphs = "Drag punch on top of the enemy to do damage
+"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_m1vkf"]
 script = ExtResource("7_x5h4l")
 character_name = "John Kaisen"
 portrait = ExtResource("8_vtmj2")
-paragraphs = "Kallum is a fraud"
+paragraphs = "Drag block about any where to reduce damage"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="tutorial" type="Node2D" unique_id=1916832371]
@@ -73,7 +74,7 @@ setted_speed = 20.0
 
 [node name="Dialogue" type="Node" parent="." unique_id=276630500]
 script = ExtResource("6_sl17i")
-at_when = 2
+at_when = 1
 dialogues = Array[ExtResource("7_x5h4l")]([SubResource("Resource_irjls"), SubResource("Resource_m1vkf")])
 
 [connection signal="button_down" from="UI/end_turn_button" to="UI/end_turn_button" method="_on_button_down"]
