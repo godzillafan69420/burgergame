@@ -12,9 +12,11 @@ texture = ExtResource("1_1lenw")
 script = ExtResource("2_o33en")
 card_name = "Aura Farm"
 discription = "waste 20 energy
-and do 1"
+and do 2 damage"
 energy = 20.0
 effects = Array[String](["blocking"])
+AOE = true
+lucky = true
 
 [node name="name" type="Label" parent="." unique_id=1243870691]
 layout_mode = 0
