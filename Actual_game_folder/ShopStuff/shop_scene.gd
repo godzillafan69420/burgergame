@@ -68,7 +68,7 @@ func generate_entire_shop() -> void:
 	var temp_item_pool = regular_item_pool.duplicate()
 
 	#Spawn 2 random packs on the Top Fridge (Tells the generator to use the pack scene layout)
-	for i in range(0):
+	for i in range(2):
 		if temp_pack_pool.is_empty(): break
 		var pack_data = temp_pack_pool.pick_random()
 		create_card_on_shelf(pack_data, top_fridge, true) #true for the other layout
@@ -160,4 +160,4 @@ func _on_reroll_pressed() -> void:
 # NEXT STAGE BUTTON
 func _on_next_stage_pressed() -> void:
 	print("Transitioning to encounter with items: ", PlayerStats.attacks)
-	get_tree().change_scene_to_file("res://battle_scene.tscn")
+	get_tree().change_scene_to_file("res://scenes/level_select.tscn")
