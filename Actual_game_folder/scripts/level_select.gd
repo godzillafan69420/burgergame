@@ -59,14 +59,14 @@ func _on_play_button_pressed():
 	var current_level_node = level_cards[current_level_index]
 	print("Play button clicked! Entering Stage: ", current_level_node.name)
 	
-	if current_level_node.name == "Card_Cambodia":
+	if current_level_node.name == "Tutorial":
 	#VERY IMPORTANT IF YOU WANT TO ADD MORE LEVELS JS COPY AND PASTE YOU CAN CHANGE THE BUTTON NAMES IYW
 		get_tree().change_scene_to_file("res://battle_scene.tscn")
 		
-	elif current_level_node.name == "Card_Philippines":
+	elif current_level_node.name == "Level_1":
 		
 		get_tree().change_scene_to_file("res://ShopStuff/shop_scene.tscn") 
 		
-	elif current_level_node.name == "Card_Japan":
+	elif current_level_node.name == "Level_1":
 		# FIXED: Main root directory path
 		get_tree().change_scene_to_file("res://battle_scene.tscn")
