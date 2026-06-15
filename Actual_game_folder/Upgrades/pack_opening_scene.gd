@@ -37,7 +37,7 @@ func open_pack(upgrade_pool: Array) -> void:
 		var buy_button = card.get_node_or_null("BuyButton")
 		
 		if name_label:
-			name_label.text = option_data["name"]
+			name_label.text = option_data["display_name"]
 		if price_label:
 			price_label.text = "CHOOSE!" # Replaces price text since it's a pack reward
 			
