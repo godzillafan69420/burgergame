@@ -140,7 +140,7 @@ func open_pack_screen() -> void:
 # HANDLING REWARD SELECTION (Via signal)
 func _on_pack_reward_claimed(chosen_data: Dictionary) -> void:
 	PlayerStats.attacks.append(chosen_data)
-	print("Selected pack upgrade: ", chosen_data["name"])
+	print("Selected pack upgrade: ", chosen_data["display_name"])
 	print("Global Inventory Contents: ", PlayerStats.attacks)
 	
 	top_fridge.visible = true
