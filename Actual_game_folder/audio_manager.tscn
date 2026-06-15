@@ -20,7 +20,7 @@ audio_one_scene = ExtResource("2_wby2p")
 
 [node name="music" type="Node" parent="." unique_id=1244756397]
 
-[node name="Boss1(socratesMaybe)" type="AudioStreamPlayer" parent="music" unique_id=1244224550]
+[node name="Boss1" type="AudioStreamPlayer" parent="music" unique_id=1244224550]
 stream = ExtResource("2_op7ad")
 
 [node name="Boss2(mangoMaybe)" type="AudioStreamPlayer" parent="music" unique_id=1881549085]

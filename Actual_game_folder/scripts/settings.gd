@@ -1,3 +1,3 @@
 extends Node
 
-var MusicVolume: float = 0
+var MusicVolume: float = -5

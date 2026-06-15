@@ -10,11 +10,9 @@ offset_right = 75.0
 offset_bottom = 101.0
 texture = ExtResource("1_h0nst")
 script = ExtResource("2_fyqss")
-card_name = "Science!!"
-discription = "Using power of science 
-or something 
-food gets to regenerate
-heal 20 hp"
+card_name = "Science"
+discription = "heal 20 hp
+cost 10"
 damage = 0.0
 effects = Array[String](["heal"])
 AOE = true
