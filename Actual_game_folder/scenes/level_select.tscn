@@ -25,71 +25,80 @@ vertical_scroll_mode = 0
 layout_mode = 2
 theme_override_constants/separation = 200
 
-[node name="Card_Cambodia" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=300834043]
+[node name="Tutorial" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=300834043]
 custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
 mouse_filter = 1
-text = "Level 1/2"
+text = "Tutorial"
 
-[node name="Card_Philippines" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=1987508733]
+[node name="Level_1" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=1987508733]
 custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
 mouse_filter = 1
-text = "Level 1"
+text = "Shop (removed later)rn here for debug"
 
-[node name="Card_Japan" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=730252866]
+[node name="Level_2" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=730252866]
 custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
 mouse_filter = 1
-text = "Level 2"
+text = "WIP
+"
 
-[node name="Card_Japan2" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=457798675]
+[node name="Level_3" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=457798675]
 custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
 mouse_filter = 1
-text = "Level 2"
+text = "WIP
+"
 
-[node name="Card_Japan3" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=1004589234]
+[node name="Level_4" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=1004589234]
 custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
 mouse_filter = 1
-text = "Level 2"
+text = "WIP
+"
 
-[node name="Card_Japan4" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=1244864332]
+[node name="Level_5" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=1244864332]
 custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
 mouse_filter = 1
-text = "Level 2"
+text = "WIP
+"
 
-[node name="Card_Japan5" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=2002289865]
+[node name="Level_6" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=2002289865]
 custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
 mouse_filter = 1
-text = "Level 2"
+text = "WIP
+"
 
-[node name="Card_Japan6" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=2123252438]
+[node name="Level_7" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=2123252438]
 custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
 mouse_filter = 1
-text = "Level 2"
+text = "WIP
+"
 
-[node name="Card_Japan7" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=939004353]
+[node name="Level_8" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=939004353]
 custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
 mouse_filter = 1
-text = "Level 2"
+text = "WIP
+"
 
-[node name="Card_Japan8" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=416532083]
+[node name="Level_9" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=416532083]
 custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
 mouse_filter = 1
-text = "Level 2"
+text = "WIP
+"
 
-[node name="Card_Japan9" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=1004976711]
+[node name="Level_10" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=1004976711]
 custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
 mouse_filter = 1
-text = "Level 2"
+text = "WIP
+"
 
 [node name="MapScrollContainer" type="ScrollContainer" parent="." unique_id=1910810919]
 layout_mode = 0
