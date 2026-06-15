@@ -45,8 +45,8 @@ func _input(event: InputEvent) -> void:
 			if lucky and chance < PlayerStats.luck:
 				Events.emit_signal("give_side_effects", "lucky_debuff")
 				
-			
-		elif get_area_under_mouse() == null and !AOE:
+				
+		elif get_area_under_mouse() == null and !AOE or !can_attack:
 			selected_card = false
 		else:
 			selected_card = false
@@ -63,6 +63,7 @@ func _drop() -> void:
 	else:
 		Events.emit_signal("id_chosen",get_area_under_mouse(), damage)
 	for effect in effects: 
+		print(effect)
 		Events.emit_signal("give_side_effects", effect)
 	
 

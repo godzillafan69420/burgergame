@@ -6,5 +6,5 @@
 script = ExtResource("1_vjtcb")
 type = "buff"
 target_stats = "def_stats"
-duration = 2
+duration = 1
 Effect_strength = 10.0
