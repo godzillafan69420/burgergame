@@ -68,7 +68,7 @@ func generate_entire_shop() -> void:
 	var temp_item_pool = regular_item_pool.duplicate()
 
 	#Spawn 2 random packs on the Top Fridge (Tells the generator to use the pack scene layout)
-	for i in range(2):
+	for i in range(0):
 		if temp_pack_pool.is_empty(): break
 		var pack_data = temp_pack_pool.pick_random()
 		create_card_on_shelf(pack_data, top_fridge, true) #true for the other layout
