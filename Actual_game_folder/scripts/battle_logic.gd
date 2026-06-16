@@ -24,7 +24,6 @@ func _ready() -> void:
 	AudioManager.play(music_name)
 	for i in PlayerStats.attacks:
 		cards_can_spawn.append(i["id"])
-	print(cards_can_spawn)
 	enemy_list = $"../enemies"
 	card_list = $"../UI/cards"
 	card_list.child_order_changed.connect(_update_card_ids)
@@ -53,7 +52,6 @@ func _players_turn():
 	current_state = States.players_turn
 	
 	if num_of_cards < MAX_CARDS:
-		print(cards_can_spawn)
 		for i in range(MAX_CARDS - num_of_cards):
 			var card_choice = randi_range(0, cards_can_spawn.size() - 1)
 			var new_card = ListOfCards.get(cards_can_spawn[card_choice]).instantiate()

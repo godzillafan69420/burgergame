@@ -25,7 +25,6 @@ func _ready() -> void:
 		attacks.append(EnemyAttacks.get(i))
 	
 func _attacked_player(attack_id):
-	print("attacking" + str(id))
 	if attack_id != id:
 		return
 	
@@ -52,6 +51,3 @@ func _attacked_player(attack_id):
 	
 
 	
-
-func _on_area_2d_mouse_entered() -> void:
-	print("in area")

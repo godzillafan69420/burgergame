@@ -10,7 +10,6 @@ func _ready() -> void:
 	
 
 func _set_up(dialgoue:Array):
-	print("tung tung tung sahere")
 	current_dialogue = dialgoue
 	doing_dialogue = true
 	_say_stuff()
@@ -27,7 +26,6 @@ func _process(delta: float) -> void:
 			Events.emit_signal("players_turn")
 			doing_dialogue = false
 		else:
-			print(count)
 			_say_stuff()
 		
 	

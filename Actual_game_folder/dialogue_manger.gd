@@ -10,4 +10,3 @@ func _process(delta: float) -> void:
 	if BattleLogic_script.current_turn == at_when:
 		Events.emit_signal("dialogue", dialogues)
 		queue_free()
-		print("gone")

@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func _on_button_down() -> void:
 	var children = enemy_list.get_children()
-	print("number of enemies:" + str(enemy_list.get_children().size()))
+	
 	for index in range(children.size()):
 		children[index].id = index
 	total_enemies = enemy_list.get_child_count() -1
