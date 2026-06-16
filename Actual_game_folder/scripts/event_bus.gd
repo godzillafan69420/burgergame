@@ -14,7 +14,7 @@ signal damaged_enemy(damage)
 signal damaged_player(damage)
 
 signal reduce_energy_by(cost)
-signal no_more_energy
+signal total_energy(total)
 
 signal give_side_effects(effect)
 

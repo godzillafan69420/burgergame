@@ -16,6 +16,8 @@ func _regenerate_energy():
 func _reduced_energy(cost: float):
 	if cost<= total_energy:
 		total_energy -= cost
-	else:
-		Events.emit_signal("no_more_energy")
+		
+
+	Events.emit_signal("total_energy", total_energy)
 	text = str(total_energy)
+	

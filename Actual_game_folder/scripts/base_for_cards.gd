@@ -63,7 +63,6 @@ func _drop() -> void:
 	else:
 		Events.emit_signal("id_chosen",get_area_under_mouse(), damage)
 	for effect in effects: 
-		print(effect)
 		Events.emit_signal("give_side_effects", effect)
 	
 
