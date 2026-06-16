@@ -70,7 +70,7 @@ visible = false
 
 [node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
 script = ExtResource("1_r5l0u")
-music_name = "Boss1"
+music_name = "Battle"
 total_enemies = 3
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("1_fw8re")]
