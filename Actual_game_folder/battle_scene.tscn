@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bme11j2i2ndyn" path="res://scripts/end_turn_button.gd" id="2_gf131"]
 [ext_resource type="PackedScene" uid="uid://balspnmwbb0nl" path="res://dialogue_manager/dialogues.tscn" id="3_irjls"]
 [ext_resource type="Script" uid="uid://c4jtsd8b6ntsy" path="res://energy_display.gd" id="3_sl17i"]
-[ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/john_the_fraud.tscn" id="4_5joda"]
+[ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/enemy.tscn" id="4_5joda"]
 [ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="6_sl17i"]
 [ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="7_x5h4l"]
 [ext_resource type="Texture2D" uid="uid://c6s6s8ipmmmdt" path="res://Art/john_test.png" id="8_vtmj2"]
