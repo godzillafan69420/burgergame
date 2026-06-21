@@ -3,6 +3,7 @@ class_name enemy
 
 var original_position:Vector2
 
+
 @export var id: int = 0
 
 @export var attacks_name:Array[String] = []

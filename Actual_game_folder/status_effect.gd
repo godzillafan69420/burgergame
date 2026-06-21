@@ -1,7 +1,6 @@
 extends Node
 
 var effects =[]
-const EFFECTS_FOLDER = "res://effects/"
 func _ready() -> void:
 	Events.connect("players_turn", _take_side_effects)
 	Events.connect("give_side_effects", _new_side_effects)
