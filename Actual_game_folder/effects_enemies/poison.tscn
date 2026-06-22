@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://nu8pedfx8l4b"]
+
+[ext_resource type="Script" uid="uid://djpecrs2843jt" path="res://effects_enemies/effect_enemies.gd" id="1_sg3ah"]
+
+[node name="poison" type="Node" unique_id=289820757]
+script = ExtResource("1_sg3ah")
+damage = -10.0
+duration = 2

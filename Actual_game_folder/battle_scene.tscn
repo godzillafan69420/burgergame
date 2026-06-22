@@ -5,16 +5,32 @@
 [ext_resource type="Script" uid="uid://bme11j2i2ndyn" path="res://scripts/end_turn_button.gd" id="2_gf131"]
 [ext_resource type="PackedScene" uid="uid://balspnmwbb0nl" path="res://dialogue_manager/dialogues.tscn" id="3_irjls"]
 [ext_resource type="Script" uid="uid://c4jtsd8b6ntsy" path="res://energy_display.gd" id="3_sl17i"]
-[ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/enemy.tscn" id="4_5joda"]
+[ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/enemy.tscn" id="6_irjls"]
 [ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="6_sl17i"]
 [ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="7_x5h4l"]
+[ext_resource type="Texture2D" uid="uid://bjhndtvnls2fo" path="res://Art/tetopeartestsize.png" id="8_m1vkf"]
 [ext_resource type="Texture2D" uid="uid://c6s6s8ipmmmdt" path="res://Art/john_test.png" id="8_vtmj2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x76d4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_vtmj2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_715r7"]
+atlas = ExtResource("8_m1vkf")
+region = Rect2(0, 0, 256, 256)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_irjls"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_vtmj2")
+"texture": SubResource("AtlasTexture_715r7")
 }],
 "loop": true,
 "name": &"default",
@@ -90,16 +106,22 @@ position = Vector2(192, 400)
 [node name="enemies" type="Node2D" parent="." unique_id=1413379743]
 position = Vector2(835, 394)
 
-[node name="John_the_fraud" parent="enemies" unique_id=708042470 instance=ExtResource("4_5joda")]
-position = Vector2(-81, 0)
-id = 1
-attacks_name = Array[String](["poison", "punch", "kick"])
-setted_HP = 100.0
-setted_speed = 20.0
+[node name="enemy" parent="enemies" unique_id=708042470 instance=ExtResource("6_irjls")]
+attacks_name = Array[String](["punch"])
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/John_the_fraud" unique_id=1450351235]
-position = Vector2(30, -30)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/enemy" unique_id=1450351235]
+position = Vector2(14, -24)
 scale = Vector2(1.46875, 1.46875)
+sprite_frames = SubResource("SpriteFrames_x76d4")
+
+[node name="enemy2" parent="enemies" unique_id=1307804686 instance=ExtResource("6_irjls")]
+position = Vector2(267, 4)
+id = 1
+attacks_name = Array[String](["punch"])
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/enemy2" unique_id=1673382165]
+position = Vector2(4.999996, -18.999996)
+scale = Vector2(0.82617164, 0.82617164)
 sprite_frames = SubResource("SpriteFrames_irjls")
 
 [node name="background" type="Sprite2D" parent="." unique_id=1824490579]

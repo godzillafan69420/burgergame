@@ -17,6 +17,7 @@ signal reduce_energy_by(cost)
 signal total_energy(total)
 
 signal give_side_effects(effect)
+signal give_side_effects_to_enemies(effect)
 
 signal dialogue
 

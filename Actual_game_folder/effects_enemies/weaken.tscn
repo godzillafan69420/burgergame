@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d3e7iloefsmd7"]
+
+[ext_resource type="Script" uid="uid://djpecrs2843jt" path="res://effects_enemies/effect_enemies.gd" id="1_pejja"]
+
+[node name="weaken" type="Node" unique_id=2076791479]
+script = ExtResource("1_pejja")
+type = "buff"
+target_stats = "damage_multiplier"
+duration = 1
+Effect_strength = 1.5

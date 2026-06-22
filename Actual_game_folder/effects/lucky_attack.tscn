@@ -6,5 +6,5 @@
 script = ExtResource("1_kn8cd")
 damage = 30.0
 target_stats = "def_stats"
-duration = -1
+duration = 1
 Effect_strength = 5.0

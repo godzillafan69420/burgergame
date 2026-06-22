@@ -21,11 +21,18 @@ func _ready() -> void:
 	
 	original_position = global_position
 	Events.connect("enemies_turn",_attacked_player)
+	Events.connect("give_side_effects_to_enemies", _add_status)
 	
 	for i in attacks_name:
 		attacks.append(EnemyAttacks.get(i))
 	
+func _add_status(status:String):
+	var type = ListEnemyStatusEffects.get(status).instantiate()
+	$status.add_child(type)
+	
 func _attacked_player(attack_id):
+	
+	
 	if attack_id != id:
 		return
 	
@@ -47,7 +54,8 @@ func _attacked_player(attack_id):
 	var back_original = get_tree().create_tween()
 	back_original.tween_property(self, "global_position", original_position, 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	await get_tree().create_timer(0.2).timeout
-
+	for i in $status.get_children():
+		i._take_effect()
 
 	
 

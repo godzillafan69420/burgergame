@@ -24,6 +24,7 @@ ListOfStatusEffects="*uid://bdyltunepg0ya"
 ListOfCards="*uid://dq6bagukhkfsy"
 AudioManager="*uid://ppr0et1a5pn1"
 Globals="*uid://cc0262u6kl5d3"
+ListEnemyStatusEffects="*uid://dtkfnl78mea1k"
 
 [display]
 
