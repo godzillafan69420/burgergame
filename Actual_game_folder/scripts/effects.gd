@@ -8,6 +8,7 @@ func _ready() -> void:
 		duration += 1
 	_take_effect()
 	
+	
 
 
 func _take_effect():
