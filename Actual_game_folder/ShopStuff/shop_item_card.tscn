@@ -13,7 +13,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_sd1vs")
 
-[node name="Background" type="TextureRect" parent="." unique_id=787241409]
+[node name="ItemIcon" type="TextureRect" parent="." unique_id=787241409]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,24 +26,24 @@ stretch_mode = 5
 
 [node name="NameLabel" type="Label" parent="." unique_id=2096382299]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 150.0
-offset_right = 70.0
-offset_bottom = 173.0
+offset_left = 50.0
+offset_top = 1.0
+offset_right = 97.0
+offset_bottom = 24.0
 text = "Name"
 
 [node name="BuyButton" type="Button" parent="." unique_id=956547880]
 layout_mode = 0
-offset_left = 39.0
-offset_top = 30.0
-offset_right = 122.0
-offset_bottom = 66.0
+offset_left = 31.0
+offset_top = 147.0
+offset_right = 114.0
+offset_bottom = 183.0
 
 [node name="PriceLabel" type="Label" parent="." unique_id=2062889375]
 layout_mode = 0
-offset_left = 57.0
-offset_top = 33.0
-offset_right = 97.0
-offset_bottom = 82.0
+offset_left = 51.0
+offset_top = 152.0
+offset_right = 91.0
+offset_bottom = 201.0
 text = "Price
 "

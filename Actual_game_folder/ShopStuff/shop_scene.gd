@@ -11,22 +11,25 @@ extends Control
 @onready var next_stage_button = $MarginContainer/ActionMenu/NextStage
 
 var reroll_cost: int = 5
-#upgradses tuff
+
+# --- UPGRADE POOL ---
+# Added "icon" keys here so the PackOpeningScene knows what sprite to use!
 var upgrade_pool = [
-	{"display_name": "placeholder","id": "placeholder", "type": "upgrade", "effect": "deez"},
-	{"display_name": "placeholder2","id": "placeholder2", "type": "upgrade", "effect": "sigma"},
-	{"display_name": "placeholder3","id": "placeholder3", "type": "upgrade", "effect": "yes"},
-	{"display_name": "placeholder4","id": "placeholder4", "type": "joker", "effect": "ohio "},
-	{"display_name": "Ancient Scroll","id": "Ancient Scroll", "type": "relic", "effect": "+1 Hand size"}
+	{"display_name": "placeholder","id": "placeholder", "type": "upgrade", "effect": "deez", "icon": preload("res://Art/CardPack.png")},
+	{"display_name": "placeholder2","id": "placeholder2", "type": "upgrade", "effect": "sigma", "icon": preload("res://Art/CardPack.png")},
+	{"display_name": "placeholder3","id": "placeholder3", "type": "upgrade", "effect": "yes", "icon": preload("res://Art/CardPack.png")},
+	{"display_name": "placeholder4","id": "placeholder4", "type": "joker", "effect": "ohio ", "icon": preload("res://Art/CardPack.png")},
+	{"display_name": "Ancient Scroll","id": "Ancient Scroll", "type": "relic", "effect": "+1 Hand size", "icon": preload("res://Art/CardPack.png")}
 ]
 
-# 2 different item pools so they dont mix 
+# --- REGULAR ITEM POOL ---
+# Added "icon" keys here to load specific sprites for the shop shelf
 var regular_item_pool = [
-	{"display_name": "tin foil","id": "iron_shield", "price": 4, "type": "defense"},
-	{"display_name": "Frying Pan","id": "steel_sword", "price": 6, "type": "attack"},
-	{"display_name": "Science","id": "health_potion", "price": 3, "type": "utility"},
-	{"display_name": "corn canon","id": "corn_canon", "price": 8, "type": "buff"},
-	{"display_name": "Aura Farm","id": "we_see_the_fit", "price": 5, "type": "passive"}
+	{"display_name": "tin foil","id": "iron_shield", "price": 4, "type": "defense", "icon": preload("res://Art/CardTemplateTuff.png")},
+	{"display_name": "Frying Pan","id": "steel_sword", "price": 6, "type": "attack", "icon": preload("res://Art/CardTemplateTuff.png")},
+	{"display_name": "Science","id": "health_potion", "price": 3, "type": "utility", "icon": preload("res://Art/CardTemplateTuff.png")},
+	{"display_name": "corn canon","id": "corn_canon", "price": 8, "type": "buff", "icon": preload("res://Art/CardTemplateTuff.png")},
+	{"display_name": "Aura Farm","id": "we_see_the_fit", "price": 5, "type": "passive", "icon": preload("res://Art/WeSeeTheFit.png")}
 ]
 
 var pack_pool = [
@@ -57,7 +60,6 @@ func update_gold_ui() -> void:
 		reroll_button.text = "Reroll $" + str(reroll_cost)
 
 func clear_shop_shelves() -> void:
-	# FIXED: Added the top fridge back in so old packs get deleted!
 	for child in top_fridge.get_children():
 		child.queue_free()
 	for child in bottom_fridge.get_children():
@@ -67,20 +69,18 @@ func generate_entire_shop() -> void:
 	var temp_pack_pool = pack_pool.duplicate()
 	var temp_item_pool = regular_item_pool.duplicate()
 
-	#Spawn 2 random packs on the Top Fridge (Tells the generator to use the pack scene layout)
-	for i in range(0):
+	# Note: Your range is currently (0). Change to (2) if you want packs to actually spawn!
+	for i in range(2):
 		if temp_pack_pool.is_empty(): break
 		var pack_data = temp_pack_pool.pick_random()
-		create_card_on_shelf(pack_data, top_fridge, true) #true for the other layout
+		create_card_on_shelf(pack_data, top_fridge, true) 
 		
-	#Spawn 5 random regular items on the Bottom Fridge
 	for i in range(5):
 		if temp_item_pool.is_empty(): break
 		var item_data = temp_item_pool.pick_random()
 		temp_item_pool.erase(item_data)
-		create_card_on_shelf(item_data, bottom_fridge, false) #flase is normal layout unc
+		create_card_on_shelf(item_data, bottom_fridge, false) 
 
-# Helper function that cleanly handles text setups and chooses the correct layout style
 func create_card_on_shelf(item_data: Dictionary, target_fridge: Node, is_pack: bool) -> void:
 	var card
 	if is_pack and pack_scene:
@@ -90,14 +90,25 @@ func create_card_on_shelf(item_data: Dictionary, target_fridge: Node, is_pack: b
 		
 	target_fridge.add_child(card)
 	
+	# Grab the UI elements
 	var name_label = card.get_node_or_null("NameLabel")
 	var price_label = card.get_node_or_null("PriceLabel")
 	var buy_button = card.get_node_or_null("BuyButton")
 	
+	# NEW: Look for a TextureRect on your card scene (Make sure the name matches your node!)
+	var icon_rect = card.get_node_or_null("ItemIcon") 
+	
 	if name_label: 
 		name_label.text = item_data["display_name"]
 	if price_label: 
-		price_label.text = str(item_data["price"]) + " Gold"
+		if item_data.has("price"):
+			price_label.text = str(item_data["price"]) + " Gold"
+		else:
+			price_label.text = "" # Hides price text if it's a free upgrade item
+		
+	# NEW: Apply the texture if the dictionary has one
+	if icon_rect and item_data.has("icon"):
+		icon_rect.texture = item_data["icon"]
 		
 	if buy_button:
 		buy_button.pressed.connect(func(): _on_item_purchased(item_data, card))
@@ -113,7 +124,6 @@ func _on_item_purchased(item_data: Dictionary, card_node: Node) -> void:
 		card_node.queue_free()
 		
 		if item_data.get("type") == "pack":
-			# FIXED: Removed pack_pool.erase(item_data) again so your master pool doesn't empty out!
 			print("Pack purchased! Opening reward selection...")
 			open_pack_screen()
 		else:
@@ -121,7 +131,7 @@ func _on_item_purchased(item_data: Dictionary, card_node: Node) -> void:
 			PlayerStats.attacks.append(item_data)
 			print("Successfully Bought! Global Inventory Contents: ", PlayerStats.attacks)
 	else:
-		print("Not enough money to buy ", item_data["name"])
+		print("Not enough money to buy ", item_data.get("name", "Item"))
 
 # PACK OPENING SETUP
 func open_pack_screen() -> void:
