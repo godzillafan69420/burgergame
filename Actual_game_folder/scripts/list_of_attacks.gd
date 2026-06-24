@@ -19,3 +19,15 @@ var poison = {
 	"damage": 0,
 	"status_effects":["poison"]
 }
+
+var giga_punch = {
+	"name": "giga punch",
+	"damage": 30,
+	"status_effects": []
+}
+
+var ragebait = {
+	"name": "ragebait",
+	"damage": 20,
+	"status_effects": ["weaken"]
+}

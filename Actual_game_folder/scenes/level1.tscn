@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://d8ss8ob3168u"]
+
+[ext_resource type="Script" uid="uid://bme11j2i2ndyn" path="res://scripts/end_turn_button.gd" id="1_f31uk"]
+[ext_resource type="Script" uid="uid://c4jtsd8b6ntsy" path="res://energy_display.gd" id="2_gnai3"]
+[ext_resource type="PackedScene" uid="uid://balspnmwbb0nl" path="res://dialogue_manager/dialogues.tscn" id="3_i8kv5"]
+[ext_resource type="Script" uid="uid://b8mrb0agbnl4d" path="res://scenes/enemy_stuff_display.gd" id="4_dxn3v"]
+[ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="5_14jow"]
+[ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="6_mvsps"]
+[ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/enemy.tscn" id="7_jvkml"]
+[ext_resource type="Texture2D" uid="uid://c6s6s8ipmmmdt" path="res://Art/john_test.png" id="8_3w4mx"]
+[ext_resource type="Texture2D" uid="uid://bjhndtvnls2fo" path="res://Art/tetopeartestsize.png" id="9_u068y"]
+[ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="10_1ooyw"]
+[ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="11_ai3nx"]
+[ext_resource type="Texture2D" uid="uid://bn8dp0w4ah3ii" path="res://Art/johnsmith.png" id="12_gnai3"]
+[ext_resource type="Texture2D" uid="uid://ckmir275cyots" path="res://Art/gordoRAM.png" id="13_3oqy1"]
+[ext_resource type="Texture2D" uid="uid://cwg4lq0qkcrsv" path="res://Art/tetoPortraits.png" id="14_i8kv5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x76d4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_3w4mx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_715r7"]
+atlas = ExtResource("9_u068y")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_irjls"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_715r7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_fydqt"]
+script = ExtResource("11_ai3nx")
+character_name = "John Smith"
+portrait = ExtResource("12_gnai3")
+paragraphs = "I got back up"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_6j6yj"]
+script = ExtResource("11_ai3nx")
+character_name = "Gordo RamE"
+portrait = ExtResource("13_3oqy1")
+paragraphs = "Bro really need to start teaming lmao"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_pin3j"]
+script = ExtResource("11_ai3nx")
+character_name = "Socrates"
+portrait = ExtResource("14_i8kv5")
+paragraphs = "I know right what is he cooking"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_jw067"]
+script = ExtResource("11_ai3nx")
+character_name = "Gordo RamE"
+portrait = ExtResource("13_3oqy1")
+paragraphs = "fr unc go back home and rest"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_gnai3"]
+script = ExtResource("11_ai3nx")
+character_name = "John Smith"
+portrait = ExtResource("12_gnai3")
+paragraphs = "Your meant to be helping me Teto"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_i8kv5"]
+script = ExtResource("11_ai3nx")
+character_name = "Teto"
+portrait = ExtResource("14_i8kv5")
+paragraphs = "it's spelled \"you're\" and I'm helping you cuz you're a fraud"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[node name="level_1" type="Node2D" unique_id=1916832371]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=89355144]
+
+[node name="cards" type="Control" parent="UI" unique_id=901797189]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="end_turn_button" type="Button" parent="UI" unique_id=1552152923]
+offset_left = 1090.0
+offset_top = 506.0
+offset_right = 1256.0
+offset_bottom = 701.0
+pivot_offset = Vector2(-583, 97)
+text = "end turn"
+script = ExtResource("1_f31uk")
+metadata/_edit_use_anchors_ = true
+
+[node name="energy_display" type="Label" parent="UI" unique_id=1700585432]
+offset_left = 85.0
+offset_top = 29.0
+offset_right = 368.0
+offset_bottom = 106.0
+script = ExtResource("2_gnai3")
+metadata/_edit_use_anchors_ = true
+
+[node name="dialogues" parent="UI" unique_id=702915050 instance=ExtResource("3_i8kv5")]
+visible = false
+
+[node name="what did they even do" type="Label" parent="UI" unique_id=1461218244]
+offset_left = 826.0
+offset_top = 31.0
+offset_right = 1262.0
+offset_bottom = 208.0
+theme_override_font_sizes/font_size = 30
+script = ExtResource("4_dxn3v")
+metadata/_edit_use_anchors_ = true
+
+[node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
+script = ExtResource("5_14jow")
+music_name = "Battle"
+total_enemies = 3
+
+[node name="player" parent="." unique_id=294404824 instance=ExtResource("6_mvsps")]
+position = Vector2(192, 400)
+
+[node name="enemies" type="Node2D" parent="." unique_id=1413379743]
+position = Vector2(835, 394)
+
+[node name="John Smith" parent="enemies" unique_id=708042470 instance=ExtResource("7_jvkml")]
+attacks_name = Array[String](["punch", "kick"])
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/John Smith" unique_id=1450351235]
+position = Vector2(14, -24)
+scale = Vector2(1.46875, 1.46875)
+sprite_frames = SubResource("SpriteFrames_x76d4")
+
+[node name="Pearto" parent="enemies" unique_id=1307804686 instance=ExtResource("7_jvkml")]
+position = Vector2(267, 4)
+id = 1
+attacks_name = Array[String](["poison", "giga_punch"])
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Pearto" unique_id=1673382165]
+position = Vector2(4.999996, -18.999996)
+scale = Vector2(0.82617164, 0.82617164)
+sprite_frames = SubResource("SpriteFrames_irjls")
+
+[node name="background" type="Sprite2D" parent="." unique_id=1824490579]
+
+[node name="Dialogue" type="Node" parent="." unique_id=276630500]
+script = ExtResource("10_1ooyw")
+at_when = 1
+dialogues = Array[ExtResource("11_ai3nx")]([SubResource("Resource_fydqt"), SubResource("Resource_6j6yj"), SubResource("Resource_pin3j"), SubResource("Resource_jw067"), SubResource("Resource_gnai3"), SubResource("Resource_i8kv5")])
+
+[connection signal="button_down" from="UI/end_turn_button" to="UI/end_turn_button" method="_on_button_down"]

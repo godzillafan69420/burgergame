@@ -13,7 +13,6 @@ script = ExtResource("2_86eg4")
 card_name = "Frying Pan"
 discription = "do 20 damage"
 damage = 20.0
-effects = Array[String](["super_block"])
 AOE = true
 
 [node name="name" type="Label" parent="." unique_id=1243870691]

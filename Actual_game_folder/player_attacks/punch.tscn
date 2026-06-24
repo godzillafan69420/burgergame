@@ -14,7 +14,6 @@ card_name = "Punch"
 discription = "do 10 damage"
 damage = 10.0
 energy = 5.0
-effects = Array[String](["blocking"])
 
 [node name="name" type="Label" parent="." unique_id=1243870691]
 layout_mode = 0

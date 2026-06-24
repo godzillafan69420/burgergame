@@ -10,7 +10,7 @@ signal update_id
 
 signal check_victory_conditions
 
-signal damaged_enemy(damage)
+signal damaged_enemy(damage, name)
 signal damaged_player(damage)
 
 signal reduce_energy_by(cost)
@@ -25,3 +25,5 @@ signal players_turn
 signal enemies_turn(attacking_enemy)
 
 signal id_chosen(id, damage)
+
+signal update_display(sentence)

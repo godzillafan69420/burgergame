@@ -31,7 +31,7 @@ func _add_status(status:String):
 	$status.add_child(type)
 	
 func _attacked_player(attack_id):
-	
+	var sentence = ""
 	
 	if attack_id != id:
 		return
@@ -43,14 +43,18 @@ func _attacked_player(attack_id):
 	Events.emit_signal("players_turn")
 	var damage =(attacks[randomAttack].get("damage")) * damage_multiplier
 	Events.emit_signal("damaged_player", damage)
-	
+	sentence = name+ " use " + attacks[randomAttack].get("name")
 	#yes kallum i used ai for this if statement lmao
 	if attacks[randomAttack].has("status_effects"):
 		var all_effects = attacks[randomAttack]["status_effects"]
 		for effect in all_effects: 
 			Events.emit_signal("give_side_effects", effect)
+			sentence +="
+			 and give "+ effect
+	
 	if get_tree() == null:
 		return
+	Events.emit_signal("update_display", sentence)
 	var back_original = get_tree().create_tween()
 	back_original.tween_property(self, "global_position", original_position, 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	await get_tree().create_timer(0.2).timeout

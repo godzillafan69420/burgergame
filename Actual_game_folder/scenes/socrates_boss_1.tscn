@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://c3xi1qe3bnw8h"]
+
+[ext_resource type="Script" uid="uid://bme11j2i2ndyn" path="res://scripts/end_turn_button.gd" id="1_jw067"]
+[ext_resource type="Script" uid="uid://c4jtsd8b6ntsy" path="res://energy_display.gd" id="2_6j6yj"]
+[ext_resource type="PackedScene" uid="uid://balspnmwbb0nl" path="res://dialogue_manager/dialogues.tscn" id="3_pin3j"]
+[ext_resource type="Script" uid="uid://b8mrb0agbnl4d" path="res://scenes/enemy_stuff_display.gd" id="4_6j6yj"]
+[ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="4_n5ufe"]
+[ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="5_u7jqu"]
+[ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/enemy.tscn" id="6_1wpc6"]
+[ext_resource type="Texture2D" uid="uid://c6s6s8ipmmmdt" path="res://Art/john_test.png" id="7_nsbur"]
+[ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="9_ydhme"]
+[ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="10_bkkef"]
+[ext_resource type="Texture2D" uid="uid://dwrjge0iry3xo" path="res://Art/socrates.png" id="11_jw067"]
+[ext_resource type="Texture2D" uid="uid://ckmir275cyots" path="res://Art/gordoRAM.png" id="11_sj4lc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x76d4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_nsbur")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_jw067"]
+script = ExtResource("10_bkkef")
+character_name = "Socrates"
+portrait = ExtResource("11_jw067")
+paragraphs = "If toppings are your power what are you without it"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_6j6yj"]
+script = ExtResource("10_bkkef")
+character_name = "Gordo RamE"
+portrait = ExtResource("11_sj4lc")
+paragraphs = "Omg not this bum"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_pin3j"]
+script = ExtResource("10_bkkef")
+character_name = "Gordo RamE"
+portrait = ExtResource("11_sj4lc")
+paragraphs = "Like unc just go back to ancient Greece or something"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_n5ufe"]
+script = ExtResource("10_bkkef")
+character_name = "Socrates"
+portrait = ExtResource("11_jw067")
+paragraphs = "Young man, is myragebait technique too powerful
+for you. So you slander my technique. I see how it is."
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[node name="socratesBoss1" type="Node2D" unique_id=1916832371]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=89355144]
+
+[node name="cards" type="Control" parent="UI" unique_id=901797189]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="end_turn_button" type="Button" parent="UI" unique_id=1552152923]
+offset_left = 1090.0
+offset_top = 506.0
+offset_right = 1256.0
+offset_bottom = 701.0
+pivot_offset = Vector2(-583, 97)
+text = "end turn"
+script = ExtResource("1_jw067")
+metadata/_edit_use_anchors_ = true
+
+[node name="energy_display" type="Label" parent="UI" unique_id=1700585432]
+offset_left = 85.0
+offset_top = 29.0
+offset_right = 368.0
+offset_bottom = 106.0
+script = ExtResource("2_6j6yj")
+metadata/_edit_use_anchors_ = true
+
+[node name="dialogues" parent="UI" unique_id=702915050 instance=ExtResource("3_pin3j")]
+visible = false
+
+[node name="what did they even do" type="Label" parent="UI" unique_id=1461218244]
+offset_left = 826.0
+offset_top = 31.0
+offset_right = 1262.0
+offset_bottom = 208.0
+theme_override_font_sizes/font_size = 30
+script = ExtResource("4_6j6yj")
+metadata/_edit_use_anchors_ = true
+
+[node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
+script = ExtResource("4_n5ufe")
+music_name = "Battle"
+total_enemies = 3
+
+[node name="player" parent="." unique_id=294404824 instance=ExtResource("5_u7jqu")]
+position = Vector2(192, 400)
+
+[node name="enemies" type="Node2D" parent="." unique_id=1413379743]
+position = Vector2(835, 394)
+
+[node name="John Smith" parent="enemies" unique_id=708042470 instance=ExtResource("6_1wpc6")]
+attacks_name = Array[String](["kick", "ragebait"])
+setted_HP = 100.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/John Smith" unique_id=1450351235]
+position = Vector2(14, -24)
+scale = Vector2(1.46875, 1.46875)
+sprite_frames = SubResource("SpriteFrames_x76d4")
+
+[node name="background" type="Sprite2D" parent="." unique_id=1824490579]
+
+[node name="Dialogue" type="Node" parent="." unique_id=276630500]
+script = ExtResource("9_ydhme")
+at_when = 1
+dialogues = Array[ExtResource("10_bkkef")]([SubResource("Resource_jw067"), SubResource("Resource_6j6yj"), SubResource("Resource_pin3j"), SubResource("Resource_n5ufe")])
+
+[connection signal="button_down" from="UI/end_turn_button" to="UI/end_turn_button" method="_on_button_down"]

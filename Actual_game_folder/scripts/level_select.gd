@@ -11,7 +11,7 @@ var target_scroll_x: float = 0.0
 
 func _ready():
 	level_cards = hbox.get_children()
-	
+	AudioManager.play("LevelSelect")
 	# Connect your layout buttons
 	if has_node("LeftButton"): $LeftButton.pressed.connect(_on_left_button_pressed)
 	if has_node("RightButton"): $RightButton.pressed.connect(_on_right_button_pressed)
