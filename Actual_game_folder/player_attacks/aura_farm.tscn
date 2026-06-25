@@ -11,11 +11,11 @@ offset_bottom = 101.0
 texture = ExtResource("1_1lenw")
 script = ExtResource("2_o33en")
 card_name = "Aura Farm"
-discription = "waste 10 energy
-to weaken enemy
+discription = "weaken enemy
 but 50% chance of 
 you taking damage lmao"
 damage = 0.0
+energy = 8.0
 effects_for_enemies = Array[String](["weaken"])
 AOE = true
 lucky = true

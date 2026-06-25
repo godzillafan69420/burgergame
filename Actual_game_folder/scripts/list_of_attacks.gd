@@ -28,6 +28,6 @@ var giga_punch = {
 
 var ragebait = {
 	"name": "ragebait",
-	"damage": 20,
+	"damage": 15,
 	"status_effects": ["weaken"]
 }

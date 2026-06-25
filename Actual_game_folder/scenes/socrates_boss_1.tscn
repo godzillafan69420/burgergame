@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://c6s6s8ipmmmdt" path="res://Art/john_test.png" id="7_nsbur"]
 [ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="9_ydhme"]
 [ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="10_bkkef"]
-[ext_resource type="Texture2D" uid="uid://dwrjge0iry3xo" path="res://Art/socrates.png" id="11_jw067"]
 [ext_resource type="Texture2D" uid="uid://ckmir275cyots" path="res://Art/gordoRAM.png" id="11_sj4lc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x76d4"]
@@ -24,10 +23,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bagtd"]
+load_path = "res://.godot/imported/socrates.png-feaf5cfc03e92680386259459fc8adb1.ctex"
+
 [sub_resource type="Resource" id="Resource_jw067"]
 script = ExtResource("10_bkkef")
 character_name = "Socrates"
-portrait = ExtResource("11_jw067")
+portrait = SubResource("CompressedTexture2D_bagtd")
 paragraphs = "If toppings are your power what are you without it"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
@@ -48,9 +50,15 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 [sub_resource type="Resource" id="Resource_n5ufe"]
 script = ExtResource("10_bkkef")
 character_name = "Socrates"
-portrait = ExtResource("11_jw067")
-paragraphs = "Young man, is myragebait technique too powerful
-for you. So you slander my technique. I see how it is."
+portrait = SubResource("CompressedTexture2D_bagtd")
+paragraphs = "Fools I shall not go away to Ancient Greece. You shall be punished for failing to answer the question."
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_u7jqu"]
+script = ExtResource("10_bkkef")
+character_name = "Gordo RamE"
+portrait = ExtResource("11_sj4lc")
+paragraphs = "well I'm not fighting so..."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="socratesBoss1" type="Node2D" unique_id=1916832371]
@@ -96,7 +104,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
 script = ExtResource("4_n5ufe")
-music_name = "Battle"
+music_name = "Boss1"
 total_enemies = 3
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("5_u7jqu")]
@@ -105,11 +113,11 @@ position = Vector2(192, 400)
 [node name="enemies" type="Node2D" parent="." unique_id=1413379743]
 position = Vector2(835, 394)
 
-[node name="John Smith" parent="enemies" unique_id=708042470 instance=ExtResource("6_1wpc6")]
-attacks_name = Array[String](["kick", "ragebait"])
-setted_HP = 100.0
+[node name="Socrates" parent="enemies" unique_id=708042470 instance=ExtResource("6_1wpc6")]
+attacks_name = Array[String](["kick", "ragebait", "poison"])
+setted_HP = 125.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/John Smith" unique_id=1450351235]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Socrates" unique_id=1450351235]
 position = Vector2(14, -24)
 scale = Vector2(1.46875, 1.46875)
 sprite_frames = SubResource("SpriteFrames_x76d4")
@@ -119,6 +127,6 @@ sprite_frames = SubResource("SpriteFrames_x76d4")
 [node name="Dialogue" type="Node" parent="." unique_id=276630500]
 script = ExtResource("9_ydhme")
 at_when = 1
-dialogues = Array[ExtResource("10_bkkef")]([SubResource("Resource_jw067"), SubResource("Resource_6j6yj"), SubResource("Resource_pin3j"), SubResource("Resource_n5ufe")])
+dialogues = Array[ExtResource("10_bkkef")]([SubResource("Resource_jw067"), SubResource("Resource_6j6yj"), SubResource("Resource_pin3j"), SubResource("Resource_n5ufe"), SubResource("Resource_u7jqu")])
 
 [connection signal="button_down" from="UI/end_turn_button" to="UI/end_turn_button" method="_on_button_down"]

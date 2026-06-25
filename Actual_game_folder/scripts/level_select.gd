@@ -65,8 +65,8 @@ func _on_play_button_pressed():
 		
 	elif current_level_node.name == "Level_1":
 		
-		get_tree().change_scene_to_file("res://ShopStuff/shop_scene.tscn") 
+		get_tree().change_scene_to_file("res://scenes/level1.tscn") 
 		
-	elif current_level_node.name == "Level_1":
+	elif current_level_node.name == "Level_2":
 		# FIXED: Main root directory path
-		get_tree().change_scene_to_file("res://battle_scene.tscn")
+		get_tree().change_scene_to_file("res://scenes/socrates_boss_1.tscn")

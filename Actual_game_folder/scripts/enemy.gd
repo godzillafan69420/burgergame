@@ -9,7 +9,6 @@ var original_position:Vector2
 @export var attacks_name:Array[String] = []
 @export var def_stats: int = 1
 @export var setted_HP: float = 50
-@export var setted_speed:float = 2
 var randomAttack :int
 var attacks:Array[Dictionary] = []
 

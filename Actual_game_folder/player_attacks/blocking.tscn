@@ -11,7 +11,10 @@ offset_bottom = 103.0
 texture = ExtResource("1_e4nfw")
 script = ExtResource("1_18cxb")
 card_name = "blocking"
+discription = "protect 50% of 
+incoming damage"
 damage = 0.0
+energy = 7.0
 effects = Array[String](["blocking"])
 AOE = true
 

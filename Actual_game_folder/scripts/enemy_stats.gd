@@ -12,6 +12,7 @@ func _ready() -> void:
 	HP = get_parent().setted_HP
 	$HP.max_value = HP
 	$HP.value = HP
+	$Label.text = str(int($HP.value)) + "/" +str(int($HP.max_value))
 	Events.connect("damaged_enemy", _take_damage)
 	Events.connect("id_chosen",_damage_yourself)
 	
@@ -19,6 +20,7 @@ func _damage_yourself(id: int ,damage: int) -> void:
 	if id != get_parent().id:
 		return
 	$HP.value -= damage * damage_multiplier
+	$Label.text = str(int($HP.value)) + "/" +str(int($HP.max_value))
 	if $HP.value <= 0:
 		get_parent().queue_free()
 		Events.emit_signal("check_victory_conditions")
@@ -26,6 +28,7 @@ func _damage_yourself(id: int ,damage: int) -> void:
 
 func _take_damage(damage: int) -> void:
 	$HP.value -= damage * damage_multiplier
+	$Label.text = str(int($HP.value)) + "/" +str(int($HP.max_value))
 	if $HP.value <= 0:
 		get_parent().queue_free()
 		Events.emit_signal("check_victory_conditions")

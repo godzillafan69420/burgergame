@@ -35,10 +35,10 @@ theme_override_font_sizes/normal_font_size = 25
 text = "test for "
 
 [node name="protraits" type="TextureRect" parent="." unique_id=431114709]
-modulate = Color(0.6847319, 0.6847319, 0.6847319, 1)
+modulate = Color(0.8569273, 0.8569273, 0.8569273, 1)
 layout_mode = 0
-offset_left = 613.0
-offset_top = -20.0
-offset_right = 1280.0
-offset_bottom = 1036.9213
+offset_left = 834.0
+offset_top = 166.90955
+offset_right = 1283.0
+offset_bottom = 792.92126
 expand_mode = 5
