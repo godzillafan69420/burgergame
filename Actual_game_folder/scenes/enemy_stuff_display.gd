@@ -7,5 +7,5 @@ func _ready() -> void:
 func _change(sentence):
 	visible = true
 	text = sentence
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(3).timeout
 	visible = false

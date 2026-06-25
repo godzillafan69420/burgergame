@@ -20,6 +20,8 @@ func _take_effect():
 			
 	duration -= 1
 	if duration <= 0:
-
-		player_ingame_stats.set(target_stats, PlayerStats.player_defalt_def)
+		if target_stats =="damage_multiplier":
+			player_ingame_stats.set(target_stats, 1)
+		if target_stats =="def_stats":
+			player_ingame_stats.set(target_stats, 0)
 		queue_free()

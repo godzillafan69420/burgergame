@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c1lpxvcgw30xi"]
+
+[ext_resource type="Script" uid="uid://d4c12ggebe1bf" path="res://scripts/effects.gd" id="1_f8ynn"]
+
+[node name="damage_reduction" type="Node" unique_id=1390896184]
+script = ExtResource("1_f8ynn")
+type = "buff"
+target_stats = "damage_multiplier"
+Effect_strength = 0.5

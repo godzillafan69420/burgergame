@@ -37,8 +37,8 @@ text = "test for "
 [node name="protraits" type="TextureRect" parent="." unique_id=431114709]
 modulate = Color(0.8569273, 0.8569273, 0.8569273, 1)
 layout_mode = 0
-offset_left = 834.0
-offset_top = 166.90955
-offset_right = 1283.0
-offset_bottom = 792.92126
+offset_left = 764.0
+offset_top = 4.768921
+offset_right = 1277.0
+offset_bottom = 720.0117
 expand_mode = 5

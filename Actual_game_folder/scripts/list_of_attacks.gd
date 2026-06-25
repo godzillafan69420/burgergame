@@ -31,3 +31,15 @@ var ragebait = {
 	"damage": 15,
 	"status_effects": ["weaken"]
 }
+
+var harmful_words = {
+	"name": "harmful words",
+	"damage": 15,
+	"status_effects": ["tired"]
+}
+
+var nuclear_pizza = {
+	"name": "nuclear pizza",
+	"damage": 25,
+	"status_effects": []
+}

@@ -6,9 +6,12 @@ var speed:float
 
 var damage_multiplier: float = 1
 
+var player_damge_multiplier: float
+
 @export var battle_logic_script: Node
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	player_damge_multiplier = get_parent().get_parent().get_parent().get_node("player").get_node("player_stats").damage_multiplier
 	HP = get_parent().setted_HP
 	$HP.max_value = HP
 	$HP.value = HP
@@ -17,9 +20,10 @@ func _ready() -> void:
 	Events.connect("id_chosen",_damage_yourself)
 	
 func _damage_yourself(id: int ,damage: int) -> void:
+	player_damge_multiplier = get_parent().get_parent().get_parent().get_node("player").get_node("player_stats").damage_multiplier
 	if id != get_parent().id:
 		return
-	$HP.value -= damage * damage_multiplier
+	$HP.value -= damage * damage_multiplier * player_damge_multiplier
 	$Label.text = str(int($HP.value)) + "/" +str(int($HP.max_value))
 	if $HP.value <= 0:
 		get_parent().queue_free()
@@ -27,7 +31,8 @@ func _damage_yourself(id: int ,damage: int) -> void:
 
 
 func _take_damage(damage: int) -> void:
-	$HP.value -= damage * damage_multiplier
+	player_damge_multiplier = get_parent().get_parent().get_parent().get_node("player").get_node("player_stats").damage_multiplier
+	$HP.value -= damage * damage_multiplier * player_damge_multiplier
 	$Label.text = str(int($HP.value)) + "/" +str(int($HP.max_value))
 	if $HP.value <= 0:
 		get_parent().queue_free()
