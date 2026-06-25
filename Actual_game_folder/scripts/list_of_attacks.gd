@@ -35,11 +35,11 @@ var ragebait = {
 var harmful_words = {
 	"name": "harmful words",
 	"damage": 15,
-	"status_effects": ["tired"]
+	"status_effects": ["tiredness"]
 }
 
 var nuclear_pizza = {
 	"name": "nuclear pizza",
 	"damage": 25,
-	"status_effects": []
+	"status_effects": ["radiation"]
 }

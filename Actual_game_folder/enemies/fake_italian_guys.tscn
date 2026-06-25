@@ -85,7 +85,7 @@ position = Vector2(835, 394)
 [node name="Furry King" parent="enemies" unique_id=708042470 instance=ExtResource("7_gb7h5")]
 position = Vector2(-240, 0)
 attacks_name = Array[String](["harmful_words", "nuclear_pizza"])
-setted_HP = 125.0
+setted_HP = 100.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Furry King" unique_id=1450351235]
 position = Vector2(14, -24)
@@ -94,8 +94,8 @@ sprite_frames = SubResource("SpriteFrames_x76d4")
 
 [node name="Tickletism" parent="enemies" unique_id=439974142 instance=ExtResource("7_gb7h5")]
 position = Vector2(-1, 2)
-attacks_name = Array[String](["kick", "ragebait", "poison"])
-setted_HP = 125.0
+attacks_name = Array[String](["ragebait", "giga_punch"])
+setted_HP = 150.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Tickletism" unique_id=1739849344]
 position = Vector2(14, -24)
@@ -104,8 +104,8 @@ sprite_frames = SubResource("SpriteFrames_x76d4")
 
 [node name="PokePastaman 67" parent="enemies" unique_id=646216501 instance=ExtResource("7_gb7h5")]
 position = Vector2(240, 1)
-attacks_name = Array[String](["kick", "ragebait", "poison"])
-setted_HP = 125.0
+attacks_name = Array[String](["kick", "punch"])
+setted_HP = 75.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/PokePastaman 67" unique_id=972275017]
 position = Vector2(14, -24)

@@ -6,4 +6,4 @@
 script = ExtResource("1_f8ynn")
 type = "buff"
 target_stats = "damage_multiplier"
-Effect_strength = 0.5
+Effect_strength = 0.75
