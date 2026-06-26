@@ -27,7 +27,7 @@ animations = [{
 script = ExtResource("10_kffbf")
 character_name = "Fake Italian man"
 portrait = ExtResource("11_nsomt")
-paragraphs = "Penis"
+paragraphs = "larp-larp-mia what are we doing here"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="fakeItalianGuys" type="Node2D" unique_id=1916832371]
