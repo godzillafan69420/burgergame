@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://bwjqyfgi7iicm"]
+
+[ext_resource type="Script" uid="uid://bme11j2i2ndyn" path="res://scripts/end_turn_button.gd" id="1_t511j"]
+[ext_resource type="Script" uid="uid://c4jtsd8b6ntsy" path="res://energy_display.gd" id="2_5lhdr"]
+[ext_resource type="PackedScene" uid="uid://balspnmwbb0nl" path="res://dialogue_manager/dialogues.tscn" id="3_r87yl"]
+[ext_resource type="Script" uid="uid://b8mrb0agbnl4d" path="res://scenes/enemy_stuff_display.gd" id="4_1si36"]
+[ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="5_yoe4b"]
+[ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="6_gifwx"]
+[ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/enemy.tscn" id="7_gb7h5"]
+[ext_resource type="Texture2D" uid="uid://c6s6s8ipmmmdt" path="res://Art/john_test.png" id="8_muvik"]
+[ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="9_a7ibq"]
+[ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="10_kffbf"]
+[ext_resource type="Texture2D" uid="uid://r740ioxx1y14" path="res://Art/furryKing.png" id="11_nsomt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x76d4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_muvik")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_60jy0"]
+script = ExtResource("10_kffbf")
+character_name = "Fake Italian man"
+portrait = ExtResource("11_nsomt")
+paragraphs = "Penis"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[node name="fakeItalianGuys" type="Node2D" unique_id=1916832371]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=89355144]
+
+[node name="cards" type="Control" parent="UI" unique_id=901797189]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="end_turn_button" type="Button" parent="UI" unique_id=1552152923]
+offset_left = 1090.0
+offset_top = 506.0
+offset_right = 1256.0
+offset_bottom = 701.0
+pivot_offset = Vector2(-583, 97)
+text = "end turn"
+script = ExtResource("1_t511j")
+metadata/_edit_use_anchors_ = true
+
+[node name="energy_display" type="Label" parent="UI" unique_id=1700585432]
+offset_left = 85.0
+offset_top = 29.0
+offset_right = 368.0
+offset_bottom = 106.0
+script = ExtResource("2_5lhdr")
+metadata/_edit_use_anchors_ = true
+
+[node name="dialogues" parent="UI" unique_id=702915050 instance=ExtResource("3_r87yl")]
+visible = false
+
+[node name="what did they even do" type="Label" parent="UI" unique_id=1461218244]
+offset_left = 826.0
+offset_top = 31.0
+offset_right = 1262.0
+offset_bottom = 208.0
+theme_override_font_sizes/font_size = 30
+script = ExtResource("4_1si36")
+metadata/_edit_use_anchors_ = true
+
+[node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
+script = ExtResource("5_yoe4b")
+music_name = "Untitled67"
+total_enemies = 3
+
+[node name="player" parent="." unique_id=294404824 instance=ExtResource("6_gifwx")]
+position = Vector2(192, 400)
+
+[node name="enemies" type="Node2D" parent="." unique_id=1413379743]
+position = Vector2(835, 394)
+
+[node name="Furry King" parent="enemies" unique_id=708042470 instance=ExtResource("7_gb7h5")]
+position = Vector2(-240, 0)
+attacks_name = Array[String](["harmful_words", "nuclear_pizza"])
+setted_HP = 100.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Furry King" unique_id=1450351235]
+position = Vector2(14, -24)
+scale = Vector2(1.46875, 1.46875)
+sprite_frames = SubResource("SpriteFrames_x76d4")
+
+[node name="Tickletism" parent="enemies" unique_id=439974142 instance=ExtResource("7_gb7h5")]
+position = Vector2(-1, 2)
+attacks_name = Array[String](["ragebait", "giga_punch"])
+setted_HP = 150.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Tickletism" unique_id=1739849344]
+position = Vector2(14, -24)
+scale = Vector2(1.46875, 1.46875)
+sprite_frames = SubResource("SpriteFrames_x76d4")
+
+[node name="PokePastaman 67" parent="enemies" unique_id=646216501 instance=ExtResource("7_gb7h5")]
+position = Vector2(240, 1)
+attacks_name = Array[String](["kick", "punch"])
+setted_HP = 75.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/PokePastaman 67" unique_id=972275017]
+position = Vector2(14, -24)
+scale = Vector2(1.46875, 1.46875)
+sprite_frames = SubResource("SpriteFrames_x76d4")
+
+[node name="background" type="Sprite2D" parent="." unique_id=1824490579]
+
+[node name="Dialogue" type="Node" parent="." unique_id=276630500]
+script = ExtResource("9_a7ibq")
+at_when = 1
+dialogues = Array[ExtResource("10_kffbf")]([SubResource("Resource_60jy0")])
+
+[connection signal="button_down" from="UI/end_turn_button" to="UI/end_turn_button" method="_on_button_down"]

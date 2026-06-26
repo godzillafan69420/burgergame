@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="9_ydhme"]
 [ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="10_bkkef"]
 [ext_resource type="Texture2D" uid="uid://ckmir275cyots" path="res://Art/gordoRAM.png" id="11_sj4lc"]
+[ext_resource type="Texture2D" uid="uid://duwo8q7rb6eet" path="res://Art/socrates.png" id="12_jw067"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x76d4"]
 animations = [{
@@ -59,6 +60,20 @@ script = ExtResource("10_bkkef")
 character_name = "Gordo RamE"
 portrait = ExtResource("11_sj4lc")
 paragraphs = "well I'm not fighting so..."
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_1wpc6"]
+script = ExtResource("10_bkkef")
+character_name = "Socrates"
+portrait = ExtResource("12_jw067")
+paragraphs = "If spam is your power what are you without it"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_nsbur"]
+script = ExtResource("10_bkkef")
+character_name = "Gordo RamE"
+portrait = ExtResource("11_sj4lc")
+paragraphs = "Mate, enough!"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="socratesBoss1" type="Node2D" unique_id=1916832371]
@@ -128,5 +143,10 @@ sprite_frames = SubResource("SpriteFrames_x76d4")
 script = ExtResource("9_ydhme")
 at_when = 1
 dialogues = Array[ExtResource("10_bkkef")]([SubResource("Resource_jw067"), SubResource("Resource_6j6yj"), SubResource("Resource_pin3j"), SubResource("Resource_n5ufe"), SubResource("Resource_u7jqu")])
+
+[node name="Dialogue2" type="Node" parent="." unique_id=1422045770]
+script = ExtResource("9_ydhme")
+at_when = 3
+dialogues = Array[ExtResource("10_bkkef")]([SubResource("Resource_1wpc6"), SubResource("Resource_nsbur")])
 
 [connection signal="button_down" from="UI/end_turn_button" to="UI/end_turn_button" method="_on_button_down"]

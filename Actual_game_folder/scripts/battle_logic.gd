@@ -39,18 +39,19 @@ func _ready() -> void:
 	Events.connect("check_victory_conditions", _check_victory)
 	Events.connect("attack_id", _spawn_attack_choice)
 	
-	Events.emit_signal("players_turn")
+	_players_turn()
 func _dialogue():
 	current_state = States.dialogue
+	
 
 func _spawn_attack_choice():
 	var choice = _spawn_attack_choice
 
 func _players_turn():
 	current_turn += 1
+	print(current_turn)
 	num_of_cards = card_list.get_child_count()
 	current_state = States.players_turn
-	
 	if num_of_cards < MAX_CARDS:
 		for i in range(MAX_CARDS - num_of_cards):
 			var card_choice = randi_range(0, cards_can_spawn.size() - 1)
@@ -69,12 +70,13 @@ func _update_card_ids() -> void:
 func _enemies_turn():
 	
 	current_state = States.enemies_turn
+	
 	num_of_cards = card_list.get_child_count()
 func _process(delta: float) -> void:
 	_check_victory()
 func _check_victory():
 	if enemy_list.get_child_count()  == 0:
 		Globals.level += 1
-		PlayerStats.player_gold +=5
+		PlayerStats.player_gold += 15
 		get_tree().change_scene_to_file("res://ShopStuff/shop_scene.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.

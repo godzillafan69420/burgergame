@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bo24b5rd2sa4p"]
+[gd_scene format=3 uid="uid://7pjuh62y5edj"]
 
 [ext_resource type="Script" uid="uid://bme11j2i2ndyn" path="res://scripts/end_turn_button.gd" id="1_q2dsb"]
 [ext_resource type="Script" uid="uid://c4jtsd8b6ntsy" path="res://energy_display.gd" id="2_p3r0x"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://c6s6s8ipmmmdt" path="res://Art/john_test.png" id="8_wa6ex"]
 [ext_resource type="Texture2D" uid="uid://bjhndtvnls2fo" path="res://Art/tetopeartestsize.png" id="9_sx8yt"]
 [ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="10_k5r18"]
+[ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="11_56dhn"]
+[ext_resource type="Texture2D" uid="uid://ckmir275cyots" path="res://Art/gordoRAM.png" id="12_q2dsb"]
+[ext_resource type="Texture2D" uid="uid://3j2l4ohtdmgt" path="res://Art/johnsmith.png" id="13_p3r0x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x76d4"]
 animations = [{
@@ -36,6 +39,21 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="Resource" id="Resource_5xqnf"]
+script = ExtResource("11_56dhn")
+character_name = "Gordo RamE"
+portrait = ExtResource("12_q2dsb")
+paragraphs = "Tutorial basically finished
+but why is there two Johns"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_una4e"]
+script = ExtResource("11_56dhn")
+character_name = "John 1"
+portrait = ExtResource("13_p3r0x")
+paragraphs = "2 is better than one ig and john 2 is actually buns. Fraud fr."
+metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="level_3" type="Node2D" unique_id=1916832371]
 
@@ -123,5 +141,6 @@ sprite_frames = SubResource("SpriteFrames_irjls")
 [node name="Dialogue" type="Node" parent="." unique_id=276630500]
 script = ExtResource("10_k5r18")
 at_when = 1
+dialogues = Array[ExtResource("11_56dhn")]([SubResource("Resource_5xqnf"), SubResource("Resource_una4e")])
 
 [connection signal="button_down" from="UI/end_turn_button" to="UI/end_turn_button" method="_on_button_down"]
