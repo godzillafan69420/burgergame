@@ -137,10 +137,11 @@ position = Vector2(192, 400)
 [node name="enemies" type="Node2D" parent="." unique_id=1413379743]
 position = Vector2(835, 394)
 
-[node name="John Smith" parent="enemies" unique_id=708042470 instance=ExtResource("7_jvkml")]
+[node name="John Smith" parent="enemies" unique_id=1564538628 instance=ExtResource("7_jvkml")]
+position = Vector2(-6, -1)
 attacks_name = Array[String](["punch", "kick"])
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/John Smith" unique_id=1450351235]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/John Smith" unique_id=1328646470]
 position = Vector2(14, -24)
 scale = Vector2(1.46875, 1.46875)
 sprite_frames = SubResource("SpriteFrames_x76d4")

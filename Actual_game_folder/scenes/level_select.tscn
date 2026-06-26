@@ -35,20 +35,20 @@ text = "Tutorial"
 custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
 mouse_filter = 1
-text = "Shop (removed later)rn here for debug"
+text = "Level 1"
 
 [node name="Level_2" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=730252866]
 custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
 mouse_filter = 1
-text = "WIP
+text = "Level 2
 "
 
 [node name="Level_3" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=457798675]
 custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
 mouse_filter = 1
-text = "WIP
+text = "Level 3
 "
 
 [node name="Level_4" type="Button" parent="TopScrollContainer/HBoxContainer" unique_id=1004589234]

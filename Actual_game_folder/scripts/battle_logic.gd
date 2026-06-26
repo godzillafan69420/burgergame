@@ -74,6 +74,7 @@ func _process(delta: float) -> void:
 	_check_victory()
 func _check_victory():
 	if enemy_list.get_child_count()  == 0:
+		Globals.level += 1
 		PlayerStats.player_gold +=5
 		get_tree().change_scene_to_file("res://ShopStuff/shop_scene.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.

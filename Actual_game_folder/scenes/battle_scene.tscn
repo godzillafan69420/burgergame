@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="7_x5h4l"]
 [ext_resource type="Texture2D" uid="uid://c6s6s8ipmmmdt" path="res://Art/john_test.png" id="8_vtmj2"]
 [ext_resource type="Texture2D" uid="uid://ckmir275cyots" path="res://Art/gordoRAM.png" id="11_x76d4"]
-[ext_resource type="Texture2D" uid="uid://bn8dp0w4ah3ii" path="res://Art/johnsmith.png" id="12_715r7"]
+[ext_resource type="Texture2D" uid="uid://3j2l4ohtdmgt" path="res://Art/johnsmith.png" id="12_715r7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x76d4"]
 animations = [{
