@@ -43,3 +43,9 @@ var nuclear_pizza = {
 	"damage": 25,
 	"status_effects": ["radiation"]
 }
+
+var van = {
+	"name": "van",
+	"damage": 10,
+	"status_effects": ["weaken", "poison"]
+}
