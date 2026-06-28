@@ -7,17 +7,16 @@
 [ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="4_n5ufe"]
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="5_u7jqu"]
 [ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/enemy.tscn" id="6_1wpc6"]
-[ext_resource type="Texture2D" uid="uid://c6s6s8ipmmmdt" path="res://Art/john_test.png" id="7_nsbur"]
 [ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="9_ydhme"]
 [ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="10_bkkef"]
 [ext_resource type="Texture2D" uid="uid://ckmir275cyots" path="res://Art/gordoRAM.png" id="11_sj4lc"]
 [ext_resource type="Texture2D" uid="uid://duwo8q7rb6eet" path="res://Art/socrates.png" id="12_jw067"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_x76d4"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_bagtd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_nsbur")
+"texture": ExtResource("12_jw067")
 }],
 "loop": true,
 "name": &"default",
@@ -135,7 +134,7 @@ setted_HP = 125.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Socrates" unique_id=1450351235]
 position = Vector2(14, -24)
 scale = Vector2(1.46875, 1.46875)
-sprite_frames = SubResource("SpriteFrames_x76d4")
+sprite_frames = SubResource("SpriteFrames_bagtd")
 
 [node name="background" type="Sprite2D" parent="." unique_id=1824490579]
 

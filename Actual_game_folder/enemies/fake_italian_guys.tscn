@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="9_a7ibq"]
 [ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="10_kffbf"]
 [ext_resource type="Texture2D" uid="uid://r740ioxx1y14" path="res://Art/furryKing.png" id="11_nsomt"]
+[ext_resource type="Texture2D" uid="uid://bganmevx6wj4l" path="res://Art/tickle_timpson.png" id="12_5lhdr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x76d4"]
 animations = [{
@@ -28,6 +29,13 @@ script = ExtResource("10_kffbf")
 character_name = "Fake Italian man"
 portrait = ExtResource("11_nsomt")
 paragraphs = "larp-larp-mia what are we doing here"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_r87yl"]
+script = ExtResource("10_kffbf")
+character_name = "Timpson"
+portrait = ExtResource("12_5lhdr")
+paragraphs = "soasobafoboae"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="fakeItalianGuys" type="Node2D" unique_id=1916832371]
@@ -117,6 +125,6 @@ sprite_frames = SubResource("SpriteFrames_x76d4")
 [node name="Dialogue" type="Node" parent="." unique_id=276630500]
 script = ExtResource("9_a7ibq")
 at_when = 1
-dialogues = Array[ExtResource("10_kffbf")]([SubResource("Resource_60jy0")])
+dialogues = Array[ExtResource("10_kffbf")]([SubResource("Resource_60jy0"), SubResource("Resource_r87yl")])
 
 [connection signal="button_down" from="UI/end_turn_button" to="UI/end_turn_button" method="_on_button_down"]
