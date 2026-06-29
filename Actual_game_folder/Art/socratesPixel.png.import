@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba8g3fhxwmocx"
-path="res://.godot/imported/socrates.png-feaf5cfc03e92680386259459fc8adb1.ctex"
+uid="uid://duwo8q7rb6eet"
+path="res://.godot/imported/socratesPixel.png-610830e55e7dc86255af4ee0d418bc21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/socrates.png"
-dest_files=["res://.godot/imported/socrates.png-feaf5cfc03e92680386259459fc8adb1.ctex"]
+source_file="res://Art/socratesPixel.png"
+dest_files=["res://.godot/imported/socratesPixel.png-610830e55e7dc86255af4ee0d418bc21.ctex"]
 
 [params]
 

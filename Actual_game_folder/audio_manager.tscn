@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ppr0et1a5pn1"]
 
 [ext_resource type="Script" uid="uid://cd2hfdl70twre" path="res://audio_manager.gd" id="1_jisk1"]
-[ext_resource type="AudioStream" uid="uid://cn1x23oeojqdo" path="res://music/boss1(socrates maybe).mp3" id="2_op7ad"]
+[ext_resource type="AudioStream" uid="uid://cn1x23oeojqdo" path="res://music/myRageBaitIsAbsolute.mp3" id="2_op7ad"]
 [ext_resource type="PackedScene" uid="uid://ceci4fhh0g2hb" path="res://audio_oneshot.tscn" id="2_wby2p"]
 [ext_resource type="AudioStream" uid="uid://chh4u4klcqyok" path="res://music/boss2(mango maybe).mp3" id="3_wby2p"]
 [ext_resource type="AudioStream" uid="uid://c0vpomtpohdty" path="res://music/finalBossPleaseGiveInput.mp3" id="4_14skr"]
