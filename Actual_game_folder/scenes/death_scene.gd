@@ -1,7 +1,8 @@
 extends Node2D
 
 
-
+func _ready() -> void:
+	AudioManager.play("death")
 
 
 func _on_texture_button_button_down() -> void:

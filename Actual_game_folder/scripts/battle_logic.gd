@@ -5,6 +5,8 @@ var current_turn: int = 0
 var enemy_id_turn: int = 0
 @export var music_name: String
 @export var total_enemies:int = 1
+
+@export var victory_gold: int = 10
 const MAX_CARDS = 5
 
 var num_of_enemies: int = 0
@@ -77,6 +79,6 @@ func _process(delta: float) -> void:
 func _check_victory():
 	if enemy_list.get_child_count()  == 0:
 		Globals.level += 1
-		PlayerStats.player_gold += 15
+		PlayerStats.player_gold += victory_gold
 		get_tree().change_scene_to_file("res://ShopStuff/shop_scene.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.

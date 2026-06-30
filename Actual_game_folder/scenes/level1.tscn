@@ -130,6 +130,7 @@ metadata/_edit_use_anchors_ = true
 script = ExtResource("5_14jow")
 music_name = "Battle"
 total_enemies = 3
+victory_gold = 5
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("6_mvsps")]
 position = Vector2(192, 400)

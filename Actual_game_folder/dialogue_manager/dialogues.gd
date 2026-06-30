@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("click"):
 		count += 1
+		
 		if count > current_dialogue.size()-1:
 			visible = false
 			count = 0
@@ -27,11 +28,14 @@ func _process(delta: float) -> void:
 			doing_dialogue = false
 		else:
 			_say_stuff()
+			
 		
 	
 func _say_stuff():
 	if count > current_dialogue.size()-1:
 		return
+	if current_dialogue[count].music != "":
+		AudioManager.play(current_dialogue[count].music)
 	visible = true
 	$Name.text = current_dialogue[count].character_name
 	$Panel/paragraph.text = current_dialogue[count].paragraphs

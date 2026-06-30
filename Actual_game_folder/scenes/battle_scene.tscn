@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://c78n0yfbk1p4q"]
+[gd_scene format=3 uid="uid://i1u706lsi73"]
 
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="1_fw8re"]
 [ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="1_r5l0u"]
+[ext_resource type="Texture2D" uid="uid://2t4sabmvtoxi" path="res://Art/kitchen.png" id="1_ti0og"]
 [ext_resource type="Script" uid="uid://bme11j2i2ndyn" path="res://scripts/end_turn_button.gd" id="2_gf131"]
 [ext_resource type="PackedScene" uid="uid://balspnmwbb0nl" path="res://dialogue_manager/dialogues.tscn" id="3_irjls"]
 [ext_resource type="Script" uid="uid://c4jtsd8b6ntsy" path="res://energy_display.gd" id="3_sl17i"]
@@ -65,9 +66,15 @@ script = ExtResource("7_x5h4l")
 character_name = "Gordo RamE"
 portrait = ExtResource("11_x76d4")
 paragraphs = "Slime out this bum"
+music = "Battle"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="tutorial" type="Node2D" unique_id=1916832371]
+
+[node name="background2" type="Sprite2D" parent="." unique_id=1796574471]
+position = Vector2(523, 591.99994)
+scale = Vector2(3.2993057, 3.2993054)
+texture = ExtResource("1_ti0og")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=89355144]
 
@@ -109,7 +116,6 @@ script = ExtResource("4_715r7")
 
 [node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
 script = ExtResource("1_r5l0u")
-music_name = "Battle"
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("1_fw8re")]
 position = Vector2(192, 400)
