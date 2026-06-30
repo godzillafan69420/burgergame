@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="9_ydhme"]
 [ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="10_bkkef"]
 [ext_resource type="Texture2D" uid="uid://ckmir275cyots" path="res://Art/gordoRAM.png" id="11_sj4lc"]
-[ext_resource type="Texture2D" uid="uid://duwo8q7rb6eet" path="res://Art/socrates.png" id="12_jw067"]
+[ext_resource type="Texture2D" uid="uid://duwo8q7rb6eet" path="res://Art/socratesPixel.png" id="12_jw067"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bagtd"]
 animations = [{

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba8g3fhxwmocx"
-path="res://.godot/imported/socrates.png-feaf5cfc03e92680386259459fc8adb1.ctex"
+uid="uid://dvwvvk6g07p7c"
+path="res://.godot/imported/coneL.png-627b6980fa7f0c6fe6e2da71ae60274a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/socrates.png"
-dest_files=["res://.godot/imported/socrates.png-feaf5cfc03e92680386259459fc8adb1.ctex"]
+source_file="res://Art/coneL.png"
+dest_files=["res://.godot/imported/coneL.png-627b6980fa7f0c6fe6e2da71ae60274a.ctex"]
 
 [params]
 
