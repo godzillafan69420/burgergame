@@ -25,9 +25,9 @@ var upgrade_pool = [
 # --- REGULAR ITEM POOL ---
 # Added "icon" keys here to load specific sprites for the shop shelf
 var regular_item_pool = [
-	{"display_name": "tin foil","id": "iron_shield", "price": 4, "type": "defense", "icon": preload("res://Art/CardTemplateTuff.png")},
+	{"display_name": "tin foil","id": "iron_shield", "price": 4, "type": "defense", "icon": preload("res://Art/Tinfoil(card).png")},
 	{"display_name": "Frying Pan","id": "steel_sword", "price": 6, "type": "attack", "icon": preload("res://Art/CardTemplateTuff.png")},
-	{"display_name": "Science","id": "health_potion", "price": 3, "type": "utility", "icon": preload("res://Art/CardTemplateTuff.png")},
+	{"display_name": "Heal","id": "health_potion", "price": 3, "type": "utility", "icon": preload("res://Art/Heal(card).png")},
 	{"display_name": "corn canon","id": "corn_canon", "price": 8, "type": "buff", "icon": preload("res://Art/CardTemplateTuff.png")},
 	{"display_name": "Aura Farm","id": "we_see_the_fit", "price": 5, "type": "passive", "icon": preload("res://Art/WeSeeTheFit.png")}
 ]
