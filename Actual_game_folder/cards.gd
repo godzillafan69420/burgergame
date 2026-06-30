@@ -106,8 +106,6 @@ func _ready() -> void:
 	can_attack = true
 	Events.connect("total_energy", _stop_fighting)
 	Events.connect("players_turn", _can_attack)
-	$name.text = card_name
-	$discription.text = discription
 
 func _stop_fighting(total_energy):
 	if total_energy < energy:
