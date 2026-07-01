@@ -4,6 +4,7 @@
 
 [node name="block_chance" type="Node" unique_id=800013498]
 script = ExtResource("1_vjtcb")
+effect_name = "block"
 type = "buff"
 target_stats = "def_stats"
 duration = 2

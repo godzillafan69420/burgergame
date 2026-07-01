@@ -4,6 +4,7 @@
 
 [node name="lucky_debuff" type="Node" unique_id=800013498]
 script = ExtResource("1_kn8cd")
+effect_name = "lucky"
 damage = 30.0
 target_stats = "def_stats"
 duration = 1

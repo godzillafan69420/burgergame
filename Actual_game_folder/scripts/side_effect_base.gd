@@ -6,6 +6,8 @@ class_name effects_base
 var types_of_effect = ["lethal", "buff", "lucky"]
 
 
+@export var effect_name = ""
+
 @export var type = "lethal"
 @export var damage: float
 @export var target_stats: String = ""

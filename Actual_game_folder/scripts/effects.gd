@@ -3,6 +3,7 @@ extends effects_base
 var player_ingame_stats: Node2D
 
 func _ready() -> void:
+	get_parent().effect.append(effect_name)
 	player_ingame_stats = get_parent().get_parent().find_child("player_stats")
 	if type == types_of_effect[1]:
 		duration += 1
@@ -24,4 +25,6 @@ func _take_effect():
 			player_ingame_stats.set(target_stats, 1)
 		if target_stats =="def_stats":
 			player_ingame_stats.set(target_stats, 0)
+		get_parent().effect.erase(effect_name)
+		print(get_parent().effect)
 		queue_free()

@@ -4,6 +4,7 @@
 
 [node name="super_block" type="Node" unique_id=800013498]
 script = ExtResource("1_7hurr")
+effect_name = "ex_block"
 type = "buff"
 target_stats = "def_stats"
 duration = 2
