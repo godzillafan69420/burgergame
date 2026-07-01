@@ -5,7 +5,7 @@ extends Control
 
 @onready var money_text = $MarginContainer/MoneyCounter/MoneyText
 @onready var top_fridge = $TopFridge        # Packs here
-@onready var bottom_fridge = $BottomFridge  # attacks here
+@onready var bottom_fridge = $BottomFridge  # Attacks here
 @onready var PLS_WORK = $PackOpeningScene
 @onready var reroll_button = $MarginContainer/ActionMenu/Reroll
 @onready var next_stage_button = $MarginContainer/ActionMenu/NextStage
@@ -13,9 +13,8 @@ extends Control
 var reroll_cost: int = 5
 
 # --- UPGRADE POOL ---
-# Added "icon" keys here so the PackOpeningScene knows what sprite to use!
 var upgrade_pool = [
-	{"display_name": "placeholder","id": "placeholder", "type": "upgrade", "effect": "deez", "icon": preload("res://Art/CardPack.png")},
+	{"display_name": "McWettuce","id": "lettuce", "type": "upgrade", "effect": "+20 hp", "icon": preload("res://Art/bacon.png")},
 	{"display_name": "placeholder2","id": "placeholder2", "type": "upgrade", "effect": "sigma", "icon": preload("res://Art/CardPack.png")},
 	{"display_name": "placeholder3","id": "placeholder3", "type": "upgrade", "effect": "yes", "icon": preload("res://Art/CardPack.png")},
 	{"display_name": "placeholder4","id": "placeholder4", "type": "joker", "effect": "ohio ", "icon": preload("res://Art/CardPack.png")},
@@ -23,7 +22,6 @@ var upgrade_pool = [
 ]
 
 # --- REGULAR ITEM POOL ---
-# Added "icon" keys here to load specific sprites for the shop shelf
 var regular_item_pool = [
 	{"display_name": "tin foil","id": "iron_shield", "price": 4, "type": "defense", "icon": preload("res://Art/Tinfoil(card).png")},
 	{"display_name": "Frying Pan","id": "steel_sword", "price": 6, "type": "attack", "icon": preload("res://Art/CardTemplateTuff.png")},
@@ -37,6 +35,10 @@ var pack_pool = [
 ]
 
 func _ready() -> void:
+	# Safe check to make sure upgrades array exists on PlayerStats Autoload
+	if not "upgrades" in PlayerStats:
+		PlayerStats.set("upgrades", [])
+
 	update_gold_ui()
 	
 	next_stage_button.pressed.connect(_on_next_stage_pressed)
@@ -44,7 +46,8 @@ func _ready() -> void:
 	
 	if PLS_WORK:
 		PLS_WORK.visible = false
-		PLS_WORK.item_chosen.connect(_on_pack_reward_claimed)
+		if not PLS_WORK.item_chosen.is_connected(_on_pack_reward_claimed):
+			PLS_WORK.item_chosen.connect(_on_pack_reward_claimed)
 	
 	clear_shop_shelves()
 	generate_entire_shop()
@@ -69,7 +72,6 @@ func generate_entire_shop() -> void:
 	var temp_pack_pool = pack_pool.duplicate()
 	var temp_item_pool = regular_item_pool.duplicate()
 
-	# Note: Your range is currently (0). Change to (2) if you want packs to actually spawn!
 	for i in range(2):
 		if temp_pack_pool.is_empty(): break
 		var pack_data = temp_pack_pool.pick_random()
@@ -90,13 +92,13 @@ func create_card_on_shelf(item_data: Dictionary, target_fridge: Node, is_pack: b
 		
 	target_fridge.add_child(card)
 	
-	# Grab the UI elements
 	var name_label = card.get_node_or_null("NameLabel")
 	var price_label = card.get_node_or_null("PriceLabel")
 	var buy_button = card.get_node_or_null("BuyButton")
+	var icon_rect = card.get_node_or_null("Background") 
 	
-	# NEW: Look for a TextureRect on your card scene (Make sure the name matches your node!)
-	var icon_rect = card.get_node_or_null("ItemIcon") 
+	if not icon_rect:
+		icon_rect = card.get_node_or_null("ItemIcon")
 	
 	if name_label: 
 		name_label.text = item_data["display_name"]
@@ -104,16 +106,14 @@ func create_card_on_shelf(item_data: Dictionary, target_fridge: Node, is_pack: b
 		if item_data.has("price"):
 			price_label.text = str(item_data["price"]) + " Gold"
 		else:
-			price_label.text = "" # Hides price text if it's a free upgrade item
+			price_label.text = ""
 		
-	# NEW: Apply the texture if the dictionary has one
 	if icon_rect and item_data.has("icon"):
 		icon_rect.texture = item_data["icon"]
 		
 	if buy_button:
 		buy_button.pressed.connect(func(): _on_item_purchased(item_data, card))
 
-# BUY LOGIC
 func _on_item_purchased(item_data: Dictionary, card_node: Node) -> void:
 	var cost = item_data["price"]
 	
@@ -133,7 +133,6 @@ func _on_item_purchased(item_data: Dictionary, card_node: Node) -> void:
 	else:
 		print("Not enough money to buy ", item_data.get("name", "Item"))
 
-# PACK OPENING SETUP
 func open_pack_screen() -> void:
 	if not PLS_WORK:
 		print("Error: PackOpeningScene node (PLS_WORK) is missing!")
@@ -146,18 +145,17 @@ func open_pack_screen() -> void:
 	
 	PLS_WORK.open_pack(upgrade_pool)
 
-# HANDLING REWARD SELECTION (Via signal)
 func _on_pack_reward_claimed(chosen_data: Dictionary) -> void:
-	PlayerStats.attacks.append(chosen_data)
+	var current_upgrades = PlayerStats.get("upgrades")
+	current_upgrades.append(chosen_data)
 	print("Selected pack upgrade: ", chosen_data["display_name"])
-	print("Global Inventory Contents: ", PlayerStats.attacks)
+	print("Global Inventory Contents: ", current_upgrades)
 	
 	top_fridge.visible = true
 	bottom_fridge.visible = true
 	next_stage_button.disabled = false
 	update_gold_ui()
 
-# REROLL BUTTON
 func _on_reroll_pressed() -> void:
 	if PlayerStats.player_gold >= reroll_cost:
 		PlayerStats.player_gold -= reroll_cost
@@ -167,7 +165,6 @@ func _on_reroll_pressed() -> void:
 		await get_tree().process_frame 
 		generate_entire_shop()
 
-# NEXT STAGE BUTTON
 func _on_next_stage_pressed() -> void:
 	print("Transitioning to encounter with items: ", PlayerStats.attacks)
 	get_tree().change_scene_to_file("res://scenes/level_select.tscn")
