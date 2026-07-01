@@ -17,4 +17,10 @@ position = Vector2(0, 32)
 [node name="player_stats" parent="." unique_id=576855214 instance=ExtResource("3_i3pqv")]
 position = Vector2(0, 2)
 
+[node name="status_effect_viewer" type="HBoxContainer" parent="." unique_id=2036309846]
+offset_left = -61.0
+offset_top = 107.0
+offset_right = 104.0
+offset_bottom = 142.0
+
 [node name="status_effect" parent="." unique_id=1779726787 instance=ExtResource("4_hqtel")]

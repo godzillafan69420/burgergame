@@ -16,7 +16,8 @@ func changeVolume():
 
 
 func play(audio_name: String, from_position: float = 0.0) -> void:
-	
+	if audio_name == "":
+		return
 	for i in music.get_children():
 		if i.name != audio_name:
 			i.stop()

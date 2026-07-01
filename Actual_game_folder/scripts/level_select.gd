@@ -72,7 +72,7 @@ func _on_play_button_pressed():
 		
 	elif current_level_node.name == "Level_2" and Globals.level == 3 :
 		# FIXED: Main root directory path
-		get_tree().change_scene_to_file("res://scenes/socrates_boss_1.tscn")
+		get_tree().change_scene_to_file("res://scenes/level_3.tscn")
 	elif current_level_node.name == "Level_3" and Globals.level == 4:
 		# FIXED: Main root directory path
-		get_tree().change_scene_to_file("res://scenes/level_3.tscn")
+		get_tree().change_scene_to_file("res://scenes/socrates_boss_1.tscn")

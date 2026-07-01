@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://crsboxpc6ww3a"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Art/icon.svg" id="1_1lenw"]
+[ext_resource type="Texture2D" uid="uid://qju8bivensgw" path="res://Art/CardTemplateTuff.png" id="1_1lenw"]
 [ext_resource type="Script" uid="uid://b1wwgji6jiwrq" path="res://cards.gd" id="2_o33en"]
+[ext_resource type="Texture2D" uid="uid://bpgg4yf20b7g8" path="res://Art/AuraFarm.png" id="3_o33en"]
 
 [node name="aura_farm" type="TextureRect" unique_id=95620961]
 offset_left = -72.0
-offset_top = -103.0
-offset_right = 75.0
-offset_bottom = 101.0
+offset_top = -107.0
+offset_right = 178.0
+offset_bottom = 243.0
+scale = Vector2(0.5706078, 0.5706078)
 texture = ExtResource("1_1lenw")
 script = ExtResource("2_o33en")
 card_name = "Aura Farm"
-discription = "weaken enemy
-but 50% chance of 
-you taking damage lmao"
+discription = ""
 damage = 0.0
 energy = 8.0
 effects_for_enemies = Array[String](["weaken"])
@@ -22,21 +22,39 @@ lucky = true
 
 [node name="name" type="Label" parent="." unique_id=1243870691]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 142.0
-offset_bottom = 25.0
-theme_override_font_sizes/font_size = 10
+offset_left = 63.0
+offset_top = 28.0
+offset_right = 263.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 21
+text = "AURA FARM"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1982351662]
-position = Vector2(71, 52)
+[node name="Sprite2D" type="TextureRect" parent="." unique_id=1145997083]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 249.0
+offset_bottom = 351.0
+texture = ExtResource("3_o33en")
 
 [node name="discription" type="Label" parent="." unique_id=1423348561]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 92.0
-offset_right = 145.0
-offset_bottom = 201.0
+offset_left = 30.0
+offset_top = 187.0
+offset_right = 230.0
+offset_bottom = 305.0
+text = "weaken enemy
+but 50% chance of 
+you taking damage lmao"
+
+[node name="Label" type="Label" parent="." unique_id=2130168746]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -10.0
+offset_right = 209.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 40
+text = "8"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://drr3088qvw5dk"]
+
+[ext_resource type="Script" uid="uid://bme11j2i2ndyn" path="res://scripts/end_turn_button.gd" id="1_nltto"]
+[ext_resource type="Script" uid="uid://c4jtsd8b6ntsy" path="res://energy_display.gd" id="2_ibotj"]
+[ext_resource type="PackedScene" uid="uid://balspnmwbb0nl" path="res://dialogue_manager/dialogues.tscn" id="3_n5ude"]
+[ext_resource type="Script" uid="uid://b8mrb0agbnl4d" path="res://scenes/enemy_stuff_display.gd" id="4_y4yjw"]
+
+[node name="UI" type="CanvasLayer" unique_id=890284133]
+
+[node name="cards" type="Control" parent="." unique_id=1847801732]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="end_turn_button" type="Button" parent="." unique_id=995316673]
+offset_left = 1090.0
+offset_top = 506.0
+offset_right = 1256.0
+offset_bottom = 701.0
+pivot_offset = Vector2(-583, 97)
+text = "end turn"
+script = ExtResource("1_nltto")
+metadata/_edit_use_anchors_ = true
+
+[node name="energy_display" type="Label" parent="." unique_id=1572040183]
+anchors_preset = -1
+anchor_left = 0.07578125
+offset_left = 24.0
+offset_top = 22.0
+offset_right = 307.0
+offset_bottom = 99.0
+script = ExtResource("2_ibotj")
+metadata/_edit_use_anchors_ = true
+
+[node name="dialogues" parent="." unique_id=702915050 instance=ExtResource("3_n5ude")]
+visible = false
+
+[node name="what did they even do" type="Label" parent="." unique_id=1227900970]
+offset_left = 826.0
+offset_top = 31.0
+offset_right = 1262.0
+offset_bottom = 208.0
+theme_override_font_sizes/font_size = 30
+script = ExtResource("4_y4yjw")
+
+[connection signal="button_down" from="end_turn_button" to="end_turn_button" method="_on_button_down"]

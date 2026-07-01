@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="9_ydhme"]
 [ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="10_bkkef"]
 [ext_resource type="Texture2D" uid="uid://ckmir275cyots" path="res://Art/gordoRAM.png" id="11_sj4lc"]
+[ext_resource type="Texture2D" uid="uid://ba8g3fhxwmocx" path="res://Art/socrates.png" id="12_6j6yj"]
 [ext_resource type="Texture2D" uid="uid://duwo8q7rb6eet" path="res://Art/socratesPixel.png" id="12_jw067"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bagtd"]
@@ -64,7 +65,7 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 [sub_resource type="Resource" id="Resource_1wpc6"]
 script = ExtResource("10_bkkef")
 character_name = "Socrates"
-portrait = ExtResource("12_jw067")
+portrait = ExtResource("12_6j6yj")
 paragraphs = "If spam is your power what are you without it"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
@@ -120,6 +121,7 @@ metadata/_edit_use_anchors_ = true
 script = ExtResource("4_n5ufe")
 music_name = "Boss1"
 total_enemies = 3
+victory_gold = 20
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("5_u7jqu")]
 position = Vector2(192, 400)
@@ -129,7 +131,7 @@ position = Vector2(835, 394)
 
 [node name="Socrates" parent="enemies" unique_id=708042470 instance=ExtResource("6_1wpc6")]
 attacks_name = Array[String](["kick", "ragebait", "poison"])
-setted_HP = 125.0
+setted_HP = 150.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Socrates" unique_id=1450351235]
 position = Vector2(14, -24)

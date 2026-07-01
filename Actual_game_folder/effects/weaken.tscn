@@ -4,6 +4,7 @@
 
 [node name="weaken" type="Node" unique_id=1780033163]
 script = ExtResource("1_754nw")
+effect_name = "weaken"
 type = "buff"
 target_stats = "def_stats"
 Effect_strength = -5.0
