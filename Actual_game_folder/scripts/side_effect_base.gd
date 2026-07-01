@@ -8,6 +8,8 @@ var types_of_effect = ["lethal", "buff", "lucky"]
 
 @export var effect_name = ""
 
+@export var stackable: bool = false
+
 @export var type = "lethal"
 @export var damage: float
 @export var target_stats: String = ""

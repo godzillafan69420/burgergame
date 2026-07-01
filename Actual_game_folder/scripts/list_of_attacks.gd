@@ -40,12 +40,18 @@ var harmful_words = {
 
 var nuclear_pizza = {
 	"name": "nuclear pizza",
-	"damage": 25,
+	"damage": 5,
 	"status_effects": ["radiation"]
 }
 
 var van = {
 	"name": "van",
 	"damage": 10,
-	"status_effects": ["weaken", "poison"]
+	"status_effects": ["weaken", "tiredness"]
+}
+
+var bait = {
+	"name": "bait",
+	"damage": 40,
+	"status_effects": ["super_block",]
 }
