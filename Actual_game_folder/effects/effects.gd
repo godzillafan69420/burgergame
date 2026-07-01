@@ -3,6 +3,9 @@ extends effects_base
 var player_ingame_stats: Node2D
 
 func _ready() -> void:
+	if effect_name in get_parent().effect and !stackable:
+		queue_free()
+		return
 	get_parent().effect.append(effect_name)
 	player_ingame_stats = get_parent().get_parent().find_child("player_stats")
 	if type == types_of_effect[1]:

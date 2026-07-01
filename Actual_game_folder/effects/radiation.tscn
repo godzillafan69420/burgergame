@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://ci0fc6omis658"]
 
-[ext_resource type="Script" uid="uid://d4c12ggebe1bf" path="res://scripts/effects.gd" id="1_7y0j4"]
+[ext_resource type="Script" uid="uid://d4c12ggebe1bf" path="res://effects/effects.gd" id="1_7y0j4"]
 
 [node name="radiation" type="Node" unique_id=812438020]
 script = ExtResource("1_7y0j4")
 effect_name = "radiation"
+stackable = true
 damage = 5.0
 duration = 3
