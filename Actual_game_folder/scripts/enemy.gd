@@ -44,12 +44,16 @@ func _attacked_player(attack_id):
 	Events.emit_signal("damaged_player", damage)
 	sentence = name+ " use " + attacks[randomAttack].get("name")
 	#yes kallum i used ai for this if statement lmao
-	if attacks[randomAttack].has("status_effects"):
-		var all_effects = attacks[randomAttack]["status_effects"]
-		for effect in all_effects: 
-			Events.emit_signal("give_side_effects", effect)
-			sentence +="
-			 and give "+ effect
+
+	var all_effects = attacks[randomAttack]["status_effects"]
+	for effect in all_effects: 
+		Events.emit_signal("give_side_effects", effect)
+		sentence +="
+		and give "+ effect
+
+	var all_buffs = attacks[randomAttack]["buff"]
+	for effect in all_buffs: 
+		Events.emit_signal("give_side_effects_to_enemies", effect)
 	
 	if get_tree() == null:
 		return

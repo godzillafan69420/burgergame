@@ -69,8 +69,8 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 [node name="tutorial" type="Node2D" unique_id=1916832371]
 
 [node name="background2" type="Sprite2D" parent="." unique_id=1796574471]
-position = Vector2(638, 364)
-scale = Vector2(2.0218751, 2.0218751)
+position = Vector2(523, 591.99994)
+scale = Vector2(3.2993057, 3.2993054)
 texture = ExtResource("1_ti0og")
 
 [node name="UI" parent="." unique_id=890284133 instance=ExtResource("2_0gp0h")]
@@ -79,14 +79,13 @@ texture = ExtResource("1_ti0og")
 script = ExtResource("1_r5l0u")
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("1_fw8re")]
-position = Vector2(252, 232)
+position = Vector2(192, 400)
 
 [node name="enemies" type="Node2D" parent="." unique_id=1413379743]
 position = Vector2(835, 394)
 
 [node name="John Smith" parent="enemies" unique_id=708042470 instance=ExtResource("6_irjls")]
-position = Vector2(56, -172)
-attacks_name = Array[String](["punch", "kick"])
+attacks_name = Array[String](["nuclear_pizza"])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/John Smith" unique_id=1450351235]
 position = Vector2(14, -24)

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://7pjuh62y5edj"]
+[gd_scene format=3 uid="uid://bo24b5rd2sa4p"]
 
 [ext_resource type="Script" uid="uid://bme11j2i2ndyn" path="res://scripts/end_turn_button.gd" id="1_q2dsb"]
 [ext_resource type="Script" uid="uid://c4jtsd8b6ntsy" path="res://energy_display.gd" id="2_p3r0x"]

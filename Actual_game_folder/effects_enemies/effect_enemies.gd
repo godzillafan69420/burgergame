@@ -29,7 +29,7 @@ func _take_effect():
 		enemy_status_node.set(target_stats, Effect_strength)
 			
 	duration -= 1
-	if duration <= 0:
+	if duration < 0:
 
 		enemy_status_node.set(target_stats, before_status)
 		queue_free()
