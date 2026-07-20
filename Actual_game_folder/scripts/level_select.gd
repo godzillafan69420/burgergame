@@ -63,7 +63,7 @@ func _on_play_button_pressed():
 	
 	# Match up your node names to their destination files
 	if current_level_node.name == "Card_Cambodia" or current_level_node.name == "Tutorial":
-		dest_scene = "res://battle_scene.tscn"
+		dest_scene = "res://scenes/battle_scene.tscn"
 	elif current_level_node.name == "Card_Philippines" or current_level_node.name == "Level 1":
 		dest_scene = "res://scenes/shop_scene.tscn"
 	elif current_level_node.name == "Card_Japan" or current_level_node.name == "Level 2":

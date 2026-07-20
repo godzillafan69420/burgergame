@@ -6,6 +6,11 @@ func _ready() -> void:
 	if effect_name in get_parent().effect and !stackable:
 		queue_free()
 		return
+		
+	var status_effect_icon = TextureRect.new()
+	status_effect_icon.name = effect_name
+	status_effect_icon.texture = StatusIcon.get(effect_name)
+	get_parent().get_parent().get_node("status_effect_viewer").add_child(status_effect_icon)
 	get_parent().effect.append(effect_name)
 	player_ingame_stats = get_parent().get_parent().find_child("player_stats")
 	if type == types_of_effect[1]:
@@ -16,6 +21,7 @@ func _ready() -> void:
 
 
 func _take_effect():
+	print(get_parent().effect)
 	if type == types_of_effect[0] and duration  >= 0:
 		Events.emit_signal("damaged_player", damage)
 	
@@ -29,5 +35,9 @@ func _take_effect():
 		if target_stats =="def_stats":
 			player_ingame_stats.set(target_stats, 0)
 		get_parent().effect.erase(effect_name)
-		print(get_parent().effect)
+		for i in get_parent().get_parent().get_node("status_effect_viewer").get_children():
+			if i.name == effect_name:
+				i.queue_free()
+				break
+		
 		queue_free()
