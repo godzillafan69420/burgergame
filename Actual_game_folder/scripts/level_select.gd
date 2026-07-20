@@ -58,19 +58,18 @@ func _on_right_button_pressed():
 	_snap_to_level(current_level_index + 1)
 
 func _on_play_button_pressed():
-	print(Globals.level)
 	var current_level_node = level_cards[current_level_index]
-	print("Play button clicked! Entering Stage: ", current_level_node.name)
+	var dest_scene: String = ""
 	
-	if current_level_node.name == "Tutorial" and Globals.level == 1:
-	#VERY IMPORTANT IF YOU WANT TO ADD MORE LEVELS JS COPY AND PASTE YOU CAN CHANGE THE BUTTON NAMES IYW
-		get_tree().change_scene_to_file("res://scenes/battle_scene.tscn")
+	# Match up your node names to their destination files
+	if current_level_node.name == "Card_Cambodia" or current_level_node.name == "Tutorial":
+		dest_scene = "res://battle_scene.tscn"
+	elif current_level_node.name == "Card_Philippines" or current_level_node.name == "Level 1":
+		dest_scene = "res://scenes/shop_scene.tscn"
+	elif current_level_node.name == "Card_Japan" or current_level_node.name == "Level 2":
+		dest_scene = "res://battle_scene.tscn"
 		
-	elif current_level_node.name == "Level_1" and Globals.level == 2:
-		
-		get_tree().change_scene_to_file("res://scenes/level1.tscn") 
-		
-	elif current_level_node.name == "Level_2" and Globals.level == 3 :
-		# FIXED: Main root directory path
-		get_tree().change_scene_to_file("res://scenes/socrates_boss_1.tscn")
+	if dest_scene != "":
+		# Simply call the global manager! It takes care of everything else.
+		TransitionManager.play_transition(dest_scene)
 		

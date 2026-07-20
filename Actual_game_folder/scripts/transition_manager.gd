@@ -13,7 +13,7 @@ func play_transition(target_scene_path: String):
 	cut_in_ui.modulate.a = 1.0
 	
 	# 3. Play the visual cut-in animation
-	animation_player.play("persona_slash")
+	animation_player.play("Transition")
 	
 	# 4. Wait for the exact moment the character slashes and covers the screen.
 	# If your animation is 1.0s long, waiting 0.4s ensures the scene change 
