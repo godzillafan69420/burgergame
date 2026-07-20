@@ -39,7 +39,7 @@ func _attacked_player(attack_id):
 	tween.tween_property(self, "global_position", $"../../player".position, 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	await get_tree().create_timer(0.2).timeout
 	randomAttack = randi_range(0,attacks.size() -1)
-	Events.emit_signal("players_turn")
+	
 	var damage =(attacks[randomAttack].get("damage")) * damage_multiplier
 	Events.emit_signal("damaged_player", damage)
 	sentence = name+ " use " + attacks[randomAttack].get("name")
@@ -50,19 +50,19 @@ func _attacked_player(attack_id):
 		Events.emit_signal("give_side_effects", effect)
 		sentence +="
 		and give "+ effect
-
-	var all_buffs = attacks[randomAttack]["buff"]
-	for effect in all_buffs: 
-		Events.emit_signal("give_side_effects_to_enemies", effect)
-	
+	if attacks[randomAttack]["buff"] != null:
+		var all_buffs = attacks[randomAttack]["buff"]
+		for effect in all_buffs: 
+			Events.emit_signal("give_side_effects_to_enemies", effect)
 	if get_tree() == null:
 		return
 	Events.emit_signal("update_display", sentence)
 	var back_original = get_tree().create_tween()
 	back_original.tween_property(self, "global_position", original_position, 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	await get_tree().create_timer(0.2).timeout
-	for i in $status.get_children():
-		i._take_effect()
+	Events.emit_signal("players_turn")
+
+
 
 	
 

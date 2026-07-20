@@ -19,7 +19,7 @@ func _ready() -> void:
 	$Label.text = str(int($HP.value)) + "/" +str(int($HP.max_value))
 	Events.connect("damaged_enemy", _take_damage)
 	Events.connect("id_chosen",_damage_yourself)
-	Events.connect("players_turn", _effect)
+	Events.connect("players_turn", _take_effect)
 	
 func _damage_yourself(id: int ,damage: int) -> void:
 	player_damge_multiplier = get_parent().get_parent().get_parent().get_node("player").get_node("player_stats").damage_multiplier
@@ -40,9 +40,10 @@ func _take_damage(damage: int) -> void:
 		get_parent().queue_free()
 		Events.emit_signal("check_victory_conditions")
 		
+func _take_effect():
 	
-func _effect():
-	for i in get_parent().get_node("status").get_children():
+	for i in $"../status".get_children():
+		print("sigma")
 		i._take_effect()
 
 

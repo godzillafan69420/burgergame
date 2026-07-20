@@ -5,4 +5,4 @@
 [node name="radiation" type="Node" unique_id=289820757]
 script = ExtResource("1_7ndtd")
 damage = 5.0
-duration = 2
+duration = 1

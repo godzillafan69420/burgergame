@@ -51,7 +51,6 @@ func _spawn_attack_choice():
 
 func _players_turn():
 	current_turn += 1
-	print(current_turn)
 	num_of_cards = card_list.get_child_count()
 	current_state = States.players_turn
 	if num_of_cards < MAX_CARDS:

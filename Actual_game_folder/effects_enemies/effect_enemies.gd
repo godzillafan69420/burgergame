@@ -15,21 +15,18 @@ var before_status: float
 func _ready() -> void:
 	enemy_status_node = get_parent().get_parent().get_node("enemy_stats")
 	if type == types_of_effect[1]:
-		duration +=1
 		before_status= enemy_status_node.get(target_stats)
-	_take_effect()
 	
 
 
 func _take_effect():
-	if type == types_of_effect[0] and duration  >= 0:
-		Events.emit_signal("damaged_enemy", damage)
-	
+	if type == types_of_effect[0] and duration  > 0:
+		enemy_status_node.get_node("HP").value -= damage 
+		enemy_status_node.get_node("Label").text = str(int(enemy_status_node.get_node("HP").value)) + "/" +str(int(enemy_status_node.get_node("HP").max_value))
 	if type == types_of_effect[1] and duration > 0:
 		enemy_status_node.set(target_stats, Effect_strength)
-			
 	duration -= 1
-	if duration < 0:
+	if duration <= 0:
 
 		enemy_status_node.set(target_stats, before_status)
 		queue_free()
