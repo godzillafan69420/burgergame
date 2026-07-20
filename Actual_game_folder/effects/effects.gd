@@ -21,7 +21,6 @@ func _ready() -> void:
 
 
 func _take_effect():
-	print(get_parent().effect)
 	if type == types_of_effect[0] and duration  >= 0:
 		Events.emit_signal("damaged_player", damage)
 	
