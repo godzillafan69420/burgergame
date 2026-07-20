@@ -20,7 +20,8 @@ position = Vector2(0, 2)
 [node name="status_effect_viewer" type="HBoxContainer" parent="." unique_id=2036309846]
 offset_left = -66.0
 offset_top = 99.0
-offset_right = 99.0
-offset_bottom = 134.0
+offset_right = -18.0
+offset_bottom = 122.0
+size_flags_vertical = 3
 
 [node name="status_effect" parent="." unique_id=1779726787 instance=ExtResource("4_hqtel")]

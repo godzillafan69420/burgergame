@@ -5,4 +5,5 @@
 [node name="poison" type="Node" unique_id=742750699]
 script = ExtResource("1_710si")
 effect_name = "poison"
+stackable = true
 damage = 2.0
