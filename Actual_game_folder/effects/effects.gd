@@ -12,6 +12,7 @@ func _ready() -> void:
 	status_effect_icon.texture = StatusIcon.get(effect_name)
 	get_parent().get_parent().get_node("status_effect_viewer").add_child(status_effect_icon)
 	get_parent().effect.append(effect_name)
+	print(get_parent().effect)
 	player_ingame_stats = get_parent().get_parent().find_child("player_stats")
 	if type == types_of_effect[1]:
 		before_stats = player_ingame_stats.get(target_stats)
@@ -36,5 +37,5 @@ func _take_effect():
 			if i.name == effect_name:
 				i.queue_free()
 				break
-		
+
 		queue_free()

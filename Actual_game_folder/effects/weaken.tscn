@@ -7,4 +7,5 @@ script = ExtResource("1_754nw")
 effect_name = "weaken"
 type = "buff"
 target_stats = "def_stats"
+duration = 4
 Effect_strength = -5.0

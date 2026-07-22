@@ -2,7 +2,6 @@ extends Node
 
 var types_of_effect = ["lethal", "buff"]
 
-
 @export var type = "lethal"
 @export var damage: float
 @export var target_stats: String = ""
@@ -16,6 +15,7 @@ func _ready() -> void:
 	enemy_status_node = get_parent().get_parent().get_node("enemy_stats")
 	if type == types_of_effect[1]:
 		before_status= enemy_status_node.get(target_stats)
+		print(before_status)
 	_take_effect()
 	
 
@@ -28,6 +28,5 @@ func _take_effect():
 		enemy_status_node.set(target_stats, Effect_strength)
 	duration -= 1
 	if duration <= 0:
-
 		enemy_status_node.set(target_stats, before_status)
 		queue_free()

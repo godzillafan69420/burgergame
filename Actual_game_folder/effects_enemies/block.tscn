@@ -5,7 +5,6 @@
 [node name="block" type="Node" unique_id=289820757]
 script = ExtResource("1_i43b2")
 type = "buff"
-damage = 0.5
 target_stats = "def"
-duration = 2
+duration = 3
 Effect_strength = 0.5
