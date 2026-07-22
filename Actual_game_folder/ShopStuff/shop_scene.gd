@@ -21,7 +21,7 @@ var upgrade_pool = [
 	{"display_name": "Ancient Scroll","id": "Ancient Scroll", "type": "relic", "effect": "+1 Hand size", "icon": preload("res://Art/CardPack.png")}
 ]
 
-# --- REGULAR ITEM POOL --- f
+# --- REGULAR ITEM POOL --- A
 var regular_item_pool = [
 	{"display_name": "tin foil","id": "iron_shield", "price": 4, "type": "defense", "icon": preload("res://Art/Tinfoil(card).png")},
 	{"display_name": "Frying Pan","id": "steel_sword", "price": 6, "type": "attack", "icon": preload("res://Art/CardTemplateTuff.png")},
