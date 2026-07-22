@@ -14,8 +14,10 @@ var damage_multiplier: float = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
 	HP = PlayerStats.player_hitpoint
+	for i in PlayerStats.upgrades:
+		if i["id"] == "lettuce":
+			HP += 5
 	$HP.max_value = HP
 	$HP.value = HP
 	$Label.text = str(int($HP.value)) + "/" +str(int($HP.max_value))

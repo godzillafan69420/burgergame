@@ -150,7 +150,7 @@ func _on_pack_reward_claimed(chosen_data: Dictionary) -> void:
 	var current_upgrades = PlayerStats.get("upgrades")
 	current_upgrades.append(chosen_data)
 	print("Selected pack upgrade: ", chosen_data["display_name"])
-	print("Global Inventory Contents: ", current_upgrades)
+	print("Global upgrades Contents: ", current_upgrades)
 	
 	top_fridge.visible = true
 	bottom_fridge.visible = true

@@ -27,6 +27,7 @@ metadata/_edit_use_anchors_ = true
 [node name="energy_display" type="Label" parent="." unique_id=1572040183]
 anchors_preset = -1
 anchor_left = 0.07578125
+anchor_right = 0.07578125
 offset_left = 24.0
 offset_top = 22.0
 offset_right = 307.0
