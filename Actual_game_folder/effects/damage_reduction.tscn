@@ -7,4 +7,5 @@ script = ExtResource("1_f8ynn")
 effect_name = "tiredness"
 type = "buff"
 target_stats = "damage_multiplier"
+duration = 3
 Effect_strength = 0.75

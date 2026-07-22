@@ -4,5 +4,5 @@
 
 [node name="poison" type="Node" unique_id=289820757]
 script = ExtResource("1_sg3ah")
-damage = -10.0
+damage = 10.0
 duration = 3

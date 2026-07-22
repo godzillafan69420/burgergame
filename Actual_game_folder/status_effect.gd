@@ -10,7 +10,8 @@ func _ready() -> void:
 	
 	
 func _take_side_effects():
-	if get_parent().get_node("BattleLogic").current_state == get_parent().get_node("BattleLogic").State.dialogue:
+	print(effect)
+	if get_parent().get_parent().get_node("BattleLogic").current_state == get_parent().get_parent().get_node("BattleLogic").States.dialogue:
 		return
 	for i in get_children():
 		i._take_effect()

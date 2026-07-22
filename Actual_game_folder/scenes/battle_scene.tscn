@@ -86,7 +86,7 @@ position = Vector2(835, 394)
 
 [node name="John Smith" parent="enemies" unique_id=708042470 instance=ExtResource("6_irjls")]
 position = Vector2(56, -172)
-attacks_name = Array[String](["punch", "kick"])
+attacks_name = Array[String](["punch", "punch", "kick"])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/John Smith" unique_id=1450351235]
 position = Vector2(14, -24)

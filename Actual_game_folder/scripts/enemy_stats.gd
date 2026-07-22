@@ -46,7 +46,7 @@ func _damage_yourself(id: int ,damage: int) -> void:
 func _take_damage(damage: int) -> void:
 	
 	player_damge_multiplier = get_parent().get_parent().get_parent().get_node("player").get_node("player_stats").damage_multiplier
-	$HP.value -= damage * damage_multiplier * player_damge_multiplier * aoe_player_damge_multiplier * def
+	$HP.value -= damage * player_damge_multiplier * def * upgraded_player_damge_multiplier * single_player_damge_multiplier
 	$Label.text = str(int($HP.value)) + "/" +str(int($HP.max_value))
 	if $HP.value <= 0:
 		get_parent().queue_free()

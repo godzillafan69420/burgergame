@@ -7,5 +7,5 @@ script = ExtResource("1_2d1wf")
 effect_name = "heal"
 damage = -20.0
 target_stats = "HP"
-duration = 1
+duration = 0
 Effect_strength = 20.0

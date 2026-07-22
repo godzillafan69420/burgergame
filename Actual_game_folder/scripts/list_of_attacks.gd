@@ -64,3 +64,24 @@ var block = {
 	"status_effects": [],
 	"buff": ["block"]
 }
+
+var tickle = {
+	"name": "tickle",
+	"damage": 5,
+	"status_effects": ["weaken"],
+	"buff": []
+}
+
+var smelly_pasta = {
+	"name": "Smelly Pasta",
+	"damage": 20,
+	"status_effects": [],
+	"buff": []
+}
+
+var knife = {
+	"name": "knife",
+	"damage": 15,
+	"status_effects": ["bleed"],
+	"buff": []
+}

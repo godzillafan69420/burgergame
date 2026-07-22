@@ -5,6 +5,5 @@
 [node name="radiation" type="Node" unique_id=812438020]
 script = ExtResource("1_7y0j4")
 effect_name = "radiation"
-stackable = true
-damage = 5.0
+damage = 10.0
 duration = 3
