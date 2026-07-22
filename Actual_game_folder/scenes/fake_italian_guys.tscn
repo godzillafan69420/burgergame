@@ -92,10 +92,10 @@ music_name = "Untitled67"
 total_enemies = 3
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("6_gifwx")]
-position = Vector2(192, 400)
+position = Vector2(192, 301)
 
 [node name="enemies" type="Node2D" parent="." unique_id=1413379743]
-position = Vector2(835, 394)
+position = Vector2(835, 295)
 
 [node name="Furry King" parent="enemies" unique_id=708042470 instance=ExtResource("7_gb7h5")]
 position = Vector2(-240, 0)

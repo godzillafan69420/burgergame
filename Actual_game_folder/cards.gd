@@ -17,7 +17,8 @@ const POSITION_OF_CARDS:Array = [
 	Vector2(250,500),
 	Vector2(400,500),
 	Vector2(550,500),
-	Vector2(700,500)]
+	Vector2(700,500),
+	Vector2(850,500)]
 
 @export var card_name: String = "aksknfk"
 @export_multiline var discription: String  = "aksknfk"

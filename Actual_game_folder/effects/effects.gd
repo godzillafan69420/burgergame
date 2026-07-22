@@ -2,7 +2,9 @@ extends effects_base
 
 var player_ingame_stats: Node2D
 var before_stats: float
+
 func _ready() -> void:
+	player_ingame_stats = get_parent().get_parent().get_node("player_stats")
 	if effect_name in get_parent().effect and !stackable:
 		queue_free()
 		return
@@ -24,6 +26,8 @@ func _ready() -> void:
 
 func _take_effect():
 	if type == types_of_effect[0] and duration  >= 0:
+		player_ingame_stats.get_node("HP").value -= damage 
+		player_ingame_stats.get_node("Label").text = str(int(player_ingame_stats.get_node("HP").value)) + "/" +str(int(player_ingame_stats.get_node("HP").max_value))
 		Events.emit_signal("damaged_player", damage)
 	
 	if type == types_of_effect[1] and duration > 0:

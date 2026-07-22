@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://c0vpomtpohdty" path="res://music/finalBossPleaseGiveInput.mp3" id="4_14skr"]
 [ext_resource type="AudioStream" uid="uid://cshtg41bktenk" path="res://music/freeCandy.mp3" id="5_k4pvn"]
 [ext_resource type="AudioStream" uid="uid://71nu4maphdxj" path="res://music/lastminutechange.mp3" id="6_fckgx"]
+[ext_resource type="AudioStream" uid="uid://c5nbfj6vrje4e" path="res://music/level select.mp3" id="8_86pii"]
 [ext_resource type="AudioStream" uid="uid://boerryrw1f2xi" path="res://music/mainMenu.mp3" id="8_mfnxe"]
 [ext_resource type="AudioStream" uid="uid://bengbmixyh3kw" path="res://music/mango67.mp3" id="9_astvc"]
 [ext_resource type="AudioStream" uid="uid://rftgm47uoqi6" path="res://music/mainMenuBetter.mp3" id="9_fckgx"]
@@ -39,7 +40,7 @@ stream = ExtResource("5_k4pvn")
 stream = ExtResource("6_fckgx")
 
 [node name="LevelSelect" type="AudioStreamPlayer" parent="music" unique_id=1200959558]
-stream = ExtResource("6_fckgx")
+stream = ExtResource("8_86pii")
 
 [node name="MainMenu" type="AudioStreamPlayer" parent="music" unique_id=651430141]
 stream = ExtResource("9_fckgx")

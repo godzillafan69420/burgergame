@@ -87,15 +87,15 @@ total_enemies = 3
 [node name="UI" parent="." unique_id=890284133 instance=ExtResource("2_y4j1f")]
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("6_538lc")]
-position = Vector2(226, 392)
+position = Vector2(220, 366)
 
 [node name="enemies" type="Node2D" parent="." unique_id=1413379743]
-position = Vector2(835, 394)
+position = Vector2(829, 368)
 
 [node name="Ivan the van" parent="enemies" unique_id=1564538628 instance=ExtResource("7_fg2du")]
 position = Vector2(104, -16)
-attacks_name = Array[String](["van", "block", "giga_punch", "ragebait"])
-setted_HP = 160.0
+attacks_name = Array[String](["block", "van", "giga_punch", "ragebait"])
+setted_HP = 200.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Ivan the van" unique_id=1328646470]
 position = Vector2(14, -23)

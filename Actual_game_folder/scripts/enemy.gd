@@ -9,7 +9,7 @@ var original_position:Vector2
 @export var attacks_name:Array[String] = []
 @export var def_stats: int = 1
 @export var setted_HP: float = 50
-var randomAttack :int
+var current_attack_choice :int = -1
 var attacks:Array[Dictionary] = []
 
 var can_attack: bool = false
@@ -30,6 +30,12 @@ func _add_status(status:String):
 	$status.add_child(type)
 	
 func _attacked_player(attack_id):
+	
+	
+	if current_attack_choice  >= attacks.size() -1:
+		current_attack_choice = 0
+	else:
+		current_attack_choice += 1
 	var sentence = ""
 	
 	if attack_id != id:
@@ -38,20 +44,20 @@ func _attacked_player(attack_id):
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "global_position", $"../../player".position, 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	await get_tree().create_timer(0.2).timeout
-	randomAttack = randi_range(0,attacks.size() -1)
 	
-	var damage =(attacks[randomAttack].get("damage")) * damage_multiplier
+	
+	var damage =(attacks[current_attack_choice].get("damage")) * damage_multiplier
 	Events.emit_signal("damaged_player", damage)
-	sentence = name+ " use " + attacks[randomAttack].get("name")
+	sentence = name+ " use " + attacks[current_attack_choice].get("name")
 	#yes kallum i used ai for this if statement lmao
 
-	var all_effects = attacks[randomAttack]["status_effects"]
+	var all_effects = attacks[current_attack_choice]["status_effects"]
 	for effect in all_effects: 
 		Events.emit_signal("give_side_effects", effect)
 		sentence +="
 		and give "+ effect
-	if attacks[randomAttack]["buff"] != null:
-		var all_buffs = attacks[randomAttack]["buff"]
+	if attacks[current_attack_choice]["buff"] != null:
+		var all_buffs = attacks[current_attack_choice]["buff"]
 		for effect in all_buffs: 
 			Events.emit_signal("give_side_effects_to_enemies", effect)
 	if get_tree() == null:

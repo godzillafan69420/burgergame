@@ -7,13 +7,13 @@ var enemy_id_turn: int = 0
 @export var total_enemies:int = 1
 
 @export var victory_gold: int = 10
-const MAX_CARDS = 5
+const MAX_CARDS = 6
 
 var num_of_enemies: int = 0
 var current_state
 enum States{players_turn, enemies_turn, dialogue} 
 
-var cards_can_spawn = ["blocking", "punch", "punch", "punch"]
+var cards_can_spawn = ["punch", "punch", "punch", "blocking"]
 
 var num_of_cards
 

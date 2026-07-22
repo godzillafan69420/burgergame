@@ -12,6 +12,7 @@ var target_scroll_x: float = 0.0
 
 
 func _ready():
+	AudioManager.play("LevelSelect")
 	level_cards = hbox.get_children()
 	# Connect your layout buttons
 	if has_node("LeftButton"): $LeftButton.pressed.connect(_on_left_button_pressed)
@@ -67,7 +68,8 @@ func _on_play_button_pressed():
 		dest_scene = "res://scenes/level1.tscn"
 	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_2") and Globals.level ==3:
 		dest_scene = "res://scenes/socrates_boss_1.tscn"
-		
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_3") and Globals.level ==4:
+		dest_scene = "res://scenes/ivan_the_van.tscn"
 	if dest_scene != "":
 		# Simply call the global manager! It takes care of everything else.
 		TransitionManager.play_transition(dest_scene)

@@ -44,8 +44,10 @@ offset_top = 187.0
 offset_right = 230.0
 offset_bottom = 305.0
 text = "weaken enemy
-but 50% chance of 
-you taking damage lmao"
+but chance of 
+you taking damage
+depending on the luck
+stats"
 
 [node name="Label" type="Label" parent="." unique_id=2130168746]
 layout_mode = 0
