@@ -62,12 +62,12 @@ func _on_play_button_pressed():
 	var dest_scene: String = ""
 	
 	# Match up your node names to their destination files
-	if current_level_node.name == "Card_Cambodia" or current_level_node.name == "Tutorial":
+	if (current_level_node.name == "Card_Cambodia" or current_level_node.name == "Tutorial") and Globals.level ==1:
 		dest_scene = "res://scenes/battle_scene.tscn"
-	elif current_level_node.name == "Card_Philippines" or current_level_node.name == "Level 1":
-		dest_scene = "res://scenes/shop_scene.tscn"
-	elif current_level_node.name == "Card_Japan" or current_level_node.name == "Level 2":
-		dest_scene = "res://battle_scene.tscn"
+	elif (current_level_node.name == "Card_Philippines" or current_level_node.name == "Level_1") and Globals.level ==2:
+		dest_scene = "res://scenes/level1.tscn"
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_2") and Globals.level ==3:
+		dest_scene = "res://scenes/socrates_boss_1.tscn"
 		
 	if dest_scene != "":
 		# Simply call the global manager! It takes care of everything else.

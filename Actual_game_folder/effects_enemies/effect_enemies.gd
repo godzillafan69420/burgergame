@@ -1,6 +1,6 @@
 extends Node
 
-var types_of_effect = ["lethal", "buff", "lucky"]
+var types_of_effect = ["lethal", "buff"]
 
 
 @export var type = "lethal"
@@ -16,6 +16,7 @@ func _ready() -> void:
 	enemy_status_node = get_parent().get_parent().get_node("enemy_stats")
 	if type == types_of_effect[1]:
 		before_status= enemy_status_node.get(target_stats)
+	_take_effect()
 	
 
 
