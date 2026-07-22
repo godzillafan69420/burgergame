@@ -25,7 +25,12 @@ func _damage_yourself(id: int ,damage: int) -> void:
 	player_damge_multiplier = get_parent().get_parent().get_parent().get_node("player").get_node("player_stats").damage_multiplier
 	if id != get_parent().id:
 		return
-	$HP.value -= damage * damage_multiplier * player_damge_multiplier * def
+	
+	$HP.value -= damage * player_damge_multiplier * def
+	print(damage_multiplier)
+	print(player_damge_multiplier)
+	print(def)
+	
 	$Label.text = str(int($HP.value)) + "/" +str(int($HP.max_value))
 	if $HP.value <= 0:
 		get_parent().queue_free()
@@ -41,9 +46,7 @@ func _take_damage(damage: int) -> void:
 		Events.emit_signal("check_victory_conditions")
 		
 func _take_effect():
-	
 	for i in $"../status".get_children():
-		print("sigma")
 		i._take_effect()
 
 

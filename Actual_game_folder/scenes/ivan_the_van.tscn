@@ -4,20 +4,73 @@
 [ext_resource type="PackedScene" uid="uid://drr3088qvw5dk" path="res://ui.tscn" id="2_y4j1f"]
 [ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="5_ik4my"]
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="6_538lc"]
+[ext_resource type="Texture2D" uid="uid://dwkqas3phwhqr" path="res://Art/ivantest.png" id="6_rx7e8"]
 [ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/enemy.tscn" id="7_fg2du"]
-[ext_resource type="Texture2D" uid="uid://c6s6s8ipmmmdt" path="res://Art/john_test.png" id="8_n4hwb"]
+[ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="8_phlpe"]
 [ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="9_ak1w2"]
+[ext_resource type="Texture2D" uid="uid://x22o2yxpjjk5" path="res://Art/ivanthevanprotrait.png" id="9_cwcg3"]
+[ext_resource type="Texture2D" uid="uid://ckmir275cyots" path="res://Art/gordoRAM.png" id="10_cwcg3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scjsp"]
+atlas = ExtResource("6_rx7e8")
+region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x76d4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_n4hwb")
+"texture": SubResource("AtlasTexture_scjsp")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="Resource" id="Resource_ygmip"]
+script = ExtResource("8_phlpe")
+character_name = "Ivan the Van"
+portrait = ExtResource("9_cwcg3")
+paragraphs = "Is this another kid wanting candy?"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_fyp6d"]
+script = ExtResource("8_phlpe")
+character_name = "Gordo RamE"
+portrait = ExtResource("10_cwcg3")
+paragraphs = "Do I look like a kid to you."
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_ik4my"]
+script = ExtResource("8_phlpe")
+character_name = "Ivan the Van"
+portrait = ExtResource("9_cwcg3")
+paragraphs = "Calm the farm bro
+Calm the farm. "
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_cwcg3"]
+script = ExtResource("8_phlpe")
+character_name = "Gordo RamE"
+portrait = ExtResource("10_cwcg3")
+paragraphs = "But holy the stink aura.
+Maybe worst than the food I tasted before"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_538lc"]
+script = ExtResource("8_phlpe")
+character_name = "Ivan the Van"
+portrait = ExtResource("9_cwcg3")
+paragraphs = "I see how it is. 
+"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_fg2du"]
+script = ExtResource("8_phlpe")
+character_name = "Ivan the Van"
+portrait = ExtResource("9_cwcg3")
+paragraphs = "I will destroy you using my van fighting style"
+music = "FreeCandy"
+metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="level_3" type="Node2D" unique_id=1916832371]
 
@@ -41,7 +94,7 @@ position = Vector2(835, 394)
 
 [node name="Ivan the van" parent="enemies" unique_id=1564538628 instance=ExtResource("7_fg2du")]
 position = Vector2(104, -16)
-attacks_name = Array[String](["van", "block"])
+attacks_name = Array[String](["van", "block", "giga_punch", "ragebait"])
 setted_HP = 160.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Ivan the van" unique_id=1328646470]
@@ -52,3 +105,4 @@ sprite_frames = SubResource("SpriteFrames_x76d4")
 [node name="Dialogue" type="Node" parent="." unique_id=276630500]
 script = ExtResource("9_ak1w2")
 at_when = 1
+dialogues = Array[ExtResource("8_phlpe")]([SubResource("Resource_ygmip"), SubResource("Resource_fyp6d"), SubResource("Resource_ik4my"), SubResource("Resource_cwcg3"), SubResource("Resource_538lc"), SubResource("Resource_fg2du")])

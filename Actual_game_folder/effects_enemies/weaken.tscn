@@ -4,7 +4,7 @@
 
 [node name="weaken" type="Node" unique_id=2076791479]
 script = ExtResource("1_pejja")
-type = "debuff"
-target_stats = "damage_multiplier"
+type = "buff"
+target_stats = "def"
 duration = 2
 Effect_strength = 1.5
