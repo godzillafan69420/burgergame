@@ -28,7 +28,7 @@ var regular_item_pool = [
 	{"display_name": "Heal","id": "health_potion", "price": 3, "type": "utility", "icon": preload("res://Art/Heal(card).png")},
 	{"display_name": "Corn Ball","id": "corn_ball", "price": 8, "type": "buff", "icon": preload("res://Art/Cornball(no_card).png")},
 	{"display_name": "Aura Farm","id": "we_see_the_fit", "price": 5, "type": "passive", "icon": preload("res://Art/WeSeeTheFit.png")},
-	{"display_name": "Hot Sauce","id": "hot_sauce", "price": 8, "type": "buff", "icon": preload("res://Art/CardTemplateTuff.png")},
+	{"display_name": "Hot Sauce","id": "hot_sauce", "price": 8, "type": "buff", "icon": preload("res://Art/Hot_Sauce(card).png")},
 ]
 
 var pack_pool = [
