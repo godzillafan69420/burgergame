@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c3xi1qe3bnw8h"]
 
 [ext_resource type="PackedScene" uid="uid://drr3088qvw5dk" path="res://ui.tscn" id="1_0kkl5"]
+[ext_resource type="Texture2D" uid="uid://bsfocnr3j840q" path="res://Art/backgroundSocrates.png" id="1_fydqt"]
 [ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="4_n5ufe"]
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="5_u7jqu"]
 [ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/enemy.tscn" id="6_1wpc6"]
@@ -75,6 +76,11 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="socratesBoss1" type="Node2D" unique_id=1916832371]
 
+[node name="background" type="Sprite2D" parent="." unique_id=1824490579]
+position = Vector2(638, 359.00003)
+scale = Vector2(1.9916666, 1.9916667)
+texture = ExtResource("1_fydqt")
+
 [node name="UI" parent="." unique_id=890284133 instance=ExtResource("1_0kkl5")]
 
 [node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
@@ -84,12 +90,13 @@ total_enemies = 3
 victory_gold = 20
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("5_u7jqu")]
-position = Vector2(326, 321)
+position = Vector2(136, 377)
 
 [node name="enemies" type="Node2D" parent="." unique_id=1413379743]
 position = Vector2(969, 315)
 
 [node name="Socrates" parent="enemies" unique_id=708042470 instance=ExtResource("6_1wpc6")]
+position = Vector2(162, 57)
 attacks_name = Array[String](["poison", "ragebait", "kick", "ragebait", "kick"])
 setted_HP = 150.0
 
@@ -97,8 +104,6 @@ setted_HP = 150.0
 position = Vector2(14, -24)
 scale = Vector2(1.46875, 1.46875)
 sprite_frames = SubResource("SpriteFrames_bagtd")
-
-[node name="background" type="Sprite2D" parent="." unique_id=1824490579]
 
 [node name="Dialogue" type="Node" parent="." unique_id=276630500]
 script = ExtResource("9_ydhme")

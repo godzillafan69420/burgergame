@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://bwjqyfgi7iicm"]
 
+[ext_resource type="Texture2D" uid="uid://q31csm3t40mq" path="res://Art/italianguysbackground.png" id="1_e4bke"]
 [ext_resource type="PackedScene" uid="uid://drr3088qvw5dk" path="res://ui.tscn" id="1_j3jjr"]
+[ext_resource type="Texture2D" uid="uid://b3bvsc0stgoqp" path="res://Art/furrykingbattle.png" id="5_j3jjr"]
 [ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="5_yoe4b"]
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="6_gifwx"]
+[ext_resource type="Texture2D" uid="uid://cg8ye3ync2qhh" path="res://Art/tickleTimpson.png" id="6_q4lse"]
+[ext_resource type="Texture2D" uid="uid://bgovmrwywfhr8" path="res://Art/pastaman67battle.png" id="7_e4bke"]
 [ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/enemy.tscn" id="7_gb7h5"]
-[ext_resource type="Texture2D" uid="uid://c6s6s8ipmmmdt" path="res://Art/john_test.png" id="8_muvik"]
 [ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="9_a7ibq"]
 [ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="10_kffbf"]
 [ext_resource type="Texture2D" uid="uid://r740ioxx1y14" path="res://Art/furryKing.png" id="11_nsomt"]
@@ -16,7 +19,29 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_muvik")
+"texture": ExtResource("5_j3jjr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lq3um"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_q4lse")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tgi3j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_e4bke")
 }],
 "loop": true,
 "name": &"default",
@@ -69,18 +94,24 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="fakeItalianGuys" type="Node2D" unique_id=1916832371]
 
+[node name="background" type="Sprite2D" parent="." unique_id=1824490579]
+position = Vector2(640.7778, 355)
+scale = Vector2(2.0055556, 2.0055556)
+texture = ExtResource("1_e4bke")
+
 [node name="UI" parent="." unique_id=890284133 instance=ExtResource("1_j3jjr")]
 
 [node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
 script = ExtResource("5_yoe4b")
 music_name = "Untitled67"
 total_enemies = 3
+victory_gold = 30
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("6_gifwx")]
-position = Vector2(192, 301)
+position = Vector2(171, 269)
 
 [node name="enemies" type="Node2D" parent="." unique_id=1413379743]
-position = Vector2(835, 295)
+position = Vector2(913, 273)
 
 [node name="Furry King" parent="enemies" unique_id=708042470 instance=ExtResource("7_gb7h5")]
 position = Vector2(-240, 0)
@@ -95,24 +126,22 @@ sprite_frames = SubResource("SpriteFrames_x76d4")
 [node name="Tickletism" parent="enemies" unique_id=439974142 instance=ExtResource("7_gb7h5")]
 position = Vector2(-1, 2)
 attacks_name = Array[String](["tickle", "smelly_pasta"])
-setted_HP = 150.0
+setted_HP = 125.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Tickletism" unique_id=1739849344]
-position = Vector2(14, -24)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Tickletism" unique_id=600242890]
+position = Vector2(27, -25)
 scale = Vector2(1.46875, 1.46875)
-sprite_frames = SubResource("SpriteFrames_x76d4")
+sprite_frames = SubResource("SpriteFrames_lq3um")
 
 [node name="PokePastaman 67" parent="enemies" unique_id=646216501 instance=ExtResource("7_gb7h5")]
 position = Vector2(240, 1)
 attacks_name = Array[String](["knife"])
-setted_HP = 75.0
+setted_HP = 80.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/PokePastaman 67" unique_id=972275017]
-position = Vector2(14, -24)
-scale = Vector2(1.46875, 1.46875)
-sprite_frames = SubResource("SpriteFrames_x76d4")
-
-[node name="background" type="Sprite2D" parent="." unique_id=1824490579]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/PokePastaman 67" unique_id=670687979]
+position = Vector2(21, -26)
+scale = Vector2(1.469, 1.469)
+sprite_frames = SubResource("SpriteFrames_tgi3j")
 
 [node name="Dialogue" type="Node" parent="." unique_id=276630500]
 script = ExtResource("9_a7ibq")

@@ -83,6 +83,7 @@ texture = ExtResource("1_rx7e8")
 script = ExtResource("5_ik4my")
 music_name = "Battle"
 total_enemies = 3
+victory_gold = 20
 
 [node name="UI" parent="." unique_id=890284133 instance=ExtResource("2_y4j1f")]
 

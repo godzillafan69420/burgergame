@@ -4,6 +4,7 @@
 
 [node name="weaken" type="Node" unique_id=2076791479]
 script = ExtResource("1_pejja")
+effect_name = "weaken"
 type = "buff"
 target_stats = "def"
 duration = 2

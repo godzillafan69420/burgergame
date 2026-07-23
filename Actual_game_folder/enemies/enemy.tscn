@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4kqr3abi6wjh" path="res://scripts/enemy.gd" id="1_2sr7e"]
 [ext_resource type="PackedScene" uid="uid://bkiarse6ln4qp" path="res://enemy_stats.tscn" id="3_4ytir"]
+[ext_resource type="Script" uid="uid://c6buq5wvbn5nx" path="res://scripts/status.gd" id="3_orwns"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ytir"]
 size = Vector2(221, 206.5)
@@ -19,5 +20,13 @@ position = Vector2(4.5, -21.75)
 shape = SubResource("RectangleShape2D_4ytir")
 
 [node name="status" type="Node" parent="." unique_id=352096447]
+script = ExtResource("3_orwns")
+
+[node name="status_effect_viewer" type="HFlowContainer" parent="." unique_id=292000366]
+offset_left = -62.0
+offset_top = 102.0
+offset_right = 93.0
+offset_bottom = 173.0
+size_flags_stretch_ratio = 2.0
 
 [connection signal="mouse_entered" from="touch_area" to="." method="_on_area_2d_mouse_entered"]

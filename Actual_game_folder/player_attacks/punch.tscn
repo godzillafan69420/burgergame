@@ -16,6 +16,7 @@ card_name = "Punch"
 discription = "do 10 damage"
 damage = 10.0
 energy = 3.0
+effects_for_enemies = Array[String](["bleed"])
 
 [node name="name" type="Label" parent="." unique_id=1387920143]
 layout_mode = 0

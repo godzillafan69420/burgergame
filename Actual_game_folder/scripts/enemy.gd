@@ -26,7 +26,10 @@ func _ready() -> void:
 		attacks.append(EnemyAttacks.get(i))
 	
 func _add_status(status:String):
+	if $enemy_stats.get_node("HP").value == 0:
+		return
 	var type = ListEnemyStatusEffects.get(status).instantiate()
+	type.name = status
 	$status.add_child(type)
 	
 func _attacked_player(attack_id):

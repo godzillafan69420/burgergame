@@ -13,6 +13,7 @@ var single_player_damge_multiplier: float
 var def:float = 1
 
 @export var battle_logic_script: Node
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	upgraded_player_damge_multiplier = get_parent().get_parent().get_parent().get_node("player").get_node("player_stats").upgraded_damage_multiplier

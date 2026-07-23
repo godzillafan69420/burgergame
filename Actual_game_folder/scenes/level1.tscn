@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d8ss8ob3168u"]
 
 [ext_resource type="PackedScene" uid="uid://drr3088qvw5dk" path="res://ui.tscn" id="1_d3jkd"]
+[ext_resource type="Texture2D" uid="uid://3wdtby4j21u4" path="res://Art/backgroundlevel1.png" id="1_u3awl"]
 [ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="5_14jow"]
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="6_mvsps"]
 [ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/enemy.tscn" id="7_jvkml"]
@@ -84,13 +85,17 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="level_1" type="Node2D" unique_id=1916832371]
 
+[node name="background" type="Sprite2D" parent="." unique_id=1824490579]
+position = Vector2(638, 357)
+scale = Vector2(2, 2)
+texture = ExtResource("1_u3awl")
+
 [node name="UI" parent="." unique_id=890284133 instance=ExtResource("1_d3jkd")]
 
 [node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
 script = ExtResource("5_14jow")
 music_name = "Battle"
 total_enemies = 3
-victory_gold = 5
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("6_mvsps")]
 position = Vector2(192, 308)
@@ -117,8 +122,6 @@ setted_HP = 60.0
 position = Vector2(4.999996, -18.999996)
 scale = Vector2(0.82617164, 0.82617164)
 sprite_frames = SubResource("SpriteFrames_irjls")
-
-[node name="background" type="Sprite2D" parent="." unique_id=1824490579]
 
 [node name="Dialogue" type="Node" parent="." unique_id=276630500]
 script = ExtResource("10_1ooyw")
