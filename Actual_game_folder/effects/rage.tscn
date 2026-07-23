@@ -8,4 +8,4 @@ effect_name = "rage"
 type = "buff"
 target_stats = "damage_multiplier"
 duration = 1
-Effect_strength = 2.0
+Effect_strength = 1.25

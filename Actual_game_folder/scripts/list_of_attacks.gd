@@ -40,7 +40,7 @@ var ragebait = {
 var harmful_words = {
 	"name": "harmful words",
 	"damage": 15,
-	"status_effects": ["tiredness"],
+	"status_effects": ["fatigue"],
 	"buff": []
 }
 
