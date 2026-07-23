@@ -4,7 +4,7 @@
 
 [node name="damage_reduction" type="Node" unique_id=1390896184]
 script = ExtResource("1_f8ynn")
-effect_name = "tiredness"
+effect_name = "fatigue"
 type = "buff"
 target_stats = "damage_multiplier"
 duration = 3
