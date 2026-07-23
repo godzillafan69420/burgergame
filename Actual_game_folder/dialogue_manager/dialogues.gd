@@ -17,7 +17,7 @@ func _set_up(dialgoue: Array):
 	current_dialogue = dialgoue
 	doing_dialogue = true
 	count = 0
-	characters_per_second = current_dialogue[count].speak_speed
+	
 	_say_stuff()
 
 func _process(_delta: float) -> void:
@@ -25,6 +25,7 @@ func _process(_delta: float) -> void:
 		return
 	
 	if Input.is_action_just_pressed("click"):
+		characters_per_second = current_dialogue[count].speak_speed
 		# IF TYPING: Skip the typing animation and instantly reveal all text
 		if is_typing:
 			_complete_text_instantly()

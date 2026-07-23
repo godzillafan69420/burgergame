@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bjhndtvnls2fo" path="res://Art/tetopeartestsize.png" id="9_u068y"]
 [ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="10_1ooyw"]
 [ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="11_ai3nx"]
+[ext_resource type="Texture2D" uid="uid://3j2l4ohtdmgt" path="res://Art/johnsmith.png" id="12_2ku1j"]
 [ext_resource type="Texture2D" uid="uid://ckmir275cyots" path="res://Art/gordoRAM.png" id="13_3oqy1"]
 [ext_resource type="Texture2D" uid="uid://cjffjbraxujuc" path="res://Art/pearto.png" id="13_gnai3"]
 
@@ -38,49 +39,55 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f31uk"]
-load_path = "res://.godot/imported/johnsmith.png-11a24c9fea116c35daab9a9a43826a57.ctex"
-
-[sub_resource type="Resource" id="Resource_fydqt"]
-script = ExtResource("11_ai3nx")
-character_name = "John Smith"
-portrait = SubResource("CompressedTexture2D_f31uk")
-paragraphs = "I got back up"
-metadata/_custom_type_script = "uid://buclel82cppmv"
-
-[sub_resource type="Resource" id="Resource_6j6yj"]
+[sub_resource type="Resource" id="Resource_u3awl"]
 script = ExtResource("11_ai3nx")
 character_name = "Gordo RamE"
 portrait = ExtResource("13_3oqy1")
-paragraphs = "Bro really need to start teaming lmao"
+paragraphs = "Some attacks are Aoe.
+Just use it like the block card"
+music = "LevelSelect"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
-[sub_resource type="Resource" id="Resource_pin3j"]
-script = ExtResource("11_ai3nx")
-character_name = "Socrates"
-portrait = ExtResource("13_gnai3")
-paragraphs = "I know right what is he cooking"
-metadata/_custom_type_script = "uid://buclel82cppmv"
-
-[sub_resource type="Resource" id="Resource_jw067"]
+[sub_resource type="Resource" id="Resource_i8kv5"]
 script = ExtResource("11_ai3nx")
 character_name = "Gordo RamE"
 portrait = ExtResource("13_3oqy1")
-paragraphs = "fr unc go back home and rest"
-metadata/_custom_type_script = "uid://buclel82cppmv"
-
-[sub_resource type="Resource" id="Resource_gnai3"]
-script = ExtResource("11_ai3nx")
-character_name = "John Smith"
-portrait = SubResource("CompressedTexture2D_f31uk")
-paragraphs = "Your meant to be helping me Teto"
+paragraphs = "Also some cards gives buffs and debuffs. The buffs and debuffs are indicated below you."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_f31uk"]
 script = ExtResource("11_ai3nx")
-character_name = "Teto"
+character_name = "Gordo RamE"
+portrait = ExtResource("13_3oqy1")
+paragraphs = "also to skip dialogue just press the left corner and click to skip the speaking animation"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_dxn3v"]
+script = ExtResource("11_ai3nx")
+character_name = "Pearto"
 portrait = ExtResource("13_gnai3")
-paragraphs = "it's spelled \"you're\" and I'm helping you cuz you're a fraud"
+paragraphs = "So why am I here"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_14jow"]
+script = ExtResource("11_ai3nx")
+character_name = "John Smith"
+portrait = ExtResource("12_2ku1j")
+paragraphs = "Help me beat this bum"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_gnai3"]
+script = ExtResource("11_ai3nx")
+character_name = "Gordo RamE"
+portrait = ExtResource("13_3oqy1")
+paragraphs = "Teaming chuds."
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_2ku1j"]
+script = ExtResource("11_ai3nx")
+character_name = "someone"
+paragraphs = "tutorial explained"
+speak_speed = 100.0
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="level_1" type="Node2D" unique_id=1916832371]
@@ -126,4 +133,4 @@ sprite_frames = SubResource("SpriteFrames_irjls")
 [node name="Dialogue" type="Node" parent="." unique_id=276630500]
 script = ExtResource("10_1ooyw")
 at_when = 1
-dialogues = Array[ExtResource("11_ai3nx")]([SubResource("Resource_fydqt"), SubResource("Resource_6j6yj"), SubResource("Resource_pin3j"), SubResource("Resource_jw067"), SubResource("Resource_gnai3"), SubResource("Resource_f31uk")])
+dialogues = Array[ExtResource("11_ai3nx")]([SubResource("Resource_u3awl"), SubResource("Resource_i8kv5"), SubResource("Resource_f31uk"), SubResource("Resource_dxn3v"), SubResource("Resource_14jow"), SubResource("Resource_gnai3"), SubResource("Resource_2ku1j")])

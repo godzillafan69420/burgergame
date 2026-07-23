@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://qju8bivensgw" path="res://Art/CardTemplateTuff.png" id="1_4giwn"]
 [ext_resource type="Script" uid="uid://b1wwgji6jiwrq" path="res://cards.gd" id="2_m1ejp"]
-[ext_resource type="Texture2D" uid="uid://bpgg4yf20b7g8" path="res://Art/AuraFarm.png" id="3_7kow4"]
+[ext_resource type="Texture2D" uid="uid://dg0il73rliv84" path="res://Art/Hot_Sauce(no_card).png" id="3_4giwn"]
 
 [node name="hot_sauce" type="TextureRect" unique_id=95620961]
 offset_left = -72.0
@@ -34,7 +34,7 @@ offset_left = -1.0
 offset_top = 1.0
 offset_right = 249.0
 offset_bottom = 351.0
-texture = ExtResource("3_7kow4")
+texture = ExtResource("3_4giwn")
 
 [node name="discription" type="Label" parent="." unique_id=1423348561]
 layout_mode = 0
