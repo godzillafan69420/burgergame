@@ -21,6 +21,8 @@ var card_list: Control
 
 var enemy_list: Node2D
 
+var victory_panel: Panel
+var victory: bool = false
 
 func _ready() -> void:
 	AudioManager.play(music_name)
@@ -35,6 +37,8 @@ func _ready() -> void:
 		num_of_enemies += 1
 		children[index].id = index
 	current_state = States.players_turn
+	victory_panel = get_parent().get_node("UI").get_node("victory")
+	victory_panel.hide()
 	Events.connect("players_turn", _players_turn)
 	Events.connect("enemies_turn", _enemies_turn)
 	Events.connect("dialogue", _dialogue)
@@ -73,11 +77,17 @@ func _enemies_turn():
 	current_state = States.enemies_turn
 	
 	num_of_cards = card_list.get_child_count()
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
+	
 	_check_victory()
 func _check_victory():
-	if enemy_list.get_child_count()  == 0:
+	if enemy_list.get_child_count()  == 0 and !victory:
+		victory = true
 		Globals.level += 1
 		PlayerStats.player_gold += victory_gold
-		get_tree().change_scene_to_file("res://ShopStuff/shop_scene.tscn")
+		victory_panel.show()
+		victory_panel.get_node("stuff you gain").text = "Gain: " + str(victory_gold) + " gold" + "
+		Total gold: " + str(PlayerStats.player_gold)  
+		
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.

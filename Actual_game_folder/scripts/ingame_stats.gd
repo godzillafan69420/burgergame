@@ -22,7 +22,7 @@ func _ready() -> void:
 		if i["id"] == "lettuce":
 			HP += 5
 		if i["id"] == "beef_patty":
-			upgraded_damage_multiplier *= 1.2
+			upgraded_damage_multiplier += 0.05
 	$HP.max_value = HP
 	$HP.value = HP
 	$Label.text = str(int($HP.value)) + "/" +str(int($HP.max_value))

@@ -27,3 +27,7 @@ func _on_button_down() -> void:
 	Events.emit_signal("enemies_turn", enemy_id_turn)
 
 	
+
+
+func _on_next_button_down() -> void:
+	get_tree().change_scene_to_file("res://ShopStuff/shop_scene.tscn")

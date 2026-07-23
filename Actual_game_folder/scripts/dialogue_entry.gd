@@ -6,4 +6,7 @@ extends Resource
 @export_multiline var paragraphs: String = "" 
 
 @export var music: String = ""
+@export var voice: String = ""
+
+@export var speak_speed: float = 30
 # This forces the big text box!

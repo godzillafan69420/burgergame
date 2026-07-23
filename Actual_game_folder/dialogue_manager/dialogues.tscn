@@ -42,3 +42,14 @@ offset_top = 2.0
 offset_right = 1286.0
 offset_bottom = 722.2311
 expand_mode = 1
+
+[node name="Skip dialogue" type="Button" parent="." unique_id=482970343]
+layout_mode = 0
+offset_left = 1047.0
+offset_top = 634.0
+offset_right = 1266.0
+offset_bottom = 706.0
+text = "Cut the yap vro
+"
+
+[connection signal="button_down" from="Skip dialogue" to="." method="_on_skip_dialogue_button_down"]

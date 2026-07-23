@@ -22,7 +22,7 @@ func _ready():
 	# Snap immediately to the starting level on launch
 	_snap_to_level(0)
 
-func _process(delta):
+func _process(_delta):
 	if level_cards.size() == 0: return
 
 	# 1. Smoothly slide the Top Scroll container to center the card

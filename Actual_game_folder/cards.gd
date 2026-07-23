@@ -76,7 +76,7 @@ func _drop() -> void:
 
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if position.x > 235 and position.x < 2000 and position.y > 44 and position.y < 400:
 		in_attack_area = true
 	else:

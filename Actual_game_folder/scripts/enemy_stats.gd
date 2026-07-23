@@ -33,9 +33,6 @@ func _damage_yourself(id: int ,damage: int) -> void:
 		return
 	
 	$HP.value -= damage * player_damge_multiplier * def * upgraded_player_damge_multiplier * single_player_damge_multiplier
-	print(damage_multiplier)
-	print(player_damge_multiplier)
-	print(def)
 	
 	$Label.text = str(int($HP.value)) + "/" +str(int($HP.max_value))
 	if $HP.value <= 0:

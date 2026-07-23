@@ -46,4 +46,37 @@ offset_bottom = 208.0
 theme_override_font_sizes/font_size = 30
 script = ExtResource("4_y4yjw")
 
+[node name="victory" type="Panel" parent="." unique_id=1139407973]
+offset_left = 387.0
+offset_top = 107.0
+offset_right = 902.0
+offset_bottom = 634.0
+
+[node name="Label" type="Label" parent="victory" unique_id=1004419997]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 19.0
+offset_right = 484.0
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 45
+text = "You beaten the level"
+
+[node name="stuff you gain" type="Label" parent="victory" unique_id=189636429]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 88.0
+offset_right = 453.0
+offset_bottom = 259.0
+theme_override_font_sizes/font_size = 41
+
+[node name="next" type="Button" parent="victory" unique_id=1523039113]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 421.0
+offset_right = 344.0
+offset_bottom = 514.0
+theme_override_font_sizes/font_size = 32
+text = "Shop"
+
 [connection signal="button_down" from="end_turn_button" to="end_turn_button" method="_on_button_down"]
+[connection signal="button_down" from="victory/next" to="end_turn_button" method="_on_next_button_down"]
