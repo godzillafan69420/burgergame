@@ -35,46 +35,41 @@ const POSITION_OF_CARDS:Array = [
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and !selected_card and mouse_is_incard:
 		selected_card = true
-	if event.is_action_released("click") and selected_card and mouse_is_incard:
-		if in_attack_area and can_attack and (get_area_under_mouse() or get_area_under_mouse() == 0):
+
+	if event.is_action_released("click") and selected_card:
+		var target_id = get_area_under_mouse()
+		var valid_single_target = (!AOE and target_id != null)
+		var valid_aoe_target = (AOE and in_attack_area)
+
+		if in_attack_area and can_attack and (valid_single_target or valid_aoe_target):
 			var chance = randf_range(0, 100)
-			_drop()
+			_drop(target_id)
 			Events.emit_signal("update_id")
 			if lucky and chance < PlayerStats.luck:
 				Events.emit_signal("give_side_effects", "lucky_debuff")
-		elif in_attack_area and can_attack and AOE:
-			var chance = randf_range(0, 100)
-			_drop()
-			Events.emit_signal("update_id")
-			if lucky and chance < PlayerStats.luck:
-				Events.emit_signal("give_side_effects", "lucky_debuff")
-				
-				
-		elif get_area_under_mouse() == null and !AOE or !can_attack:
-			selected_card = false
 		else:
 			selected_card = false
-			
 
-func _drop() -> void:
-	
-	
+
+func _drop(target_id = null) -> void:
 	if !can_attack:
 		return
+
 	Events.emit_signal("reduce_energy_by", energy)
+
 	if AOE:
 		Events.emit_signal("damaged_enemy", damage)
-	else:
-		Events.emit_signal("id_chosen",get_area_under_mouse(), damage)
+		for effect in effects_for_enemies: 
+			Events.emit_signal("give_side_effects_to_enemies", effect)
+	elif target_id != null:
+		Events.emit_signal("id_chosen", target_id, damage)
+		for effect in effects_for_enemies: 
+			Events.emit_signal("id_effect_chosen", target_id, effect)
 	for effect in effects: 
 		Events.emit_signal("give_side_effects", effect)
-	for effect in effects_for_enemies: 
-		Events.emit_signal("give_side_effects_to_enemies", effect)
 	
 
 	queue_free()
-
-
 
 func _process(_delta: float) -> void:
 	if position.x > 235 and position.x < 2000 and position.y > 44 and position.y < 400:

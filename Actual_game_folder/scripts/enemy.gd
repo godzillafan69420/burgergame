@@ -21,10 +21,21 @@ func _ready() -> void:
 	original_position = global_position
 	Events.connect("enemies_turn",_attacked_player)
 	Events.connect("give_side_effects_to_enemies", _add_status)
+	Events.connect("id_effect_chosen", _add_status_id)
 	
 	for i in attacks_name:
 		attacks.append(EnemyAttacks.get(i))
-	
+
+func _add_status_id(targeted_id: int,status:String):
+	if targeted_id != id:
+		return
+		
+	if $enemy_stats.get_node("HP").value == 0:
+		return
+	var type = ListEnemyStatusEffects.get(status).instantiate()
+	type.name = status
+	$status.add_child(type)
+
 func _add_status(status:String):
 	if $enemy_stats.get_node("HP").value == 0:
 		return

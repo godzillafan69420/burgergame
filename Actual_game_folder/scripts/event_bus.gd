@@ -25,5 +25,6 @@ signal players_turn
 signal enemies_turn(attacking_enemy)
 
 signal id_chosen(id, damage)
+signal id_effect_chosen(id, effect)
 
 signal update_display(sentence)
