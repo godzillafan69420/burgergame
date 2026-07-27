@@ -11,7 +11,7 @@ func _ready() -> void:
 	Events.connect("players_turn", _regenerate_energy)
 	
 func _regenerate_energy():
-	total_energy += total_regeneration
+	total_energy += total_regeneration + get_parent().get_parent().get_node("player").get_node("player_stats").stamina_regeneration
 	text = str(total_energy)
 func _reduced_energy(cost: float):
 	if cost<= total_energy:

@@ -5,9 +5,10 @@ extends Node2D
 
 var passives = []
 var lettuce = preload("res://Art/lectuce.png")
-var beef_patty = preload("res://Art/burgerpatty.png")
-const gap_size: float = 25
-const offset: float = 30
+var beef_patty = preload("res://Art/patty.png")
+var cheese = preload("res://Art/cheese.png")
+const gap_size: float = 15
+const offset: float = 60
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	passives = PlayerStats.upgrades
