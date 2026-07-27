@@ -30,4 +30,4 @@ func _on_button_down() -> void:
 
 
 func _on_next_button_down() -> void:
-	get_tree().change_scene_to_file("res://ShopStuff/shop_scene.tscn")
+	TransitionManager.play_transition("res://ShopStuff/shop_scene.tscn")

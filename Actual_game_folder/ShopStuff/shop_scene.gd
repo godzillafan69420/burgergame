@@ -169,4 +169,4 @@ func _on_reroll_pressed() -> void:
 
 func _on_next_stage_pressed() -> void:
 	print("Transitioning to encounter with items: ", PlayerStats.attacks)
-	get_tree().change_scene_to_file("res://scenes/level_select.tscn")
+	TransitionManager.play_transition("res://scenes/level_select.tscn")
