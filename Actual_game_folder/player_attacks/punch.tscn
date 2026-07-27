@@ -15,7 +15,7 @@ script = ExtResource("1_s8un3")
 card_name = "Punch"
 discription = "do 10 damage"
 damage = 10.0
-energy = 3.0
+energy = 5.0
 
 [node name="name" type="Label" parent="." unique_id=1387920143]
 layout_mode = 0
@@ -49,7 +49,7 @@ offset_top = -6.8376093
 offset_right = 208.54701
 offset_bottom = 48.16239
 theme_override_font_sizes/font_size = 40
-text = "3"
+text = "5"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

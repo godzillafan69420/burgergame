@@ -28,12 +28,21 @@ metadata/_edit_use_anchors_ = true
 anchors_preset = -1
 anchor_left = 0.07578125
 anchor_right = 0.07578125
-offset_left = 24.0
-offset_top = 22.0
-offset_right = 307.0
-offset_bottom = 99.0
+offset_left = 72.0
+offset_top = 23.0
+offset_right = 355.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 28
+text = "100"
 script = ExtResource("2_ibotj")
 metadata/_edit_use_anchors_ = true
+
+[node name="energyBar" type="ProgressBar" parent="." unique_id=566822747]
+offset_left = 35.0
+offset_top = 23.0
+offset_right = 365.0
+offset_bottom = 67.0
+show_percentage = false
 
 [node name="dialogues" parent="." unique_id=702915050 instance=ExtResource("3_n5ude")]
 visible = false

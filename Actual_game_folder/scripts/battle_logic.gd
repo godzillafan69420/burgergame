@@ -62,7 +62,7 @@ func _players_turn():
 	current_state = States.players_turn
 	if num_of_cards < MAX_CARDS:
 		for i in range(MAX_CARDS - num_of_cards):
-			if card_choice  == num_of_cards:
+			if card_choice  == cards_can_spawn.size() -1:
 				card_choice = 0
 			else:
 				card_choice += 1

@@ -87,7 +87,7 @@ texture = ExtResource("1_fydqt")
 script = ExtResource("4_n5ufe")
 music_name = "Boss1"
 total_enemies = 3
-victory_gold = 20
+victory_gold = 30
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("5_u7jqu")]
 position = Vector2(136, 377)

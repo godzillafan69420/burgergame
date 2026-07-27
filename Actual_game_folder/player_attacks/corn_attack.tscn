@@ -15,7 +15,7 @@ script = ExtResource("2_q548j")
 card_name = "corn attack"
 discription = "50% chance of hitting 
 yourself"
-damage = 40.0
+damage = 25.0
 energy = 15.0
 AOE = true
 lucky = true
@@ -46,7 +46,7 @@ text = "chance of hitting
 yourself depending on your
  luck stats
 
-but 40 Aoe damage"
+but 25 Aoe damage"
 
 [node name="Label" type="Label" parent="." unique_id=1843147056]
 layout_mode = 0
