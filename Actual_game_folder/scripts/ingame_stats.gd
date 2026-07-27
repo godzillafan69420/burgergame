@@ -13,6 +13,7 @@ var damage_multiplier: float = 1
 var upgraded_damage_multiplier: float = 1
 var upgraded_aoe_damage_multiplier: float = 1
 var upgraded_single_damage_multiplier: float = 1
+var stamina_regeneration: float = 0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -23,6 +24,8 @@ func _ready() -> void:
 			HP += 5
 		if i["id"] == "beef_patty":
 			upgraded_damage_multiplier += 0.05
+		if i["id"] == "cheese":
+			stamina_regeneration += 1
 	$HP.max_value = HP
 	$HP.value = HP
 	$Label.text = str(int($HP.value)) + "/" +str(int($HP.max_value))

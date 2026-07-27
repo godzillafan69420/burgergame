@@ -24,6 +24,8 @@ var enemy_list: Node2D
 var victory_panel: Panel
 var victory: bool = false
 
+var card_choice: int = 0
+
 func _ready() -> void:
 	AudioManager.play(music_name)
 	for i in PlayerStats.attacks:
@@ -56,10 +58,14 @@ func _spawn_attack_choice():
 func _players_turn():
 	current_turn += 1
 	num_of_cards = card_list.get_child_count()
+	
 	current_state = States.players_turn
 	if num_of_cards < MAX_CARDS:
 		for i in range(MAX_CARDS - num_of_cards):
-			var card_choice = randi_range(0, cards_can_spawn.size() - 1)
+			if card_choice  == num_of_cards:
+				card_choice = 0
+			else:
+				card_choice += 1
 			var new_card = ListOfCards.get(cards_can_spawn[card_choice]).instantiate()
 			card_list.add_child(new_card)
 		
