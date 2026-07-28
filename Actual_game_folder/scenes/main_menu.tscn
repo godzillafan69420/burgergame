@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b0k5838nc0vb5"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Art/icon.svg" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://fljhhb8q5smd" path="res://Art/gordoTitleScreen.png" id="2_bqqt6"]
 [ext_resource type="Script" uid="uid://b6udiq5bu4apv" path="res://scenes/button.gd" id="2_ekxnf"]
 
 [node name="main_menu" type="Node2D" unique_id=2012640209]
@@ -12,14 +12,15 @@ script = ExtResource("2_ekxnf")
 offset_top = 2.0
 offset_right = 1272.0
 offset_bottom = 708.0
-texture = ExtResource("1_l6cm7")
+texture = ExtResource("2_bqqt6")
 expand_mode = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=507507939]
-offset_left = 179.0
-offset_top = 55.0
-offset_right = 1172.0
-offset_bottom = 231.0
+offset_left = 26.0
+offset_top = -23.0
+offset_right = 1019.0
+offset_bottom = 153.0
+theme_override_colors/default_color = Color(0.12658688, 0.121742, 0.1216631, 1)
 theme_override_font_sizes/normal_font_size = 125
 text = "Kurger buns"
 
