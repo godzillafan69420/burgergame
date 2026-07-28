@@ -10,8 +10,8 @@ script = ExtResource("2_ekxnf")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1407863908]
 offset_top = 2.0
-offset_right = 1272.0
-offset_bottom = 708.0
+offset_right = 1293.6205
+offset_bottom = 720.0
 texture = ExtResource("2_bqqt6")
 expand_mode = 1
 
@@ -45,4 +45,9 @@ offset_right = 563.8069
 offset_bottom = 546.0
 text = "Nothing"
 
+[node name="Timer" type="Timer" parent="." unique_id=242307133]
+wait_time = 9.0
+autostart = true
+
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
