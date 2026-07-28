@@ -14,11 +14,11 @@ var reroll_cost: int = 5
 
 # --- UPGRADE POOL ---
 var upgrade_pool = [
-	{"display_name": "McWettuce","id": "lettuce", "type": "upgrade", "effect": "+20 hp", "icon": preload("res://Art/bacon.png")},
-	{"display_name": "beef patty","id": "beef_patty", "type": "upgrade", "effect": "damage up", "icon": preload("res://Art/CardPack.png")},
-	{"display_name": "cheese","id": "cheese", "type": "upgrade", "effect": "yes", "icon": preload("res://Art/CardPack.png")},
-	{"display_name": "placeholder4","id": "placeholder4", "type": "joker", "effect": "ohio ", "icon": preload("res://Art/CardPack.png")},
-	{"display_name": "Ancient Scroll","id": "Ancient Scroll", "type": "relic", "effect": "+1 Hand size", "icon": preload("res://Art/CardPack.png")}
+	{"display_name": "Lettuce","id": "lettuce", "type": "upgrade", "effect": "+20 hp", "icon": preload("res://Art/lectuce.png")},
+	{"display_name": "beef patty","id": "beef_patty", "type": "upgrade", "effect": "damage up", "icon": preload("res://Art/burgerpatty.png")},
+	{"display_name": "cheese","id": "cheese", "type": "upgrade", "effect": "yes", "icon": preload("res://Art/cheese.png")},
+	{"display_name": "Bacon","id": "bacon", "type": "joker", "effect": "ohio ", "icon": preload("res://Art/bacon.png")},
+	{"display_name": "pickle","id": "pickle", "type": "relic", "effect": "+1 Hand size", "icon": preload("res://Art/CardPack.png")}
 ]
 
 # --- REGULAR ITEM POOL --- A

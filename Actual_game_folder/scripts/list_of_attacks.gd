@@ -67,14 +67,14 @@ var block = {
 
 var tickle = {
 	"name": "tickle",
-	"damage": 5,
+	"damage": 30,
 	"status_effects": ["weaken"],
 	"buff": []
 }
 
 var smelly_pasta = {
 	"name": "Smelly Pasta",
-	"damage": 20,
+	"damage": 35,
 	"status_effects": [],
 	"buff": []
 }

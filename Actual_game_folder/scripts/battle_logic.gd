@@ -71,6 +71,8 @@ func _players_turn():
 		
 		# Update all IDs sequentially now that the hand is full
 		_update_card_ids()
+	get_parent().get_node("player").get_node("player_stats").get_node("HP").value += get_parent().get_node("player").get_node("player_stats").hp_regeneration
+	get_parent().get_node("player").get_node("player_stats").get_node("Label").text = str(int(get_parent().get_node("player").get_node("player_stats").get_node("HP").value)) + "/" +str(int(get_parent().get_node("player").get_node("player_stats").get_node("HP").max_value))
 
 # Cleaned-up sequential ID assignment function
 func _update_card_ids() -> void:

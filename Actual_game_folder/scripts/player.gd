@@ -7,6 +7,8 @@ var passives = []
 var lettuce = preload("res://Art/lectuce.png")
 var beef_patty = preload("res://Art/patty.png")
 var cheese = preload("res://Art/cheese.png")
+var bacon = preload("res://Art/bacon.png")
+var pickle = preload("res://Art/pickle.png")
 const gap_size: float = 15
 const offset: float = 60
 # Called when the node enters the scene tree for the first time.
