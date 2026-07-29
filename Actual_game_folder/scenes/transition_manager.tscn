@@ -1,18 +1,12 @@
 [gd_scene format=3 uid="uid://cewkqq80nqc6v"]
 
 [ext_resource type="Script" uid="uid://do83jf3u8l3to" path="res://scripts/transition_manager.gd" id="1_nk83w"]
-[ext_resource type="Texture2D" uid="uid://bfosxkvv6nha1" path="res://Art/zemonke.png" id="2_e4pj3"]
 [ext_resource type="Texture2D" uid="uid://cksk4axyrg4se" path="res://Art/PersonaTransition.png" id="2_sb1xu"]
-[ext_resource type="Texture2D" uid="uid://cwa3x16aoik6d" path="res://Art/pastaman67.png" id="3_esmbu"]
-[ext_resource type="Texture2D" uid="uid://dvwvvk6g07p7c" path="res://Art/coneL.png" id="5_e4pj3"]
-[ext_resource type="Texture2D" uid="uid://c6s6s8ipmmmdt" path="res://Art/john_test.png" id="6_esmbu"]
-[ext_resource type="Texture2D" uid="uid://b3bvsc0stgoqp" path="res://Art/furrykingbattle.png" id="6_mohqp"]
 
-[node name="TransitionManager" type="CanvasLayer" unique_id=1361086131]
+[node name="TransitionManager" type="CanvasLayer" unique_id=1752521573]
 script = ExtResource("1_nk83w")
-character_textures = Array[Texture2D]([ExtResource("2_e4pj3"), ExtResource("3_esmbu"), ExtResource("6_mohqp"), ExtResource("5_e4pj3"), ExtResource("6_esmbu")])
 
-[node name="CutIn" type="Control" parent="." unique_id=921341367]
+[node name="CutIn" type="Control" parent="." unique_id=1986799290]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,7 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Background" type="TextureRect" parent="CutIn" unique_id=729148433]
+[node name="Background" type="TextureRect" parent="CutIn" unique_id=214939663]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,7 +30,7 @@ texture = ExtResource("2_sb1xu")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Flash" type="ColorRect" parent="CutIn" unique_id=604651310]
+[node name="Flash" type="ColorRect" parent="CutIn" unique_id=-996863184]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,17 +40,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Person" type="TextureRect" parent="CutIn" unique_id=2082537522]
+[node name="Person" type="TextureRect" parent="CutIn" unique_id=415935103]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="BlackFade" type="ColorRect" parent="CutIn" unique_id=1777524339]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 0)
