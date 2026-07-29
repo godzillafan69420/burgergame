@@ -18,7 +18,7 @@ var upgrade_pool = [
 	{"display_name": "beef patty","id": "beef_patty", "type": "upgrade", "effect": "damage up", "icon": preload("res://Art/burgerpatty.png")},
 	{"display_name": "cheese","id": "cheese", "type": "upgrade", "effect": "yes", "icon": preload("res://Art/cheese.png")},
 	{"display_name": "Bacon","id": "bacon", "type": "joker", "effect": "ohio ", "icon": preload("res://Art/bacon.png")},
-	{"display_name": "pickle","id": "pickle", "type": "relic", "effect": "+1 Hand size", "icon": preload("res://Art/CardPack.png")}
+	{"display_name": "pickle","id": "pickle", "type": "relic", "effect": "+1 Hand size", "icon": preload("res://Art/pickle.png")}
 ]
 
 # --- REGULAR ITEM POOL --- A
