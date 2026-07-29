@@ -45,7 +45,6 @@ character_name = "Gordo RamE"
 portrait = ExtResource("13_3oqy1")
 paragraphs = "Some attacks are Aoe.
 Just use it like the block card"
-music = "LevelSelect"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_i8kv5"]
@@ -81,6 +80,7 @@ script = ExtResource("11_ai3nx")
 character_name = "Gordo RamE"
 portrait = ExtResource("13_3oqy1")
 paragraphs = "Teaming chuds."
+music = "Battle"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_2ku1j"]
@@ -101,7 +101,7 @@ texture = ExtResource("1_u3awl")
 
 [node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
 script = ExtResource("5_14jow")
-music_name = "Battle"
+music_name = "LevelSelect"
 total_enemies = 3
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("6_mvsps")]

@@ -22,11 +22,11 @@ func _ready() -> void:
 	HP = PlayerStats.player_hitpoint
 	for i in PlayerStats.upgrades:
 		if i["id"] == "lettuce":
-			HP += 5
+			HP += 7
 		if i["id"] == "beef_patty":
-			upgraded_damage_multiplier += 0.1
+			upgraded_damage_multiplier += 0.2
 		if i["id"] == "cheese":
-			stamina_regeneration += 1
+			stamina_regeneration += 3
 		if i["id"] == "bacon":
 			hp_regeneration += 1
 		if i["id"] == "pickle":

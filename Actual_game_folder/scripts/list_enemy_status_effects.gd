@@ -5,3 +5,4 @@ extends Node
 @onready var radiation = preload("res://effects_enemies/radiation.tscn")
 @onready var block = preload("res://effects_enemies/block.tscn")
 @onready var bleed = preload("res://effects_enemies/bleed.tscn")
+@onready var burn = preload("res://effects_enemies/burn.tscn")

@@ -13,12 +13,11 @@ scale = Vector2(0.56, 0.56)
 texture = ExtResource("1_q548j")
 script = ExtResource("2_q548j")
 card_name = "corn attack"
-discription = "50% chance of hitting 
-yourself"
-damage = 25.0
+discription = ""
+damage = 15.0
 energy = 15.0
+effects_for_enemies = Array[String](["burn"])
 AOE = true
-lucky = true
 
 [node name="name2" type="Label" parent="." unique_id=240421317]
 layout_mode = 0
@@ -42,11 +41,9 @@ offset_left = 21.42857
 offset_top = 183.92857
 offset_right = 234.42857
 offset_bottom = 310.9286
-text = "chance of hitting 
-yourself depending on your
- luck stats
-
-but 25 Aoe damage"
+text = "applies burn 
+and does 15 Aoe
+"
 
 [node name="Label" type="Label" parent="." unique_id=1843147056]
 layout_mode = 0

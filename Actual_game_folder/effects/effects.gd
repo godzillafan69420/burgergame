@@ -28,7 +28,7 @@ func _take_effect():
 		player_ingame_stats.get_node("HP").value -= damage 
 		player_ingame_stats.get_node("Label").text = str(int(player_ingame_stats.get_node("HP").value)) + "/" +str(int(player_ingame_stats.get_node("HP").max_value))
 		if player_ingame_stats.get_node("HP").value <=0:
-			get_tree().change_scene_to_file("res://scenes/deathScene.tscn")
+			TransitionManager.play_transition("res://scenes/deathScene.tscn")
 	if type == types_of_effect[1] and duration > 0:
 		player_ingame_stats.set(target_stats, Effect_strength)
 			

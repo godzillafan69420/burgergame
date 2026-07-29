@@ -77,6 +77,7 @@ texture = ExtResource("1_ti0og")
 
 [node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
 script = ExtResource("1_r5l0u")
+music_name = "Battle"
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("1_fw8re")]
 position = Vector2(252, 232)

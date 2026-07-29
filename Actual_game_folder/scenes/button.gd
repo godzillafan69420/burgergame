@@ -12,7 +12,7 @@ func _ready() -> void:
 
 
 func _on_button_pressed() -> void:
-	TransitionManager.play_transition("res://scenes/battle_scene.tscn")
+	TransitionManager.play_transition("res://scenes/level_select.tscn")
 
 
 func _on_timer_timeout() -> void:
