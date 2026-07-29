@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://cmodmwl8injfv"]
+[gd_scene format=3 uid="uid://86q275l1hhq0"]
 
 [ext_resource type="Script" uid="uid://w1rd75tw6ylc" path="res://ShopStuff/shop_scene.gd" id="1_xduvy"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Art/icon.svg" id="2_2e6ro"]
 [ext_resource type="Script" uid="uid://u4ks6kn82y6w" path="res://Upgrades/pack_opening_scene.gd" id="4_g0e1r"]
-[ext_resource type="PackedScene" uid="uid://dc57hjimdun51" path="res://ShopStuff/pack_opener.tscn" id="5_pkopn"]
+[ext_resource type="PackedScene" path="res://ShopStuff/pack_opener.tscn" id="5_pkopn"]
 
 [node name="ShopScene" type="Control" unique_id=249197523]
 layout_mode = 3
