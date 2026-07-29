@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://w1rd75tw6ylc" path="res://ShopStuff/shop_scene.gd" id="1_xduvy"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Art/icon.svg" id="2_2e6ro"]
+[ext_resource type="Texture2D" uid="uid://5a768ou6j0qq" path="res://Art/fridge.png" id="2_g6l4v"]
 [ext_resource type="Script" uid="uid://u4ks6kn82y6w" path="res://Upgrades/pack_opening_scene.gd" id="4_g0e1r"]
 [ext_resource type="PackedScene" uid="uid://dc57hjimdun51" path="res://ShopStuff/pack_opener.tscn" id="5_pkopn"]
 
@@ -14,32 +15,30 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xduvy")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=303051074]
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1117802300]
 layout_mode = 0
-offset_left = 1.9999999
-offset_right = 130.0
-offset_bottom = 128.0
-scale = Vector2(10.017863, 5.535115)
-texture = ExtResource("2_2e6ro")
+offset_right = 1283.5555
+offset_bottom = 722.0
+texture = ExtResource("2_g6l4v")
 
 [node name="TopFridge" type="HBoxContainer" parent="." unique_id=696781289]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.94400007
-offset_left = 579.0
-offset_top = 92.0
-offset_right = -551.0
-offset_bottom = -387.68005
+offset_left = 687.0
+offset_top = 5.0
+offset_right = -443.0
+offset_bottom = -474.68005
 grow_horizontal = 2
 theme_override_constants/separation = 144
 
 [node name="BottomFridge" type="HBoxContainer" parent="." unique_id=152868063]
 layout_mode = 0
-offset_left = 250.0
-offset_top = 467.0
-offset_right = 883.0
-offset_bottom = 667.0
+offset_left = 248.0
+offset_top = 361.0
+offset_right = 881.0
+offset_bottom = 561.0
 theme_override_constants/separation = 50
 alignment = 1
 
