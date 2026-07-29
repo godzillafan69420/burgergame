@@ -1,22 +1,4 @@
 extends Node2D
-## PackOpener
-## Drop-in "Balatro style" buffoon pack opening transition.
-##
-## SETUP:
-## 1. Add this scene (PackOpener.tscn) wherever your pack currently shows
-##    (e.g. as a child of your pack-selection screen, positioned where the
-##    pack should appear).
-## 2. Select the "Body" node and drag Pack_Body.png onto its Texture slot.
-## 3. Select the "Foil" node and drag your foil/edge overlay png onto its
-##    Texture slot (the mostly-transparent one with the scalloped top).
-## 4. From your existing code:
-##       var pack = $PackOpener
-##       pack.play_intro()                 # pack drops/pops into view
-##       ... when the player clicks the pack ...
-##       pack.open_pack()
-##       await pack.pack_opened            # then reveal your card UI
-##
-## Everything below is tunable via the @export vars in the Inspector.
 
 signal pack_opened
 

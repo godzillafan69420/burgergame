@@ -133,4 +133,3 @@ layout_mode = 2
 
 [node name="PackOpener" parent="PackOpeningScene" unique_id=1383528784 instance=ExtResource("5_pkopn")]
 position = Vector2(640, 300)
-script = null
