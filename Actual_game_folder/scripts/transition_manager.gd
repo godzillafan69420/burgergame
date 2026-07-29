@@ -9,9 +9,28 @@ extends CanvasLayer
 # original art offset -- tweak if it doesn't fully clear your resolution.
 @export var offscreen_offset: float = 1300.0
 
-# BlackFade needs adding to the .tscn by hand (drag a ColorRect under CutIn,
-# full-rect anchors, color black, alpha 0). Until you do, this builds one at
-# runtime so the transition still works either way.
+# Drag your character portraits in here (any order, any count up to 5 slots
+# defined below). Empty slots just won't spawn a shard.
+@export var character_textures: Array[Texture2D] = []
+
+# --- Character shard setup -----------------------------------------------
+# Each entry: target position as a FRACTION of screen size, the direction
+# the shard flies in from, and the bounding size of its shard shape.
+# Square-ish sizes suit small sprite portraits; tall sizes suit full-body
+# art. Order matches whatever order you drop textures into character_textures.
+const SHARD_SLOTS = [
+	{"pos": Vector2(0.16, 0.28), "dir": Vector2(-1, -0.5), "size": Vector2(190, 190)},
+	{"pos": Vector2(0.50, 0.62), "dir": Vector2(0, -1),    "size": Vector2(170, 260)},
+	{"pos": Vector2(0.84, 0.28), "dir": Vector2(1, -0.5),  "size": Vector2(190, 190)},
+	{"pos": Vector2(0.30, 0.80), "dir": Vector2(-1, 1),    "size": Vector2(170, 260)},
+	{"pos": Vector2(0.70, 0.80), "dir": Vector2(1, 1),     "size": Vector2(170, 260)},
+]
+
+var shards_container: Node2D
+var shard_nodes: Array = []
+var shard_targets: Array = []
+var shard_starts: Array = []
+
 func _get_or_create_black_fade() -> ColorRect:
 	var existing = get_node_or_null("CutIn/BlackFade")
 	if existing:
@@ -26,27 +45,104 @@ func _get_or_create_black_fade() -> ColorRect:
 	return rect
 
 func _ready() -> void:
-	# Keep transition hidden when game launches
 	cut_in.visible = false
 	flash.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	black_fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	flash.modulate.a = 0.0
 	black_fade.modulate.a = 0.0
 
+	shards_container = Node2D.new()
+	shards_container.name = "Shards"
+	cut_in.add_child(shards_container)
+	_build_character_shards()
+
+func _build_character_shards() -> void:
+	for child in shards_container.get_children():
+		child.queue_free()
+	shard_nodes.clear()
+
+	var count = min(character_textures.size(), SHARD_SLOTS.size())
+	for i in range(count):
+		var tex = character_textures[i]
+		if tex == null:
+			continue
+
+		var slot = SHARD_SLOTS[i]
+		var half = slot["size"] * 0.5
+
+		# A slightly irregular quad (not a perfect rectangle) so it reads
+		# as a glass shard rather than a plain photo frame.
+		var jitter = 18.0
+		var poly := Polygon2D.new()
+		poly.polygon = PackedVector2Array([
+			Vector2(-half.x + randf_range(-jitter, jitter), -half.y + randf_range(-jitter, jitter)),
+			Vector2(half.x + randf_range(-jitter, jitter), -half.y + randf_range(-jitter, jitter)),
+			Vector2(half.x + randf_range(-jitter, jitter), half.y + randf_range(-jitter, jitter)),
+			Vector2(-half.x + randf_range(-jitter, jitter), half.y + randf_range(-jitter, jitter)),
+		])
+		poly.texture = tex
+		_fit_uv_to_polygon(poly)
+
+		shards_container.add_child(poly)
+		shard_nodes.append(poly)
+
+func _fit_uv_to_polygon(poly: Polygon2D) -> void:
+	# Polygon2D doesn't auto-fit a texture to a custom polygon shape -- map
+	# the full portrait into the polygon's bounding box ourselves so it
+	# shows cropped-to-shard instead of tiled/misaligned.
+	if poly.texture == null:
+		return
+	var pts = poly.polygon
+	var min_p = pts[0]
+	var max_p = pts[0]
+	for p in pts:
+		min_p.x = min(min_p.x, p.x)
+		min_p.y = min(min_p.y, p.y)
+		max_p.x = max(max_p.x, p.x)
+		max_p.y = max(max_p.y, p.y)
+	var box_size = max_p - min_p
+	var tex_size = poly.texture.get_size()
+	var uvs := PackedVector2Array()
+	for p in pts:
+		var t = Vector2(
+			(p.x - min_p.x) / max(box_size.x, 0.001),
+			(p.y - min_p.y) / max(box_size.y, 0.001)
+		)
+		uvs.append(Vector2(t.x * tex_size.x, t.y * tex_size.y))
+	poly.uv = uvs
+
+func _reset_shards() -> void:
+	var viewport_size := get_viewport().get_visible_rect().size
+	shard_targets.clear()
+	shard_starts.clear()
+
+	for i in range(shard_nodes.size()):
+		var node = shard_nodes[i]
+		var slot = SHARD_SLOTS[i]
+		var target = Vector2(slot["pos"].x * viewport_size.x, slot["pos"].y * viewport_size.y)
+		var start = target + slot["dir"].normalized() * (viewport_size.length() * 0.75)
+
+		node.position = start
+		node.scale = Vector2(0.55, 0.55)
+		node.rotation = slot["dir"].angle() * 0.3
+		node.modulate.a = 0.0
+
+		shard_targets.append(target)
+		shard_starts.append(start)
+
 func play_transition(target_scene_path: String) -> void:
 	cut_in.visible = true
 
-	# 1. SLAM IN -- fast hit with a tiny overshoot pop. Ends fully covering
-	#    the screen.
+	# 1. SLAM IN -- background + character shards fly in and hit hard.
 	await _slam_in()
 
-	# 2. Crossfade the shard art to solid black -- this is what actually
-	#    hides the scene swap, so it reads as a clean beat instead of a hitch.
-	await _fade_to_black()
+	# 2. SHATTER OUT -- everything flies apart like breaking glass, then
+	#    crossfades to solid black -- this is what actually hides the swap.
+	await _shatter_out()
 
 	# 3. Swap scenes while the screen is solid black.
 	get_tree().change_scene_to_file(target_scene_path)
-	await get_tree().process_frame  # give the new scene a frame to enter the tree
+	await get_tree().process_frame
 
 	# 4. Fade smoothly from black into the new scene.
 	await _fade_from_black()
@@ -57,36 +153,83 @@ func _slam_in() -> void:
 	background.position = Vector2(-offscreen_offset, 0)
 	background.scale = Vector2(1.5, 1.5)
 	background.rotation_degrees = 0.0
+	background.modulate.a = 1.0
 	cut_in.modulate = Color(1, 1, 1, 1)
 	flash.modulate.a = 0.0
 	black_fade.modulate.a = 0.0
+	_reset_shards()
 
-	# The slam: one quick, decisive hit -- no lingering easing.
 	var tw := create_tween()
 	tw.set_parallel(true)
+
+	# The background slam: one quick, decisive hit.
 	tw.tween_property(background, "position", Vector2(15, 0), 0.08)\
 		.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 	tw.tween_property(background, "scale", Vector2(0.97, 0.97), 0.08)\
 		.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+
+	# Character shards fly in with a slight stagger so they don't land as
+	# one flat block -- each hits a beat after the last.
+	for i in range(shard_nodes.size()):
+		var node = shard_nodes[i]
+		var delay = 0.02 * i
+		tw.tween_property(node, "position", shard_targets[i], 0.14)\
+			.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT).set_delay(delay)
+		tw.tween_property(node, "scale", Vector2.ONE, 0.14)\
+			.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT).set_delay(delay)
+		tw.tween_property(node, "rotation", 0.0, 0.14)\
+			.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT).set_delay(delay)
+		tw.tween_property(node, "modulate:a", 1.0, 0.08).set_delay(delay)
+
 	tw.tween_callback(_impact_flash).set_delay(0.06)
 	await tw.finished
 
-	# Tiny snap-back to rest -- this is the "pop," kept short so it doesn't drag.
+	# Tiny snap-back to rest -- the "pop" that a straight ease-out can't give.
 	var settle := create_tween()
 	settle.set_parallel(true)
 	settle.tween_property(background, "position", Vector2.ZERO, 0.045)\
 		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	settle.tween_property(background, "scale", Vector2.ONE, 0.045)\
 		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	for node in shard_nodes:
+		settle.tween_property(node, "scale", Vector2.ONE, 0.045)\
+			.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	await settle.finished
 
-func _fade_to_black() -> void:
+func _shatter_out() -> void:
+	var viewport_center := get_viewport().get_visible_rect().size * 0.5
 	var tw := create_tween()
-	tw.tween_property(black_fade, "modulate:a", 1.0, 0.09)\
-		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	tw.set_parallel(true)
+
+	# The background itself kicks outward and fades.
+	tw.tween_property(background, "position", background.position + Vector2(0, -140), 0.14)\
+		.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
+	tw.tween_property(background, "scale", background.scale * 1.5, 0.14)\
+		.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
+	tw.tween_property(background, "modulate:a", 0.0, 0.13)
+
+	# Every character shard flies outward away from screen-center and
+	# tumbles, like it's breaking apart -- this is the "glass break."
+	for node in shard_nodes:
+		var outward = (node.position - viewport_center)
+		if outward.length() < 1.0:
+			outward = Vector2.UP
+		outward = outward.normalized()
+		var fly_to = node.position + outward * 420.0
+		var spin = randf_range(-2.2, 2.2)
+
+		tw.tween_property(node, "position", fly_to, 0.16)\
+			.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
+		tw.tween_property(node, "rotation", spin, 0.16)\
+			.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+		tw.tween_property(node, "modulate:a", 0.0, 0.14)
+
+	# Black rushes in right on top of the shatter so there's no empty gap
+	# between "glass gone" and "screen covered."
+	tw.tween_property(black_fade, "modulate:a", 1.0, 0.12).set_delay(0.05)
 	await tw.finished
-	# Small hold on solid black so the swap below never peeks through.
-	await get_tree().create_timer(0.04).timeout
+
+	await get_tree().create_timer(0.03).timeout
 
 func _fade_from_black() -> void:
 	var tw := create_tween()

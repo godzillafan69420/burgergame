@@ -26,7 +26,15 @@ AudioManager="*uid://ppr0et1a5pn1"
 Globals="*uid://cc0262u6kl5d3"
 ListEnemyStatusEffects="*uid://dtkfnl78mea1k"
 StatusIcon="*uid://c4gvkjslm5vco"
+<<<<<<< Updated upstream
 TransitionManager="*uid://cewkqq80nqc6v"
+=======
+<<<<<<< HEAD
+TransitionManager="*res://scenes/transition_manager.tscn"
+=======
+TransitionManager="*uid://cewkqq80nqc6v"
+>>>>>>> b0696d27efecf3cf39d5ee2ff566b01f6f82739e
+>>>>>>> Stashed changes
 
 [display]
 
