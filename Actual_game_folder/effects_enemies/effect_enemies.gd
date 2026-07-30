@@ -34,7 +34,7 @@ func _ready() -> void:
 func _take_effect():
 	if type == types_of_effect[0] and duration  > 0:
 		enemy_status_node.get_node("HP").value -= damage 
-		enemy_status_node.get_node("Label").text = str(int(enemy_status_node.get_node("HP").value)) + "/" +str(int(enemy_status_node.get_node("HP").max_value))
+		enemy_status_node.get_node("Label").text = str(snapped(enemy_status_node.get_node("HP").value, 0.01)) + "/" +str(int(enemy_status_node.get_node("HP").max_value))
 		if enemy_status_node.get_node("HP").value <= 0:
 			get_parent().get_parent().queue_free()
 			Events.emit_signal("check_victory_conditions")

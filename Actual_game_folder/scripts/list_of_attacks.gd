@@ -67,7 +67,7 @@ var block = {
 
 var tickle = {
 	"name": "tickle",
-	"damage": 30,
+	"damage": 25,
 	"status_effects": ["weaken"],
 	"buff": []
 }
@@ -84,4 +84,18 @@ var knife = {
 	"damage": 15,
 	"status_effects": ["bleed"],
 	"buff": []
+}
+
+var strong_right = {
+	"name": "Strong Right",
+	"damage": 35,
+	"status_effects": [],
+	"buff": []
+}
+
+var ice_cream_balls = {
+	"name": "An Ice Cream",
+	"damage": 0,
+	"status_effects": [],
+	"buff": ["heal"]
 }

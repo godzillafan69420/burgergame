@@ -25,7 +25,7 @@ func _process(_delta: float) -> void:
 		return
 	
 	if Input.is_action_just_pressed("click"):
-		characters_per_second = current_dialogue[count].speak_speed
+		
 		# IF TYPING: Skip the typing animation and instantly reveal all text
 		if is_typing:
 			_complete_text_instantly()
@@ -47,7 +47,7 @@ func _say_stuff():
 	visible = true
 	$Name.text = current_dialogue[count].character_name
 	$protraits.texture = current_dialogue[count].portrait
-	
+	characters_per_second = current_dialogue[count].speak_speed
 	# Setup paragraph text
 	var paragraph_node = $Panel/paragraph
 	var full_text: String = current_dialogue[count].paragraphs

@@ -35,7 +35,7 @@ func _damage_yourself(id: int ,damage: int) -> void:
 	
 	$HP.value -= damage * player_damge_multiplier * def * upgraded_player_damge_multiplier * single_player_damge_multiplier
 	
-	$Label.text = str(int($HP.value)) + "/" +str(int($HP.max_value))
+	$Label.text = str(snapped($HP.value, 0.01)) + "/" +str(int($HP.max_value))
 	if $HP.value <= 0:
 		get_parent().queue_free()
 		Events.emit_signal("check_victory_conditions")

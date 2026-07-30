@@ -26,7 +26,7 @@ func _ready() -> void:
 func _take_effect():
 	if type == types_of_effect[0] and duration  > 0:
 		player_ingame_stats.get_node("HP").value -= damage 
-		player_ingame_stats.get_node("Label").text = str(int(player_ingame_stats.get_node("HP").value)) + "/" +str(int(player_ingame_stats.get_node("HP").max_value))
+		player_ingame_stats.get_node("Label").text = str(snapped(player_ingame_stats.get_node("HP").value, 0.01)) + "/" +str(int(player_ingame_stats.get_node("HP").max_value))
 		if player_ingame_stats.get_node("HP").value <=0:
 			TransitionManager.play_transition("res://scenes/deathScene.tscn")
 	if type == types_of_effect[1] and duration > 0:

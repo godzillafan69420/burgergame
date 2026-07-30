@@ -42,7 +42,7 @@ func _ready() -> void:
 
 func _take_damage(damage: float) -> void:
 	$HP.value -= damage * ((MAX_DEF - def_stats)/MAX_DEF)
-	$Label.text = str(int($HP.value)) + "/" +str(int($HP.max_value))
+	$Label.text = str(snapped($HP.value, 0.01)) + "/" +str(int($HP.max_value))
 	if $HP.value<=0:
 		get_tree().change_scene_to_file("res://scenes/deathScene.tscn")
 	
