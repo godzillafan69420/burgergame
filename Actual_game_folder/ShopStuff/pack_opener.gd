@@ -49,6 +49,7 @@ func _setup_particles() -> void:
 
 ## Call once the pack should appear on screen.
 func play_intro() -> void:
+	reset()
 	pivot.scale = Vector2.ZERO
 	pivot.rotation = 0.0
 	var tw := create_tween()
