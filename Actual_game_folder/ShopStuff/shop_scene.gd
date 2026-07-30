@@ -32,7 +32,7 @@ var regular_item_pool = [
 ]
 
 var pack_pool = [
-	{"display_name": "Buffoon Pack", "id": "Buffoon Pack", "price": 6, "type": "pack"}
+	{"display_name": "Foid pack", "id": "Buffoon Pack", "price": 6, "type": "pack"}
 ]
 
 func _ready() -> void:
