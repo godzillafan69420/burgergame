@@ -5,6 +5,7 @@ extends Control
 @onready var hbox = $TopScrollContainer/HBoxContainer
 @onready var godot_guy = $MapScrollContainer/Control/TextureRect
 
+
 var level_cards: Array = []
 var current_level_index: int = 0
 var target_scroll_x: float = 0.0
@@ -37,9 +38,9 @@ func _process(_delta):
 	var active_card = level_cards[current_level_index]
 	var card_center_global_x = active_card.global_position.x + (active_card.size.x / 2)
 	var target_guy_global_x = card_center_global_x - (godot_guy.size.x / 2)
-	
+	var bg_global_x = active_card.global_position.x - (active_card.size.x / 2)
 	godot_guy.global_position.x = lerp(godot_guy.global_position.x, target_guy_global_x, 0.15)
-
+	
 func _snap_to_level(index: int):
 	# Keep the index safely bounded inside your actual level list
 	current_level_index = clamp(index, 0, level_cards.size() - 1)
@@ -72,6 +73,8 @@ func _on_play_button_pressed():
 		dest_scene = "res://scenes/ivan_the_van.tscn"
 	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_4") and Globals.level ==5:
 		dest_scene = "res://scenes/fake_italian_guys.tscn"
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_5") and Globals.level ==6:
+		dest_scene = "res://scenes/cone_l.tscn"
 	if dest_scene != "":
 		# Simply call the global manager! It takes care of everything else.
 		TransitionManager.play_transition(dest_scene)

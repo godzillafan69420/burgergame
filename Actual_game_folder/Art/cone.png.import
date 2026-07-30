@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch2uj8uek7s5e"
-path="res://.godot/imported/pickle.png-b24bf3101a055e2b5130bcdd35fdd82f.ctex"
+uid="uid://b88k0skjwetnw"
+path="res://.godot/imported/cone.png-20c8d6ffb71bf49184b9fdb6f0172f1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/pickle.png"
-dest_files=["res://.godot/imported/pickle.png-b24bf3101a055e2b5130bcdd35fdd82f.ctex"]
+source_file="res://Art/cone.png"
+dest_files=["res://.godot/imported/cone.png-20c8d6ffb71bf49184b9fdb6f0172f1c.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b2sxwi1q7pvsb"]
 
-[ext_resource type="Texture2D" uid="uid://b465vd0n86lw2" path="res://Art/vanbg.png" id="1_t1b7t"]
+[ext_resource type="Texture2D" uid="uid://b88k0skjwetnw" path="res://Art/cone.png" id="1_7wowf"]
 [ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="2_ofqtu"]
 [ext_resource type="PackedScene" uid="uid://drr3088qvw5dk" path="res://ui.tscn" id="3_k213a"]
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="4_7wowf"]
@@ -62,7 +62,7 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 [node name="background" type="Sprite2D" parent="." unique_id=1824490579]
 position = Vector2(640.3333, 361.5)
 scale = Vector2(1.9916666, 1.9916667)
-texture = ExtResource("1_t1b7t")
+texture = ExtResource("1_7wowf")
 
 [node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
 script = ExtResource("2_ofqtu")
@@ -73,13 +73,13 @@ victory_gold = 20
 [node name="UI" parent="." unique_id=890284133 instance=ExtResource("3_k213a")]
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("4_7wowf")]
-position = Vector2(220, 366)
+position = Vector2(218, 387)
 
 [node name="enemies" type="Node2D" parent="." unique_id=1413379743]
 position = Vector2(829, 368)
 
 [node name="Cone L" parent="enemies" unique_id=1564538628 instance=ExtResource("5_32sd0")]
-position = Vector2(104, -5)
+position = Vector2(-7, 5)
 attacks_name = Array[String](["strong_right", "ice_cream_balls", "strong_right", "block", "harmful_words"])
 setted_HP = 300.0
 
