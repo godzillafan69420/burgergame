@@ -6,4 +6,4 @@
 script = ExtResource("1_7ndtd")
 effect_name = "radiation"
 damage = 5.0
-duration = 1
+duration = 3
