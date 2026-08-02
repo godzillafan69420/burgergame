@@ -44,6 +44,7 @@ func open_pack(upgrade_pool: Array) -> void:
 		_populate_card(card, option_data)
 
 	# 6. Play the Balatro-style pop: pack appears, anticipation beat, then bursts open
+	pack_opener.reset() # clears _is_open + resets position/alpha from any previous opening
 	pack_opener.show()
 	pack_opener.play_intro()
 	await get_tree().create_timer(anticipation_delay).timeout
