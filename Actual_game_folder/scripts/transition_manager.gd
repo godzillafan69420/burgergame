@@ -9,6 +9,11 @@ extends CanvasLayer
 # original art offset -- tweak if it doesn't fully clear your resolution.
 @export var offscreen_offset: float = 1300.0
 
+# How long the screen stays fully black between the shatter and the fade-in.
+# Bumped way up since there's no actual loading happening to hide -- this is
+# now purely a deliberate beat, tune to taste.
+@export var black_hold_duration: float = 0.45
+
 # Drag your character portraits in here (any order, any count up to 5 slots
 # defined below). Empty slots just won't spawn a shard.
 @export var character_textures: Array[Texture2D] = []
@@ -163,36 +168,36 @@ func _slam_in() -> void:
 	tw.set_parallel(true)
 
 	# The background slam: one quick, decisive hit.
-	tw.tween_property(background, "position", Vector2(15, 0), 0.08)\
+	tw.tween_property(background, "position", Vector2(15, 0), 0.14)\
 		.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
-	tw.tween_property(background, "scale", Vector2(0.97, 0.97), 0.08)\
+	tw.tween_property(background, "scale", Vector2(0.97, 0.97), 0.14)\
 		.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 
 	# Character shards fly in with a slight stagger so they don't land as
 	# one flat block -- each hits a beat after the last.
 	for i in range(shard_nodes.size()):
 		var node = shard_nodes[i]
-		var delay = 0.02 * i
-		tw.tween_property(node, "position", shard_targets[i], 0.14)\
+		var delay = 0.035 * i
+		tw.tween_property(node, "position", shard_targets[i], 0.22)\
 			.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT).set_delay(delay)
-		tw.tween_property(node, "scale", Vector2.ONE, 0.14)\
+		tw.tween_property(node, "scale", Vector2.ONE, 0.22)\
 			.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT).set_delay(delay)
-		tw.tween_property(node, "rotation", 0.0, 0.14)\
+		tw.tween_property(node, "rotation", 0.0, 0.22)\
 			.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT).set_delay(delay)
-		tw.tween_property(node, "modulate:a", 1.0, 0.08).set_delay(delay)
+		tw.tween_property(node, "modulate:a", 1.0, 0.13).set_delay(delay)
 
-	tw.tween_callback(_impact_flash).set_delay(0.06)
+	tw.tween_callback(_impact_flash).set_delay(0.10)
 	await tw.finished
 
 	# Tiny snap-back to rest -- the "pop" that a straight ease-out can't give.
 	var settle := create_tween()
 	settle.set_parallel(true)
-	settle.tween_property(background, "position", Vector2.ZERO, 0.045)\
+	settle.tween_property(background, "position", Vector2.ZERO, 0.08)\
 		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	settle.tween_property(background, "scale", Vector2.ONE, 0.045)\
+	settle.tween_property(background, "scale", Vector2.ONE, 0.08)\
 		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	for node in shard_nodes:
-		settle.tween_property(node, "scale", Vector2.ONE, 0.045)\
+		settle.tween_property(node, "scale", Vector2.ONE, 0.08)\
 			.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	await settle.finished
 
@@ -202,11 +207,11 @@ func _shatter_out() -> void:
 	tw.set_parallel(true)
 
 	# The background itself kicks outward and fades.
-	tw.tween_property(background, "position", background.position + Vector2(0, -140), 0.14)\
+	tw.tween_property(background, "position", background.position + Vector2(0, -140), 0.22)\
 		.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
-	tw.tween_property(background, "scale", background.scale * 1.5, 0.14)\
+	tw.tween_property(background, "scale", background.scale * 1.5, 0.22)\
 		.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
-	tw.tween_property(background, "modulate:a", 0.0, 0.13)
+	tw.tween_property(background, "modulate:a", 0.0, 0.2)
 
 	# Every character shard flies outward away from screen-center and
 	# tumbles, like it's breaking apart -- this is the "glass break."
@@ -218,26 +223,28 @@ func _shatter_out() -> void:
 		var fly_to = node.position + outward * 420.0
 		var spin = randf_range(-2.2, 2.2)
 
-		tw.tween_property(node, "position", fly_to, 0.16)\
+		tw.tween_property(node, "position", fly_to, 0.26)\
 			.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
-		tw.tween_property(node, "rotation", spin, 0.16)\
+		tw.tween_property(node, "rotation", spin, 0.26)\
 			.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
-		tw.tween_property(node, "modulate:a", 0.0, 0.14)
+		tw.tween_property(node, "modulate:a", 0.0, 0.22)
 
 	# Black rushes in right on top of the shatter so there's no empty gap
 	# between "glass gone" and "screen covered."
-	tw.tween_property(black_fade, "modulate:a", 1.0, 0.12).set_delay(0.05)
+	tw.tween_property(black_fade, "modulate:a", 1.0, 0.2).set_delay(0.08)
 	await tw.finished
 
-	await get_tree().create_timer(0.03).timeout
+	# Deliberate hold on solid black -- the game has nothing to actually load,
+	# so this beat is pure pacing/weight rather than hiding a hitch.
+	await get_tree().create_timer(black_hold_duration).timeout
 
 func _fade_from_black() -> void:
 	var tw := create_tween()
-	tw.tween_property(black_fade, "modulate:a", 0.0, 0.22)\
+	tw.tween_property(black_fade, "modulate:a", 0.0, 0.4)\
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	await tw.finished
 
 func _impact_flash() -> void:
 	flash.modulate.a = 1.0
 	var tw := create_tween()
-	tw.tween_property(flash, "modulate:a", 0.0, 0.12).set_trans(Tween.TRANS_SINE)
+	tw.tween_property(flash, "modulate:a", 0.0, 0.2).set_trans(Tween.TRANS_SINE)

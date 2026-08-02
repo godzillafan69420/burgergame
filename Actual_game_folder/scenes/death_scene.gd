@@ -6,4 +6,4 @@ func _ready() -> void:
 
 
 func _on_texture_button_button_down() -> void:
-	get_tree().change_scene_to_file("res://battle_scene.tscn")
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

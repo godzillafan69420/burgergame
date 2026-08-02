@@ -1,4 +1,22 @@
 extends Node2D
+## PackOpener
+## Drop-in "Balatro style" buffoon pack opening transition.
+##
+## SETUP:
+## 1. Add this scene (PackOpener.tscn) wherever your pack currently shows
+##    (e.g. as a child of your pack-selection screen, positioned where the
+##    pack should appear).
+## 2. Select the "Body" node and drag Pack_Body.png onto its Texture slot.
+## 3. Select the "Foil" node and drag your foil/edge overlay png onto its
+##    Texture slot (the mostly-transparent one with the scalloped top).
+## 4. From your existing code:
+##       var pack = $PackOpener
+##       pack.play_intro()                 # pack drops/pops into view
+##       ... when the player clicks the pack ...
+##       pack.open_pack()
+##       await pack.pack_opened            # then reveal your card UI
+##
+## Everything below is tunable via the @export vars in the Inspector.
 
 signal pack_opened
 
@@ -13,6 +31,14 @@ signal pack_opened
 @export var pop_scale_overshoot: float = 1.18
 @export var flash_color: Color = Color(1, 1, 1, 1)
 @export var particle_color: Color = Color(1, 0.95, 0.6, 1)
+
+@export_subgroup("Particles")
+@export var particle_amount: int = 40
+@export var particle_scale_min: float = 6.0
+@export var particle_scale_max: float = 11.0
+@export var particle_velocity_min: float = 260.0
+@export var particle_velocity_max: float = 520.0
+@export var particle_lifetime: float = 0.9
 
 @onready var pivot: Node2D = $Pivot
 @onready var body: Sprite2D = $Pivot/Body
@@ -34,22 +60,28 @@ func _ready() -> void:
 func _setup_particles() -> void:
 	particles.emitting = false
 	particles.one_shot = true
-	particles.amount = 28
-	particles.lifetime = 0.6
+	particles.amount = particle_amount
+	particles.lifetime = particle_lifetime
 	particles.direction = Vector2.UP
 	particles.spread = 180.0
-	particles.initial_velocity_min = 120.0
-	particles.initial_velocity_max = 260.0
-	particles.gravity = Vector2(0, 480)
-	particles.scale_amount_min = 2.0
-	particles.scale_amount_max = 4.0
+	particles.initial_velocity_min = particle_velocity_min
+	particles.initial_velocity_max = particle_velocity_max
+	particles.gravity = Vector2(0, 620)
+	particles.scale_amount_min = particle_scale_min
+	particles.scale_amount_max = particle_scale_max
 	particles.color = particle_color
-	# No texture needed: CPUParticles2D draws small squares by default,
-	# which reads fine as confetti/sparks at this scale.
+
+	# Shrink each particle over its lifetime
+	var scale_curve := Curve.new()
+	scale_curve.add_point(Vector2(0.0, 1.0))
+	scale_curve.add_point(Vector2(0.7, 0.85))
+	scale_curve.add_point(Vector2(1.0, 0.0))
+	
+	# Pass the Curve straight to CPUParticles2D
+	particles.scale_amount_curve = scale_curve
 
 ## Call once the pack should appear on screen.
 func play_intro() -> void:
-	reset()
 	pivot.scale = Vector2.ZERO
 	pivot.rotation = 0.0
 	var tw := create_tween()
@@ -108,7 +140,6 @@ func open_pack() -> void:
 		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 
 	tw.tween_callback(func():
-		hide()
 		pack_opened.emit()
 	)
 
@@ -137,4 +168,3 @@ func reset() -> void:
 	foil.modulate.a = 1.0
 	foil.rotation = 0.0
 	foil.position = Vector2.ZERO
-	flash.modulate.a = 0.0
