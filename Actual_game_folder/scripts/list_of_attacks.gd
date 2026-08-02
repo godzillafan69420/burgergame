@@ -88,7 +88,7 @@ var knife = {
 
 var strong_right = {
 	"name": "Strong Right",
-	"damage": 35,
+	"damage": 50,
 	"status_effects": [],
 	"buff": []
 }
@@ -98,4 +98,25 @@ var ice_cream_balls = {
 	"damage": 0,
 	"status_effects": [],
 	"buff": ["heal"]
+}
+
+var guess_what = {
+	"name": "guess what",
+	"damage": 0,
+	"status_effects": ["fatigue"],
+	"buff": ["block"]
+}
+
+var chicken = {
+	"name": "chicken butt",
+	"damage": 0,
+	"status_effects": [],
+	"buff": ["heal", "heal"]
+}
+
+var banana_nuke = {
+	"name": "Super giga ultra mega giga again banananananana nuke",
+	"damage": 99999999,
+	"status_effects": [],
+	"buff": []
 }

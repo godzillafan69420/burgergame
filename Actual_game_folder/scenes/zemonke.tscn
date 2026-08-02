@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://dcerwyte66fm0"]
+
+[ext_resource type="Texture2D" uid="uid://qaevsvfcf314" path="res://Art/durian plantation.png" id="1_tcm4h"]
+[ext_resource type="PackedScene" uid="uid://drr3088qvw5dk" path="res://ui.tscn" id="2_tcm4h"]
+[ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="3_6kh1l"]
+[ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="4_fyow1"]
+[ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/enemy.tscn" id="5_jae5d"]
+[ext_resource type="Texture2D" uid="uid://cnq877jxbfe6n" path="res://Art/socratesPixel.png" id="6_w4m1c"]
+[ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="7_2sg40"]
+[ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="8_fdkgc"]
+[ext_resource type="Texture2D" uid="uid://ckmir275cyots" path="res://Art/gordoRAM.png" id="9_1ybjt"]
+[ext_resource type="Texture2D" uid="uid://bfosxkvv6nha1" path="res://Art/zemonke.png" id="9_tcm4h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bagtd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_w4m1c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_jw067"]
+script = ExtResource("8_fdkgc")
+character_name = "ZeMonke"
+portrait = ExtResource("9_tcm4h")
+paragraphs = "Fun fact: Banana are yellow because they are."
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_6j6yj"]
+script = ExtResource("8_fdkgc")
+character_name = "Gordo RamE"
+portrait = ExtResource("9_1ybjt")
+paragraphs = "...."
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_pin3j"]
+script = ExtResource("8_fdkgc")
+character_name = "Gordo RamE"
+portrait = ExtResource("9_1ybjt")
+paragraphs = "Worst fun fact by far"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_n5ufe"]
+script = ExtResource("8_fdkgc")
+character_name = "Zemonke"
+portrait = ExtResource("9_tcm4h")
+paragraphs = "The monkey is never concern with the opinion of a fool"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[node name="socratesBoss1" type="Node2D" unique_id=1916832371]
+
+[node name="background" type="Sprite2D" parent="." unique_id=1824490579]
+position = Vector2(640.2222, 360.25003)
+scale = Vector2(1.998611, 1.9986111)
+texture = ExtResource("1_tcm4h")
+
+[node name="UI" parent="." unique_id=890284133 instance=ExtResource("2_tcm4h")]
+
+[node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
+script = ExtResource("3_6kh1l")
+music_name = "Boss1"
+total_enemies = 3
+victory_gold = 30
+
+[node name="player" parent="." unique_id=294404824 instance=ExtResource("4_fyow1")]
+position = Vector2(136, 377)
+
+[node name="enemies" type="Node2D" parent="." unique_id=1413379743]
+position = Vector2(969, 315)
+
+[node name="ZeMonke" parent="enemies" unique_id=708042470 instance=ExtResource("5_jae5d")]
+position = Vector2(162, 57)
+attacks_name = Array[String](["guess_what", "chicken", "banana_nuke"])
+setted_HP = 100.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/ZeMonke" unique_id=1450351235]
+position = Vector2(14, -24)
+scale = Vector2(1.46875, 1.46875)
+sprite_frames = SubResource("SpriteFrames_bagtd")
+
+[node name="Dialogue" type="Node" parent="." unique_id=276630500]
+script = ExtResource("7_2sg40")
+at_when = 1
+dialogues = Array[ExtResource("8_fdkgc")]([SubResource("Resource_jw067"), SubResource("Resource_6j6yj"), SubResource("Resource_pin3j"), SubResource("Resource_n5ufe")])
