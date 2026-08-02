@@ -18,21 +18,22 @@ var upgrade_pool = [
 	{"display_name": "beef patty","id": "beef_patty", "type": "upgrade", "effect": "damage up", "icon": preload("res://Art/burgerpatty.png")},
 	{"display_name": "cheese","id": "cheese", "type": "upgrade", "effect": "yes", "icon": preload("res://Art/cheese.png")},
 	{"display_name": "Bacon","id": "bacon", "type": "joker", "effect": "ohio ", "icon": preload("res://Art/bacon.png")},
-	{"display_name": "pickle","id": "pickle", "type": "relic", "effect": "+1 Hand size", "icon": preload("res://Art/pickle.png")}
+	{"display_name": "pickle","id": "pickle", "type": "relic", "effect": "+1 Hand size", "icon": preload("res://Art/CardPack.png")}
 ]
 
 # --- REGULAR ITEM POOL --- A
+# NOTE: "effect" is what shows up in the hover tooltip in the shop.
 var regular_item_pool = [
-	{"display_name": "tin foil","id": "iron_shield", "price": 4, "type": "defense", "icon": preload("res://Art/Tinfoil(card).png")},
-	{"display_name": "Frying Pan","id": "frying_pan", "price": 6, "type": "attack", "icon": preload("res://Art/Frying_pan(_card).png")},
-	{"display_name": "Heal","id": "health_potion", "price": 3, "type": "utility", "icon": preload("res://Art/Heal(card).png")},
-	{"display_name": "Corn Ball","id": "corn_ball", "price": 8, "type": "buff", "icon": preload("res://Art/Cornball(no_card).png")},
-	{"display_name": "Aura Farm","id": "we_see_the_fit", "price": 5, "type": "passive", "icon": preload("res://Art/WeSeeTheFit.png")},
-	{"display_name": "Hot Sauce","id": "hot_sauce", "price": 8, "type": "buff", "icon": preload("res://Art/Hot_Sauce(card).png")},
+	{"display_name": "tin foil","id": "iron_shield", "price": 4, "type": "defense", "effect": "Blocks incoming damage", "icon": preload("res://Art/Tinfoil(card).png")},
+	{"display_name": "Frying Pan","id": "frying_pan", "price": 6, "type": "attack", "effect": "Deals damage to the enemy", "icon": preload("res://Art/Frying_pan(_card).png")},
+	{"display_name": "Heal","id": "health_potion", "price": 3, "type": "utility", "effect": "Restores HP", "icon": preload("res://Art/Heal(card).png")},
+	{"display_name": "Corn Ball","id": "corn_ball", "price": 8, "type": "buff", "effect": "Boosts your stats", "icon": preload("res://Art/Cornball(no_card).png")},
+	{"display_name": "Aura Farm","id": "we_see_the_fit", "price": 5, "type": "passive", "effect": "Passive bonus while equipped", "icon": preload("res://Art/WeSeeTheFit.png")},
+	{"display_name": "Hot Sauce","id": "hot_sauce", "price": 8, "type": "buff", "effect": "Boosts your stats", "icon": preload("res://Art/Hot_Sauce(card).png")},
 ]
 
 var pack_pool = [
-	{"display_name": "Foid pack", "id": "Buffoon Pack", "price": 6, "type": "pack"}
+	{"display_name": "Buffoon Pack", "id": "Buffoon Pack", "price": 6, "type": "pack", "effect": "Opens 3 random upgrades -- pick 1 to keep"}
 ]
 
 func _ready() -> void:
@@ -65,6 +66,7 @@ func update_gold_ui() -> void:
 		reroll_button.text = "Reroll $" + str(reroll_cost)
 
 func clear_shop_shelves() -> void:
+	HoverTooltip.hide_tooltip()
 	for child in top_fridge.get_children():
 		child.queue_free()
 	for child in bottom_fridge.get_children():
@@ -116,6 +118,12 @@ func create_card_on_shelf(item_data: Dictionary, target_fridge: Node, is_pack: b
 	if buy_button:
 		buy_button.pressed.connect(func(): _on_item_purchased(item_data, card))
 
+	# Hover tooltip -- Balatro-style popup instead of the native OS tooltip.
+	card.mouse_entered.connect(func():
+		HoverTooltip.show_at(card, item_data.get("display_name", ""), item_data.get("effect", ""))
+	)
+	card.mouse_exited.connect(func(): HoverTooltip.hide_tooltip(card))
+
 func _on_item_purchased(item_data: Dictionary, card_node: Node) -> void:
 	var cost = item_data["price"]
 	
@@ -123,6 +131,7 @@ func _on_item_purchased(item_data: Dictionary, card_node: Node) -> void:
 		PlayerStats.player_gold -= cost
 		update_gold_ui()
 		
+		HoverTooltip.hide_tooltip() # card's about to disappear, don't leave the tooltip floating
 		card_node.queue_free()
 		
 		if item_data.get("type") == "pack":

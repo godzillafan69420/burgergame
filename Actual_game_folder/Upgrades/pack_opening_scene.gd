@@ -46,9 +46,7 @@ func open_pack(upgrade_pool: Array) -> void:
 	# 6. Play the Balatro-style pop: pack appears, anticipation beat, then bursts open
 	pack_opener.show()
 	pack_opener.play_intro()
-
 	await get_tree().create_timer(anticipation_delay).timeout
-
 	pack_opener.open_pack()
 	await pack_opener.pack_opened
 
@@ -85,7 +83,15 @@ func _populate_card(card: Control, option_data: Dictionary) -> void:
 	if buy_button:
 		buy_button.pressed.connect(func(): _on_reward_selected(option_data))
 
+	# Hover tooltip -- Balatro-style popup, same component the shop cards use.
+	card.mouse_entered.connect(func():
+		HoverTooltip.show_at(card, option_data.get("display_name", ""), option_data.get("effect", ""))
+	)
+	card.mouse_exited.connect(func(): HoverTooltip.hide_tooltip(card))
+
 func _on_reward_selected(chosen_data: Dictionary) -> void:
+	HoverTooltip.hide_tooltip()
+
 	# Tell the main shop system what item was chosen
 	item_chosen.emit(chosen_data)
 

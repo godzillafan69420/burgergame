@@ -27,6 +27,7 @@ Globals="*uid://cc0262u6kl5d3"
 ListEnemyStatusEffects="*uid://dtkfnl78mea1k"
 StatusIcon="*uid://c4gvkjslm5vco"
 TransitionManager="*res://scenes/transition_manager.tscn"
+HoverTooltip="*uid://btawowwfwdk0w"
 
 [display]
 
