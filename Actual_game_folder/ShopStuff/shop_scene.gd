@@ -15,10 +15,10 @@ var reroll_cost: int = 5
 # --- UPGRADE POOL ---
 var upgrade_pool = [
 	{"display_name": "Lettuce","id": "lettuce", "type": "upgrade", "effect": "+20 hp", "icon": preload("res://Art/lectuce.png")},
-	{"display_name": "beef patty","id": "beef_patty", "type": "upgrade", "effect": "damage up by 0.1%", "icon": preload("res://Art/burgerpatty.png")},
+	{"display_name": "beef patty","id": "beef_patty", "type": "upgrade", "effect": "damage up by 15%", "icon": preload("res://Art/burgerpatty.png")},
 	{"display_name": "cheese","id": "cheese", "type": "upgrade", "effect": "stamina regeneration by 3", "icon": preload("res://Art/cheese.png")},
 	{"display_name": "Bacon","id": "bacon", "type": "joker", "effect": "HP rengeneration by 1", "icon": preload("res://Art/bacon.png")},
-	{"display_name": "pickle","id": "pickle", "type": "relic", "effect": "damage multiplier 0.01, +3HP, +1 stamina", "icon": preload("res://Art/pickle.png")}
+	{"display_name": "pickle","id": "pickle", "type": "relic", "effect": "damage multiplier 10%, +3HP, +1 stamina", "icon": preload("res://Art/pickle.png")}
 ]
 
 # --- REGULAR ITEM POOL --- A

@@ -68,7 +68,7 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("8_fdkgc")
 character_name = "Zemonke"
 portrait = ExtResource("9_tcm4h")
-paragraphs = "I'll give you 3 turns so you can see it."
+paragraphs = "I'll give you 5 turns so you can see it."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_jae5d"]
@@ -108,7 +108,7 @@ position = Vector2(969, 315)
 
 [node name="ZeMonke" parent="enemies" unique_id=708042470 instance=ExtResource("5_jae5d")]
 position = Vector2(162, 57)
-attacks_name = Array[String](["guess_what", "chicken", "banana_nuke"])
+attacks_name = Array[String](["guess_what", "chicken", "guess_what", "chicken", "guess_what", "banana_nuke"])
 setted_HP = 100.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/ZeMonke" unique_id=1450351235]
@@ -123,5 +123,5 @@ dialogues = Array[ExtResource("8_fdkgc")]([SubResource("Resource_jw067"), SubRes
 
 [node name="Dialogue2" type="Node" parent="." unique_id=521808174]
 script = ExtResource("7_2sg40")
-at_when = 3
+at_when = 5
 dialogues = Array[ExtResource("8_fdkgc")]([SubResource("Resource_jae5d"), SubResource("Resource_w4m1c")])

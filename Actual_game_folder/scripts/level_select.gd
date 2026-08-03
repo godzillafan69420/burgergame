@@ -77,19 +77,19 @@ func _on_play_button_pressed():
 	var dest_scene: String = ""
 	
 	# Match up your node names to their destination files
-	if (current_level_node.name == "Card_Cambodia" or current_level_node.name == "Tutorial") and Globals.level ==1:
+	if (current_level_node.name == "Card_Cambodia" or current_level_node.name == "Tutorial") and (Globals.level ==1 or Globals.level >7):
 		dest_scene = "res://scenes/battle_scene.tscn"
-	elif (current_level_node.name == "Card_Philippines" or current_level_node.name == "Level_1") and Globals.level ==2:
+	elif (current_level_node.name == "Card_Philippines" or current_level_node.name == "Level_1") and (Globals.level ==2 or Globals.level >7):
 		dest_scene = "res://scenes/level1.tscn"
-	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_2") and Globals.level ==3:
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_2") and (Globals.level ==3 or Globals.level >7):
 		dest_scene = "res://scenes/socrates_boss_1.tscn"
-	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_3") and Globals.level ==4:
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_3") and (Globals.level ==4 or Globals.level >7):
 		dest_scene = "res://scenes/ivan_the_van.tscn"
-	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_4") and Globals.level ==5:
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_4") and (Globals.level ==5 or Globals.level >7):
 		dest_scene = "res://scenes/fake_italian_guys.tscn"
-	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_5") and Globals.level ==6:
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_5") and (Globals.level ==6 or Globals.level >7):
 		dest_scene = "res://scenes/cone_l.tscn"
-	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_6") and Globals.level ==7:
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_6") and (Globals.level ==7 or Globals.level >7):
 		dest_scene = "res://scenes/zemonke.tscn"
 	if dest_scene != "":
 		# Simply call the global manager! It takes care of everything else.
