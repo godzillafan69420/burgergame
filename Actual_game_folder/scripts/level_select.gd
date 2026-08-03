@@ -89,6 +89,8 @@ func _on_play_button_pressed():
 		dest_scene = "res://scenes/fake_italian_guys.tscn"
 	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_5") and Globals.level ==6:
 		dest_scene = "res://scenes/cone_l.tscn"
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_6") and Globals.level ==7:
+		dest_scene = "res://scenes/zemonke.tscn"
 	if dest_scene != "":
 		# Simply call the global manager! It takes care of everything else.
 		TransitionManager.play_transition(dest_scene)

@@ -5,7 +5,7 @@
 [node name="heal" type="Node" unique_id=289820757]
 script = ExtResource("1_w7pbh")
 effect_name = "heal"
-damage = -20.0
+damage = -30.0
 target_stats = "HP"
 duration = 1
 Effect_strength = 0.5

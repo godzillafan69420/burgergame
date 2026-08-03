@@ -103,8 +103,8 @@ var ice_cream_balls = {
 var guess_what = {
 	"name": "guess what",
 	"damage": 0,
-	"status_effects": ["fatigue"],
-	"buff": ["block"]
+	"status_effects": [],
+	"buff": ["block","heal"]
 }
 
 var chicken = {

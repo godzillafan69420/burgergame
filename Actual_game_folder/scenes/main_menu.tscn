@@ -14,6 +14,7 @@ offset_right = 1293.6205
 offset_bottom = 720.0
 texture = ExtResource("2_bqqt6")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=507507939]
 offset_left = 26.0
@@ -36,18 +37,20 @@ offset_left = 173.0
 offset_top = 393.0
 offset_right = 560.8069
 offset_bottom = 465.0
-text = "Nothing"
+text = "Credits Real"
 
 [node name="Button3" type="Button" parent="CanvasLayer" unique_id=2024521351]
 offset_left = 176.0
 offset_top = 474.0
 offset_right = 563.8069
 offset_bottom = 546.0
-text = "Nothing"
+text = "Music Room"
 
 [node name="Timer" type="Timer" parent="." unique_id=242307133]
 wait_time = 9.0
 autostart = true
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="button_down" from="CanvasLayer/Button2" to="." method="_on_button_2_button_down"]
+[connection signal="button_down" from="CanvasLayer/Button3" to="." method="_on_button_3_button_down"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

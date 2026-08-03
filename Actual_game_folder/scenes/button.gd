@@ -43,3 +43,11 @@ func _on_timer_timeout() -> void:
 		var reverse = get_tree().create_tween()
 		reverse.tween_property($CanvasLayer/TextureRect, "modulate", Color.WHITE, 1.0)
 		await get_tree().create_timer(1).timeout
+
+
+func _on_button_2_button_down() -> void:
+	get_tree().change_scene_to_file("res://scenes/credits.tscn")
+
+
+func _on_button_3_button_down() -> void:
+	get_tree().change_scene_to_file("res://scenes/music_room.tscn")

@@ -11,9 +11,11 @@ var nameOfMusicPlaying: String
 func changeVolume():
 	for i in music.get_children():
 		i.set_volume_db(Globals.MusicVolume)
+	
+func stop():
+	for i in music.get_children():
 
-		
-
+		i.stop()
 
 func play(audio_name: String, from_position: float = 0.0) -> void:
 	if audio_name == "":
