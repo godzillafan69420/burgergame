@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c8bs5yed7bmyq"]
 
 [ext_resource type="Script" uid="uid://dvkgmnjqv64ix" path="res://scenes/death_scene.gd" id="1_3cgnp"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Art/icon.svg" id="1_5mfmg"]
+[ext_resource type="Texture2D" uid="uid://ckm8gejc57ff4" path="res://Art/2026_06_15_0se_Kleki.png" id="2_3cgnp"]
 
 [node name="deathScene" type="Node2D" unique_id=795378392]
 script = ExtResource("1_3cgnp")
@@ -11,21 +11,23 @@ script = ExtResource("1_3cgnp")
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1550950324]
 offset_right = 1285.0
 offset_bottom = 722.0
-texture = ExtResource("1_5mfmg")
+texture = ExtResource("2_3cgnp")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=1214383934]
-offset_left = 501.0
-offset_top = 170.0
-offset_right = 754.0
-offset_bottom = 346.0
+offset_left = 500.0
+offset_top = 34.0
+offset_right = 753.0
+offset_bottom = 210.0
+theme_override_colors/default_color = Color(0.18717614, 0.18717614, 0.18717614, 1)
 theme_override_font_sizes/normal_font_size = 100
 text = "DIED"
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer" unique_id=319513182]
-offset_left = 562.0
+[node name="TextureButton" type="Button" parent="CanvasLayer" unique_id=2092368256]
+offset_left = 408.0
 offset_top = 311.0
-offset_right = 690.0
+offset_right = 826.0
 offset_bottom = 439.0
-texture_normal = ExtResource("1_5mfmg")
+theme_override_font_sizes/font_size = 39
+text = "Main Menu"
 
 [connection signal="button_down" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_button_down"]
