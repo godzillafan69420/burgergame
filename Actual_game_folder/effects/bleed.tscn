@@ -6,4 +6,4 @@
 script = ExtResource("1_ilgjq")
 effect_name = "bleed"
 stackable = true
-damage = 2.0
+damage = 4.0

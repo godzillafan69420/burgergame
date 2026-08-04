@@ -21,7 +21,7 @@ offset_left = 26.0
 offset_top = -23.0
 offset_right = 1019.0
 offset_bottom = 153.0
-theme_override_colors/default_color = Color(0.12658688, 0.121742, 0.1216631, 1)
+theme_override_colors/default_color = Color(0.13863948, 0.16680756, 0.2997063, 1)
 theme_override_font_sizes/normal_font_size = 125
 text = "Kurger buns"
 

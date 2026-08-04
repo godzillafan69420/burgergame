@@ -30,6 +30,7 @@ var regular_item_pool = [
 	{"display_name": "Corn Ball","id": "corn_ball", "price": 8, "type": "buff", "effect": "Deals 15 AOE and burns", "icon": preload("res://Art/Cornball(no_card).png")},
 	{"display_name": "Aura Farm","id": "we_see_the_fit", "price": 5, "type": "passive", "effect": "weakens the enemies but can get punished", "icon": preload("res://Art/WeSeeTheFit.png")},
 	{"display_name": "Hot Sauce","id": "hot_sauce", "price": 8, "type": "buff", "effect": "Boosts your damage", "icon": preload("res://Art/Hot_Sauce(card).png")},
+	{"display_name": "Hot Sauce","id": "knife", "price": 4, "type": "buff", "effect": "bleed", "icon": preload("res://Art/knifeBase.png")},
 ]
 
 var pack_pool = [

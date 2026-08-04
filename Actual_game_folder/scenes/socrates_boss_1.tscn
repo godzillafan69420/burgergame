@@ -71,7 +71,7 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("10_bkkef")
 character_name = "Gordo RamE"
 portrait = ExtResource("11_sj4lc")
-paragraphs = "Mate, enough!"
+paragraphs = "mate"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="socratesBoss1" type="Node2D" unique_id=1916832371]
