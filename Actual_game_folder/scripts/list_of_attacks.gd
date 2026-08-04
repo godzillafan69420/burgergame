@@ -109,9 +109,9 @@ var guess_what = {
 
 var chicken = {
 	"name": "chicken butt",
-	"damage": 0,
+	"damage": 30,
 	"status_effects": [],
-	"buff": ["heal", "heal"]
+	"buff": ["heal"]
 }
 
 var banana_nuke = {
