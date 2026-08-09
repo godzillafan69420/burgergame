@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d05x4u5i1pyso"]
+[gd_scene format=3 uid="uid://cewkqq80nqc6v"]
 
 [ext_resource type="Script" uid="uid://do83jf3u8l3to" path="res://scripts/transition_manager.gd" id="1_nk83w"]
 [ext_resource type="Texture2D" uid="uid://bfosxkvv6nha1" path="res://Art/zemonke.png" id="2_e4pj3"]
@@ -11,6 +11,12 @@
 [node name="TransitionManager" type="CanvasLayer" unique_id=1361086131]
 script = ExtResource("1_nk83w")
 character_textures = Array[Texture2D]([ExtResource("2_e4pj3"), ExtResource("6_esmbu"), ExtResource("4_e4pj3"), ExtResource("5_esmbu"), ExtResource("6_ttsw7")])
+particle_amount = 500
+particle_scale_min = 29.0
+particle_scale_max = 50.0
+particle_velocity_min = 400.0
+particle_velocity_max = 800.0
+particle_color = Color(1, 1, 1, 1)
 
 [node name="CutIn" type="Control" parent="." unique_id=921341367]
 layout_mode = 3

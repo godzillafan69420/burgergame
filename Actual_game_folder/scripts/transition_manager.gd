@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var background: TextureRect = $CutIn/Background
 @onready var flash: ColorRect = $CutIn/Flash
 @onready var black_fade: ColorRect = _get_or_create_black_fade()
+@onready var impact_particles: CPUParticles2D = _get_or_create_particles()
 
 # Where the shard art starts/ends off-screen. -1300/1300 matched your
 # original art offset -- tweak if it doesn't fully clear your resolution.
@@ -12,11 +13,20 @@ extends CanvasLayer
 # How long the screen stays fully black between the shatter and the fade-in.
 # Bumped way up since there's no actual loading happening to hide -- this is
 # now purely a deliberate beat, tune to taste.
-@export var black_hold_duration: float = 0.45
+@export var black_hold_duration: float = 0.6
 
 # Drag your character portraits in here (any order, any count up to 5 slots
 # defined below). Empty slots just won't spawn a shard.
 @export var character_textures: Array[Texture2D] = []
+
+@export_group("Impact Particles")
+@export var particle_amount: int = 36
+@export var particle_scale_min: float = 5.0
+@export var particle_scale_max: float = 10.0
+@export var particle_velocity_min: float = 300.0
+@export var particle_velocity_max: float = 620.0
+@export var particle_lifetime: float = 0.7
+@export var particle_color: Color = Color(1.0, 0.85, 0.75, 1.0)
 
 # --- Character shard setup -----------------------------------------------
 # Each entry: target position as a FRACTION of screen size, the direction
@@ -49,6 +59,16 @@ func _get_or_create_black_fade() -> ColorRect:
 	$CutIn.add_child(rect)
 	return rect
 
+func _get_or_create_particles() -> CPUParticles2D:
+	var existing = get_node_or_null("CutIn/ImpactParticles")
+	if existing:
+		return existing
+
+	var p := CPUParticles2D.new()
+	p.name = "ImpactParticles"
+	$CutIn.add_child(p)
+	return p
+
 func _ready() -> void:
 	cut_in.visible = false
 	flash.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -60,6 +80,30 @@ func _ready() -> void:
 	shards_container.name = "Shards"
 	cut_in.add_child(shards_container)
 	_build_character_shards()
+
+	_setup_particles()
+
+func _setup_particles() -> void:
+	impact_particles.emitting = false
+	impact_particles.one_shot = true
+	impact_particles.amount = particle_amount
+	impact_particles.lifetime = particle_lifetime
+	impact_particles.direction = Vector2.ZERO
+	impact_particles.spread = 180.0 # full radial burst, not a directional cone
+	impact_particles.initial_velocity_min = particle_velocity_min
+	impact_particles.initial_velocity_max = particle_velocity_max
+	impact_particles.gravity = Vector2(0, 260)
+	impact_particles.damping_min = 40.0
+	impact_particles.damping_max = 90.0
+	impact_particles.scale_amount_min = particle_scale_min
+	impact_particles.scale_amount_max = particle_scale_max
+	impact_particles.color = particle_color
+
+	var scale_curve := Curve.new()
+	scale_curve.add_point(Vector2(0.0, 1.0))
+	scale_curve.add_point(Vector2(0.65, 0.8))
+	scale_curve.add_point(Vector2(1.0, 0.0))
+	impact_particles.scale_amount_curve = scale_curve
 
 func _build_character_shards() -> void:
 	for child in shards_container.get_children():
@@ -155,7 +199,18 @@ func play_transition(target_scene_path: String) -> void:
 	cut_in.visible = false
 
 func _slam_in() -> void:
-	background.position = Vector2(-offscreen_offset, 0)
+	# Center pivot so scale animations grow/shrink symmetrically instead of
+	# drifting toward the top-left corner -- that drift is what was leaving
+	# gaps at the screen edges.
+	background.pivot_offset = background.size * 0.5
+
+	var vp_size := get_viewport().get_visible_rect().size
+	# Always at least fully clear the real screen width, regardless of the
+	# tuned offscreen_offset value -- prevents gaps if the export var was
+	# set for a different resolution than the game is actually running at.
+	var start_x: float = -max(offscreen_offset, vp_size.x * 1.2)
+
+	background.position = Vector2(start_x, 0)
 	background.scale = Vector2(1.5, 1.5)
 	background.rotation_degrees = 0.0
 	background.modulate.a = 1.0
@@ -190,11 +245,13 @@ func _slam_in() -> void:
 	await tw.finished
 
 	# Tiny snap-back to rest -- the "pop" that a straight ease-out can't give.
+	# Settles slightly ABOVE 1.0 scale (1.03) as a deliberate small overscan
+	# margin, so there's never a 1px gap at the edges even with rounding.
 	var settle := create_tween()
 	settle.set_parallel(true)
 	settle.tween_property(background, "position", Vector2.ZERO, 0.08)\
 		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	settle.tween_property(background, "scale", Vector2.ONE, 0.08)\
+	settle.tween_property(background, "scale", Vector2(1.03, 1.03), 0.08)\
 		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	for node in shard_nodes:
 		settle.tween_property(node, "scale", Vector2.ONE, 0.08)\
@@ -240,7 +297,7 @@ func _shatter_out() -> void:
 
 func _fade_from_black() -> void:
 	var tw := create_tween()
-	tw.tween_property(black_fade, "modulate:a", 0.0, 0.4)\
+	tw.tween_property(black_fade, "modulate:a", 0.0, 0.5)\
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	await tw.finished
 
@@ -248,3 +305,7 @@ func _impact_flash() -> void:
 	flash.modulate.a = 1.0
 	var tw := create_tween()
 	tw.tween_property(flash, "modulate:a", 0.0, 0.2).set_trans(Tween.TRANS_SINE)
+
+	impact_particles.position = get_viewport().get_visible_rect().size * 0.5
+	impact_particles.restart()
+	impact_particles.emitting = true
