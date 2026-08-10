@@ -7,3 +7,4 @@ script = ExtResource("1_xnowp")
 effect_name = "burn"
 damage = 10.0
 duration = 2
+discription = "10 damage  for a turn"

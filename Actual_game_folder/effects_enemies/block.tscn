@@ -9,3 +9,4 @@ type = "buff"
 target_stats = "def"
 duration = 3
 Effect_strength = 0.5
+discription = "block 50% incoming attacks"

@@ -3,9 +3,15 @@ extends TextureRect
 class_name status_effect_icon
 
 var text = ""
-func _process(delta: float) -> void:
-	if get_global_rect().has_point(get_global_mouse_position()):
+var is_hovered: bool = false
+
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion and not is_hovered:
+		is_hovered = true
 		Events.emit_signal("show_status_text", text)
-	else:
-		Events.emit_signal("hide_status_text")
 		
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion and is_hovered:
+		if not get_global_rect().has_point(get_global_mouse_position()):
+			is_hovered = false
+			Events.emit_signal("hide_status_text")

@@ -5,5 +5,7 @@
 [node name="poison" type="Node" unique_id=289820757]
 script = ExtResource("1_sg3ah")
 effect_name = "poison"
-damage = 10.0
+damage = 3.0
 duration = 3
+discription = "do 3 damage every turn
+for 3 turns"

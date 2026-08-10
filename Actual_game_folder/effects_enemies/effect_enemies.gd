@@ -10,7 +10,7 @@ var types_of_effect = ["lethal", "buff"]
 @export var Effect_strength: float = 1.2
 @export var stackable: bool = false
 
-
+@export_multiline var discription = ""
 
 
 var enemy_status_node :Node2D
@@ -23,6 +23,7 @@ func _ready() -> void:
 	var icon = status_effect_icon.new()
 	icon.name = effect_name
 	icon.texture = StatusIcon.get(effect_name)
+	icon.text = discription
 	get_parent().get_parent().get_node("status_effect_viewer").add_child(icon)
 	get_parent().effect.append(effect_name)
 	enemy_status_node = get_parent().get_parent().get_node("enemy_stats")

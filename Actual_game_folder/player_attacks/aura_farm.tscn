@@ -15,10 +15,8 @@ script = ExtResource("2_o33en")
 card_name = "Aura Farm"
 discription = ""
 damage = 0.0
-energy = 8.0
 effects_for_enemies = Array[String](["weaken"])
 AOE = true
-lucky = true
 
 [node name="name" type="Label" parent="." unique_id=1243870691]
 layout_mode = 0
@@ -44,10 +42,7 @@ offset_top = 187.0
 offset_right = 230.0
 offset_bottom = 305.0
 text = "weaken enemy
-but chance of 
-you taking damage
-depending on the luck
-stats"
+"
 
 [node name="Label" type="Label" parent="." unique_id=2130168746]
 layout_mode = 0
@@ -56,7 +51,7 @@ offset_top = -10.0
 offset_right = 209.0
 offset_bottom = 45.0
 theme_override_font_sizes/font_size = 40
-text = "8"
+text = "10"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
