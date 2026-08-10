@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://brvjmfvdrrfg6"]
+
+[ext_resource type="Texture2D" uid="uid://bpp8nf463r3ow" path="res://Art/burger buns.png" id="1_7wjax"]
+[ext_resource type="Texture2D" uid="uid://d2wqrsedola2s" path="res://Art/patty.png" id="2_csef1"]
+[ext_resource type="Texture2D" uid="uid://cwdkn1bibhl15" path="res://Art/lectuce.png" id="3_omb07"]
+[ext_resource type="Texture2D" uid="uid://dsu4a1usnqij6" path="res://Art/cheese.png" id="4_ocew0"]
+[ext_resource type="Texture2D" uid="uid://ch2uj8uek7s5e" path="res://Art/pickle.png" id="5_26yqc"]
+[ext_resource type="Texture2D" uid="uid://cmdnrvhthm1om" path="res://Art/bacon.png" id="6_b3ux6"]
+
+[node name="begining cutscene" type="Node2D" unique_id=1392934614]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=837014787]
+
+[node name="BurgerBuns" type="Sprite2D" parent="Node2D" unique_id=1364345252]
+position = Vector2(281, 523)
+texture = ExtResource("1_7wjax")
+
+[node name="Patty" type="Sprite2D" parent="Node2D" unique_id=1645702758]
+position = Vector2(280, 489)
+texture = ExtResource("2_csef1")
+
+[node name="Lectuce" type="Sprite2D" parent="Node2D" unique_id=977996271]
+position = Vector2(281, 473)
+texture = ExtResource("3_omb07")
+
+[node name="Cheese" type="Sprite2D" parent="Node2D" unique_id=1634231663]
+position = Vector2(282, 471)
+texture = ExtResource("4_ocew0")
+
+[node name="Pickle" type="Sprite2D" parent="Node2D" unique_id=1656277764]
+position = Vector2(282, 463)
+texture = ExtResource("5_26yqc")
+
+[node name="Bacon" type="Sprite2D" parent="Node2D" unique_id=1253896372]
+position = Vector2(281, 452)
+texture = ExtResource("6_b3ux6")

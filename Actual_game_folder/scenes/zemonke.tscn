@@ -116,7 +116,7 @@ position = Vector2(969, 315)
 [node name="ZeMonke" parent="enemies" unique_id=708042470 instance=ExtResource("5_jae5d")]
 position = Vector2(162, 57)
 attacks_name = Array[String](["guess_what", "chicken", "guess_what", "chicken", "guess_what", "banana_nuke"])
-setted_HP = 90.0
+setted_HP = 175.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/ZeMonke" unique_id=1450351235]
 position = Vector2(12.999998, -24.000002)
