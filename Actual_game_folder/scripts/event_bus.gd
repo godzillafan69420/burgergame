@@ -28,3 +28,6 @@ signal id_chosen(id, damage)
 signal id_effect_chosen(id, effect)
 
 signal update_display(sentence)
+
+signal show_status_text(text)
+signal hide_status_text

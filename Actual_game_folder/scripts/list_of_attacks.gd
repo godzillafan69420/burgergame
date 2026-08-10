@@ -130,6 +130,14 @@ var chicken = {
 	"animation": ""
 }
 
+var butt = {
+	"name": "sneaky dodge",
+	"damage": 0,
+	"status_effects": [],
+	"buff": ["dodge"],
+	"animation": ""
+}
+
 var banana_nuke = {
 	"name": "Super giga ultra mega giga again banananananana nuke",
 	"damage": 99999999,

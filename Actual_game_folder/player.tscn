@@ -23,5 +23,6 @@ offset_top = 102.0
 offset_right = 93.0
 offset_bottom = 173.0
 size_flags_stretch_ratio = 2.0
+mouse_filter = 2
 
 [node name="status_effect" parent="." unique_id=1779726787 instance=ExtResource("4_hqtel")]

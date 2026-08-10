@@ -96,7 +96,7 @@ position = Vector2(829, 368)
 [node name="Ivan the van" parent="enemies" unique_id=1564538628 instance=ExtResource("7_fg2du")]
 position = Vector2(104, -16)
 attacks_name = Array[String](["block", "van", "giga_punch", "ragebait"])
-setted_HP = 200.0
+setted_HP = 250.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Ivan the van" unique_id=1328646470]
 position = Vector2(14, -23)

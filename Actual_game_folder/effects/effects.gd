@@ -9,10 +9,11 @@ func _ready() -> void:
 		queue_free()
 		return
 	
-	var status_effect_icon = TextureRect.new()
-	status_effect_icon.name = effect_name
-	status_effect_icon.texture = StatusIcon.get(effect_name)
-	get_parent().get_parent().get_node("status_effect_viewer").add_child(status_effect_icon)
+	var icon = status_effect_icon.new()
+	icon.name = effect_name
+	icon.texture = StatusIcon.get(effect_name)
+	icon.text = discription
+	get_parent().get_parent().get_node("status_effect_viewer").add_child(icon)
 	get_parent().effect.append(effect_name)
 	if type == types_of_effect[1] or effect_name == "heal":
 		before_stats = player_ingame_stats.get(target_stats)
