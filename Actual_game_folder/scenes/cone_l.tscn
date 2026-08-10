@@ -77,7 +77,7 @@ position = Vector2(829, 368)
 [node name="Cone L" parent="enemies" unique_id=1564538628 instance=ExtResource("5_32sd0")]
 position = Vector2(-7, 5)
 attacks_name = Array[String](["strong_right", "ice_cream_balls", "strong_right", "block", "harmful_words"])
-setted_HP = 300.0
+setted_HP = 350.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Cone L" unique_id=1328646470]
 position = Vector2(14, -23)
