@@ -10,13 +10,14 @@
 
 [node name="TransitionManager" type="CanvasLayer" unique_id=1361086131]
 script = ExtResource("1_nk83w")
+black_hold_duration = 0.0
 character_textures = Array[Texture2D]([ExtResource("2_e4pj3"), ExtResource("6_esmbu"), ExtResource("4_e4pj3"), ExtResource("5_esmbu"), ExtResource("6_ttsw7")])
-particle_amount = 500
+particle_amount = 150
 particle_scale_min = 29.0
 particle_scale_max = 50.0
 particle_velocity_min = 400.0
 particle_velocity_max = 800.0
-particle_color = Color(1, 1, 1, 1)
+particle_color = Color(0.95683426, 0.21730682, 0.21886444, 0.3882353)
 
 [node name="CutIn" type="Control" parent="." unique_id=921341367]
 layout_mode = 3
