@@ -17,13 +17,16 @@ func _regenerate_energy():
 	$"../energyBar".value = total_energy
 	if total_energy >= 50:
 		total_energy = 50
+
+	$"../ColorRect".visible = false
 	
 	text = str(total_energy)
 func _reduced_energy(cost: float):
 	if cost<= total_energy:
 		total_energy -= cost
 	$"../energyBar".value = total_energy
-
+	if total_energy < 4:
+		$"../ColorRect".visible = true
 	Events.emit_signal("total_energy", total_energy)
 	text = str(total_energy)
 	
