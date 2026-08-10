@@ -7,3 +7,4 @@ script = ExtResource("1_ilgjq")
 effect_name = "bleed"
 stackable = true
 damage = 4.0
+discription = "does 4 damage over 5 turns"
