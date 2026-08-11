@@ -7,7 +7,7 @@ var punch = {
 	"damage": 10,
 	"status_effects": [],
 	"buff": [],
-	"animation": ""
+	"animation": "punch"
 }
 
 var kick = {
@@ -15,7 +15,7 @@ var kick = {
 	"damage": 25,
 	"status_effects": [],
 	"buff": [],
-	"animation": ""
+	"animation": "punch"
 }
 
 var poison = {

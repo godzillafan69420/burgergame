@@ -16,7 +16,9 @@ var upgraded_single_damage_multiplier: float = 1
 var stamina_regeneration: float = 0
 var hp_regeneration: float = 0
 
+var incoming_damage: float = 0
 
+@onready var animation_player = $"../animations"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	HP = PlayerStats.player_hitpoint
@@ -38,12 +40,22 @@ func _ready() -> void:
 	Events.connect("damaged_player", _take_damage)
 	
 
-
-func _take_damage(damage: float) -> void:
-	$HP.value -= damage * ((MAX_DEF - def_stats)/MAX_DEF)
+func _on_animations_animation_finished() -> void:
+	animation_player.visible = false
+	$HP.value -= incoming_damage * ((MAX_DEF - def_stats)/MAX_DEF)
 	$Label.text = str(snapped($HP.value, 0.01)) + "/" +str(int($HP.max_value))
+	
 	if $HP.value<=0:
 		get_tree().change_scene_to_file("res://scenes/deathScene.tscn")
+	Events.emit_signal("players_turn")
+	
+	
+
+func _take_damage(damage: float, animation: String) -> void:
+	incoming_damage = damage
+	animation_player.visible = true
+	animation_player.play(animation)
+	
 	
 
 

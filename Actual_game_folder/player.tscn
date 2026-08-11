@@ -4,6 +4,50 @@
 [ext_resource type="Texture2D" uid="uid://bpp8nf463r3ow" path="res://Art/burger buns.png" id="2_hqtel"]
 [ext_resource type="PackedScene" uid="uid://ctnf6wjt5kuvb" path="res://player_stats.tscn" id="3_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://bons014fxsklb" path="res://status_effect_parent.tscn" id="4_hqtel"]
+[ext_resource type="Texture2D" uid="uid://bgdv2dnysxfoi" path="res://Art/animation/impact.png" id="5_sweqy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivps1"]
+atlas = ExtResource("5_sweqy")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urp6f"]
+atlas = ExtResource("5_sweqy")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwjto"]
+atlas = ExtResource("5_sweqy")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_606se"]
+atlas = ExtResource("5_sweqy")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1c27"]
+atlas = ExtResource("5_sweqy")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_op7ga"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivps1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urp6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwjto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_606se")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1c27")
+}],
+"loop": false,
+"name": &"punch",
+"speed": 12.0
+}]
 
 [node name="player_sprites" type="Node2D" unique_id=294404824]
 script = ExtResource("1_onrkg")
@@ -26,3 +70,12 @@ size_flags_stretch_ratio = 2.0
 mouse_filter = 2
 
 [node name="status_effect" parent="." unique_id=1779726787 instance=ExtResource("4_hqtel")]
+
+[node name="animations" type="AnimatedSprite2D" parent="." unique_id=261416703]
+visible = false
+position = Vector2(23.999996, 13.000008)
+scale = Vector2(1.5078125, 1.5078125)
+sprite_frames = SubResource("SpriteFrames_op7ga")
+animation = &"punch"
+
+[connection signal="animation_finished" from="animations" to="player_stats" method="_on_animations_animation_finished"]

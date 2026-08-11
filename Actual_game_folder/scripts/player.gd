@@ -20,7 +20,4 @@ func _ready() -> void:
 		toppings.texture = get(passives[i]["id"])
 		$toppings_group.add_child(toppings)
 
-
-
-
 	

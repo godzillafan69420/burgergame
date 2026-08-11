@@ -55,13 +55,8 @@ func _attacked_player(attack_id):
 	if attack_id != id:
 		return
 	
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "global_position", $"../../player".position, 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	await get_tree().create_timer(0.2).timeout
-	
-	
 	var damage =(attacks[current_attack_choice].get("damage")) * damage_multiplier
-	Events.emit_signal("damaged_player", damage)
+	
 	sentence = name+ " use " + attacks[current_attack_choice].get("name")
 	#yes kallum i used ai for this if statement lmao
 
@@ -77,10 +72,8 @@ func _attacked_player(attack_id):
 	if get_tree() == null:
 		return
 	Events.emit_signal("update_display", sentence)
-	var back_original = get_tree().create_tween()
-	back_original.tween_property(self, "global_position", original_position, 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
-	await get_tree().create_timer(0.2).timeout
-	Events.emit_signal("players_turn")
+	Events.emit_signal("damaged_player", damage, attacks[current_attack_choice].get("animation"))
+	
 
 
 
