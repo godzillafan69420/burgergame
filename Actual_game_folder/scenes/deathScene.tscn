@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c8bs5yed7bmyq"]
 
 [ext_resource type="Script" uid="uid://dvkgmnjqv64ix" path="res://scenes/death_scene.gd" id="1_3cgnp"]
-[ext_resource type="Texture2D" uid="uid://ckm8gejc57ff4" path="res://Art/2026_06_15_0se_Kleki.png" id="2_3cgnp"]
+[ext_resource type="Texture2D" uid="uid://dweskpgv2hhy8" path="res://Art/sitDown.png" id="2_3cgnp"]
 
 [node name="deathScene" type="Node2D" unique_id=795378392]
 script = ExtResource("1_3cgnp")
