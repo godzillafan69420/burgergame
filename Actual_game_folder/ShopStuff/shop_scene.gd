@@ -132,7 +132,13 @@ func _on_item_purchased(item_data: Dictionary, card_node: Node) -> void:
 		PlayerStats.player_gold -= cost
 		update_gold_ui()
 		
-		HoverTooltip.hide_tooltip() # card's about to disappear, don't leave the tooltip floating
+		# 1. Force tooltip away immediately
+		HoverTooltip.hide_tooltip()
+		
+		# 2. Disable mouse input on the bought card so it stops sending mouse_entered
+		if card_node is Control:
+			card_node.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			
 		card_node.queue_free()
 		
 		if item_data.get("type") == "pack":
@@ -149,7 +155,11 @@ func open_pack_screen() -> void:
 	if not PLS_WORK:
 		print("Error: PackOpeningScene node (PLS_WORK) is missing!")
 		return
+
+	# Force tooltip clear one more time to be safe
+	HoverTooltip.hide_tooltip()
 		
+	# Hide the shop shelves right away so the underlying shop cards can't be hovered
 	top_fridge.visible = false
 	bottom_fridge.visible = false
 	reroll_button.disabled = true
