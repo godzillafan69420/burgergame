@@ -29,7 +29,7 @@ var poison = {
 
 var giga_punch = {
 	"name": "giga punch",
-	"damage": 30,
+	"damage": 20,
 	"status_effects": [],
 	"buff": [],
 	"animation": "punch"
@@ -85,7 +85,7 @@ var tickle = {
 
 var smelly_pasta = {
 	"name": "Smelly Pasta",
-	"damage": 35,
+	"damage": 30,
 	"status_effects": [],
 	"buff": [],
 	"animation": "stink"
