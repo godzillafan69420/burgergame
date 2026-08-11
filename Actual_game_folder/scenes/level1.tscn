@@ -123,7 +123,7 @@ sprite_frames = SubResource("SpriteFrames_x76d4")
 [node name="Pearto" parent="enemies" unique_id=1307804686 instance=ExtResource("7_jvkml")]
 position = Vector2(267, 4)
 id = 1
-attacks_name = Array[String](["poison", "giga_punch"])
+attacks_name = Array[String](["giga_punch"])
 setted_HP = 100.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Pearto" unique_id=1673382165]

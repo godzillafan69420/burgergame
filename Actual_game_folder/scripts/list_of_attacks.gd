@@ -23,7 +23,7 @@ var poison = {
 	"damage": 0,
 	"status_effects":["poison"],
 	"buff": [],
-	"animation": ""
+	"animation": "poison"
 	
 }
 
@@ -32,7 +32,7 @@ var giga_punch = {
 	"damage": 30,
 	"status_effects": [],
 	"buff": [],
-	"animation": ""
+	"animation": "punch"
 }
 
 var ragebait = {
@@ -40,7 +40,7 @@ var ragebait = {
 	"damage": 15,
 	"status_effects": ["weaken"],
 	"buff": [],
-	"animation": ""
+	"animation": "ragebait"
 }
 
 var harmful_words = {
@@ -48,7 +48,7 @@ var harmful_words = {
 	"damage": 15,
 	"status_effects": ["fatigue"],
 	"buff": [],
-	"animation": ""
+	"animation": "harmful_words"
 }
 
 var nuclear_pizza = {
@@ -56,7 +56,7 @@ var nuclear_pizza = {
 	"damage": 5,
 	"status_effects": ["radiation"],
 	"buff": ["radiation"],
-	"animation": ""
+	"animation": "pizza"
 }
 
 var van = {
@@ -64,7 +64,7 @@ var van = {
 	"damage": 10,
 	"status_effects": ["weaken",],
 	"buff": [],
-	"animation": ""
+	"animation": "punch"
 }
 
 var block = {
@@ -72,7 +72,7 @@ var block = {
 	"damage": 0,
 	"status_effects": [],
 	"buff": ["block"],
-	"animation": ""
+	"animation": "no_animation"
 }
 
 var tickle = {
@@ -80,7 +80,7 @@ var tickle = {
 	"damage": 25,
 	"status_effects": ["weaken"],
 	"buff": [],
-	"animation": ""
+	"animation": "tickle"
 }
 
 var smelly_pasta = {
@@ -88,7 +88,7 @@ var smelly_pasta = {
 	"damage": 35,
 	"status_effects": [],
 	"buff": [],
-	"animation": ""
+	"animation": "stink"
 }
 
 var knife = {
@@ -96,7 +96,7 @@ var knife = {
 	"damage": 15,
 	"status_effects": ["bleed"],
 	"buff": [],
-	"animation": ""
+	"animation": "slash"
 }
 
 var strong_right = {
@@ -104,22 +104,31 @@ var strong_right = {
 	"damage": 50,
 	"status_effects": [],
 	"buff": [],
-	"animation": ""
+	"animation": "punch"
 }
 
 var ice_cream_balls = {
 	"name": "An Ice Cream",
 	"damage": 0,
 	"status_effects": [],
-	"buff": ["heal"]
+	"buff": ["heal"],
+	"animation": "no_animation"
 }
 
+var scratch = {
+	"name": "scratch",
+	"damage": 10,
+	"status_effects": ["bleed","bleed","bleed"],
+	"buff": [],
+	"animation": "slash"
+}
 var guess_what = {
 	"name": "guess what",
 	"damage": 0,
 	"status_effects": [],
 	"buff": ["block","heal"],
-	"animation": ""
+	"animation": "no_animation",
+	
 }
 
 var chicken = {
@@ -127,7 +136,7 @@ var chicken = {
 	"damage": 30,
 	"status_effects": [],
 	"buff": ["heal"],
-	"animation": ""
+	"animation": "punch"
 }
 
 var butt = {
@@ -135,7 +144,7 @@ var butt = {
 	"damage": 0,
 	"status_effects": [],
 	"buff": ["dodge"],
-	"animation": ""
+	"animation": "no_animation"
 }
 
 var banana_nuke = {
