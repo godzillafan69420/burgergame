@@ -152,5 +152,5 @@ var banana_nuke = {
 	"damage": 99999999,
 	"status_effects": [],
 	"buff": [],
-	"animation": ""
+	"animation": "banana_nuke"
 }

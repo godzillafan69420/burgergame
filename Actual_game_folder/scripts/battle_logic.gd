@@ -13,7 +13,7 @@ var num_of_enemies: int = 0
 var current_state
 enum States{players_turn, enemies_turn, dialogue} 
 
-var cards_can_spawn = ["punch", "punch", "punch", "blocking"]
+var cards_can_spawn = [ "punch", "blocking",  "punch"]
 
 var num_of_cards
 
