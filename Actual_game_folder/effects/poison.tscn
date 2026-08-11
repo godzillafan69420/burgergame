@@ -6,3 +6,4 @@
 script = ExtResource("1_710si")
 effect_name = "poison"
 damage = 3.0
+discription = "does 3 damage over 5 turns"

@@ -7,3 +7,4 @@ script = ExtResource("1_7y0j4")
 effect_name = "radiation"
 damage = 10.0
 duration = 3
+discription = "does 10 damage over 3 turns"

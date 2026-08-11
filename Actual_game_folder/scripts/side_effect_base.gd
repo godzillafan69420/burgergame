@@ -16,4 +16,6 @@ var types_of_effect = ["lethal", "buff"]
 @export var duration: int = 5
 @export var Effect_strength: float = 1.2
 
+@export_multiline var discription: String = ""
+
 		

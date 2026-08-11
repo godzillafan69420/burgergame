@@ -9,3 +9,4 @@ type = "buff"
 target_stats = "def_stats"
 duration = 3
 Effect_strength = -5.0
+discription = "defence reduce by 25% for 3 turns"

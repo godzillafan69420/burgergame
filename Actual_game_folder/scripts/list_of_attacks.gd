@@ -7,7 +7,7 @@ var punch = {
 	"damage": 10,
 	"status_effects": [],
 	"buff": [],
-	"animation": ""
+	"animation": "punch"
 }
 
 var kick = {
@@ -15,7 +15,7 @@ var kick = {
 	"damage": 25,
 	"status_effects": [],
 	"buff": [],
-	"animation": ""
+	"animation": "punch"
 }
 
 var poison = {
@@ -127,6 +127,14 @@ var chicken = {
 	"damage": 30,
 	"status_effects": [],
 	"buff": ["heal"],
+	"animation": ""
+}
+
+var butt = {
+	"name": "sneaky dodge",
+	"damage": 0,
+	"status_effects": [],
+	"buff": ["dodge"],
 	"animation": ""
 }
 
