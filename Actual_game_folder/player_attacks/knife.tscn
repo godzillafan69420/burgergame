@@ -14,8 +14,8 @@ texture = ExtResource("1_kma5y")
 script = ExtResource("2_kblhx")
 card_name = "Punch"
 discription = "do 10 damage"
-damage = 10.0
-energy = 6.0
+damage = 7.0
+energy = 8.0
 effects_for_enemies = Array[String](["bleed"])
 
 [node name="name" type="Label" parent="." unique_id=1387920143]
@@ -51,7 +51,7 @@ offset_top = -6.8376093
 offset_right = 208.54701
 offset_bottom = 48.16239
 theme_override_font_sizes/font_size = 40
-text = "6"
+text = "8"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -16,9 +16,9 @@ var reroll_cost: int = 5
 var upgrade_pool = [
 	{"display_name": "Lettuce","id": "lettuce", "type": "upgrade", "effect": "+25 hp", "icon": preload("res://Art/lectuce.png")},
 	{"display_name": "beef patty","id": "beef_patty", "type": "upgrade", "effect": "damage up by 15%", "icon": preload("res://Art/burgerpatty.png")},
-	{"display_name": "cheese","id": "cheese", "type": "upgrade", "effect": "stamina regeneration by 3", "icon": preload("res://Art/cheese.png")},
-	{"display_name": "Bacon","id": "bacon", "type": "joker", "effect": "HP rengeneration by 2", "icon": preload("res://Art/bacon.png")},
-	{"display_name": "pickle","id": "pickle", "type": "relic", "effect": "damage multiplier 5%, +3HP", "icon": preload("res://Art/pickle.png")},
+	{"display_name": "cheese","id": "cheese", "type": "upgrade", "effect": "stamina regeneration by 4", "icon": preload("res://Art/cheese.png")},
+	{"display_name": "Bacon","id": "bacon", "type": "joker", "effect": "HP rengeneration by 5", "icon": preload("res://Art/bacon.png")},
+	{"display_name": "pickle","id": "pickle", "type": "relic", "effect": "damage multiplier 5%, +10HP", "icon": preload("res://Art/pickle.png")},
 	{"display_name": "Fried Chicken","id": "chicken", "type": "relic", "effect": "Increase stamina by 10, Increase stamina rengeneration by 2", "icon": preload("res://Art/fried_chicken.png")}
 ]
 

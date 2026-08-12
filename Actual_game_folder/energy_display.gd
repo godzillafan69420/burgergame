@@ -1,22 +1,26 @@
 extends Label
 
+var max_energy: float
+
 var total_energy: float
 var total_regeneration: float
 
 func _ready() -> void:
-	total_energy = PlayerStats.player_energy
-	$"../energyBar".max_value = get_parent().get_parent().get_node("player").get_node("player_stats").Max_stamina
-	$"../energyBar".value = total_energy
+	
 	total_regeneration = PlayerStats.player_recovery
+	max_energy = PlayerStats.player_max_energy
+	total_energy = 10
+	$"../energyBar".max_value = max_energy
+	$"../energyBar".value = 10
 	text = str(total_energy)
 	Events.connect("reduce_energy_by", _reduced_energy)
 	Events.connect("players_turn", _regenerate_energy)
 	
 func _regenerate_energy():
-	total_energy += total_regeneration + get_parent().get_parent().get_node("player").get_node("player_stats").stamina_regeneration
+	total_energy += total_regeneration
 	$"../energyBar".value = total_energy
-	if total_energy >= 50:
-		total_energy = 50
+	if total_energy >= max_energy:
+		total_energy = max_energy
 
 	$"../ColorRect".visible = false
 	

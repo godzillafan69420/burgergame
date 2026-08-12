@@ -14,6 +14,8 @@ func _ready() -> void:
 	enemy_id_turn = total_enemies
 
 func _on_button_down() -> void:
+	if battle_logic_script.current_state != battle_logic_script.States.players_turn:
+		return
 	var children = enemy_list.get_children()
 	
 	for index in range(children.size()):

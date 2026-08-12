@@ -9,7 +9,33 @@ var level_cards: Array = []
 var current_level_index: int = 0
 var target_scroll_x: float = 0.0
 
+func _player_stats_change():
+	PlayerStats.player_hitpoint = 100
+	PlayerStats.player_max_energy = 50
+	PlayerStats.player_recovery = 10
+	PlayerStats.player_aoe_damage = 1
+	PlayerStats.player_single_damage = 1
+	PlayerStats.player_damage = 1
+	PlayerStats.player_hitpoint_recovery = 0
+	for i in PlayerStats.upgrades:
+		if i["id"] == "lettuce":
+			PlayerStats.player_hitpoint += 25
+		if i["id"] == "beef_patty":
+			PlayerStats.player_damage += 0.15
+		if i["id"] == "cheese":
+			PlayerStats.player_recovery += 4
+		if i["id"] == "bacon":
+			PlayerStats.player_hitpoint_recovery += 5
+		if i["id"] == "pickle":
+			PlayerStats.player_damage += 0.05
+			PlayerStats.player_hitpoint += 10
+		if i["id"] == "chicken":
+			PlayerStats.player_recovery += 2
+			PlayerStats.player_max_energy += 10
+
+
 func _ready():
+	_player_stats_change()
 	AudioManager.play("LevelSelect")
 	level_cards = hbox.get_children()
 

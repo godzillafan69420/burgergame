@@ -10,37 +10,15 @@ var def_stats: float = 0
 const MAX_DEF: float = 20
 
 var damage_multiplier: float = 1
-var upgraded_damage_multiplier: float = 1
-var upgraded_aoe_damage_multiplier: float = 1
-var upgraded_single_damage_multiplier: float = 1
-var stamina_regeneration: float = 0
-var hp_regeneration: float = 0
 
-var Max_stamina: int = 50
 
 var incoming_damage: float = 0
 
 @onready var animation_player = $"../animations"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	HP = PlayerStats.player_hitpoint
-	for i in PlayerStats.upgrades:
-		if i["id"] == "lettuce":
-			HP += 25
-		if i["id"] == "beef_patty":
-			upgraded_damage_multiplier += 0.15
-		if i["id"] == "cheese":
-			stamina_regeneration += 3
-		if i["id"] == "bacon":
-			hp_regeneration += 2
-		if i["id"] == "pickle":
-			upgraded_damage_multiplier += 0.05
-			HP += 3
-		if i["id"] == "chicken":
-			stamina_regeneration += 2
-			Max_stamina += 10
-	$HP.max_value = HP
-	$HP.value = HP
+	$HP.max_value = PlayerStats.player_hitpoint
+	$HP.value = PlayerStats.player_hitpoint
 	$Label.text = str(int($HP.value)) + "/" +str(int($HP.max_value))
 	Events.connect("damaged_player", _take_damage)
 	
