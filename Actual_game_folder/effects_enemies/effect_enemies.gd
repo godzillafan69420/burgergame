@@ -21,7 +21,7 @@ func _ready() -> void:
 		queue_free()
 		return
 	var icon = status_effect_icon.new()
-	icon.name = effect_name
+	icon.effect_name = effect_name
 	icon.texture = StatusIcon.get(effect_name)
 	icon.text = discription
 	get_parent().get_parent().get_node("status_effect_viewer").add_child(icon)
@@ -48,7 +48,7 @@ func _take_effect():
 		enemy_status_node.set(target_stats, before_status)
 		get_parent().effect.erase(effect_name)
 		for i in get_parent().get_parent().get_node("status_effect_viewer").get_children():
-			if i.name == effect_name:
+			if i.effect_name == effect_name:
 				i.queue_free()
 				break
 		queue_free()

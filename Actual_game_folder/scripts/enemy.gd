@@ -44,8 +44,6 @@ func _add_status(status:String):
 	$status.add_child(type)
 	
 func _attacked_player(attack_id):
-	
-	
 	if current_attack_choice  >= attacks.size() -1:
 		current_attack_choice = 0
 	else:

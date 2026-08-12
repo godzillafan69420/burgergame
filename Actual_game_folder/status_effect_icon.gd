@@ -5,6 +5,8 @@ class_name status_effect_icon
 var text = ""
 var is_hovered: bool = false
 
+var effect_name: String=""
+
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and not is_hovered:
 		is_hovered = true

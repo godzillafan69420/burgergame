@@ -12,6 +12,31 @@
 [ext_resource type="FontFile" uid="uid://bxrukl00n4uu7" path="res://fonts/montreal/Montreal-Regular.ttf" id="6_n5rqp"]
 [ext_resource type="FontFile" uid="uid://bqxpbabpowhdh" path="res://fonts/kirifont/KiriFont.ttf" id="6_y4yjw"]
 
+[sub_resource type="Animation" id="Animation_e2l4f"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_n5rqp"]
+resource_name = "flash"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.53333336, 0.7833334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gs482"]
+_data = {
+&"RESET": SubResource("Animation_e2l4f"),
+&"flash": SubResource("Animation_n5rqp")
+}
+
 [node name="UI" type="CanvasLayer" unique_id=890284133]
 
 [node name="ColorRect" type="TextureRect" parent="." unique_id=432087091]
@@ -23,6 +48,9 @@ offset_right = 1368.0
 offset_bottom = 794.0
 mouse_filter = 2
 texture = ExtResource("1_n5ude")
+
+[node name="flash" type="AnimationPlayer" parent="." unique_id=391045815]
+libraries/ = SubResource("AnimationLibrary_gs482")
 
 [node name="cards" type="Control" parent="." unique_id=1847801732]
 layout_mode = 3

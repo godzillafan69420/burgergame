@@ -49,7 +49,7 @@ offset_top = -10.714285
 offset_right = 208.92857
 offset_bottom = 44.285713
 theme_override_font_sizes/font_size = 40
-text = "8
+text = "6
 "
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
