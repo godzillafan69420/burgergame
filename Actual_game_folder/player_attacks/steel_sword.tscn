@@ -13,9 +13,9 @@ scale = Vector2(0.56, 0.56)
 texture = ExtResource("1_tnwh0")
 script = ExtResource("2_86eg4")
 card_name = "Frying Pan"
-discription = "do 20 damage"
-damage = 20.0
-energy = 8.0
+discription = "do 13  damage"
+damage = 13.0
+energy = 6.0
 AOE = true
 
 [node name="Sprite2D2" type="TextureRect" parent="." unique_id=518539219]
@@ -40,7 +40,7 @@ offset_left = 31.0
 offset_top = 184.50002
 offset_right = 231.0
 offset_bottom = 302.5
-text = "do 20  Aoe damage"
+text = "do 13  Aoe damage"
 
 [node name="Label" type="Label" parent="." unique_id=1102381502]
 layout_mode = 0

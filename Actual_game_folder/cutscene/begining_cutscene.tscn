@@ -6,7 +6,7 @@
 [node name="begining cutscene" type="Node2D" unique_id=1392934614]
 script = ExtResource("1_jgsi1")
 pannel_1 = "A long time ago, a burger bun was living together with the other burger parts. It was happy and does burger things."
-pannel_2 = "This all changed when a bum called Me67 decided to eat the other parts of the burger, but not the bottom part. This Me67 bum then threw the burger bun away to the trash."
+pannel_2 = "This all changed when a bum called Me67 decided to eat the other parts of the burger, but not the bottom part. This Me67 guy then threw the burger bun away to the trash."
 pannel_3 = "For some reason the burger bun was in a nuclear power plant. The radiation mutated the burger with magic."
 pannel_4 = "The burger soon grew to a size of a grown man, also gain intelligence. "
 pannel_5 = "Gordo RamE, an alien, that just came to earth. The food being in his home planet being disgusting lead to him to earth for some reason. He was searching for food when he found the burger bun. The kind Gordo decided to help the bun."

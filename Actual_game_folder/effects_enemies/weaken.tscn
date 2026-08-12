@@ -8,5 +8,5 @@ effect_name = "weaken"
 type = "buff"
 target_stats = "def"
 duration = 2
-Effect_strength = 1.5
-discription = "reduce defence by 50%"
+Effect_strength = 1.15
+discription = "reduce defence by 15%"

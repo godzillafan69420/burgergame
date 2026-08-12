@@ -16,6 +16,8 @@ var upgraded_single_damage_multiplier: float = 1
 var stamina_regeneration: float = 0
 var hp_regeneration: float = 0
 
+var Max_stamina: int = 50
+
 var incoming_damage: float = 0
 
 @onready var animation_player = $"../animations"
@@ -34,6 +36,9 @@ func _ready() -> void:
 		if i["id"] == "pickle":
 			upgraded_damage_multiplier += 0.05
 			HP += 3
+		if i["id"] == "chicken":
+			stamina_regeneration += 2
+			Max_stamina += 10
 	$HP.max_value = HP
 	$HP.value = HP
 	$Label.text = str(int($HP.value)) + "/" +str(int($HP.max_value))

@@ -13,10 +13,10 @@ scale = Vector2(0.55999964, 0.55999964)
 texture = ExtResource("1_aqvf3")
 script = ExtResource("1_18cxb")
 card_name = "blocking"
-discription = "protect 50% of 
+discription = "protect 25% of 
 incoming damage"
 damage = 0.0
-energy = 7.0
+energy = 3.0
 effects = Array[String](["blocking"])
 AOE = true
 
@@ -43,7 +43,7 @@ offset_left = 28.0
 offset_top = 188.0
 offset_right = 228.0
 offset_bottom = 306.0
-text = "protect 50% of 
+text = "protect 25% of 
 incoming damage"
 
 [node name="Label" type="Label" parent="." unique_id=908153971]
@@ -53,7 +53,8 @@ offset_top = -9.0
 offset_right = 207.0
 offset_bottom = 46.0
 theme_override_font_sizes/font_size = 40
-text = "7"
+text = "3
+"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

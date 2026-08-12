@@ -63,8 +63,6 @@ func _attacked_player(attack_id):
 	var all_effects = attacks[current_attack_choice]["status_effects"]
 	for effect in all_effects: 
 		Events.emit_signal("give_side_effects", effect)
-		sentence +="
-		and give "+ effect
 	if attacks[current_attack_choice]["buff"] != null:
 		var all_buffs = attacks[current_attack_choice]["buff"]
 		for effect in all_buffs: 

@@ -12,7 +12,7 @@ var punch = {
 
 var kick = {
 	"name": "kick",
-	"damage": 25,
+	"damage": 20,
 	"status_effects": [],
 	"buff": [],
 	"animation": "punch"
@@ -20,7 +20,7 @@ var kick = {
 
 var poison = {
 	"name": "poison",
-	"damage": 0,
+	"damage": 7,
 	"status_effects":["poison"],
 	"buff": [],
 	"animation": "poison"
@@ -53,7 +53,7 @@ var harmful_words = {
 
 var nuclear_pizza = {
 	"name": "nuclear pizza",
-	"damage": 5,
+	"damage": 10,
 	"status_effects": ["radiation"],
 	"buff": ["radiation"],
 	"animation": "pizza"
@@ -77,7 +77,7 @@ var block = {
 
 var tickle = {
 	"name": "tickle",
-	"damage": 25,
+	"damage": 20,
 	"status_effects": ["weaken"],
 	"buff": [],
 	"animation": "tickle"
@@ -85,7 +85,7 @@ var tickle = {
 
 var smelly_pasta = {
 	"name": "Smelly Pasta",
-	"damage": 30,
+	"damage": 25,
 	"status_effects": [],
 	"buff": [],
 	"animation": "stink"
@@ -93,7 +93,7 @@ var smelly_pasta = {
 
 var knife = {
 	"name": "knife",
-	"damage": 15,
+	"damage": 20,
 	"status_effects": ["bleed"],
 	"buff": [],
 	"animation": "slash"
@@ -101,7 +101,7 @@ var knife = {
 
 var strong_right = {
 	"name": "Strong Right",
-	"damage": 50,
+	"damage": 35,
 	"status_effects": [],
 	"buff": [],
 	"animation": "punch"
@@ -133,7 +133,7 @@ var guess_what = {
 
 var chicken = {
 	"name": "chicken butt",
-	"damage": 30,
+	"damage": 35,
 	"status_effects": [],
 	"buff": ["heal"],
 	"animation": "punch"

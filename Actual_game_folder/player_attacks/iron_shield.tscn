@@ -15,6 +15,7 @@ script = ExtResource("2_h6dac")
 card_name = "Tin foil"
 discription = "block 75% of incoming attacks"
 damage = 0.0
+energy = 7.0
 effects = Array[String](["super_block"])
 AOE = true
 
@@ -51,7 +52,7 @@ offset_top = -9.0
 offset_right = 207.0
 offset_bottom = 46.0
 theme_override_font_sizes/font_size = 40
-text = "10"
+text = "7"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

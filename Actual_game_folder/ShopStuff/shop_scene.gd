@@ -18,14 +18,15 @@ var upgrade_pool = [
 	{"display_name": "beef patty","id": "beef_patty", "type": "upgrade", "effect": "damage up by 15%", "icon": preload("res://Art/burgerpatty.png")},
 	{"display_name": "cheese","id": "cheese", "type": "upgrade", "effect": "stamina regeneration by 3", "icon": preload("res://Art/cheese.png")},
 	{"display_name": "Bacon","id": "bacon", "type": "joker", "effect": "HP rengeneration by 2", "icon": preload("res://Art/bacon.png")},
-	{"display_name": "pickle","id": "pickle", "type": "relic", "effect": "damage multiplier 5%, +3HP", "icon": preload("res://Art/pickle.png")}
+	{"display_name": "pickle","id": "pickle", "type": "relic", "effect": "damage multiplier 5%, +3HP", "icon": preload("res://Art/pickle.png")},
+	{"display_name": "Fried Chicken","id": "chicken", "type": "relic", "effect": "Increase stamina by 10, Increase stamina rengeneration by 2", "icon": preload("res://Art/fried_chicken.png")}
 ]
 
 # --- REGULAR ITEM POOL --- A
 # NOTE: "effect" is what shows up in the hover tooltip in the shop.
 var regular_item_pool = [
 	{"display_name": "tin foil","id": "iron_shield", "price": 4, "type": "defense", "effect": "Blocks 75% incoming damage", "icon": preload("res://Art/Tinfoil(card).png")},
-	{"display_name": "Frying Pan","id": "frying_pan", "price": 6, "type": "attack", "effect": "Deals 20 AOE damage", "icon": preload("res://Art/Frying_pan(_card).png")},
+	{"display_name": "Frying Pan","id": "frying_pan", "price": 6, "type": "attack", "effect": "Deals 13 AOE damage", "icon": preload("res://Art/Frying_pan(_card).png")},
 	{"display_name": "Heal","id": "health_potion", "price": 3, "type": "utility", "effect": "Restores 20 HP", "icon": preload("res://Art/Heal(card).png")},
 	{"display_name": "Corn Ball","id": "corn_ball", "price": 8, "type": "buff", "effect": "Deals 15 AOE and burns", "icon": preload("res://Art/Cornball(no_card).png")},
 	{"display_name": "Aura Farm","id": "we_see_the_fit", "price": 5, "type": "passive", "effect": "weakens the enemies", "icon": preload("res://Art/WeSeeTheFit.png")},

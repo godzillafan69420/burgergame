@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://fljhhb8q5smd" path="res://Art/gordoTitleScreen.png" id="2_bqqt6"]
 [ext_resource type="Script" uid="uid://b6udiq5bu4apv" path="res://scenes/button.gd" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://c6bc7db3tdg4d" path="res://Art/title.png" id="3_8ln24"]
 [ext_resource type="StyleBox" uid="uid://dvrqw8rhluaai" path="res://level_buttons.tres" id="3_wu84c"]
 [ext_resource type="StyleBox" uid="uid://bjncy0blgwv8n" path="res://hover.tres" id="4_8ln24"]
 
@@ -18,40 +19,48 @@ texture = ExtResource("2_bqqt6")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer" unique_id=1639429048]
+offset_left = -135.0
+offset_top = -26.0
+offset_right = 1585.4818
+offset_bottom = 798.0963
+scale = Vector2(0.415, 0.415)
+texture = ExtResource("3_8ln24")
+
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=507507939]
-offset_left = 26.0
-offset_top = -23.0
-offset_right = 1019.0
-offset_bottom = 153.0
+offset_left = -1027.0
+offset_top = -20.0
+offset_right = -34.0
+offset_bottom = 156.0
 theme_override_colors/default_color = Color(0.13863948, 0.16680756, 0.2997063, 1)
 theme_override_font_sizes/normal_font_size = 125
 text = "Kurger buns"
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=883469284]
-offset_left = 166.0
-offset_top = 281.0
-offset_right = 553.8069
-offset_bottom = 353.0
+offset_left = 57.0
+offset_top = 381.0
+offset_right = 444.8069
+offset_bottom = 453.0
 theme_override_styles/normal = ExtResource("3_wu84c")
 theme_override_styles/pressed = ExtResource("4_8ln24")
 theme_override_styles/hover = ExtResource("4_8ln24")
 text = "Play"
 
 [node name="Button2" type="Button" parent="CanvasLayer" unique_id=1997134882]
-offset_left = 165.0
-offset_top = 379.0
-offset_right = 552.8069
-offset_bottom = 451.0
+offset_left = 58.0
+offset_top = 502.0
+offset_right = 445.8069
+offset_bottom = 574.0
 theme_override_styles/normal = ExtResource("3_wu84c")
 theme_override_styles/pressed = ExtResource("4_8ln24")
 theme_override_styles/hover = ExtResource("4_8ln24")
 text = "Credits Real"
 
 [node name="Button3" type="Button" parent="CanvasLayer" unique_id=2024521351]
-offset_left = 166.0
-offset_top = 477.0
-offset_right = 553.8069
-offset_bottom = 549.0
+offset_left = 57.0
+offset_top = 614.0
+offset_right = 444.8069
+offset_bottom = 686.0
 theme_override_styles/normal = ExtResource("3_wu84c")
 theme_override_styles/pressed = ExtResource("4_8ln24")
 theme_override_styles/hover = ExtResource("4_8ln24")

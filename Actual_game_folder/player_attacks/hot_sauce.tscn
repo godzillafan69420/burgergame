@@ -15,7 +15,7 @@ script = ExtResource("2_m1ejp")
 card_name = "Hot Sauce"
 discription = ""
 damage = 0.0
-energy = 8.0
+energy = 7.0
 effects = Array[String](["rage"])
 AOE = true
 
@@ -51,7 +51,7 @@ offset_top = -10.0
 offset_right = 209.0
 offset_bottom = 45.0
 theme_override_font_sizes/font_size = 40
-text = "8"
+text = "7"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,6 +1,7 @@
 extends Node
 
 const poison: Texture2D = preload("res://Art/status effects/poison.png")
+const ex_block: Texture2D = preload("res://Art/status effects/ex_block.png")
 const block: Texture2D = preload("res://Art/status effects/block.png")
 const weaken: Texture2D = preload("res://Art/status effects/weaken.png")
 const rage: Texture2D = preload("res://Art/status effects/rage.png")

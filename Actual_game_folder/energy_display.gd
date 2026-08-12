@@ -5,7 +5,7 @@ var total_regeneration: float
 
 func _ready() -> void:
 	total_energy = PlayerStats.player_energy
-	$"../energyBar".max_value = 50
+	$"../energyBar".max_value = get_parent().get_parent().get_node("player").get_node("player_stats").Max_stamina
 	$"../energyBar".value = total_energy
 	total_regeneration = PlayerStats.player_recovery
 	text = str(total_energy)
