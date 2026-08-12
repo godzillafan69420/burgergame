@@ -58,19 +58,24 @@ func _spawn_attack_choice():
 func _players_turn():
 	current_turn += 1
 	num_of_cards = card_list.get_child_count()
+	for i in card_list.get_children():
+		i.queue_free()
 	
-	current_state = States.players_turn
-	if num_of_cards < MAX_CARDS:
-		for i in range(MAX_CARDS - num_of_cards):
-			if card_choice  == cards_can_spawn.size() -1:
-				card_choice = 0
-			else:
-				card_choice += 1
-			var new_card = ListOfCards.get(cards_can_spawn[card_choice]).instantiate()
+	for i in range(MAX_CARDS):
+		# Increment and automatically wrap around array size
+		card_choice = (card_choice + 1) % cards_can_spawn.size()
+		
+		var card_key = cards_can_spawn[card_choice]
+		var card_scene = ListOfCards.get(card_key)
+		
+		if card_scene:
+			var new_card = card_scene.instantiate()
+			new_card.card_id = i
 			card_list.add_child(new_card)
 		
 		# Update all IDs sequentially now that the hand is full
-		_update_card_ids()
+	current_state = States.players_turn
+	
 	get_parent().get_node("player").get_node("player_stats").get_node("HP").value += PlayerStats.player_hitpoint_recovery
 	get_parent().get_node("player").get_node("player_stats").get_node("Label").text = str(int(get_parent().get_node("player").get_node("player_stats").get_node("HP").value)) + "/" +str(int(get_parent().get_node("player").get_node("player_stats").get_node("HP").max_value))
 

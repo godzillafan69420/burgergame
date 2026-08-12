@@ -78,7 +78,12 @@ func _process(_delta: float) -> void:
 		in_attack_area = false
 	if !selected_card:
 
-		position = POSITION_OF_CARDS[card_id]
+		if card_id >= 0 and card_id < POSITION_OF_CARDS.size():
+			position = POSITION_OF_CARDS[card_id]
+		else:
+			# Fallback so it doesn't crash if card_id is too high
+			push_warning("Card ID %d out of bounds! Clamping..." % card_id)
+			position = POSITION_OF_CARDS[clamp(card_id, 0, POSITION_OF_CARDS.size() - 1)]
 	else:
 		position = get_global_mouse_position() + Vector2(-100,-100)
 	
