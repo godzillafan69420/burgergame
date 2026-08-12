@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://fljhhb8q5smd" path="res://Art/gordoTitleScreen.png" id="2_bqqt6"]
 [ext_resource type="Script" uid="uid://b6udiq5bu4apv" path="res://scenes/button.gd" id="2_ekxnf"]
+[ext_resource type="StyleBox" uid="uid://dvrqw8rhluaai" path="res://level_buttons.tres" id="3_wu84c"]
+[ext_resource type="StyleBox" uid="uid://bjncy0blgwv8n" path="res://hover.tres" id="4_8ln24"]
 
 [node name="main_menu" type="Node2D" unique_id=2012640209]
 script = ExtResource("2_ekxnf")
@@ -26,24 +28,33 @@ theme_override_font_sizes/normal_font_size = 125
 text = "Kurger buns"
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=883469284]
-offset_left = 173.0
-offset_top = 301.0
-offset_right = 560.8069
-offset_bottom = 373.0
+offset_left = 166.0
+offset_top = 281.0
+offset_right = 553.8069
+offset_bottom = 353.0
+theme_override_styles/normal = ExtResource("3_wu84c")
+theme_override_styles/pressed = ExtResource("4_8ln24")
+theme_override_styles/hover = ExtResource("4_8ln24")
 text = "Play"
 
 [node name="Button2" type="Button" parent="CanvasLayer" unique_id=1997134882]
-offset_left = 173.0
-offset_top = 393.0
-offset_right = 560.8069
-offset_bottom = 465.0
+offset_left = 165.0
+offset_top = 379.0
+offset_right = 552.8069
+offset_bottom = 451.0
+theme_override_styles/normal = ExtResource("3_wu84c")
+theme_override_styles/pressed = ExtResource("4_8ln24")
+theme_override_styles/hover = ExtResource("4_8ln24")
 text = "Credits Real"
 
 [node name="Button3" type="Button" parent="CanvasLayer" unique_id=2024521351]
-offset_left = 176.0
-offset_top = 474.0
-offset_right = 563.8069
-offset_bottom = 546.0
+offset_left = 166.0
+offset_top = 477.0
+offset_right = 553.8069
+offset_bottom = 549.0
+theme_override_styles/normal = ExtResource("3_wu84c")
+theme_override_styles/pressed = ExtResource("4_8ln24")
+theme_override_styles/hover = ExtResource("4_8ln24")
 text = "Music Room"
 
 [node name="Timer" type="Timer" parent="." unique_id=242307133]
