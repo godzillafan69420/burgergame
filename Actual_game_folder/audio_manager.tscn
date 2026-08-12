@@ -15,6 +15,9 @@
 [ext_resource type="AudioStream" uid="uid://wwajtbbwqbhq" path="res://music/untitled something.mp3" id="13_86pii"]
 [ext_resource type="AudioStream" uid="uid://c7vj2vgjicj85" path="res://music/battleBetter.mp3" id="14_86pii"]
 [ext_resource type="AudioStream" uid="uid://hdn4evacflw6" path="res://music/jacob is gonna help igb.mp3" id="15_86pii"]
+[ext_resource type="AudioStream" uid="uid://dd6iborh6pwtd" path="res://music/Kevin.mp3" id="16_ma34g"]
+[ext_resource type="AudioStream" uid="uid://beiww2gpbnxll" path="res://music/dihTouchingMusic.mp3" id="17_hokuy"]
+[ext_resource type="AudioStream" uid="uid://dws0doqvxipay" path="res://music/It's worth the 5 bucks.mp3" id="18_alxyf"]
 
 [node name="audio_manager" type="Node" unique_id=224815698 node_paths=PackedStringArray("music", "sfx")]
 script = ExtResource("1_jisk1")
@@ -66,5 +69,14 @@ stream = ExtResource("8_mfnxe")
 
 [node name="zemonke" type="AudioStreamPlayer" parent="music" unique_id=1409402969]
 stream = ExtResource("15_86pii")
+
+[node name="Kevin" type="AudioStreamPlayer" parent="music" unique_id=430555650]
+stream = ExtResource("16_ma34g")
+
+[node name="bok choi" type="AudioStreamPlayer" parent="music" unique_id=886830501]
+stream = ExtResource("17_hokuy")
+
+[node name="kallum" type="AudioStreamPlayer" parent="music" unique_id=670662364]
+stream = ExtResource("18_alxyf")
 
 [node name="sfx" type="Node" parent="." unique_id=2134736088]

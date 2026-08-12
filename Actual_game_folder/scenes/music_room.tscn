@@ -69,7 +69,22 @@ layout_mode = 2
 text = "the chicken butt"
 music_name = "zemonke"
 
+[node name="Button10" parent="CanvasLayer/ScrollContainer/VBoxContainer" unique_id=1131521833 instance=ExtResource("2_qt6lu")]
+layout_mode = 2
+text = "The bok Choi Farmer"
+music_name = "bok choi"
+
+[node name="Button12" parent="CanvasLayer/ScrollContainer/VBoxContainer" unique_id=1307259739 instance=ExtResource("2_qt6lu")]
+layout_mode = 2
+text = "It's worth the 5 bucks"
+music_name = "kallum"
+
 [node name="Button9" parent="CanvasLayer/ScrollContainer/VBoxContainer" unique_id=1944898159 instance=ExtResource("2_qt6lu")]
+layout_mode = 2
+text = "Vengence on the Ragebaiter"
+music_name = "Kevin"
+
+[node name="Button11" parent="CanvasLayer/ScrollContainer/VBoxContainer" unique_id=1385027937 instance=ExtResource("2_qt6lu")]
 layout_mode = 2
 text = "how did you die son"
 music_name = "death"
