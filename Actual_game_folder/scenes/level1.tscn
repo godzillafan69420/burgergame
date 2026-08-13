@@ -51,41 +51,41 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("11_ai3nx")
 character_name = "Gordo RamE"
 portrait = ExtResource("13_3oqy1")
-paragraphs = "Also some cards gives buffs and debuffs. The buffs and debuffs are indicated below you."
+paragraphs = "Also some cards gives buffs and debuffs. The buffs and debuffs are indicated below you and the enemies"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_f31uk"]
 script = ExtResource("11_ai3nx")
 character_name = "Gordo RamE"
 portrait = ExtResource("13_3oqy1")
-paragraphs = "also to skip dialogue just press the left corner and click to skip the speaking animation"
+paragraphs = "also to skip dialogue just press the left corner and click to skip the speaking animation. I think you guys can all see."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_dxn3v"]
 script = ExtResource("11_ai3nx")
 character_name = "Pearto"
 portrait = ExtResource("13_gnai3")
-paragraphs = "So why am I here"
+paragraphs = "Are we done now? I was about to leave."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_14jow"]
 script = ExtResource("11_ai3nx")
 character_name = "John Smith"
 portrait = ExtResource("12_2ku1j")
-paragraphs = "Help me beat this bum"
+paragraphs = "Get rid of this burger thing and I will give you baguette."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_gnai3"]
 script = ExtResource("11_ai3nx")
 character_name = "Gordo RamE"
 portrait = ExtResource("13_3oqy1")
-paragraphs = "Teaming chuds."
+paragraphs = "Teamer fraud."
 music = "Battle"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_2ku1j"]
 script = ExtResource("11_ai3nx")
-character_name = "someone"
+character_name = "Somebody"
 paragraphs = "tutorial explained"
 speak_speed = 100.0
 metadata/_custom_type_script = "uid://buclel82cppmv"

@@ -26,7 +26,7 @@ animations = [{
 script = ExtResource("8_ofqtu")
 character_name = "Gordo RamE"
 portrait = ExtResource("10_32sd0")
-paragraphs = "LOL what is this"
+paragraphs = "WHAT IS THIS"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_k213a"]
@@ -40,17 +40,33 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("8_ofqtu")
 character_name = "Gordo RamE"
 portrait = ExtResource("10_32sd0")
-paragraphs = "Son.
+paragraphs = "DID YOU REALLY SAID \"MEONEY\".
 
-We all know you wanted this"
+"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_nx32a"]
+script = ExtResource("8_ofqtu")
+character_name = "ConeL"
+portrait = ExtResource("9_7wowf")
+paragraphs = "No.............
+
+>.<"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_32sd0"]
 script = ExtResource("8_ofqtu")
-character_name = "Cone L"
+character_name = "ConeL"
 portrait = ExtResource("9_7wowf")
-paragraphs = "NAH"
+paragraphs = "I mean it's not that I like wearing cat ears."
 music = "Lastminutechange"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_yucst"]
+script = ExtResource("8_ofqtu")
+character_name = "Gordo RamE"
+portrait = ExtResource("10_32sd0")
+paragraphs = "Sure....."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="ConeL" type="Node2D" unique_id=1916832371]
@@ -87,4 +103,4 @@ sprite_frames = SubResource("SpriteFrames_32sd0")
 [node name="Dialogue" type="Node" parent="." unique_id=276630500]
 script = ExtResource("7_nx32a")
 at_when = 1
-dialogues = Array[ExtResource("8_ofqtu")]([SubResource("Resource_2lm43"), SubResource("Resource_k213a"), SubResource("Resource_7wowf"), SubResource("Resource_32sd0")])
+dialogues = Array[ExtResource("8_ofqtu")]([SubResource("Resource_2lm43"), SubResource("Resource_k213a"), SubResource("Resource_7wowf"), SubResource("Resource_nx32a"), SubResource("Resource_32sd0"), SubResource("Resource_yucst")])

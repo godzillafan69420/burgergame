@@ -59,7 +59,21 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("10_kffbf")
 character_name = "Gordo RamE"
 portrait = ExtResource("12_e4bke")
-paragraphs = "Smells bad in here. Also why is the pizza burn like that."
+paragraphs = "Wow! Nice place."
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_e4bke"]
+script = ExtResource("10_kffbf")
+character_name = "Tickle Larpson"
+portrait = ExtResource("12_5lhdr")
+paragraphs = "Thanks vro"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_lq3um"]
+script = ExtResource("10_kffbf")
+character_name = "Gordo RamE"
+portrait = ExtResource("12_e4bke")
+paragraphs = "However, why do I smell burnt things."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_sx0x8"]
@@ -67,29 +81,65 @@ script = ExtResource("10_kffbf")
 character_name = "pastaman 67"
 portrait = ExtResource("13_lq3um")
 paragraphs = "Bro.
-You were meant to keep watch on the pizza. Should of never summon you."
+You were meant to keep watch on the pizza.... What are we doing"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_ng763"]
 script = ExtResource("10_kffbf")
-character_name = "Tickle Timpson"
+character_name = "Tickle Larpson"
 portrait = ExtResource("12_5lhdr")
-paragraphs = "Oh nah. This is so cooked. Why are we doing this restaurant thingy.
-Also why Italian food, I'm NOT EVEN ITALIAN AND WE HAVE TO WEAR A STUPID MUSTASH"
+paragraphs = "oh sorry my bad."
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_lnhnp"]
+script = ExtResource("10_kffbf")
+character_name = "pastaman 67"
+portrait = ExtResource("13_lq3um")
+paragraphs = "You're so useless.... You almost do nothing."
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_bq0us"]
+script = ExtResource("10_kffbf")
+character_name = "Tickle Larpson"
+portrait = ExtResource("12_5lhdr")
+paragraphs = "My bad.
+I think we should start larping a Chinese restrurant now?"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_d7365"]
 script = ExtResource("10_kffbf")
 character_name = "Gordo RamE"
 portrait = ExtResource("12_e4bke")
-paragraphs = "Yeah... why are you guys running a restaurant when you guys burnt a goddam pizza."
+paragraphs = "Hell no!
+you guys probably can't even cook. "
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_7vn0o"]
+script = ExtResource("10_kffbf")
+character_name = "Pastaman 67"
+portrait = ExtResource("13_lq3um")
+paragraphs = "True...."
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_dgqpk"]
+script = ExtResource("10_kffbf")
+character_name = "Tickle Larpson"
+portrait = ExtResource("12_5lhdr")
+paragraphs = "fairs"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_kqhmf"]
 script = ExtResource("10_kffbf")
 character_name = "pizza larpman"
 portrait = ExtResource("11_nsomt")
-paragraphs = "Money"
+paragraphs = "NOOOOOOO"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_71kye"]
+script = ExtResource("10_kffbf")
+character_name = "pizza larpman"
+portrait = ExtResource("11_nsomt")
+paragraphs = "I need money."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="fakeItalianGuys" type="Node2D" unique_id=1916832371]
@@ -146,4 +196,4 @@ sprite_frames = SubResource("SpriteFrames_tgi3j")
 [node name="Dialogue" type="Node" parent="." unique_id=276630500]
 script = ExtResource("9_a7ibq")
 at_when = 1
-dialogues = Array[ExtResource("10_kffbf")]([SubResource("Resource_60jy0"), SubResource("Resource_tgi3j"), SubResource("Resource_sx0x8"), SubResource("Resource_ng763"), SubResource("Resource_d7365"), SubResource("Resource_kqhmf")])
+dialogues = Array[ExtResource("10_kffbf")]([SubResource("Resource_60jy0"), SubResource("Resource_tgi3j"), SubResource("Resource_e4bke"), SubResource("Resource_lq3um"), SubResource("Resource_sx0x8"), SubResource("Resource_ng763"), SubResource("Resource_lnhnp"), SubResource("Resource_bq0us"), SubResource("Resource_d7365"), SubResource("Resource_7vn0o"), SubResource("Resource_dgqpk"), SubResource("Resource_kqhmf"), SubResource("Resource_71kye")])

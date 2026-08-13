@@ -5,6 +5,6 @@
 [node name="Burn" type="Node" unique_id=1751863362]
 script = ExtResource("1_xnowp")
 effect_name = "burn"
-damage = 10.0
+damage = 5.0
 duration = 2
-discription = "10 damage  for a turn"
+discription = "5  damage  for a turn"

@@ -44,32 +44,29 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("8_phlpe")
 character_name = "Ivan the Van"
 portrait = ExtResource("9_cwcg3")
-paragraphs = "Calm the farm bro
-Calm the farm. "
+paragraphs = "Omg you're so fat."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_cwcg3"]
 script = ExtResource("8_phlpe")
 character_name = "Gordo RamE"
 portrait = ExtResource("10_cwcg3")
-paragraphs = "But holy the stink aura.
-Maybe worst than the food I tasted before"
+paragraphs = "Mate. Why does almost every bosses we meet. They always seems to talk about my body."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_538lc"]
 script = ExtResource("8_phlpe")
 character_name = "Ivan the Van"
 portrait = ExtResource("9_cwcg3")
-paragraphs = "I see how it is. 
+paragraphs = "Calm the farm bro. Calm the farm. It's not that deep.
 "
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_fg2du"]
 script = ExtResource("8_phlpe")
-character_name = "Ivan the Van"
-portrait = ExtResource("9_cwcg3")
-paragraphs = "I will destroy you using my van fighting style"
-music = "FreeCandy"
+character_name = "Gordo RamE"
+portrait = ExtResource("10_cwcg3")
+paragraphs = "Mate, it always been that deep."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="level_3" type="Node2D" unique_id=1916832371]
@@ -81,7 +78,7 @@ texture = ExtResource("1_rx7e8")
 
 [node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
 script = ExtResource("5_ik4my")
-music_name = "Battle"
+music_name = "FreeCandy"
 total_enemies = 3
 victory_gold = 20
 

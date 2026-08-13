@@ -124,27 +124,27 @@ var scratch = {
 }
 var guess_what = {
 	"name": "guess what",
-	"damage": 40,
-	"status_effects": ["rage"],
+	"damage": 10,
+	"status_effects": [""],
 	"buff": ["heal","weaken"],
-	"animation": "no_animation",
+	"animation": "punch",
 	
 }
 
 var chicken = {
 	"name": "chicken butt",
-	"damage": 35,
-	"status_effects": ["rage"],
-	"buff": ["heal","weaken"],
+	"damage": 25,
+	"status_effects": [],
+	"buff": ["weaken"],
 	"animation": "punch"
 }
 
 var butt = {
-	"name": "come at me",
-	"damage": 35,
-	"status_effects": ["rage"],
+	"name": "banana gun",
+	"damage": 10,
+	"status_effects": ["burn"],
 	"buff": ["weaken"],
-	"animation": "no_animation"
+	"animation": "punch"
 }
 
 var banana_nuke = {
