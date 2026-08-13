@@ -54,8 +54,9 @@ var level_preview_data: Dictionary = {
 
 func _player_stats_change():
 	PlayerStats.player_hitpoint = 100
+	PlayerStats.luck = 20
 	PlayerStats.player_max_energy = 50
-	PlayerStats.player_recovery = 10
+	PlayerStats.player_recovery = 15
 	PlayerStats.player_aoe_damage = 1
 	PlayerStats.player_single_damage = 1
 	PlayerStats.player_damage = 1
@@ -75,7 +76,9 @@ func _player_stats_change():
 		if i["id"] == "chicken":
 			PlayerStats.player_recovery += 2
 			PlayerStats.player_max_energy += 10
-
+		if i["id"] == "clover":
+			PlayerStats.luck += 10
+			
 func _ready():
 	_player_stats_change()
 	AudioManager.play("LevelSelect")

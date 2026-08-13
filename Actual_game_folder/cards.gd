@@ -45,7 +45,7 @@ func _input(event: InputEvent) -> void:
 			var chance = randf_range(0, 100)
 			_drop(target_id)
 			Events.emit_signal("update_id")
-			if lucky and chance < PlayerStats.luck:
+			if lucky and chance > PlayerStats.luck:
 				Events.emit_signal("give_side_effects", "lucky_debuff")
 		else:
 			selected_card = false

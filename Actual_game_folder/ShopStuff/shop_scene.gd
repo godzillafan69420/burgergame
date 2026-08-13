@@ -19,7 +19,8 @@ var upgrade_pool = [
 	{"display_name": "cheese","id": "cheese", "type": "upgrade", "effect": "stamina regeneration by 4", "icon": preload("res://Art/cheese.png")},
 	{"display_name": "Bacon","id": "bacon", "type": "joker", "effect": "HP rengeneration by 5", "icon": preload("res://Art/bacon.png")},
 	{"display_name": "pickle","id": "pickle", "type": "relic", "effect": "damage multiplier 5%, +10HP", "icon": preload("res://Art/pickle.png")},
-	{"display_name": "Fried Chicken","id": "chicken", "type": "relic", "effect": "Increase stamina by 10, Increase stamina rengeneration by 2", "icon": preload("res://Art/fried_chicken.png")}
+	{"display_name": "Fried Chicken","id": "chicken", "type": "relic", "effect": "Increase stamina by 10, Increase stamina rengeneration by 2", "icon": preload("res://Art/fried_chicken.png")},
+	{"display_name": "Four Leaf Clover","id": "clover", "type": "relic", "effect": "Increase luck by 10", "icon": preload("res://Art/clover.png")}
 ]
 
 # --- REGULAR ITEM POOL --- A
@@ -31,7 +32,8 @@ var regular_item_pool = [
 	{"display_name": "Corn Ball","id": "corn_ball", "price": 8, "type": "buff", "effect": "Deals 15 AOE and burns", "icon": preload("res://Art/Cornball(no_card).png")},
 	{"display_name": "Aura Farm","id": "we_see_the_fit", "price": 5, "type": "passive", "effect": "weakens the enemies", "icon": preload("res://Art/WeSeeTheFit.png")},
 	{"display_name": "Hot Sauce","id": "hot_sauce", "price": 8, "type": "buff", "effect": "Boosts your damage", "icon": preload("res://Art/Hot_Sauce(card).png")},
-	{"display_name": "Knife","id": "knife", "price": 4, "type": "buff", "effect": "single attack 7 damage plus bleed", "icon": preload("res://Art/knifeBase.png")},
+	{"display_name": "Knife","id": "knife", "price": 4, "type": "buff", "effect": "single attack 12 damage plus bleed", "icon": preload("res://Art/knifeBase.png")},
+	{"display_name": "Hot Oil","id": "oil", "price": 4, "type": "buff", "effect": "50 single damage with risks involve", "icon": preload("res://Art/CardTemplateTuff.png")},
 ]
 
 var pack_pool = [

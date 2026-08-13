@@ -97,7 +97,8 @@ func _check_victory():
 	if enemy_list.get_child_count()  == 0 and !victory:
 		victory = true
 		Globals.level += 1
-		PlayerStats.player_gold += victory_gold
+		victory_gold += int(PlayerStats.luck/5)
+		PlayerStats.player_gold +=  victory_gold
 		victory_panel.show()
 		victory_panel.get_node("stuff you gain").text = "Gain: " + str(victory_gold) + " gold" + "
 		Total gold: " + str(PlayerStats.player_gold)  

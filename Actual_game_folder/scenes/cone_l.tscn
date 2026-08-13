@@ -80,7 +80,7 @@ texture = ExtResource("1_7wowf")
 script = ExtResource("2_ofqtu")
 music_name = "Lastminutechange"
 total_enemies = 3
-victory_gold = 20
+victory_gold = 30
 
 [node name="UI" parent="." unique_id=890284133 instance=ExtResource("3_k213a")]
 
@@ -93,7 +93,7 @@ position = Vector2(829, 368)
 [node name="Cone L" parent="enemies" unique_id=1564538628 instance=ExtResource("5_32sd0")]
 position = Vector2(-7, 5)
 attacks_name = Array[String](["strong_right", "ice_cream_balls", "scratch", "strong_right", "block"])
-setted_HP = 350.0
+setted_HP = 325.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Cone L" unique_id=1328646470]
 position = Vector2(14, -23)

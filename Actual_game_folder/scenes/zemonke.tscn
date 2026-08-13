@@ -144,8 +144,8 @@ position = Vector2(969, 315)
 
 [node name="ZeMonke" parent="enemies" unique_id=708042470 instance=ExtResource("5_jae5d")]
 position = Vector2(162, 57)
-attacks_name = Array[String](["guess_what", "chicken", "butt", "guess_what", "butt", "butt", "guess_what", "chicken", "butt", "guess_what", "banana_nuke"])
-setted_HP = 500.0
+attacks_name = Array[String](["guess_what", "chicken", "butt", "guess_what", "butt", "guess_what", "chicken", "butt", "guess_what", "chicken", "butt", "guess_what", "banana_nuke"])
+setted_HP = 450.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/ZeMonke" unique_id=1450351235]
 position = Vector2(12.999998, -24.000002)
@@ -169,5 +169,5 @@ dialogues = Array[ExtResource("8_fdkgc")]([SubResource("Resource_1ybjt"), SubRes
 
 [node name="Dialogue2" type="Node" parent="." unique_id=521808174]
 script = ExtResource("7_2sg40")
-at_when = 10
+at_when = 13
 dialogues = Array[ExtResource("8_fdkgc")]([SubResource("Resource_jae5d"), SubResource("Resource_w4m1c")])

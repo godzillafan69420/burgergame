@@ -5,7 +5,7 @@
 [node name="Bleed" type="Node" unique_id=1751863362]
 script = ExtResource("1_wrnq5")
 effect_name = "bleed"
-damage = 2.0
+damage = 3.0
 duration = 3
 stackable = true
-discription = "do 2 damage. last for 3 turns"
+discription = "do32 damage. last for 3 turns"

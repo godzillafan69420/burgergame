@@ -10,6 +10,7 @@ var cheese = preload("res://Art/cheese.png")
 var bacon = preload("res://Art/bacon.png")
 var pickle = preload("res://Art/pickle.png")
 var chicken = preload("res://Art/fried_chicken.png")
+var clover = preload("res://Art/clover.png")
 const gap_size: float = 15
 const offset: float = 60
 # Called when the node enters the scene tree for the first time.

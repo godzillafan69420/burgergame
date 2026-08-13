@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://drr3088qvw5dk"]
 
-[ext_resource type="Texture2D" uid="uid://cswy7u6a8b46h" path="res://Art/New Piskel.png" id="1_n5ude"]
+[ext_resource type="Texture2D" uid="uid://cswy7u6a8b46h" path="res://Art/clover.png" id="1_n5ude"]
 [ext_resource type="Script" uid="uid://bme11j2i2ndyn" path="res://scripts/end_turn_button.gd" id="1_nltto"]
 [ext_resource type="Script" uid="uid://c4jtsd8b6ntsy" path="res://energy_display.gd" id="2_ibotj"]
 [ext_resource type="FontFile" path="res://fonts/kirifont/Kirifont.tres" id="2_waa4j"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cjg1n6ng1agfq" path="res://status_effect_viewer.gd" id="5_ibotj"]
 [ext_resource type="FontFile" uid="uid://bxrukl00n4uu7" path="res://fonts/montreal/Montreal-Regular.ttf" id="6_n5rqp"]
 [ext_resource type="FontFile" uid="uid://bqxpbabpowhdh" path="res://fonts/kirifont/KiriFont.ttf" id="6_y4yjw"]
+[ext_resource type="FontFile" uid="uid://11stbrnoqjdc" path="res://fonts/montreal/Montreal-Bold.ttf" id="12_n5rqp"]
 
 [sub_resource type="Animation" id="Animation_e2l4f"]
 length = 0.001
@@ -153,9 +154,9 @@ script = ExtResource("5_ibotj")
 layout_mode = 0
 offset_right = 294.0
 offset_bottom = 122.0
-theme_override_fonts/font = ExtResource("2_waa4j")
+theme_override_fonts/font = ExtResource("12_n5rqp")
 theme_override_font_sizes/font_size = 28
-text = "this does"
+text = "this does "
 autowrap_mode = 3
 
 [connection signal="button_down" from="end_turn_button" to="end_turn_button" method="_on_button_down"]

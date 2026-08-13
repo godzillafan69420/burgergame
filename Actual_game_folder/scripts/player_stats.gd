@@ -15,6 +15,6 @@ var player_hitpoint_recovery: float = 0
 var attacks: Array =[]
 var upgrades: Array = []
 
-var luck: int = 60 #percentage wise
+var luck: int = 20 #percentage wise
 # Global player wallet 
 var player_gold: int = 20

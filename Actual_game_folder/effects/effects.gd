@@ -3,6 +3,8 @@ extends effects_base
 var player_ingame_stats: Node2D
 var before_stats: float
 
+@export var startInstantly: bool = false
+
 func _ready() -> void:
 	player_ingame_stats = get_parent().get_parent().get_node("player_stats")
 	if effect_name in get_parent().effect and !stackable:
@@ -15,9 +17,10 @@ func _ready() -> void:
 	icon.text = discription
 	get_parent().get_parent().get_node("status_effect_viewer").add_child(icon, true)
 	get_parent().effect.append(effect_name)
-	if type == types_of_effect[1] or effect_name == "heal":
+	if type == types_of_effect[1]:
 		before_stats = player_ingame_stats.get(target_stats)
 		duration += 1
+	if startInstantly:
 		_take_effect()
 
 	
