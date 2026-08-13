@@ -47,7 +47,7 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("8_fdkgc")
 character_name = "Zemonke"
 portrait = ExtResource("9_tcm4h")
-paragraphs = "The monkey is never concern with the opinion of a fool"
+paragraphs = "Oh come on. I thought of this fact all day."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_tcm4h"]
@@ -61,14 +61,50 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("8_fdkgc")
 character_name = "Zemonke"
 portrait = ExtResource("9_tcm4h")
-paragraphs = "You wanna see the Super giga ultra mega giga again banananananana nuke"
+paragraphs = "You wanna see the Super giga ultra mega giga again banananananana nuke.
+It one shot almost anything"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_fyow1"]
 script = ExtResource("8_fdkgc")
+character_name = "Gordo RamE"
+portrait = ExtResource("9_1ybjt")
+paragraphs = "Who decided to add this move to the game,"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_2sg40"]
+script = ExtResource("8_fdkgc")
 character_name = "Zemonke"
 portrait = ExtResource("9_tcm4h")
-paragraphs = "I'll give you 10 turns so you can see it."
+paragraphs = "Bad news."
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_fdkgc"]
+script = ExtResource("8_fdkgc")
+character_name = "Zemonke"
+portrait = ExtResource("9_tcm4h")
+paragraphs = "They said it will come at around 10 turns."
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_1ybjt"]
+script = ExtResource("8_fdkgc")
+character_name = "Zemonke"
+portrait = ExtResource("9_tcm4h")
+paragraphs = "Hey guess what"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_xqf1q"]
+script = ExtResource("8_fdkgc")
+character_name = "Gordo RamE"
+portrait = ExtResource("9_1ybjt")
+paragraphs = "What"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_1x05n"]
+script = ExtResource("8_fdkgc")
+character_name = "Zemonke"
+portrait = ExtResource("9_tcm4h")
+paragraphs = "CHICKEN BUTT"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_jae5d"]
@@ -85,7 +121,7 @@ portrait = ExtResource("9_1ybjt")
 paragraphs = "Wait you gotta kill him now"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
-[node name="socratesBoss1" type="Node2D" unique_id=1916832371]
+[node name="zemonke" type="Node2D" unique_id=1916832371]
 
 [node name="background" type="Sprite2D" parent="." unique_id=1824490579]
 position = Vector2(640.2222, 360.25003)
@@ -108,8 +144,8 @@ position = Vector2(969, 315)
 
 [node name="ZeMonke" parent="enemies" unique_id=708042470 instance=ExtResource("5_jae5d")]
 position = Vector2(162, 57)
-attacks_name = Array[String](["guess_what", "butt", "chicken", "guess_what", "butt", "butt", "guess_what", "chicken", "butt", "guess_what", "banana_nuke"])
-setted_HP = 700.0
+attacks_name = Array[String](["guess_what", "chicken", "butt", "guess_what", "butt", "butt", "guess_what", "chicken", "butt", "guess_what", "banana_nuke"])
+setted_HP = 500.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/ZeMonke" unique_id=1450351235]
 position = Vector2(12.999998, -24.000002)
@@ -121,7 +157,17 @@ script = ExtResource("7_2sg40")
 at_when = 1
 dialogues = Array[ExtResource("8_fdkgc")]([SubResource("Resource_jw067"), SubResource("Resource_6j6yj"), SubResource("Resource_pin3j"), SubResource("Resource_n5ufe"), SubResource("Resource_tcm4h"), SubResource("Resource_6kh1l"), SubResource("Resource_fyow1")])
 
+[node name="Dialogue3" type="Node" parent="." unique_id=707145313]
+script = ExtResource("7_2sg40")
+at_when = 2
+dialogues = Array[ExtResource("8_fdkgc")]([SubResource("Resource_2sg40"), SubResource("Resource_fdkgc")])
+
+[node name="Dialogue4" type="Node" parent="." unique_id=750260895]
+script = ExtResource("7_2sg40")
+at_when = 6
+dialogues = Array[ExtResource("8_fdkgc")]([SubResource("Resource_1ybjt"), SubResource("Resource_xqf1q"), SubResource("Resource_1x05n")])
+
 [node name="Dialogue2" type="Node" parent="." unique_id=521808174]
 script = ExtResource("7_2sg40")
-at_when = 9
+at_when = 10
 dialogues = Array[ExtResource("8_fdkgc")]([SubResource("Resource_jae5d"), SubResource("Resource_w4m1c")])

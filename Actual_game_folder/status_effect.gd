@@ -16,9 +16,6 @@ func _take_side_effects():
 		i._take_effect()
 	
 func _new_side_effects(effects:String):
-	
-	
-	
 	var new_effect =ListOfStatusEffects.get(effects).instantiate()
 	new_effect.player_ingame_stats = get_parent().get_parent().find_child("player_stats")
 	add_child(new_effect)

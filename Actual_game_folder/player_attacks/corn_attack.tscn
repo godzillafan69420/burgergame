@@ -15,7 +15,6 @@ script = ExtResource("2_q548j")
 card_name = "corn attack"
 discription = ""
 damage = 15.0
-energy = 13.0
 effects_for_enemies = Array[String](["burn"])
 AOE = true
 
@@ -52,7 +51,7 @@ offset_top = -10.714285
 offset_right = 42.428574
 offset_bottom = 102.28571
 theme_override_font_sizes/font_size = 40
-text = "13
+text = "10
 "
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
