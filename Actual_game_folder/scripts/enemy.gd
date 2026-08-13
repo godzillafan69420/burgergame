@@ -34,14 +34,14 @@ func _add_status_id(targeted_id: int,status:String):
 		return
 	var type = ListEnemyStatusEffects.get(status).instantiate()
 	type.name = status
-	$status.add_child(type)
+	$status.add_child(type, true)
 
 func _add_status(status:String):
 	if $enemy_stats.get_node("HP").value == 0:
 		return
 	var type = ListEnemyStatusEffects.get(status).instantiate()
 	type.name = status
-	$status.add_child(type)
+	$status.add_child(type, true)
 	
 func _attacked_player(attack_id):
 	if current_attack_choice  >= attacks.size() -1:

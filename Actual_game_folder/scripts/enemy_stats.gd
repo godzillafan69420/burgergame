@@ -8,10 +8,13 @@ var damage_multiplier: float = 1
 
 var def:float = 1
 var player_damge_multiplier
-@export var battle_logic_script: Node
+var battle_logic_script: Node
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	battle_logic_script =  get_parent().get_parent().get_parent().get_node("BattleLogic")
 	HP = get_parent().setted_HP
 	$HP.max_value = HP
 	$HP.value = HP
@@ -43,6 +46,8 @@ func _take_damage(damage: int) -> void:
 		Events.emit_signal("check_victory_conditions")
 		
 func _take_effect():
+	if battle_logic_script.current_state == battle_logic_script.States.dialogue:
+		return
 	for i in $"../status".get_children():
 		i._take_effect()
 

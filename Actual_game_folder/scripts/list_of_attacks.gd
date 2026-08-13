@@ -124,9 +124,9 @@ var scratch = {
 }
 var guess_what = {
 	"name": "guess what",
-	"damage": 0,
+	"damage": 40,
 	"status_effects": ["rage"],
-	"buff": ["block","heal"],
+	"buff": ["heal","weaken"],
 	"animation": "no_animation",
 	
 }
@@ -135,15 +135,15 @@ var chicken = {
 	"name": "chicken butt",
 	"damage": 35,
 	"status_effects": ["rage"],
-	"buff": ["heal"],
+	"buff": ["heal","weaken"],
 	"animation": "punch"
 }
 
 var butt = {
 	"name": "come at me",
-	"damage": 0,
+	"damage": 35,
 	"status_effects": ["rage"],
-	"buff": ["block"],
+	"buff": ["weaken"],
 	"animation": "no_animation"
 }
 
