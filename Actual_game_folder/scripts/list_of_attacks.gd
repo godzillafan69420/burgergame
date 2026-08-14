@@ -135,7 +135,7 @@ var chicken = {
 	"name": "chicken butt",
 	"damage": 25,
 	"status_effects": [],
-	"buff": ["weaken"],
+	"buff": ["weaken", "heal"],
 	"animation": "punch"
 }
 

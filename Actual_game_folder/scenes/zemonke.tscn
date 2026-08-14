@@ -94,20 +94,6 @@ paragraphs = "I think I gotta lock in now"
 music = "BananaLoreRemix"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
-[sub_resource type="Resource" id="Resource_xqf1q"]
-script = ExtResource("8_fdkgc")
-character_name = "Gordo RamE"
-portrait = ExtResource("9_1ybjt")
-paragraphs = "What"
-metadata/_custom_type_script = "uid://buclel82cppmv"
-
-[sub_resource type="Resource" id="Resource_1x05n"]
-script = ExtResource("8_fdkgc")
-character_name = "Zemonke"
-portrait = ExtResource("9_tcm4h")
-paragraphs = "CHICKEN BUTT"
-metadata/_custom_type_script = "uid://buclel82cppmv"
-
 [sub_resource type="Resource" id="Resource_jae5d"]
 script = ExtResource("8_fdkgc")
 character_name = "Zemonke"
@@ -146,7 +132,7 @@ position = Vector2(969, 315)
 [node name="ZeMonke" parent="enemies" unique_id=708042470 instance=ExtResource("5_jae5d")]
 position = Vector2(162, 57)
 attacks_name = Array[String](["guess_what", "chicken", "butt", "guess_what", "butt", "guess_what", "chicken", "butt", "guess_what", "chicken", "butt", "guess_what", "banana_nuke"])
-setted_HP = 450.0
+setted_HP = 600.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/ZeMonke" unique_id=1450351235]
 position = Vector2(12.999998, -24.000002)
@@ -162,11 +148,6 @@ dialogues = Array[ExtResource("8_fdkgc")]([SubResource("Resource_jw067"), SubRes
 script = ExtResource("7_2sg40")
 at_when = 2
 dialogues = Array[ExtResource("8_fdkgc")]([SubResource("Resource_2sg40"), SubResource("Resource_fdkgc")])
-
-[node name="Dialogue4" type="Node" parent="." unique_id=750260895]
-script = ExtResource("7_2sg40")
-at_when = 6
-dialogues = Array[ExtResource("8_fdkgc")]([SubResource("Resource_1ybjt"), SubResource("Resource_xqf1q"), SubResource("Resource_1x05n")])
 
 [node name="Dialogue5" type="Node" parent="." unique_id=1394487316]
 script = ExtResource("7_2sg40")
