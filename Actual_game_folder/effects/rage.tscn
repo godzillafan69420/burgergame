@@ -4,6 +4,7 @@
 
 [node name="rage" type="Node" unique_id=800013498]
 script = ExtResource("1_1nhcx")
+startInstantly = true
 effect_name = "rage"
 type = "buff"
 target_stats = "damage_multiplier"

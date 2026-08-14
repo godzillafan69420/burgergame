@@ -4,6 +4,7 @@
 
 [node name="radiation" type="Node" unique_id=812438020]
 script = ExtResource("1_7y0j4")
+startInstantly = true
 effect_name = "radiation"
 damage = 10.0
 duration = 3

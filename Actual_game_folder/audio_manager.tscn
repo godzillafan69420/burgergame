@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://dd6iborh6pwtd" path="res://music/Kevin.mp3" id="16_ma34g"]
 [ext_resource type="AudioStream" uid="uid://beiww2gpbnxll" path="res://music/dihTouchingMusic.mp3" id="17_hokuy"]
 [ext_resource type="AudioStream" uid="uid://dws0doqvxipay" path="res://music/It's worth the 5 bucks.mp3" id="18_alxyf"]
+[ext_resource type="AudioStream" uid="uid://dud1ty55ht1d6" path="res://music/banana_lore_remix.mp3" id="19_hokuy"]
 
 [node name="audio_manager" type="Node" unique_id=224815698 node_paths=PackedStringArray("music", "sfx")]
 script = ExtResource("1_jisk1")
@@ -78,5 +79,8 @@ stream = ExtResource("17_hokuy")
 
 [node name="kallum" type="AudioStreamPlayer" parent="music" unique_id=670662364]
 stream = ExtResource("18_alxyf")
+
+[node name="BananaLoreRemix" type="AudioStreamPlayer" parent="music" unique_id=20986775]
+stream = ExtResource("19_hokuy")
 
 [node name="sfx" type="Node" parent="." unique_id=2134736088]

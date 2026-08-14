@@ -125,7 +125,7 @@ var scratch = {
 var guess_what = {
 	"name": "guess what",
 	"damage": 10,
-	"status_effects": [""],
+	"status_effects": [],
 	"buff": ["heal","weaken"],
 	"animation": "punch",
 	

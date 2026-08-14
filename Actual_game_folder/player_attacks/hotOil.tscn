@@ -13,7 +13,7 @@ texture = ExtResource("1_huwhf")
 script = ExtResource("2_73dsv")
 card_name = "Aura Farm"
 discription = ""
-damage = 50.0
+damage = 35.0
 energy = 15.0
 lucky = true
 
@@ -39,7 +39,7 @@ offset_left = 30.0
 offset_top = 187.0
 offset_right = 230.0
 offset_bottom = 305.0
-text = "Do 50 damage but sometimes you can get damaged (80% with no luck stats)
+text = "Do 35 damage but sometimes you can get damaged (80% with no luck stats)
 "
 autowrap_mode = 3
 

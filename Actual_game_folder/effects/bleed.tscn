@@ -4,6 +4,7 @@
 
 [node name="bleed" type="Node" unique_id=742750699]
 script = ExtResource("1_ilgjq")
+startInstantly = true
 effect_name = "bleed"
 stackable = true
 damage = 3.0

@@ -8,5 +8,5 @@ startInstantly = true
 effect_name = "heal"
 damage = -20.0
 target_stats = "HP"
-duration = 0
+duration = 1
 Effect_strength = 20.0

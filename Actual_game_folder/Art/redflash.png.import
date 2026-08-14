@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cswy7u6a8b46h"
-path="res://.godot/imported/New Piskel.png-e7abdf0782ae430b459d1776fc5ec800.ctex"
+path="res://.godot/imported/redflash.png-0a949f82c223e48d0f41ef86e057b26f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/New Piskel.png"
-dest_files=["res://.godot/imported/New Piskel.png-e7abdf0782ae430b459d1776fc5ec800.ctex"]
+source_file="res://Art/redflash.png"
+dest_files=["res://.godot/imported/redflash.png-0a949f82c223e48d0f41ef86e057b26f.ctex"]
 
 [params]
 

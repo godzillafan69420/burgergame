@@ -4,6 +4,7 @@
 
 [node name="bleed" type="Node" unique_id=742750699]
 script = ExtResource("1_c5lv3")
+startInstantly = true
 effect_name = "bleed"
 damage = 5.0
 duration = 1

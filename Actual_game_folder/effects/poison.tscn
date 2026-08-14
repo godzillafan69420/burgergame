@@ -4,6 +4,7 @@
 
 [node name="poison" type="Node" unique_id=742750699]
 script = ExtResource("1_710si")
+startInstantly = true
 effect_name = "poison"
 damage = 3.0
 discription = "does 3 damage over 5 turns"
