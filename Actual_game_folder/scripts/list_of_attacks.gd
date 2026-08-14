@@ -147,6 +147,31 @@ var butt = {
 	"animation": "punch"
 }
 
+var lock_in = {
+	"name": "serious what",
+	"damage": 35,
+	"status_effects": [],
+	"buff": ["heal"],
+	"animation": "punch",
+	
+}
+
+var serious_chicken = {
+	"name": "serious chicken",
+	"damage": 50,
+	"status_effects": [],
+	"buff": ["heal"],
+	"animation": "punch"
+}
+
+var every_last_banana= {
+	"name": "every_last_banana",
+	"damage": 0,
+	"status_effects": [],
+	"buff": ["heal","heal","heal","heal"],
+	"animation": "punch"
+}
+
 var banana_nuke = {
 	"name": "Super giga ultra mega giga again banananananana nuke",
 	"damage": 99999999,

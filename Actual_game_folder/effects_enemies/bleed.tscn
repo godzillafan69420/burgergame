@@ -8,4 +8,4 @@ effect_name = "bleed"
 damage = 3.0
 duration = 3
 stackable = true
-discription = "do32 damage. last for 3 turns"
+discription = "do 3 damage. last for 3 turns"

@@ -131,7 +131,7 @@ position = Vector2(969, 315)
 
 [node name="ZeMonke" parent="enemies" unique_id=708042470 instance=ExtResource("5_jae5d")]
 position = Vector2(162, 57)
-attacks_name = Array[String](["guess_what", "chicken", "butt", "guess_what", "butt", "guess_what", "chicken", "butt", "guess_what", "chicken", "butt", "guess_what", "banana_nuke"])
+attacks_name = Array[String](["guess_what", "chicken", "butt", "guess_what", "butt", "guess_what", "chicken", "butt", "every_last_banana", "serious_chicken", "lock_in", "guess_what", "banana_nuke"])
 setted_HP = 600.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/ZeMonke" unique_id=1450351235]

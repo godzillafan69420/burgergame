@@ -20,7 +20,7 @@ var upgrade_pool = [
 	{"display_name": "Bacon","id": "bacon", "type": "joker", "effect": "HP rengeneration by 5", "icon": preload("res://Art/bacon.png")},
 	{"display_name": "pickle","id": "pickle", "type": "relic", "effect": "damage multiplier 5%, +10HP", "icon": preload("res://Art/pickle.png")},
 	{"display_name": "Fried Chicken","id": "chicken", "type": "relic", "effect": "Increase stamina by 10, Increase stamina rengeneration by 2", "icon": preload("res://Art/fried_chicken.png")},
-	{"display_name": "Four Leaf Clover","id": "clover", "type": "relic", "effect": "Increase luck by 10", "icon": preload("res://Art/clover.png")}
+	{"display_name": "Four Leaf Clover","id": "clover", "type": "relic", "effect": "Increase luck by 10 and money gained", "icon": preload("res://Art/clover.png")}
 ]
 
 # --- REGULAR ITEM POOL --- A
