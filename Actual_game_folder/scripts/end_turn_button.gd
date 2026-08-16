@@ -31,3 +31,8 @@ func _on_button_down() -> void:
 
 func _on_next_button_down() -> void:
 	TransitionManager.play_transition("res://ShopStuff/shop_scene.tscn")
+
+
+func _on_play_testing_purpose_button_down() -> void:
+	for i in enemy_list.get_children():
+		i.queue_free()
