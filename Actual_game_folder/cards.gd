@@ -11,6 +11,8 @@ var mouse_is_incard: bool = false
 
 var in_attack_area: bool = false
 
+var luck: int = 0
+
 var card_number: int =0
 const POSITION_OF_CARDS:Array = [
 	Vector2(100,500),
@@ -43,9 +45,15 @@ func _input(event: InputEvent) -> void:
 
 		if in_attack_area and can_attack and (valid_single_target or valid_aoe_target):
 			var chance = randf_range(0, 100)
+			if PlayerStats.luck > 80:
+				luck = 80
+			else:
+				luck = PlayerStats.luck
 			_drop(target_id)
 			Events.emit_signal("update_id")
-			if lucky and chance > PlayerStats.luck:
+			if lucky and chance > luck:
+				print(luck)
+				print(PlayerStats.luck)
 				Events.emit_signal("give_side_effects", "lucky_debuff")
 		else:
 			selected_card = false
