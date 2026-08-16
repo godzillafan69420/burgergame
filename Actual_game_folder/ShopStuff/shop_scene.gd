@@ -27,12 +27,13 @@ var upgrade_pool = [
 # NOTE: "effect" is what shows up in the hover tooltip in the shop.
 var regular_item_pool = [
 	{"display_name": "tin foil","id": "iron_shield", "price": 4, "type": "defense", "effect": "Blocks 75% incoming damage", "icon": preload("res://Art/Tinfoil(card).png")},
-	{"display_name": "Frying Pan","id": "frying_pan", "price": 6, "type": "attack", "effect": "Deals 13 AOE damage", "icon": preload("res://Art/Frying_pan(_card).png")},
+	{"display_name": "Frying Pan","id": "frying_pan", "price": 6, "type": "attack", "effect": "Deals 20 AOE damage", "icon": preload("res://Art/Frying_pan(_card).png")},
 	{"display_name": "Heal","id": "health_potion", "price": 3, "type": "utility", "effect": "Restores 20 HP", "icon": preload("res://Art/Heal(card).png")},
 	{"display_name": "Corn Ball","id": "corn_ball", "price": 8, "type": "buff", "effect": "Deals 15 AOE and burns", "icon": preload("res://Art/Cornball(no_card).png")},
-	{"display_name": "Aura Farm","id": "we_see_the_fit", "price": 5, "type": "passive", "effect": "weakens the enemies", "icon": preload("res://Art/WeSeeTheFit.png")},
+	{"display_name": "Aura Farm","id": "we_see_the_fit", "price": 5, "type": "passive", "effect": "weakens the enemies but can get punished", "icon": preload("res://Art/WeSeeTheFit.png")},
 	{"display_name": "Hot Sauce","id": "hot_sauce", "price": 8, "type": "buff", "effect": "Boosts your damage", "icon": preload("res://Art/Hot_Sauce(card).png")},
-	{"display_name": "Knife","id": "knife", "price": 4, "type": "buff", "effect": "single attack 12 damage plus bleed", "icon": preload("res://Art/knifeBase.png")},
+	{"display_name": "Knife","id": "knife", "price": 4, "type": "buff", "effect": "single attack 7 damage plus bleed", "icon": preload("res://Art/knifeBase.png")},
+	{"display_name": "Black Flash","id": "black_flash", "price": 15, "type": "attack", "effect": "High energy. Nail the rhythm timing for a massive hit -- miss it and it barely scratches.", "icon": preload("res://Art/CardTemplateTuff.png")},
 	{"display_name": "Hot Oil","id": "oil", "price": 4, "type": "buff", "effect": "35 single damage with risks involve", "icon": preload("res://Art/CardTemplateTuff.png")},
 ]
 

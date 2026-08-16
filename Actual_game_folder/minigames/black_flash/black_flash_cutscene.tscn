@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://minigames/black_flash/black_flash_cutscene.gd" id="1_cs"]
+
+[node name="BlackFlashCutscene" type="CanvasLayer"]
+script = ExtResource("1_cs")

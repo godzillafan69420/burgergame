@@ -17,4 +17,4 @@ var upgrades: Array = []
 
 var luck: int = 20 #percentage wise
 # Global player wallet 
-var player_gold: int = 20
+var player_gold: int = 2000
