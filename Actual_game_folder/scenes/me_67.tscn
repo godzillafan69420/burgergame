@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b8crveffai261"]
 
-[ext_resource type="Texture2D" uid="uid://3wdtby4j21u4" path="res://Art/backgroundlevel1.png" id="1_ayegc"]
+[ext_resource type="Texture2D" uid="uid://bt8pd6qtc2tsv" path="res://Art/backgroundme67.png" id="1_ayegc"]
 [ext_resource type="PackedScene" uid="uid://drr3088qvw5dk" path="res://ui.tscn" id="2_xte1c"]
 [ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="3_gk2jk"]
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="4_8xagh"]
@@ -90,18 +90,18 @@ visible = false
 
 [node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
 script = ExtResource("3_gk2jk")
-music_name = "Battle"
+music_name = "Kevin"
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("4_8xagh")]
-position = Vector2(252, 232)
+position = Vector2(232, 291)
 
 [node name="enemies" type="Node2D" parent="." unique_id=1413379743]
 position = Vector2(835, 394)
 
 [node name="Me67" parent="enemies" unique_id=708042470 instance=ExtResource("5_rasdo")]
-position = Vector2(56, -172)
-attacks_name = Array[String](["punch", "punch", "kick"])
-setted_HP = 75.0
+position = Vector2(198, -108)
+attacks_name = Array[String](["add_status_effect", "super_normal_attack", "low_iq"])
+setted_HP = 1000.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Me67" unique_id=1450351235]
 position = Vector2(14, -24)
