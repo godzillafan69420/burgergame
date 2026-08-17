@@ -160,6 +160,10 @@ func _on_play_button_pressed():
 		dest_scene = "res://scenes/cone_l.tscn"
 	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_6") and (Globals.level ==7 or Globals.level >7):
 		dest_scene = "res://scenes/zemonke.tscn"
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_8") and (Globals.level ==9 or Globals.level >7):
+		dest_scene = "res://scenes/zemonke.tscn"
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_9") and (Globals.level ==10 or Globals.level >7):
+		dest_scene = "res://scenes/zemonke.tscn"
 		
 	if dest_scene != "":
 		TransitionManager.play_transition(dest_scene)
