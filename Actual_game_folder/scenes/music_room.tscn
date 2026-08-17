@@ -20,7 +20,7 @@ metadata/_edit_use_anchors_ = true
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer" unique_id=219763972]
 offset_left = 246.0
 offset_top = 134.0
-offset_right = 1027.0
+offset_right = 1200.0
 offset_bottom = 697.0
 scroll_vertical_custom_step = 919.528
 
@@ -69,6 +69,11 @@ layout_mode = 2
 text = "the chicken butt"
 music_name = "zemonke"
 
+[node name="Button13" parent="CanvasLayer/ScrollContainer/VBoxContainer" unique_id=1996490504 instance=ExtResource("2_qt6lu")]
+layout_mode = 2
+text = "Musa Acuminata Bad67 remix. Original by Enda"
+music_name = "BananaLoreRemix"
+
 [node name="Button10" parent="CanvasLayer/ScrollContainer/VBoxContainer" unique_id=1131521833 instance=ExtResource("2_qt6lu")]
 layout_mode = 2
 text = "The bok Choi Farmer"
@@ -81,7 +86,7 @@ music_name = "kallum"
 
 [node name="Button9" parent="CanvasLayer/ScrollContainer/VBoxContainer" unique_id=1944898159 instance=ExtResource("2_qt6lu")]
 layout_mode = 2
-text = "Vengence on the Ragebaiter"
+text = "me67 incoming"
 music_name = "Kevin"
 
 [node name="Button11" parent="CanvasLayer/ScrollContainer/VBoxContainer" unique_id=1385027937 instance=ExtResource("2_qt6lu")]

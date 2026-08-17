@@ -131,6 +131,7 @@ var guess_what = {
 	
 }
 
+#Zemonke attacks
 var chicken = {
 	"name": "chicken butt",
 	"damage": 25,
@@ -178,4 +179,30 @@ var banana_nuke = {
 	"status_effects": [],
 	"buff": [],
 	"animation": "banana_nuke"
+}
+
+#me67 attacks
+
+var super_normal_attack = {
+	"name": "super normal attack",
+	"damage": 67,
+	"status_effects": [],
+	"buff": [],
+	"animation": "punch"
+}
+
+var add_status_effect = {
+	"name": "add status effects",
+	"damage": 0,
+	"status_effects": ["bleed","burn","radiation","weaken","fatigue"],
+	"buff": [],
+	"animation": "slash"
+}
+
+var low_iq = {
+	"name": "iq drop",
+	"damage": 67,
+	"status_effects": [],
+	"buff": ["block","heal","heal"],
+	"animation": "ragebait"
 }
