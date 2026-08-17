@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bmbwre7d48yq4"]
+[gd_scene format=3 uid="uid://b8crveffai261"]
 
-[ext_resource type="Texture2D" uid="uid://2t4sabmvtoxi" path="res://Art/kitchen.png" id="1_ayegc"]
+[ext_resource type="Texture2D" uid="uid://3wdtby4j21u4" path="res://Art/backgroundlevel1.png" id="1_ayegc"]
 [ext_resource type="PackedScene" uid="uid://drr3088qvw5dk" path="res://ui.tscn" id="2_xte1c"]
 [ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="3_gk2jk"]
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="4_8xagh"]
@@ -86,6 +86,7 @@ scale = Vector2(2.0218751, 2.0218751)
 texture = ExtResource("1_ayegc")
 
 [node name="UI" parent="." unique_id=890284133 instance=ExtResource("2_xte1c")]
+visible = false
 
 [node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
 script = ExtResource("3_gk2jk")
@@ -104,6 +105,7 @@ setted_HP = 75.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Me67" unique_id=1450351235]
 position = Vector2(14, -24)
+rotation = -0.005377153
 scale = Vector2(1.46875, 1.46875)
 sprite_frames = SubResource("SpriteFrames_x76d4")
 

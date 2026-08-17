@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://qju8bivensgw" path="res://Art/CardTemplateTuff.png" id="1_1lenw"]
 [ext_resource type="Script" uid="uid://b1wwgji6jiwrq" path="res://cards.gd" id="2_o33en"]
-[ext_resource type="Texture2D" uid="uid://b5gjgnb6sfvkn" path="res://Art/BlackFlash(no_card).png" id="3_o33en"]
+[ext_resource type="Texture2D" uid="uid://bpgg4yf20b7g8" path="res://Art/AuraFarm.png" id="3_o33en"]
 
 [node name="Attack" type="TextureRect" unique_id=95620961]
 offset_left = -72.0
@@ -26,7 +26,7 @@ offset_top = 28.040272
 offset_right = 299.8935
 offset_bottom = 68.04027
 theme_override_font_sizes/font_size = 21
-text = "???"
+text = "Aura Farm"
 
 [node name="Sprite2D" type="TextureRect" parent="." unique_id=1145997083]
 layout_mode = 0
@@ -41,9 +41,7 @@ offset_left = 30.0
 offset_top = 187.0
 offset_right = 230.0
 offset_bottom = 305.0
-text = "you'll see
-😉😉😉
-;)
+text = "Weakens enemies
 "
 
 [node name="Label" type="Label" parent="." unique_id=2130168746]
@@ -53,7 +51,7 @@ offset_top = -10.0
 offset_right = 209.0
 offset_bottom = 45.0
 theme_override_font_sizes/font_size = 40
-text = "20
+text = "9
 "
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
