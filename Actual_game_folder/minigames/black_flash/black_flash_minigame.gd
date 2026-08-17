@@ -1,63 +1,73 @@
 extends Node2D
-## black_flash_minigame.gd (v2 -- rebuilt from scratch)
+## black_flash_minigame.gd (v3 -- osu! style, mouse-driven)
 ##
-## Fully self-contained FNF-style rhythm minigame. No "Signals" autoload,
-## no separate FallingKey/KeyListener/ScorePressText scenes -- everything
-## (lane layout, falling notes, hit judging, scoring, popups) lives in this
-## one script. Only external dependency is the arrows.webp spritesheet.
+## Circles appear on screen with a shrinking "approach ring." Click inside
+## the circle right as the ring collapses onto it. Judged Perfect/Good/Miss
+## by timing accuracy, same scoring shape as before.
 ##
-## Layout is computed from the ACTUAL viewport size at start() time, not
-## hardcoded pixel positions -- so there's nothing to manually re-position
-## to match a threshold buried in another file.
+## Fully self-contained: everything is drawn procedurally (no sprite sheet
+## needed), no external autoload. Uses the same "click" input action your
+## cards already use, so it matches your game's existing mouse controls.
 ##
-## Judging is time-based (how close your press is to the note's scheduled
-## hit time), not pixel-distance-based -- this is the standard approach and
-## sidesteps an entire category of "note position doesn't match hitbox"
-## bugs, since speed/position are always mathematically consistent.
-##
-## Interface (unchanged from before, so black_flash_card.gd needs no edits):
+## Interface (unchanged, so black_flash_card.gd needs no edits):
 ##   signal finished(accuracy: float)
 ##   func start() -> void
 
 signal finished(accuracy: float)
 
-# Each entry: [lane_index (0-3), time_in_seconds_the_note_should_be_hit].
-# Keep this SHORT -- a few seconds, not a full song.
+# Each entry: [x_fraction, y_fraction, hit_time_in_seconds].
+# x/y are fractions of the viewport (0.0-1.0) so layout is resolution
+# independent. Keep this SHORT -- a few seconds, not a full song.
 @export var chart: Array = [
-	[0, 0.6], [1, 1.0], [2, 1.4], [3, 1.8],
-	[0, 2.4], [1, 2.4], [2, 2.8], [3, 2.8],
-	[0, 3.5], [1, 3.9], [2, 4.3], [3, 4.7],
+	[0.30, 0.35, 0.6], [0.62, 0.30, 1.15], [0.45, 0.55, 1.7],
+	[0.70, 0.50, 2.25], [0.28, 0.60, 2.8], [0.55, 0.40, 3.35],
+	[0.40, 0.28, 3.9], [0.65, 0.62, 4.45], [0.50, 0.45, 5.0],
 ]
 
-@export var arrows_texture: Texture2D
-@export var note_speed: float = 700.0 # pixels/second, delta-scaled
-@export var perfect_window: float = 0.07 # seconds
-@export var good_window: float = 0.14 # seconds
+@export var circle_radius: float = 48.0
+@export var approach_time: float = 1.0 # seconds from ring appearing to landing
+@export var approach_start_scale: float = 2.4
+@export var perfect_window: float = 0.08 # seconds
+@export var good_window: float = 0.18 # seconds
 @export var end_padding: float = 1.0
 @export var music_player_path: NodePath = ^"MusicPlayer"
+
+# Shown in the on-screen threshold readout. Should match whatever
+# black_flash_card.gd uses for its own bonus-damage cutoff (currently 0.9).
+@export var critical_accuracy_threshold: float = 0.9
 
 # Turn on ONLY for standalone testing (Run Current Scene). Leave off for
 # real play -- black_flash_card.gd calls start() itself.
 @export var autostart_for_testing: bool = false
 
-const LANE_COUNT = 4
-const LANE_KEYS = ["button_Q", "button_W", "button_O", "button_P"]
-const LANE_FRAMES = [0, 1, 2, 3] # left, down, up, right in arrows.webp row 0
-const SPAWN_Y = -80.0
 const PERFECT_SCORE = 300
 const GOOD_SCORE = 150
+const NOTE_COLORS = [
+	Color(0.28, 0.75, 1.0), Color(1.0, 0.55, 0.75), Color(0.55, 1.0, 0.55),
+	Color(1.0, 0.85, 0.35), Color(0.75, 0.55, 1.0),
+]
 
-class NoteData:
-	var sprite: Sprite2D
-	var lane: int
+class OsuNote extends Node2D:
 	var hit_time: float
 	var judged: bool = false
+	var radius: float = 48.0
+	var approach_start_scale: float = 2.4
+	var progress: float = 0.0 # 0 = just appeared, 1 = exactly on hit_time
+	var note_color: Color = Color.WHITE
 
-var _lane_x: Array = []
-var _hit_y: float = 0.0
+	func _draw() -> void:
+		draw_circle(Vector2.ZERO, radius, note_color)
+		draw_arc(Vector2.ZERO, radius, 0.0, TAU, 40, Color(1, 1, 1, 0.9), 3.0)
+		if progress < 1.2:
+			var approach_radius = lerp(radius * approach_start_scale, radius, clamp(progress, 0.0, 1.0))
+			draw_arc(Vector2.ZERO, approach_radius, 0.0, TAU, 48, Color(1, 1, 1, 0.85), 3.0)
+
+	func set_progress(p: float) -> void:
+		progress = p
+		queue_redraw()
+
 var _pending: Array = [] # chart entries not yet spawned
-var _notes: Array = [] # NoteData currently on screen
-var _lane_targets: Array = []
+var _notes: Array = [] # OsuNote currently on screen
 var _notes_container: Node2D
 
 var _score: int = 0
@@ -65,29 +75,69 @@ var _max_score: int = 0
 var _started: bool = false
 var _elapsed: float = 0.0
 
+var _score_label: Label
+var _threshold_label: Label
+var _hint_label: Label
+
 func _ready() -> void:
-	if not arrows_texture:
-		arrows_texture = load("res://minigames/black_flash/art/arrows.webp")
 	_notes_container = Node2D.new()
 	add_child(_notes_container)
+	_build_hud()
 	set_process(false)
 	if autostart_for_testing:
 		start()
+
+func _build_hud() -> void:
+	_score_label = Label.new()
+	_score_label.add_theme_font_size_override("font_size", 28)
+	_score_label.add_theme_color_override("font_color", Color.WHITE)
+	_score_label.add_theme_color_override("font_outline_color", Color.BLACK)
+	_score_label.add_theme_constant_override("outline_size", 5)
+	_score_label.position = Vector2(24, 20)
+	add_child(_score_label)
+
+	_threshold_label = Label.new()
+	_threshold_label.add_theme_font_size_override("font_size", 18)
+	_threshold_label.add_theme_color_override("font_color", Color(1, 0.9, 0.6))
+	_threshold_label.add_theme_color_override("font_outline_color", Color.BLACK)
+	_threshold_label.add_theme_constant_override("outline_size", 4)
+	_threshold_label.position = Vector2(24, 58)
+	add_child(_threshold_label)
+
+	_hint_label = Label.new()
+	_hint_label.text = "Click the circles right as the ring closes in!"
+	_hint_label.add_theme_font_size_override("font_size", 16)
+	_hint_label.add_theme_color_override("font_color", Color(1, 1, 1, 0.75))
+	_hint_label.add_theme_color_override("font_outline_color", Color.BLACK)
+	_hint_label.add_theme_constant_override("outline_size", 4)
+	add_child(_hint_label)
+
+	_update_hud()
+
+func _update_hud() -> void:
+	_score_label.text = "Score: %d" % _score
+	var live_accuracy := 0.0
+	if _max_score > 0:
+		live_accuracy = float(_score) / float(_max_score)
+	var pct := int(round(live_accuracy * 100.0))
+	var crit_pct := int(round(critical_accuracy_threshold * 100.0))
+	_threshold_label.text = "Accuracy: %d%%  (need %d%% for CRITICAL damage)" % [pct, crit_pct]
 
 func start() -> void:
 	if _started:
 		return
 	_started = true
 
-	_compute_layout()
-	_spawn_lane_targets()
+	var vp := get_viewport().get_visible_rect().size
+	_hint_label.position = Vector2(vp.x * 0.5 - 220, vp.y - 50)
 
 	_pending = chart.duplicate(true)
-	_pending.sort_custom(func(a, b): return a[1] < b[1])
+	_pending.sort_custom(func(a, b): return a[2] < b[2])
 	_notes.clear()
 	_score = 0
 	_max_score = chart.size() * PERFECT_SCORE
 	_elapsed = 0.0
+	_update_hud()
 
 	var music_player = get_node_or_null(music_player_path)
 	if music_player:
@@ -95,80 +145,46 @@ func start() -> void:
 
 	set_process(true)
 
-func _compute_layout() -> void:
-	var vp := get_viewport().get_visible_rect().size
-	_hit_y = vp.y * 0.78
-	var spacing := 110.0
-	var start_x := vp.x * 0.5 - spacing * 1.5
-	_lane_x.clear()
-	for i in range(LANE_COUNT):
-		_lane_x.append(start_x + i * spacing)
-
-func _make_arrow_sprite(lane: int) -> Sprite2D:
-	var s := Sprite2D.new()
-	s.texture = arrows_texture
-	s.hframes = 4
-	s.vframes = 3
-	s.frame = LANE_FRAMES[lane]
-	return s
-
-func _spawn_lane_targets() -> void:
-	for t in _lane_targets:
-		if is_instance_valid(t):
-			t.queue_free()
-	_lane_targets.clear()
-	for lane in range(LANE_COUNT):
-		var s = _make_arrow_sprite(lane)
-		s.modulate = Color(1, 1, 1, 0.45)
-		s.position = Vector2(_lane_x[lane], _hit_y)
-		add_child(s)
-		_lane_targets.append(s)
-
-func _travel_time() -> float:
-	return (_hit_y - SPAWN_Y) / note_speed
-
 func _process(delta: float) -> void:
 	_elapsed += delta
-	var travel = _travel_time()
 
-	# Spawn any notes whose flight should have begun by now, so they arrive
-	# at the hit line exactly on their scheduled hit_time.
-	while _pending.size() > 0 and _pending[0][1] - travel <= _elapsed:
+	while _pending.size() > 0 and _pending[0][2] - approach_time <= _elapsed:
 		var entry = _pending.pop_front()
-		_spawn_note(entry[0], entry[1])
+		_spawn_note(entry[0], entry[1], entry[2])
 
-	# Move notes + auto-miss anything that's fallen well past the hit line.
 	for note in _notes.duplicate():
 		if note.judged:
 			continue
 		var t_left = note.hit_time - _elapsed
-		var frac = clamp(1.0 - (t_left / travel), 0.0, 1.3)
-		note.sprite.position.y = lerp(SPAWN_Y, _hit_y, frac)
+		var progress = 1.0 - (t_left / approach_time)
+		note.set_progress(progress)
 		if t_left < -good_window:
 			_judge(note, "MISS", 0)
 
-	for lane in range(LANE_COUNT):
-		if Input.is_action_just_pressed(LANE_KEYS[lane]):
-			_try_hit(lane)
+	if Input.is_action_just_pressed("click"):
+		_try_click(get_global_mouse_position())
 
 	if _pending.is_empty() and _notes.is_empty():
 		_finish()
 
-func _spawn_note(lane: int, hit_time: float) -> void:
-	var s = _make_arrow_sprite(lane)
-	s.position = Vector2(_lane_x[lane], SPAWN_Y)
-	_notes_container.add_child(s)
-	var note := NoteData.new()
-	note.sprite = s
-	note.lane = lane
+func _spawn_note(x_frac: float, y_frac: float, hit_time: float) -> void:
+	var vp := get_viewport().get_visible_rect().size
+	var note := OsuNote.new()
 	note.hit_time = hit_time
+	note.radius = circle_radius
+	note.approach_start_scale = approach_start_scale
+	note.note_color = NOTE_COLORS[_notes.size() % NOTE_COLORS.size()]
+	note.position = Vector2(x_frac * vp.x, y_frac * vp.y)
+	_notes_container.add_child(note)
 	_notes.append(note)
 
-func _try_hit(lane: int) -> void:
+func _try_click(mouse_pos: Vector2) -> void:
 	var best_note = null
 	var best_diff := INF
 	for note in _notes:
-		if note.judged or note.lane != lane:
+		if note.judged:
+			continue
+		if note.global_position.distance_to(mouse_pos) > note.radius:
 			continue
 		var diff = absf(note.hit_time - _elapsed)
 		if diff < best_diff:
@@ -183,22 +199,32 @@ func _try_hit(lane: int) -> void:
 	else:
 		_judge(best_note, "GOOD", GOOD_SCORE)
 
-func _judge(note: NoteData, label: String, points: int) -> void:
+func _judge(note: OsuNote, label_text: String, points: int) -> void:
 	note.judged = true
 	_score += points
-	if is_instance_valid(note.sprite):
-		note.sprite.queue_free()
+	_update_hud()
+	_show_popup(label_text, note.position, points > 0)
+	_burst_and_free(note, points > 0)
 	_notes.erase(note)
-	_show_popup(label, _lane_x[note.lane])
 
-func _show_popup(text: String, x: float) -> void:
+func _burst_and_free(note: OsuNote, was_hit: bool) -> void:
+	var tw := create_tween()
+	if was_hit:
+		tw.tween_property(note, "scale", Vector2(1.4, 1.4), 0.15)\
+			.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+		tw.parallel().tween_property(note, "modulate:a", 0.0, 0.18)
+	else:
+		tw.tween_property(note, "modulate:a", 0.0, 0.12)
+	tw.tween_callback(note.queue_free)
+
+func _show_popup(text: String, pos: Vector2, was_hit: bool) -> void:
 	var label := Label.new()
 	label.text = text
 	label.add_theme_font_size_override("font_size", 22)
-	label.add_theme_color_override("font_color", Color.WHITE)
+	label.add_theme_color_override("font_color", Color.WHITE if was_hit else Color(1, 0.4, 0.4))
 	label.add_theme_color_override("font_outline_color", Color.BLACK)
-	label.add_theme_constant_override("outline_size", 6)
-	label.position = Vector2(x - 30, _hit_y - 60)
+	label.add_theme_constant_override("outline_size", 5)
+	label.position = pos + Vector2(-30, -circle_radius - 30)
 	add_child(label)
 
 	var tw := create_tween()
@@ -209,11 +235,6 @@ func _show_popup(text: String, x: float) -> void:
 func _finish() -> void:
 	set_process(false)
 	_started = false
-	for t in _lane_targets:
-		if is_instance_valid(t):
-			t.queue_free()
-	_lane_targets.clear()
-
 	var accuracy := 0.0
 	if _max_score > 0:
 		accuracy = float(_score) / float(_max_score)
