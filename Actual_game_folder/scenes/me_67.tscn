@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://bmbwre7d48yq4"]
+
+[ext_resource type="Texture2D" uid="uid://2t4sabmvtoxi" path="res://Art/kitchen.png" id="1_ayegc"]
+[ext_resource type="PackedScene" uid="uid://drr3088qvw5dk" path="res://ui.tscn" id="2_xte1c"]
+[ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="3_gk2jk"]
+[ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="4_8xagh"]
+[ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/enemy.tscn" id="5_rasdo"]
+[ext_resource type="Texture2D" uid="uid://c6s6s8ipmmmdt" path="res://Art/john_test.png" id="6_xvvvi"]
+[ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="7_q4ehi"]
+[ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="8_g0s7f"]
+[ext_resource type="Texture2D" uid="uid://ckmir275cyots" path="res://Art/gordoRAM.png" id="9_gcnsn"]
+[ext_resource type="Texture2D" uid="uid://3j2l4ohtdmgt" path="res://Art/johnsmith.png" id="10_hvy3n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x76d4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_xvvvi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_irjls"]
+script = ExtResource("8_g0s7f")
+character_name = "Gordo RamE"
+portrait = ExtResource("9_gcnsn")
+paragraphs = "Drag punch on top of the enemy to play the card
+"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_m1vkf"]
+script = ExtResource("8_g0s7f")
+character_name = "Gordo RamE"
+portrait = ExtResource("9_gcnsn")
+paragraphs = "Drag block to the playing field for a defensive buff"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_x76d4"]
+script = ExtResource("8_g0s7f")
+character_name = "Gordo RamE"
+portrait = ExtResource("9_gcnsn")
+paragraphs = "your energy is on the top left corner. When you ran out you can't play any cards"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_715r7"]
+script = ExtResource("8_g0s7f")
+character_name = "Gordo RamE"
+portrait = ExtResource("9_gcnsn")
+paragraphs = "when you're done with your turn press \"end turn\".
+It helps you regenerate energy."
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_rx3wi"]
+script = ExtResource("8_g0s7f")
+character_name = "John Smith"
+portrait = ExtResource("10_hvy3n")
+paragraphs = "Shut up already fatty"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_f7bhn"]
+script = ExtResource("8_g0s7f")
+character_name = "Gordo RamE"
+portrait = ExtResource("9_gcnsn")
+paragraphs = "Also beating this bum gives you money."
+music = "Battle"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_0gp0h"]
+script = ExtResource("8_g0s7f")
+character_name = "Gordo RamE"
+portrait = ExtResource("9_gcnsn")
+paragraphs = "So beat this bum. 
+
+
+
+I'm not fat, right :( "
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[node name="Me67" type="Node2D" unique_id=1916832371]
+
+[node name="background2" type="Sprite2D" parent="." unique_id=1796574471]
+position = Vector2(638, 364)
+scale = Vector2(2.0218751, 2.0218751)
+texture = ExtResource("1_ayegc")
+
+[node name="UI" parent="." unique_id=890284133 instance=ExtResource("2_xte1c")]
+
+[node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
+script = ExtResource("3_gk2jk")
+music_name = "Battle"
+
+[node name="player" parent="." unique_id=294404824 instance=ExtResource("4_8xagh")]
+position = Vector2(252, 232)
+
+[node name="enemies" type="Node2D" parent="." unique_id=1413379743]
+position = Vector2(835, 394)
+
+[node name="Me67" parent="enemies" unique_id=708042470 instance=ExtResource("5_rasdo")]
+position = Vector2(56, -172)
+attacks_name = Array[String](["punch", "punch", "kick"])
+setted_HP = 75.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Me67" unique_id=1450351235]
+position = Vector2(14, -24)
+scale = Vector2(1.46875, 1.46875)
+sprite_frames = SubResource("SpriteFrames_x76d4")
+
+[node name="background" type="Sprite2D" parent="." unique_id=1824490579]
+
+[node name="Dialogue" type="Node" parent="." unique_id=276630500]
+script = ExtResource("7_q4ehi")
+at_when = 1
+dialogues = Array[ExtResource("8_g0s7f")]([SubResource("Resource_irjls"), SubResource("Resource_m1vkf"), SubResource("Resource_x76d4"), SubResource("Resource_715r7"), SubResource("Resource_rx3wi"), SubResource("Resource_f7bhn"), SubResource("Resource_0gp0h")])

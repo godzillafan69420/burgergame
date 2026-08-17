@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://qju8bivensgw" path="res://Art/CardTemplateTuff.png" id="1_frame"]
 [ext_resource type="Script" uid="uid://fsh2m5euofhk" path="res://minigames/black_flash/black_flash_card.gd" id="2_script"]
 [ext_resource type="PackedScene" path="res://minigames/black_flash/black_flash_cutscene.tscn" id="3_cutscene"]
-[ext_resource type="PackedScene" path="res://minigames/black_flash/black_flash_minigame.tscn" id="4_minigame"]
+[ext_resource type="PackedScene" uid="uid://br4y3ad61jtrm" path="res://minigames/black_flash/black_flash_minigame.tscn" id="4_minigame"]
+[ext_resource type="Texture2D" uid="uid://b5gjgnb6sfvkn" path="res://Art/BlackFlash(no_card).png" id="5_xcd74"]
 
 [node name="black_flash" type="TextureRect" unique_id=1185445716]
 offset_left = -72.0
@@ -53,6 +54,11 @@ offset_right = 209.0
 offset_bottom = 45.0
 theme_override_font_sizes/font_size = 40
 text = "40"
+
+[node name="BlackFlash(noCard)" type="Sprite2D" parent="." unique_id=428710975]
+position = Vector2(125.89561, 172.74883)
+scale = Vector2(0.9836947, 0.9656689)
+texture = ExtResource("5_xcd74")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
