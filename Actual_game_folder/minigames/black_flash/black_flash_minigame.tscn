@@ -5,6 +5,11 @@
 
 [node name="BlackFlashMinigame" type="Node2D" unique_id=264310077]
 script = ExtResource("1_mg")
+approach_time = 2.5
+perfect_window = 0.05
+good_window = 0.12
+max_duration = 100.0
+reaction_speed = 2.5
 autostart_for_testing = true
 
 [node name="Background" type="ColorRect" parent="." unique_id=1370405849]
