@@ -28,7 +28,7 @@ func _damage_yourself(id: int ,damage: int) -> void:
 	if id != get_parent().id:
 		return
 	
-	$HP.value -= damage * player_damge_multiplier * def * PlayerStats.player_damage * PlayerStats.player_aoe_damage
+	$HP.value -= damage * player_damge_multiplier * def * PlayerStats.player_damage * PlayerStats.player_single_damage
 	
 	$Label.text = str(snapped($HP.value, 0.01)) + "/" +str(int($HP.max_value))
 	if $HP.value <= 0:
@@ -39,7 +39,7 @@ func _damage_yourself(id: int ,damage: int) -> void:
 func _take_damage(damage: int) -> void:
 	
 	player_damge_multiplier = get_parent().get_parent().get_parent().get_node("player").get_node("player_stats").damage_multiplier
-	$HP.value -= damage * player_damge_multiplier * def * PlayerStats.player_damage * PlayerStats.player_single_damage
+	$HP.value -= damage * player_damge_multiplier * def * PlayerStats.player_damage * PlayerStats.player_aoe_damage
 	$Label.text = str(int($HP.value)) + "/" +str(int($HP.max_value))
 	if $HP.value <= 0:
 		get_parent().queue_free()

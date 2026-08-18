@@ -156,5 +156,5 @@ dialogues = Array[ExtResource("8_fdkgc")]([SubResource("Resource_1ybjt")])
 
 [node name="Dialogue2" type="Node" parent="." unique_id=521808174]
 script = ExtResource("7_2sg40")
-at_when = 14
+at_when = 13
 dialogues = Array[ExtResource("8_fdkgc")]([SubResource("Resource_jae5d"), SubResource("Resource_w4m1c")])

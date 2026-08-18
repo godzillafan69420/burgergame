@@ -101,7 +101,7 @@ var knife = {
 
 var strong_right = {
 	"name": "Strong Right",
-	"damage": 35,
+	"damage": 40,
 	"status_effects": [],
 	"buff": [],
 	"animation": "punch"
@@ -117,11 +117,12 @@ var ice_cream_balls = {
 
 var scratch = {
 	"name": "scratch",
-	"damage": 10,
+	"damage": 0,
 	"status_effects": ["bleed","bleed","bleed"],
 	"buff": [],
 	"animation": "slash"
 }
+#Zemonke attacks
 var guess_what = {
 	"name": "guess what",
 	"damage": 10,
@@ -131,7 +132,7 @@ var guess_what = {
 	
 }
 
-#Zemonke attacks
+
 var chicken = {
 	"name": "chicken butt",
 	"damage": 25,
@@ -180,6 +181,26 @@ var banana_nuke = {
 	"buff": [],
 	"animation": "banana_nuke"
 }
+
+#big wang attacks
+var fraud_attacks= {
+	"name": "fraudulent attacks",
+	"damage": 40,
+	"status_effects": ["weaken"],
+	"buff": [],
+	"animation": "punch"
+}
+
+var love_beam= {
+	"name": "love beam",
+	"damage": 60,
+	"status_effects": ["burn"],
+	"buff": ["heal"],
+	"animation": "heart"
+}
+
+
+
 
 #me67 attacks
 

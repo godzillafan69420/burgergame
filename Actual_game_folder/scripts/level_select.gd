@@ -65,7 +65,7 @@ func _player_stats_change():
 		if i["id"] == "lettuce":
 			PlayerStats.player_hitpoint += 25
 		if i["id"] == "beef_patty":
-			PlayerStats.player_damage += 0.15
+			PlayerStats.player_damage += 0.10
 		if i["id"] == "cheese":
 			PlayerStats.player_recovery += 4
 		if i["id"] == "bacon":
@@ -78,7 +78,10 @@ func _player_stats_change():
 			PlayerStats.player_max_energy += 10
 		if i["id"] == "clover":
 			PlayerStats.luck += 10
-			
+		if i["id"] == "fish":
+			PlayerStats.player_aoe_damage += 0.15
+		if i["id"] == "nuts":
+			PlayerStats.player_single_damage += 0.15
 func _ready():
 	_player_stats_change()
 	AudioManager.play("LevelSelect")
@@ -159,6 +162,10 @@ func _on_play_button_pressed():
 	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_5") and (Globals.level ==6 or Globals.level >7):
 		dest_scene = "res://scenes/cone_l.tscn"
 	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_6") and (Globals.level ==7 or Globals.level >7):
+		dest_scene = "res://scenes/zemonke.tscn"
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_8") and (Globals.level ==9 or Globals.level >7):
+		dest_scene = "res://scenes/zemonke.tscn"
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_9") and (Globals.level ==10 or Globals.level >7):
 		dest_scene = "res://scenes/zemonke.tscn"
 		
 	if dest_scene != "":
