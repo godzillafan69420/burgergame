@@ -196,7 +196,7 @@ var love_beam= {
 	"damage": 60,
 	"status_effects": ["burn"],
 	"buff": ["heal"],
-	"animation": "pizza"
+	"animation": "heart"
 }
 
 

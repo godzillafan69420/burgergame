@@ -44,7 +44,29 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 [sub_resource type="Resource" id="Resource_peaf5"]
 script = ExtResource("8_hn52y")
 character_name = "Gordo"
-paragraphs = "You "
+portrait = ExtResource("9_peaf5")
+paragraphs = "LMAO WHAT ARE YOU WEARING"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_xgovk"]
+script = ExtResource("8_hn52y")
+character_name = "That JJS fraud guy"
+portrait = ExtResource("9_peaf5")
+paragraphs = "come on Brochacho. This is peak."
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_41ai5"]
+script = ExtResource("8_hn52y")
+character_name = "Gordo RamE"
+portrait = ExtResource("9_oo3n6")
+paragraphs = "Mate. Are we serious"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_c781l"]
+script = ExtResource("8_hn52y")
+character_name = "That JJS fraud guy"
+portrait = ExtResource("9_peaf5")
+paragraphs = "Yes bro."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="big_wang" type="Node2D" unique_id=1916832371]
@@ -83,4 +105,4 @@ sprite_frames = SubResource("SpriteFrames_vm5ie")
 [node name="Dialogue" type="Node" parent="." unique_id=276630500]
 script = ExtResource("7_w8vp6")
 at_when = 1
-dialogues = Array[ExtResource("8_hn52y")]([SubResource("Resource_tv4rf"), SubResource("Resource_vm5ie"), SubResource("Resource_peaf5")])
+dialogues = Array[ExtResource("8_hn52y")]([SubResource("Resource_tv4rf"), SubResource("Resource_vm5ie"), SubResource("Resource_peaf5"), SubResource("Resource_xgovk"), SubResource("Resource_41ai5"), SubResource("Resource_c781l")])
