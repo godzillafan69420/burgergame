@@ -63,7 +63,7 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("7_x5h4l")
 character_name = "Gordo RamE"
 portrait = ExtResource("11_x76d4")
-paragraphs = "Also beating this bum gives you money."
+paragraphs = "Also beating this bum. It gives you money."
 music = "Battle"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 

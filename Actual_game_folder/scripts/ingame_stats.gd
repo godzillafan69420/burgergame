@@ -10,7 +10,7 @@ var def_stats: float = 0
 const MAX_DEF: float = 20
 
 var damage_multiplier: float = 1
-
+var damage_sfx: AudioStream = preload("res://sfx/player dmagae.mp3")
 
 var incoming_damage: float = 0
 
@@ -35,6 +35,8 @@ func _on_animations_animation_finished() -> void:
 	
 
 func _take_damage(damage: float, animation: String) -> void:
+	if damage > 0 :
+		AudioManager.play_oneshot(damage_sfx)
 	incoming_damage = damage
 	animation_player.visible = true
 	animation_player.play(animation)

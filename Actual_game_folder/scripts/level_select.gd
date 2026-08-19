@@ -33,22 +33,42 @@ var level_preview_data: Dictionary = {
 	"Level_3": {
 		"title": "Boss: Ivan the Van",
 		"icon": "res://Art/ivanthevanprotrait.png",
-		"description": "Boss Encounter: Ivan the Van"
+		"description": "Don't let Ivan the van get you"
 	},
 	"Level_4": {
 		"title": "Boss: Fake Italian Guys",
 		"icon": "res://Art/furryKing.png",
-		"description": "Threat: Fake Italian Crew"
+		"description": "There is no limit to the larp"
 	},
 	"Level_5": {
 		"title": "Boss: Cone L",
 		"icon": "res://Art/coneL.png",
-		"description": "Boss Encounter: Cone L"
+		"description": "Cat boy ice cream shop?"
 	},
 	"Level_6": {
 		"title": "Boss: Ze Monke",
 		"icon": "res://Art/zemonke.png",
-		"description": "Boss Encounter: Ze Monke"
+		"description": "A monkey with nuclear weapons"
+	},
+	"Level_7": {
+		"title": "Boss: Bok choi",
+		"icon": "res://Art/big_wang.png",
+		"description": "A peaceful Bok Choy farmer"
+	},
+	"Level_8": {
+		"title": "Boss: That JJS fraud guy",
+		"icon": "res://Art/big_wang.png",
+		"description": "Mango Maid Cafe"
+	},
+	"Level_9": {
+		"title": "Boss: Me67",
+		"icon": "res://Art/me67.png",
+		"description": "Vengence is here"
+	},
+	"Level_10": {
+		"title": "Boss: insert Anime girl",
+		"icon": "res://Art/me67.png",
+		"description": "Vengence is here"
 	}
 }
 
@@ -164,9 +184,9 @@ func _on_play_button_pressed():
 	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_6") and (Globals.level ==7 or Globals.level >7):
 		dest_scene = "res://scenes/zemonke.tscn"
 	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_8") and (Globals.level ==9 or Globals.level >7):
-		dest_scene = "res://scenes/zemonke.tscn"
+		dest_scene = "res://scenes/big_wang.tscn"
 	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_9") and (Globals.level ==10 or Globals.level >7):
-		dest_scene = "res://scenes/zemonke.tscn"
+		dest_scene = "res://scenes/me_67.tscn"
 		
 	if dest_scene != "":
 		TransitionManager.play_transition(dest_scene)
