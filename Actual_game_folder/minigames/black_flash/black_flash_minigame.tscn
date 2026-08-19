@@ -10,7 +10,7 @@ approach_time = 2.5
 perfect_window = 0.05
 good_window = 0.12
 max_duration = 100.0
-reaction_speed = 2.5
+reaction_speed = 25.0
 autostart_for_testing = true
 
 [node name="Background" type="TextureRect" parent="." unique_id=1506018864]
