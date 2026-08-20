@@ -1,8 +1,5 @@
 extends Node2D
 class_name enemy
-
-var original_position:Vector2
-
 @export var enemy_dying: AudioStream
 
 @export var id: int = 0
@@ -18,8 +15,6 @@ var can_attack: bool = false
 var damage_multiplier: float = 1
 
 func _ready() -> void:
-	
-	original_position = global_position
 	Events.connect("enemies_turn",_attacked_player)
 	Events.connect("give_side_effects_to_enemies", _add_status)
 	Events.connect("id_effect_chosen", _add_status_id)
