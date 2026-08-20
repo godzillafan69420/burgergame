@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://cnyt6r7yt1h8j" path="res://scripts/level_select.gd" id="1_3shnc"]
 [ext_resource type="Texture2D" uid="uid://bpp8nf463r3ow" path="res://Art/burger buns.png" id="2_p0wlc"]
 [ext_resource type="Texture2D" uid="uid://cbqxcphym0tnu" path="res://Art/cool.png" id="3_2epne"]
+[ext_resource type="StyleBox" uid="uid://b1b12snmxeehw" path="res://playerHP.tres" id="3_4nqmc"]
 [ext_resource type="StyleBox" uid="uid://dvrqw8rhluaai" path="res://level_buttons.tres" id="3_r77uv"]
+[ext_resource type="FontFile" uid="uid://b4op6rjwgpx25" path="res://fonts/kirifont/KiriFont.otf" id="4_7plkq"]
 [ext_resource type="StyleBox" uid="uid://bjncy0blgwv8n" path="res://hover.tres" id="5_4nqmc"]
 [ext_resource type="StyleBox" uid="uid://dk0m455vrnwhn" path="res://cool_colours.tres" id="6_r77uv"]
 
@@ -23,6 +25,23 @@ offset_top = -1.0
 offset_right = 7301.0
 offset_bottom = 719.0
 texture = ExtResource("3_2epne")
+
+[node name="Panel" type="Panel" parent="." unique_id=1776413840]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 402.0
+offset_right = 1283.0
+offset_bottom = 716.0
+theme_override_styles/panel = ExtResource("3_4nqmc")
+
+[node name="Label" type="Label" parent="Panel" unique_id=1131155159]
+layout_mode = 0
+offset_right = 908.0
+offset_bottom = 307.0
+theme_override_fonts/font = ExtResource("4_7plkq")
+theme_override_font_sizes/font_size = 30
+text = "test"
+autowrap_mode = 3
 
 [node name="TopScrollContainer" type="ScrollContainer" parent="." unique_id=861332106]
 layout_mode = 1

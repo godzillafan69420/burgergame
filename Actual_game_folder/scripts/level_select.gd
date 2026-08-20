@@ -18,37 +18,43 @@ var level_preview_data: Dictionary = {
 	"Tutorial": {
 		"title": "Tutorial Stage",
 		"icon": "res://Art/john_test.png",
-		"description": "Target: Practice Dummy"
+		"description": "John Smith is a very kind and grateful person. Every time he gets low he has to pop ult. He is not a fraud, but the kindest jjs player know to man kind."
 	},
 	"Level_1": {
 		"title": "Stage 1: The Streets",
 		"icon": "res://Art/tetoPortraits.png",
-		"description": "Threat: Street Goons"
+		"description": "Random people go."
 	},
 	"Level_2": {
 		"title": "Boss: Socrates",
 		"icon": "res://Art/socrates.png",
-		"description": "Boss Encounter: Socrates"
+		"description": "It's the guy who was ragebaiting the skeleton. 
+		Why is here in this game? I do not know, but his ragebait technique apparently makes your defence low.
+		You can cheese the weaken by just blocking. Intentional game design"
 	},
 	"Level_3": {
 		"title": "Boss: Ivan the Van",
 		"icon": "res://Art/ivanthevanprotrait.png",
-		"description": "Don't let Ivan the van get you"
+		"description": "Don't let Ivan the van get you.
+		Buddy thinks block would do stuff or something."
 	},
 	"Level_4": {
 		"title": "Boss: Fake Italian Guys",
 		"icon": "res://Art/furryKing.png",
-		"description": "There is no limit to the larp"
+		"description": "There is no limit to the larp! 
+		They are going to team so it would be very smart to spam Aoe attacks instead of using single attacks."
 	},
 	"Level_5": {
 		"title": "Boss: Cone L",
 		"icon": "res://Art/coneL.png",
-		"description": "Cat boy ice cream shop?"
+		"description": "Cat boy ice cream shop?
+		He hits hard and heal himself. Just out last him and you will win."
 	},
 	"Level_6": {
 		"title": "Boss: Ze Monke",
 		"icon": "res://Art/zemonke.png",
-		"description": "A monkey with nuclear weapons"
+		"description": "A monkey with nuclear weapons.
+		Kill him before he nukes you."
 	},
 	"Level_7": {
 		"title": "Boss: Bok choi",
@@ -63,12 +69,12 @@ var level_preview_data: Dictionary = {
 	"Level_9": {
 		"title": "Boss: Me67",
 		"icon": "res://Art/me67.png",
-		"description": "Vengence is here"
+		"description": "It's the bum that threw you away"
 	},
 	"Level_10": {
 		"title": "Boss: insert Anime girl",
-		"icon": "res://Art/me67.png",
-		"description": "Vengence is here"
+		"icon": "res://Art/anime girl ig.png",
+		"description": "Oh they need you for research."
 	}
 }
 
@@ -155,7 +161,7 @@ func _update_level_preview(card_name: String):
 			
 		if enemy_preview and ResourceLoader.exists(data["icon"]):
 			enemy_preview.texture = load(data["icon"])
-			
+			$Panel/Label.text =  data["description"]
 		if info_panel:
 			info_panel.visible = true
 
