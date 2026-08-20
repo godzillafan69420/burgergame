@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="5_ik4my"]
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="6_538lc"]
 [ext_resource type="Texture2D" uid="uid://dwkqas3phwhqr" path="res://Art/ivantest.png" id="6_rx7e8"]
+[ext_resource type="AudioStream" uid="uid://durdxkle8jlyy" path="res://sfx/ivan asmr.mp3" id="6_ygmip"]
 [ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/enemy.tscn" id="7_fg2du"]
 [ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="8_phlpe"]
 [ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="9_ak1w2"]
@@ -92,6 +93,7 @@ position = Vector2(829, 368)
 
 [node name="Ivan the van" parent="enemies" unique_id=1564538628 instance=ExtResource("7_fg2du")]
 position = Vector2(104, -16)
+enemy_dying = ExtResource("6_ygmip")
 attacks_name = Array[String](["block", "van", "giga_punch", "ragebait"])
 setted_HP = 250.0
 

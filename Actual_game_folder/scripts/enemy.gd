@@ -3,6 +3,7 @@ class_name enemy
 
 var original_position:Vector2
 
+@export var enemy_dying: AudioStream
 
 @export var id: int = 0
 

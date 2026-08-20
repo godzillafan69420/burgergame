@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cvnnlej3hajr7" path="res://Art/me68.png" id="6_ayegc"]
 [ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="7_q4ehi"]
 [ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="8_g0s7f"]
+[ext_resource type="Texture2D" uid="uid://botua6w2u4xeo" path="res://Art/me67.png" id="9_jurtw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xte1c"]
 atlas = ExtResource("6_ayegc")
@@ -23,6 +24,11 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="Resource" id="Resource_ayegc"]
+script = ExtResource("8_g0s7f")
+portrait = ExtResource("9_jurtw")
+metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="Me67" type="Node2D" unique_id=1916832371]
 
@@ -60,4 +66,4 @@ sprite_frames = SubResource("SpriteFrames_gk2jk")
 [node name="Dialogue" type="Node" parent="." unique_id=276630500]
 script = ExtResource("7_q4ehi")
 at_when = 1
-dialogues = Array[ExtResource("8_g0s7f")]([null])
+dialogues = Array[ExtResource("8_g0s7f")]([SubResource("Resource_ayegc")])

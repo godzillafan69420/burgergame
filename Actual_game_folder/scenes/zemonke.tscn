@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="3_6kh1l"]
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="4_fyow1"]
 [ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/enemy.tscn" id="5_jae5d"]
+[ext_resource type="AudioStream" uid="uid://61nm7dskgc3f" path="res://sfx/goodmorningChina.wav" id="6_6kh1l"]
 [ext_resource type="Texture2D" uid="uid://dwbcw4yteuw7q" path="res://Art/zemonketest.png" id="6_tcm4h"]
 [ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="7_2sg40"]
 [ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="8_fdkgc"]
@@ -131,6 +132,7 @@ position = Vector2(969, 315)
 
 [node name="ZeMonke" parent="enemies" unique_id=708042470 instance=ExtResource("5_jae5d")]
 position = Vector2(162, 57)
+enemy_dying = ExtResource("6_6kh1l")
 attacks_name = Array[String](["guess_what", "chicken", "butt", "guess_what", "butt", "guess_what", "chicken", "butt", "every_last_banana", "serious_chicken", "lock_in", "guess_what", "banana_nuke"])
 setted_HP = 600.0
 
