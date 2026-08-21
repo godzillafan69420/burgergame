@@ -77,7 +77,6 @@ scale = Vector2(2.0218751, 2.0218751)
 texture = ExtResource("1_peaf5")
 
 [node name="UI" parent="." unique_id=890284133 instance=ExtResource("2_tv4rf")]
-visible = false
 
 [node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
 script = ExtResource("3_vm5ie")

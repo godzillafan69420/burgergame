@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="7_q4ehi"]
 [ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="8_g0s7f"]
 [ext_resource type="Texture2D" uid="uid://botua6w2u4xeo" path="res://Art/me67.png" id="9_jurtw"]
+[ext_resource type="Texture2D" uid="uid://ckmir275cyots" path="res://Art/gordoRAM.png" id="10_ayegc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xte1c"]
 atlas = ExtResource("6_ayegc")
@@ -27,7 +28,62 @@ animations = [{
 
 [sub_resource type="Resource" id="Resource_ayegc"]
 script = ExtResource("8_g0s7f")
+character_name = "Me67"
 portrait = ExtResource("9_jurtw")
+paragraphs = "what the ....
+"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_xte1c"]
+script = ExtResource("8_g0s7f")
+character_name = "Me67"
+portrait = ExtResource("9_jurtw")
+paragraphs = "a top less burger"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_gk2jk"]
+script = ExtResource("8_g0s7f")
+character_name = "Gordo RamE"
+portrait = ExtResource("10_ayegc")
+paragraphs = "At this point... words are unnecessary!"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_8xagh"]
+script = ExtResource("8_g0s7f")
+character_name = "Me67"
+paragraphs = "huh i dont get"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_rasdo"]
+script = ExtResource("8_g0s7f")
+character_name = "Gordo RamE"
+portrait = ExtResource("10_ayegc")
+paragraphs = "Do you not remenber  throwing out a burger bun."
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_xvvvi"]
+script = ExtResource("8_g0s7f")
+character_name = "Me67"
+portrait = ExtResource("9_jurtw")
+paragraphs = "ohhhhhh yeah
+
+so does this mean...."
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_q4ehi"]
+script = ExtResource("8_g0s7f")
+character_name = "Gordo RamE"
+portrait = ExtResource("10_ayegc")
+paragraphs = "yes we're going to beat you up."
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_g0s7f"]
+script = ExtResource("8_g0s7f")
+character_name = "Me67"
+portrait = ExtResource("9_jurtw")
+paragraphs = "Let me say something deep before we fight.
+
+This is truly a Kurger Buns"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="Me67" type="Node2D" unique_id=1916832371]
@@ -38,7 +94,6 @@ scale = Vector2(2.0218751, 2.0218751)
 texture = ExtResource("1_ayegc")
 
 [node name="UI" parent="." unique_id=890284133 instance=ExtResource("2_xte1c")]
-visible = false
 
 [node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
 script = ExtResource("3_gk2jk")
@@ -52,7 +107,7 @@ position = Vector2(835, 394)
 
 [node name="Me67" parent="enemies" unique_id=708042470 instance=ExtResource("5_rasdo")]
 position = Vector2(198, -108)
-attacks_name = Array[String](["add_status_effect", "super_normal_attack", "low_iq"])
+attacks_name = Array[String](["add_status_effect", "super_normal_attack", "low_iq", "super_normal_attack", "super_normal_attack"])
 setted_HP = 800.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Me67" unique_id=1450351235]
@@ -66,4 +121,4 @@ sprite_frames = SubResource("SpriteFrames_gk2jk")
 [node name="Dialogue" type="Node" parent="." unique_id=276630500]
 script = ExtResource("7_q4ehi")
 at_when = 1
-dialogues = Array[ExtResource("8_g0s7f")]([SubResource("Resource_ayegc")])
+dialogues = Array[ExtResource("8_g0s7f")]([SubResource("Resource_ayegc"), SubResource("Resource_xte1c"), SubResource("Resource_gk2jk"), SubResource("Resource_8xagh"), SubResource("Resource_rasdo"), SubResource("Resource_xvvvi"), SubResource("Resource_q4ehi"), SubResource("Resource_g0s7f")])

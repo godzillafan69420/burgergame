@@ -64,17 +64,19 @@ var level_preview_data: Dictionary = {
 	"Level_8": {
 		"title": "Boss: That JJS fraud guy",
 		"icon": "res://Art/big_wang.png",
-		"description": "Mango Maid Cafe"
+		"description": "Mango Maid Cafe
+		Trust me this guy is a fraud."
 	},
 	"Level_9": {
 		"title": "Boss: Me67",
 		"icon": "res://Art/me67.png",
-		"description": "It's the bum that threw you away"
+		"description": "It's the bum that threw you away.
+		At this point... words are unnecessary!"
 	},
 	"Level_10": {
 		"title": "Boss: insert Anime girl",
 		"icon": "res://Art/anime girl ig.png",
-		"description": "Oh they need you for research."
+		"description": "Government is going to experiment on you."
 	}
 }
 

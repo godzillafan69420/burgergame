@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://cn1x23oeojqdo" path="res://music/myRageBaitIsAbsolute.mp3" id="2_op7ad"]
 [ext_resource type="PackedScene" uid="uid://ceci4fhh0g2hb" path="res://audio_oneshot.tscn" id="2_wby2p"]
 [ext_resource type="AudioStream" uid="uid://chh4u4klcqyok" path="res://music/boss2(mango maybe).mp3" id="3_wby2p"]
-[ext_resource type="AudioStream" uid="uid://c0vpomtpohdty" path="res://music/finalBossPleaseGiveInput.mp3" id="4_14skr"]
+[ext_resource type="AudioStream" uid="uid://bc4l8hkjycknu" path="res://music/i think it is done.mp3" id="5_hokuy"]
 [ext_resource type="AudioStream" uid="uid://cshtg41bktenk" path="res://music/freeCandy.mp3" id="5_k4pvn"]
 [ext_resource type="AudioStream" uid="uid://c5nbfj6vrje4e" path="res://music/level select.mp3" id="8_86pii"]
 [ext_resource type="AudioStream" uid="uid://boerryrw1f2xi" path="res://music/mainMenu.mp3" id="8_mfnxe"]
@@ -35,7 +35,7 @@ stream = ExtResource("2_op7ad")
 stream = ExtResource("3_wby2p")
 
 [node name="FinalBossPleaseGiveInput" type="AudioStreamPlayer" parent="music" unique_id=994352068]
-stream = ExtResource("4_14skr")
+stream = ExtResource("5_hokuy")
 
 [node name="FreeCandy" type="AudioStreamPlayer" parent="music" unique_id=1116581445]
 stream = ExtResource("5_k4pvn")

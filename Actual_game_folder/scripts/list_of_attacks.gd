@@ -127,7 +127,7 @@ var guess_what = {
 	"name": "guess what",
 	"damage": 10,
 	"status_effects": [],
-	"buff": ["heal","weaken"],
+	"buff": ["heal"],
 	"animation": "punch",
 	
 }
@@ -145,7 +145,7 @@ var butt = {
 	"name": "banana gun",
 	"damage": 10,
 	"status_effects": ["burn"],
-	"buff": ["weaken"],
+	"buff": [],
 	"animation": "punch"
 }
 
@@ -216,7 +216,7 @@ var add_status_effect = {
 	"name": "add status effects",
 	"damage": 0,
 	"status_effects": ["bleed","burn","radiation","weaken","fatigue"],
-	"buff": [],
+	"buff": ["weaken"],
 	"animation": "slash"
 }
 

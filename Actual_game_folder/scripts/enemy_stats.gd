@@ -46,6 +46,7 @@ func _take_damage(damage: int) -> void:
 	$HP.value -= damage * player_damge_multiplier * def * PlayerStats.player_damage * PlayerStats.player_aoe_damage
 	$Label.text = str(int($HP.value)) + "/" +str(int($HP.max_value))
 	if $HP.value <= 0:
+		AudioManager.play_oneshot(get_parent().enemy_dying)
 		get_parent().queue_free()
 		Events.emit_signal("check_victory_conditions")
 		

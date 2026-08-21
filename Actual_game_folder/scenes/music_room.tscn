@@ -89,6 +89,12 @@ layout_mode = 2
 text = "me67 incoming"
 music_name = "Kevin"
 
+[node name="Button14" parent="CanvasLayer/ScrollContainer/VBoxContainer" unique_id=1214159816 instance=ExtResource("2_qt6lu")]
+layout_mode = 2
+text = "Homeless mango 
+"
+music_name = "FinalBossPleaseGiveInput"
+
 [node name="Button11" parent="CanvasLayer/ScrollContainer/VBoxContainer" unique_id=1385027937 instance=ExtResource("2_qt6lu")]
 layout_mode = 2
 text = "how did you die son"

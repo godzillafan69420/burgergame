@@ -89,12 +89,12 @@ position = Vector2(418, 257)
 [node name="enemies" type="Node2D" parent="." unique_id=1413379743]
 position = Vector2(835, 394)
 
-[node name="that jjs fraud guy" parent="enemies" unique_id=708042470 instance=ExtResource("5_7m7ge")]
+[node name="bok choi" parent="enemies" unique_id=708042470 instance=ExtResource("5_7m7ge")]
 position = Vector2(-25, -132)
 attacks_name = Array[String](["strong_right", "fraud_attacks", "love_beam"])
 setted_HP = 700.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/that jjs fraud guy" unique_id=1450351235]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/bok choi" unique_id=1450351235]
 position = Vector2(14, -24)
 rotation = -0.005377153
 scale = Vector2(1.46875, 1.46875)
