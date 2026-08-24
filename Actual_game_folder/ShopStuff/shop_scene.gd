@@ -35,7 +35,7 @@ var regular_item_pool = [
 	{"display_name": "Aura Farm","id": "we_see_the_fit", "price": 5, "type": "passive", "effect": "weakens the enemies but can get punished", "icon": preload("res://Art/WeSeeTheFit.png")},
 	{"display_name": "Hot Sauce","id": "hot_sauce", "price": 8, "type": "buff", "effect": "Boosts your damage", "icon": preload("res://Art/Hot_Sauce(card).png")},
 	{"display_name": "Knife","id": "knife", "price": 4, "type": "buff", "effect": "single attack 7 damage plus bleed", "icon": preload("res://Art/knifeBase.png")},
-	{"display_name": "Black Flash","id": "black_flash", "price": 15, "type": "attack", "effect": "High energy. Nail the rhythm timing for a massive hit -- miss it and it barely scratches.", "icon": preload("res://Art/CardTemplateTuff.png")},
+	{"display_name": "Black Flash","id": "black_flash", "price": 15, "type": "attack", "effect": "High energy. Nail the rhythm timing for a massive hit -- miss it and it barely scratches.", "icon": preload("res://Art/BlackFlash(card).png")},
 	{"display_name": "Hot Oil","id": "oil", "price": 4, "type": "buff", "effect": "35 single damage with risks involve", "icon": preload("res://Art/Hot_Oil.png")},
 ]
 
