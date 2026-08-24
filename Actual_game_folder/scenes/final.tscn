@@ -1,25 +1,21 @@
 [gd_scene format=3 uid="uid://dy0fvo4kx1jct"]
 
-[ext_resource type="Texture2D" uid="uid://bt8pd6qtc2tsv" path="res://Art/backgroundme67.png" id="1_vf3a0"]
+[ext_resource type="Texture2D" uid="uid://3wdtby4j21u4" path="res://Art/backgroundlevel1.png" id="1_vf3a0"]
 [ext_resource type="PackedScene" uid="uid://drr3088qvw5dk" path="res://ui.tscn" id="2_30t23"]
 [ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="3_6b1qv"]
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="4_1rxmq"]
 [ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/enemy.tscn" id="5_6b7v6"]
-[ext_resource type="Texture2D" uid="uid://cvnnlej3hajr7" path="res://Art/me68.png" id="6_msjty"]
+[ext_resource type="Texture2D" uid="uid://cct5nq8x5uixe" path="res://Art/mangoMusturd67.png" id="6_vf3a0"]
 [ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="7_1wbyy"]
 [ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="8_32mrs"]
 [ext_resource type="Texture2D" uid="uid://botua6w2u4xeo" path="res://Art/me67.png" id="9_po02c"]
 [ext_resource type="Texture2D" uid="uid://ckmir275cyots" path="res://Art/gordoRAM.png" id="10_ju3dn"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xte1c"]
-atlas = ExtResource("6_msjty")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_gk2jk"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_30t23"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xte1c")
+"texture": ExtResource("6_vf3a0")
 }],
 "loop": true,
 "name": &"default",
@@ -106,7 +102,7 @@ position = Vector2(232, 291)
 position = Vector2(835, 394)
 
 [node name="Me67" parent="enemies" unique_id=708042470 instance=ExtResource("5_6b7v6")]
-position = Vector2(198, -108)
+position = Vector2(126, -92)
 attacks_name = Array[String](["add_status_effect", "super_normal_attack", "low_iq", "super_normal_attack", "super_normal_attack"])
 setted_HP = 800.0
 
@@ -114,7 +110,7 @@ setted_HP = 800.0
 position = Vector2(14, -24)
 rotation = -0.005377153
 scale = Vector2(1.46875, 1.46875)
-sprite_frames = SubResource("SpriteFrames_gk2jk")
+sprite_frames = SubResource("SpriteFrames_30t23")
 
 [node name="background" type="Sprite2D" parent="." unique_id=1824490579]
 

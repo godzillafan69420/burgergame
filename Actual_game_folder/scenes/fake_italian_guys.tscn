@@ -155,7 +155,7 @@ texture = ExtResource("1_e4bke")
 script = ExtResource("5_yoe4b")
 music_name = "Untitled67"
 total_enemies = 3
-victory_gold = 30
+victory_gold = 25
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("6_gifwx")]
 position = Vector2(171, 269)

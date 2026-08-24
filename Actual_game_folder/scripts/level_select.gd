@@ -58,7 +58,7 @@ var level_preview_data: Dictionary = {
 	},
 	"Level_7": {
 		"title": "Boss: Bok choi",
-		"icon": "res://Art/big_wang.png",
+		"icon": "res://Art/bokchoi.png",
 		"description": "A peaceful Bok Choy farmer"
 	},
 	"Level_8": {

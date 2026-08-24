@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cmntwanupnlvn" path="res://Art/issac.png" id="6_85v7t"]
 [ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="7_g7t5c"]
 [ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="8_f1h3p"]
-[ext_resource type="Texture2D" uid="uid://c3cqciegumtyh" path="res://Art/big_wang.png" id="9_d4tyj"]
+[ext_resource type="Texture2D" uid="uid://h2yi5xntb2rk" path="res://Art/bokchoi.png" id="9_lu4uu"]
 [ext_resource type="Texture2D" uid="uid://ckmir275cyots" path="res://Art/gordoRAM.png" id="10_yjrkl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sht3x"]
@@ -22,47 +22,39 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Resource" id="Resource_tv4rf"]
+[sub_resource type="Resource" id="Resource_85v7t"]
 script = ExtResource("8_f1h3p")
-character_name = "That JJS fraud guy"
-portrait = ExtResource("9_d4tyj")
-paragraphs = "Welcome to Mango Maid Cafe!"
+character_name = "Bok Choi"
+portrait = ExtResource("9_lu4uu")
+paragraphs = "Burger!!"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
-[sub_resource type="Resource" id="Resource_vm5ie"]
+[sub_resource type="Resource" id="Resource_sht3x"]
 script = ExtResource("8_f1h3p")
-character_name = "Gordo"
-portrait = ExtResource("10_yjrkl")
-paragraphs = "............"
-speak_speed = 15.0
+character_name = "Bok Choi"
+portrait = ExtResource("9_lu4uu")
+paragraphs = "Is your middle name cheese?"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
-[sub_resource type="Resource" id="Resource_peaf5"]
-script = ExtResource("8_f1h3p")
-character_name = "Gordo"
-portrait = ExtResource("10_yjrkl")
-paragraphs = "LMAO WHAT ARE YOU WEARING"
-metadata/_custom_type_script = "uid://buclel82cppmv"
-
-[sub_resource type="Resource" id="Resource_xgovk"]
-script = ExtResource("8_f1h3p")
-character_name = "That JJS fraud guy"
-portrait = ExtResource("9_d4tyj")
-paragraphs = "Brochacho. This is peak."
-metadata/_custom_type_script = "uid://buclel82cppmv"
-
-[sub_resource type="Resource" id="Resource_41ai5"]
+[sub_resource type="Resource" id="Resource_nr746"]
 script = ExtResource("8_f1h3p")
 character_name = "Gordo RamE"
 portrait = ExtResource("10_yjrkl")
-paragraphs = "Mate. Are we serious"
+paragraphs = "The joke is so dry now. The game took too long to develop, that the joke became old."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
-[sub_resource type="Resource" id="Resource_c781l"]
+[sub_resource type="Resource" id="Resource_ev42o"]
 script = ExtResource("8_f1h3p")
-character_name = "That JJS fraud guy"
-portrait = ExtResource("9_d4tyj")
-paragraphs = "Yes bro."
+character_name = "Bok Choi"
+portrait = ExtResource("9_lu4uu")
+paragraphs = "Well, do want some bok choy, fatty?"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_7m7ge"]
+script = ExtResource("8_f1h3p")
+character_name = "Gordo RamE"
+portrait = ExtResource("10_yjrkl")
+paragraphs = "It's a curse"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="bok_choi" type="Node2D" unique_id=1916832371]
@@ -73,11 +65,10 @@ scale = Vector2(2.0218751, 2.0218751)
 texture = ExtResource("1_85v7t")
 
 [node name="UI" parent="." unique_id=890284133 instance=ExtResource("2_sht3x")]
-visible = false
 
 [node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
 script = ExtResource("3_nr746")
-music_name = "kallum"
+music_name = "bok choi"
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("4_ev42o")]
 position = Vector2(584, 251)
@@ -87,7 +78,7 @@ position = Vector2(835, 394)
 
 [node name="bok choi" parent="enemies" unique_id=708042470 instance=ExtResource("5_7m7ge")]
 position = Vector2(-45, -140)
-attacks_name = Array[String](["strong_right", "fraud_attacks", "love_beam"])
+attacks_name = Array[String](["pitch_fork", "pitch_fork", "bok_choy", "eat_bok_choy"])
 setted_HP = 700.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/bok choi" unique_id=1450351235]
@@ -101,4 +92,4 @@ sprite_frames = SubResource("SpriteFrames_sht3x")
 [node name="Dialogue" type="Node" parent="." unique_id=276630500]
 script = ExtResource("7_g7t5c")
 at_when = 1
-dialogues = Array[ExtResource("8_f1h3p")]([SubResource("Resource_tv4rf"), SubResource("Resource_vm5ie"), SubResource("Resource_peaf5"), SubResource("Resource_xgovk"), SubResource("Resource_41ai5"), SubResource("Resource_c781l")])
+dialogues = Array[ExtResource("8_f1h3p")]([SubResource("Resource_85v7t"), SubResource("Resource_sht3x"), SubResource("Resource_nr746"), SubResource("Resource_ev42o"), SubResource("Resource_7m7ge")])

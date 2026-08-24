@@ -127,7 +127,7 @@ var guess_what = {
 	"name": "guess what",
 	"damage": 10,
 	"status_effects": [],
-	"buff": ["heal"],
+	"buff": ["weaken","heal"],
 	"animation": "punch",
 	
 }
@@ -145,7 +145,7 @@ var butt = {
 	"name": "banana gun",
 	"damage": 10,
 	"status_effects": ["burn"],
-	"buff": [],
+	"buff": ["weaken","heal"],
 	"animation": "punch"
 }
 
@@ -170,7 +170,7 @@ var every_last_banana= {
 	"name": "every_last_banana",
 	"damage": 0,
 	"status_effects": [],
-	"buff": ["heal","heal","heal","heal"],
+	"buff": ["weaken","heal","heal","heal","heal"],
 	"animation": "punch"
 }
 
@@ -187,26 +187,49 @@ var fraud_attacks= {
 	"name": "fraudulent attacks",
 	"damage": 40,
 	"status_effects": ["weaken"],
-	"buff": [],
+	"buff": ["block"],
 	"animation": "punch"
 }
 
 var love_beam= {
 	"name": "love beam",
-	"damage": 60,
+	"damage": 70,
 	"status_effects": ["burn"],
-	"buff": ["heal"],
+	"buff": ["heal","heal"],
 	"animation": "heart"
 }
 
 
+#bok choi attacks
+var pitch_fork= {
+	"name": "pitch fork",
+	"damage": 40,
+	"status_effects": ["bleed"],
+	"buff": [],
+	"animation": "punch"
+}
 
+var bok_choy= {
+	"name": "bok choy",
+	"damage": 55,
+	"status_effects": [],
+	"buff": [],
+	"animation": "punch"
+}
+
+var eat_bok_choy= {
+	"name": "eats bok choy",
+	"damage": 40,
+	"status_effects": [],
+	"buff": ["heal", "heal"],
+	"animation": "punch"
+}
 
 #me67 attacks
 
 var super_normal_attack = {
 	"name": "super normal attack",
-	"damage": 67,
+	"damage": 80,
 	"status_effects": [],
 	"buff": [],
 	"animation": "punch"
@@ -214,7 +237,7 @@ var super_normal_attack = {
 
 var add_status_effect = {
 	"name": "add status effects",
-	"damage": 0,
+	"damage": 20,
 	"status_effects": ["bleed","burn","radiation","weaken","fatigue"],
 	"buff": ["weaken"],
 	"animation": "slash"
