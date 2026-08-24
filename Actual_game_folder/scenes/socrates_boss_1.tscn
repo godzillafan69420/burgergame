@@ -53,13 +53,6 @@ portrait = SubResource("CompressedTexture2D_bagtd")
 paragraphs = "If words aren't going through your fat body. Then I have to show you my ragebait techniques."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
-[sub_resource type="Resource" id="Resource_fydqt"]
-script = ExtResource("10_bkkef")
-character_name = "Socrates"
-portrait = ExtResource("12_6j6yj")
-paragraphs = "I won many Olympics btw during my prime."
-metadata/_custom_type_script = "uid://buclel82cppmv"
-
 [sub_resource type="Resource" id="Resource_bagtd"]
 script = ExtResource("10_bkkef")
 character_name = "Gordo RamE"
@@ -116,7 +109,7 @@ sprite_frames = SubResource("SpriteFrames_bagtd")
 [node name="Dialogue" type="Node" parent="." unique_id=276630500]
 script = ExtResource("9_ydhme")
 at_when = 1
-dialogues = Array[ExtResource("10_bkkef")]([SubResource("Resource_jw067"), SubResource("Resource_6j6yj"), SubResource("Resource_pin3j"), SubResource("Resource_n5ufe"), SubResource("Resource_fydqt"), SubResource("Resource_bagtd")])
+dialogues = Array[ExtResource("10_bkkef")]([SubResource("Resource_jw067"), SubResource("Resource_6j6yj"), SubResource("Resource_pin3j"), SubResource("Resource_n5ufe"), SubResource("Resource_bagtd")])
 
 [node name="Dialogue2" type="Node" parent="." unique_id=1422045770]
 script = ExtResource("9_ydhme")

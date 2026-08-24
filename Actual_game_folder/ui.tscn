@@ -44,10 +44,8 @@ _data = {
 [node name="ColorRect" type="TextureRect" parent="." unique_id=432087091]
 visible = false
 modulate = Color(0.81, 0, 0.28349993, 0.6313726)
-offset_left = -40.0
-offset_top = -33.0
-offset_right = 1368.0
-offset_bottom = 794.0
+offset_right = 1280.0
+offset_bottom = 719.0
 mouse_filter = 2
 texture = ExtResource("1_n5rqp")
 

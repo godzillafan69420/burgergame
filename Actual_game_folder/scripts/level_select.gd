@@ -177,23 +177,25 @@ func _on_play_button_pressed():
 	var current_level_node = level_cards[current_level_index]
 	var dest_scene: String = ""
 	
-	if (current_level_node.name == "Card_Cambodia" or current_level_node.name == "Tutorial") and (Globals.level ==1 or Globals.level >7):
+	if (current_level_node.name == "Card_Cambodia" or current_level_node.name == "Tutorial") and (Globals.level ==1 or Globals.level >11):
 		dest_scene = "res://scenes/battle_scene.tscn"
-	elif (current_level_node.name == "Card_Philippines" or current_level_node.name == "Level_1") and (Globals.level ==2 or Globals.level >7):
+	elif (current_level_node.name == "Card_Philippines" or current_level_node.name == "Level_1") and (Globals.level ==2 or Globals.level >11):
 		dest_scene = "res://scenes/level1.tscn"
-	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_2") and (Globals.level ==3 or Globals.level >7):
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_2") and (Globals.level ==3 or Globals.level >11):
 		dest_scene = "res://scenes/socrates_boss_1.tscn"
-	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_3") and (Globals.level ==4 or Globals.level >7):
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_3") and (Globals.level ==4 or Globals.level >11):
 		dest_scene = "res://scenes/ivan_the_van.tscn"
-	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_4") and (Globals.level ==5 or Globals.level >7):
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_4") and (Globals.level ==5 or Globals.level >11):
 		dest_scene = "res://scenes/fake_italian_guys.tscn"
-	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_5") and (Globals.level ==6 or Globals.level >7):
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_5") and (Globals.level ==6 or Globals.level >11):
 		dest_scene = "res://scenes/cone_l.tscn"
-	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_6") and (Globals.level ==7 or Globals.level >7):
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_6") and (Globals.level ==7 or Globals.level >11):
 		dest_scene = "res://scenes/zemonke.tscn"
-	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_8") and (Globals.level ==9 or Globals.level >7):
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_7") and (Globals.level ==8 or Globals.level >11):
+		dest_scene = "res://scenes/bok_choi.tscn"
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_8") and (Globals.level ==9 or Globals.level >11):
 		dest_scene = "res://scenes/big_wang.tscn"
-	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_9") and (Globals.level ==10 or Globals.level >7):
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_9") and (Globals.level ==10 or Globals.level >11):
 		dest_scene = "res://scenes/me_67.tscn"
 		
 	if dest_scene != "":

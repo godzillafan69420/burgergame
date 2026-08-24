@@ -35,6 +35,7 @@ func _damage_yourself(id: int ,damage: int) -> void:
 	
 	$Label.text = str(snapped($HP.value, 0.01)) + "/" +str(int($HP.max_value))
 	if $HP.value <= 0:
+		AudioManager.play_oneshot(get_parent().enemy_dying)
 		get_parent().queue_free()
 		Events.emit_signal("check_victory_conditions")
 

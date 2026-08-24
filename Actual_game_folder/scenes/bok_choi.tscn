@@ -5,21 +5,17 @@
 [ext_resource type="Script" uid="uid://dnr14uiyajquj" path="res://scripts/battle_logic.gd" id="3_nr746"]
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="4_ev42o"]
 [ext_resource type="PackedScene" uid="uid://ck6ewcnl8sg60" path="res://enemies/enemy.tscn" id="5_7m7ge"]
-[ext_resource type="Texture2D" uid="uid://hsoccewh4ryy" path="res://Art/big_wang_67.png" id="6_jxqhp"]
+[ext_resource type="Texture2D" uid="uid://cmntwanupnlvn" path="res://Art/issac.png" id="6_85v7t"]
 [ext_resource type="Script" uid="uid://cpukq3r6546by" path="res://dialogue_manger.gd" id="7_g7t5c"]
 [ext_resource type="Script" uid="uid://buclel82cppmv" path="res://scripts/dialogue_entry.gd" id="8_f1h3p"]
 [ext_resource type="Texture2D" uid="uid://c3cqciegumtyh" path="res://Art/big_wang.png" id="9_d4tyj"]
 [ext_resource type="Texture2D" uid="uid://ckmir275cyots" path="res://Art/gordoRAM.png" id="10_yjrkl"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tv4rf"]
-atlas = ExtResource("6_jxqhp")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vm5ie"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_sht3x"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tv4rf")
+"texture": ExtResource("6_85v7t")
 }],
 "loop": true,
 "name": &"default",
@@ -84,13 +80,13 @@ script = ExtResource("3_nr746")
 music_name = "kallum"
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("4_ev42o")]
-position = Vector2(418, 257)
+position = Vector2(584, 251)
 
 [node name="enemies" type="Node2D" parent="." unique_id=1413379743]
 position = Vector2(835, 394)
 
 [node name="bok choi" parent="enemies" unique_id=708042470 instance=ExtResource("5_7m7ge")]
-position = Vector2(-25, -132)
+position = Vector2(-45, -140)
 attacks_name = Array[String](["strong_right", "fraud_attacks", "love_beam"])
 setted_HP = 700.0
 
@@ -98,7 +94,7 @@ setted_HP = 700.0
 position = Vector2(14, -24)
 rotation = -0.005377153
 scale = Vector2(1.46875, 1.46875)
-sprite_frames = SubResource("SpriteFrames_vm5ie")
+sprite_frames = SubResource("SpriteFrames_sht3x")
 
 [node name="background" type="Sprite2D" parent="." unique_id=1824490579]
 
