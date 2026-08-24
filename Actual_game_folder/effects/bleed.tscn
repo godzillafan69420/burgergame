@@ -8,4 +8,5 @@ startInstantly = true
 effect_name = "bleed"
 stackable = true
 damage = 3.0
+duration = 3
 discription = "does 3 damage over 5 turns"

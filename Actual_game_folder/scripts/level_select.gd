@@ -91,7 +91,7 @@ func _player_stats_change():
 	PlayerStats.player_hitpoint_recovery = 0
 	for i in PlayerStats.upgrades:
 		if i["id"] == "lettuce":
-			PlayerStats.player_hitpoint += 25
+			PlayerStats.player_hitpoint += 30
 		if i["id"] == "beef_patty":
 			PlayerStats.player_damage += 0.10
 		if i["id"] == "cheese":
@@ -100,16 +100,16 @@ func _player_stats_change():
 			PlayerStats.player_hitpoint_recovery += 5
 		if i["id"] == "pickle":
 			PlayerStats.player_damage += 0.05
-			PlayerStats.player_hitpoint += 10
+			PlayerStats.player_hitpoint += 15
 		if i["id"] == "chicken":
-			PlayerStats.player_recovery += 2
+			PlayerStats.player_recovery += 3
 			PlayerStats.player_max_energy += 10
 		if i["id"] == "clover":
 			PlayerStats.luck += 10
 		if i["id"] == "fish":
-			PlayerStats.player_aoe_damage += 0.15
+			PlayerStats.player_aoe_damage += 0.2
 		if i["id"] == "nuts":
-			PlayerStats.player_single_damage += 0.15
+			PlayerStats.player_single_damage += 0.2
 func _ready():
 	_player_stats_change()
 	AudioManager.play("LevelSelect")
@@ -197,6 +197,8 @@ func _on_play_button_pressed():
 		dest_scene = "res://scenes/big_wang.tscn"
 	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_9") and (Globals.level ==10 or Globals.level >11):
 		dest_scene = "res://scenes/me_67.tscn"
+	elif (current_level_node.name == "Card_Japan" or current_level_node.name == "Level_10") and (Globals.level ==11 or Globals.level >11):
+		dest_scene = "res://scenes/final.tscn"
 		
 	if dest_scene != "":
 		TransitionManager.play_transition(dest_scene)

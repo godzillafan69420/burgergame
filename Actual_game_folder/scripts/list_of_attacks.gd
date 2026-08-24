@@ -185,14 +185,14 @@ var banana_nuke = {
 #big wang attacks
 var fraud_attacks= {
 	"name": "fraudulent attacks",
-	"damage": 40,
+	"damage": 30,
 	"status_effects": ["weaken"],
 	"buff": ["block"],
 	"animation": "punch"
 }
 
 var love_beam= {
-	"name": "love beam",
+	"name": "Cute attack",
 	"damage": 70,
 	"status_effects": ["burn"],
 	"buff": ["heal","heal"],
@@ -249,4 +249,23 @@ var low_iq = {
 	"status_effects": [],
 	"buff": ["block","heal","heal"],
 	"animation": "ragebait"
+}
+
+#attacks
+
+
+var evil_scientist_attack = {
+	"name": "science",
+	"damage": 10,
+	"status_effects": ["radiation","weaken","poison","virus"],
+	"buff": [],
+	"animation": "poison"
+}
+
+var flat_earth = {
+	"name": "yap",
+	"damage": 30,
+	"status_effects": ["radiation","fatigue","virus"],
+	"buff": ["block","heal","heal"],
+	"animation": "harmful_words"
 }

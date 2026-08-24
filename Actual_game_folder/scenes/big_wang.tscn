@@ -90,7 +90,7 @@ position = Vector2(835, 394)
 
 [node name="that jjs fraud guy" parent="enemies" unique_id=708042470 instance=ExtResource("5_41ai5")]
 position = Vector2(198, -108)
-attacks_name = Array[String](["fraud_attacks", "strong_right", "love_beam"])
+attacks_name = Array[String](["fraud_attacks", "strong_right", "strong_right", "love_beam"])
 setted_HP = 700.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/that jjs fraud guy" unique_id=1450351235]

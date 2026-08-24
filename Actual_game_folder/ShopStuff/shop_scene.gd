@@ -14,15 +14,15 @@ var reroll_cost: int = 5
 
 # --- UPGRADE POOL ---
 var upgrade_pool = [
-	{"display_name": "Lettuce","id": "lettuce", "type": "upgrade", "effect": "+25 hp", "icon": preload("res://Art/lectuce.png")},
+	{"display_name": "Lettuce","id": "lettuce", "type": "upgrade", "effect": "+30 hp", "icon": preload("res://Art/lectuce.png")},
 	{"display_name": "beef patty","id": "beef_patty", "type": "upgrade", "effect": "damage up by 10%", "icon": preload("res://Art/burgerpatty.png")},
 	{"display_name": "cheese","id": "cheese", "type": "upgrade", "effect": "stamina regeneration by 4", "icon": preload("res://Art/cheese.png")},
 	{"display_name": "Bacon","id": "bacon", "type": "joker", "effect": "HP rengeneration by 5", "icon": preload("res://Art/bacon.png")},
-	{"display_name": "pickle","id": "pickle", "type": "relic", "effect": "damage multiplier 5%, +10HP", "icon": preload("res://Art/pickle.png")},
+	{"display_name": "pickle","id": "pickle", "type": "relic", "effect": "damage multiplier 5%, +15HP", "icon": preload("res://Art/pickle.png")},
 	{"display_name": "Fried Chicken","id": "chicken", "type": "relic", "effect": "Increase stamina by 10, Increase stamina rengeneration by 2", "icon": preload("res://Art/fried_chicken.png")},
 	{"display_name": "Four Leaf Clover","id": "clover", "type": "relic", "effect": "Increase luck by 10 and money gained", "icon": preload("res://Art/clover.png")},
-	{"display_name": "fish","id": "fish", "type": "relic", "effect": "Increase Aoe damage by 15%", "icon": preload("res://Art/fish.png")},
-	{"display_name": "Nuts","id": "nuts", "type": "relic", "effect": "Increase single damage by 15%", "icon": preload("res://Art/peanut.png")}
+	{"display_name": "fish","id": "fish", "type": "relic", "effect": "Increase Aoe damage by 20%", "icon": preload("res://Art/fish.png")},
+	{"display_name": "Nuts","id": "nuts", "type": "relic", "effect": "Increase single damage by 20%", "icon": preload("res://Art/peanut.png")}
 ]
 
 # --- REGULAR ITEM POOL --- A
@@ -91,7 +91,7 @@ func generate_entire_shop() -> void:
 	for i in range(5):
 		if temp_item_pool.is_empty(): break
 		var item_data = temp_item_pool.pick_random()
-		temp_item_pool.erase(item_data)
+		
 		create_card_on_shelf(item_data, bottom_fridge, false) 
 
 func create_card_on_shelf(item_data: Dictionary, target_fridge: Node, is_pack: bool) -> void:
