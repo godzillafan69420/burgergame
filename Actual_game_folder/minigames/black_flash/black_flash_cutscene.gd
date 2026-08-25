@@ -14,9 +14,16 @@ extends CanvasLayer
 @onready var enemy_rect: TextureRect = _get_or_create_portrait("EnemyPortrait")
 @onready var flash: ColorRect = _get_or_create_solid("Flash", Color(1, 1, 1, 0))
 @onready var black_out: ColorRect = _get_or_create_solid("BlackOut", Color(0, 0, 0, 0))
+@onready var video_player: VideoStreamPlayer = _get_or_create_video_player()
 
 @export var hitstop_time_scale: float = 0.05
 @export var hitstop_duration: float = 0.25 # measured in REAL seconds, unaffected by the slowdown
+
+# Assign a converted .ogv here (Godot's VideoStreamPlayer only supports
+# Ogg Theora natively -- convert an mp4 to .ogv first). When set, play()
+# shows this video full-screen instead of the procedural portrait-punch
+# sequence below. Leave empty to keep using the built-in effect.
+@export var video_stream: VideoStream
 
 func _get_or_create_root() -> Control:
 	var existing = get_node_or_null("Root")
@@ -54,8 +61,25 @@ func _get_or_create_solid(node_name: String, color: Color) -> ColorRect:
 	root_control.add_child(r)
 	return r
 
+func _get_or_create_video_player() -> VideoStreamPlayer:
+	var existing = root_control.get_node_or_null("VideoPlayer") if root_control else null
+	if existing:
+		return existing
+	var v := VideoStreamPlayer.new()
+	v.name = "VideoPlayer"
+	v.set_anchors_preset(Control.PRESET_FULL_RECT)
+	v.expand = true
+	v.visible = false
+	root_control.add_child(v)
+	return v
+
 func play(player_portrait: Texture2D, enemy_portrait: Texture2D) -> void:
 	layer = 100
+
+	if video_stream:
+		await _play_video()
+		return
+
 	player_rect.texture = player_portrait
 	enemy_rect.texture = enemy_portrait
 	player_rect.modulate.a = 0.0
@@ -109,3 +133,11 @@ func play(player_portrait: Texture2D, enemy_portrait: Texture2D) -> void:
 	out_tw.tween_property(black_out, "modulate:a", 1.0, 0.12)\
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	await out_tw.finished
+
+func _play_video() -> void:
+	video_player.stream = video_stream
+	video_player.visible = true
+	video_player.play()
+	await video_player.finished
+	video_player.visible = false
+	video_player.stream = null # release the stream so it's not still decoding in the background
