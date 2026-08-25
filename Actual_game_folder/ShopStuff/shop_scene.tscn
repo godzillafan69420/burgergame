@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://86q275l1hhq0"]
 
 [ext_resource type="Script" uid="uid://w1rd75tw6ylc" path="res://ShopStuff/shop_scene.gd" id="1_xduvy"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Art/icon.svg" id="2_2e6ro"]
 [ext_resource type="Texture2D" uid="uid://5a768ou6j0qq" path="res://Art/fridge.png" id="2_g6l4v"]
 [ext_resource type="Script" uid="uid://u4ks6kn82y6w" path="res://Upgrades/pack_opening_scene.gd" id="4_g0e1r"]
 [ext_resource type="PackedScene" uid="uid://dc57hjimdun51" path="res://ShopStuff/pack_opener.tscn" id="5_pkopn"]
@@ -60,13 +59,6 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-
-[node name="MoneyIcon" type="TextureRect" parent="MarginContainer/MoneyCounter" unique_id=882921033]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-texture = ExtResource("2_2e6ro")
-expand_mode = 1
-flip_v = true
 
 [node name="MoneyText" type="Label" parent="MarginContainer/MoneyCounter" unique_id=1026687164]
 layout_mode = 2

@@ -29,7 +29,7 @@ load_path = "res://.godot/imported/socrates.png-feaf5cfc03e92680386259459fc8adb1
 script = ExtResource("10_bkkef")
 character_name = "Socrates"
 portrait = SubResource("CompressedTexture2D_bagtd")
-paragraphs = "If toppings are your power what are you without it"
+paragraphs = "If toppings are your power, what are you without it?"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_6j6yj"]
@@ -50,14 +50,15 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("10_bkkef")
 character_name = "Socrates"
 portrait = SubResource("CompressedTexture2D_bagtd")
-paragraphs = "If words aren't going through your fat body. Then I have to show you my ragebait techniques."
+paragraphs = "La peace youngster La peace.
+Does the burger control the Alien or does the Alien control the burger?"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_bagtd"]
 script = ExtResource("10_bkkef")
 character_name = "Gordo RamE"
 portrait = ExtResource("11_sj4lc")
-paragraphs = "Ok........ beat him up"
+paragraphs = "This is utterly a faff. Beat this gentleman up."
 speak_speed = 10.0
 metadata/_custom_type_script = "uid://buclel82cppmv"
 

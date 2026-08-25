@@ -30,36 +30,37 @@ animations = [{
 [sub_resource type="Resource" id="Resource_ygmip"]
 script = ExtResource("8_phlpe")
 character_name = "Ivan the Van"
-portrait = ExtResource("9_cwcg3")
-paragraphs = "Is this another kid wanting candy?"
+paragraphs = "Is this another kid wanting candy? Business is going down hill after I got famous"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_fyp6d"]
 script = ExtResource("8_phlpe")
 character_name = "Gordo RamE"
 portrait = ExtResource("10_cwcg3")
-paragraphs = "Do I look like a kid to you."
+paragraphs = "Mate, do I look like a child to you?"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_ik4my"]
 script = ExtResource("8_phlpe")
 character_name = "Ivan the Van"
 portrait = ExtResource("9_cwcg3")
-paragraphs = "Omg you're so fat."
+paragraphs = "Oh.
+
+But, you're so fat."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_cwcg3"]
 script = ExtResource("8_phlpe")
 character_name = "Gordo RamE"
 portrait = ExtResource("10_cwcg3")
-paragraphs = "Mate. Why does almost every bosses we meet. They always seems to talk about my body."
+paragraphs = "I'm utterly gutted why are all these bosses always call me fat? They're observation is always wrong, but they still believed that I am bit chubby"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_538lc"]
 script = ExtResource("8_phlpe")
 character_name = "Ivan the Van"
 portrait = ExtResource("9_cwcg3")
-paragraphs = "Calm the farm bro. Calm the farm. It's not that deep.
+paragraphs = "Who is going to tell bro. Just calm the farm bro. It's ok to be fat.
 "
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
@@ -67,7 +68,7 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("8_phlpe")
 character_name = "Gordo RamE"
 portrait = ExtResource("10_cwcg3")
-paragraphs = "Mate, it always been that deep."
+paragraphs = "How dare you to call me fat."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="level_3" type="Node2D" unique_id=1916832371]

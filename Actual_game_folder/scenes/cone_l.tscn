@@ -26,7 +26,7 @@ animations = [{
 script = ExtResource("8_ofqtu")
 character_name = "Gordo RamE"
 portrait = ExtResource("10_32sd0")
-paragraphs = "WHAT IS THIS"
+paragraphs = "Mate, what am I looking at?"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_k213a"]
@@ -40,7 +40,7 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("8_ofqtu")
 character_name = "Gordo RamE"
 portrait = ExtResource("10_32sd0")
-paragraphs = "DID YOU REALLY SAID \"MEONEY\".
+paragraphs = "utter cap, I know you love wearing cat ears. However I can not support this statement. 
 
 "
 metadata/_custom_type_script = "uid://buclel82cppmv"
@@ -49,16 +49,14 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("8_ofqtu")
 character_name = "ConeL"
 portrait = ExtResource("9_7wowf")
-paragraphs = "No.............
-
->.<"
+paragraphs = "Ok fatty"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_32sd0"]
 script = ExtResource("8_ofqtu")
 character_name = "ConeL"
 portrait = ExtResource("9_7wowf")
-paragraphs = "I mean it's not that I like wearing cat ears."
+paragraphs = "You want an ice cream or not."
 music = "Lastminutechange"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
@@ -66,7 +64,7 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("8_ofqtu")
 character_name = "Gordo RamE"
 portrait = ExtResource("10_32sd0")
-paragraphs = "Sure....."
+paragraphs = "Mate, don't change the subject. You ought that I would not notice. Sneaky."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="ConeL" type="Node2D" unique_id=1916832371]

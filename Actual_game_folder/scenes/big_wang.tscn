@@ -45,7 +45,7 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("8_hn52y")
 character_name = "Gordo"
 portrait = ExtResource("9_oo3n6")
-paragraphs = "LMAO WHAT ARE YOU WEARING"
+paragraphs = "Lad what are we wearing?"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_xgovk"]
@@ -59,14 +59,14 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("8_hn52y")
 character_name = "Gordo RamE"
 portrait = ExtResource("9_oo3n6")
-paragraphs = "Mate. Are we serious"
+paragraphs = "I suppose"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_c781l"]
 script = ExtResource("8_hn52y")
 character_name = "That JJS fraud guy"
 portrait = ExtResource("9_peaf5")
-paragraphs = "Yes bro."
+paragraphs = "Yes bro. Now can you get out of here if you aren't going to order anything fatty."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="big_wang" type="Node2D" unique_id=1916832371]

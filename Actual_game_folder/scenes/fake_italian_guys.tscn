@@ -59,7 +59,7 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("10_kffbf")
 character_name = "Gordo RamE"
 portrait = ExtResource("12_e4bke")
-paragraphs = "Wow! Nice place."
+paragraphs = "Crikey! Nice place."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_e4bke"]
@@ -73,7 +73,7 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("10_kffbf")
 character_name = "Gordo RamE"
 portrait = ExtResource("12_e4bke")
-paragraphs = "However, why do I smell burnt things."
+paragraphs = "However, it's quite whiffy in here."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_sx0x8"]
@@ -95,7 +95,14 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("10_kffbf")
 character_name = "pastaman 67"
 portrait = ExtResource("13_lq3um")
-paragraphs = "You're so useless.... You almost do nothing."
+paragraphs = "You're so useless.... You almost do nothing. Furryking how did we summon him instead of Herobrine"
+metadata/_custom_type_script = "uid://buclel82cppmv"
+
+[sub_resource type="Resource" id="Resource_axian"]
+script = ExtResource("10_kffbf")
+character_name = "pizza larp man"
+portrait = ExtResource("11_nsomt")
+paragraphs = "I don't know."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_bq0us"]
@@ -110,7 +117,7 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("10_kffbf")
 character_name = "Gordo RamE"
 portrait = ExtResource("12_e4bke")
-paragraphs = "Hell no!
+paragraphs = "Jog on!
 you guys probably can't even cook. "
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
@@ -196,4 +203,4 @@ sprite_frames = SubResource("SpriteFrames_tgi3j")
 [node name="Dialogue" type="Node" parent="." unique_id=276630500]
 script = ExtResource("9_a7ibq")
 at_when = 1
-dialogues = Array[ExtResource("10_kffbf")]([SubResource("Resource_60jy0"), SubResource("Resource_tgi3j"), SubResource("Resource_e4bke"), SubResource("Resource_lq3um"), SubResource("Resource_sx0x8"), SubResource("Resource_ng763"), SubResource("Resource_lnhnp"), SubResource("Resource_bq0us"), SubResource("Resource_d7365"), SubResource("Resource_7vn0o"), SubResource("Resource_dgqpk"), SubResource("Resource_kqhmf"), SubResource("Resource_71kye")])
+dialogues = Array[ExtResource("10_kffbf")]([SubResource("Resource_60jy0"), SubResource("Resource_tgi3j"), SubResource("Resource_e4bke"), SubResource("Resource_lq3um"), SubResource("Resource_sx0x8"), SubResource("Resource_ng763"), SubResource("Resource_lnhnp"), SubResource("Resource_axian"), SubResource("Resource_bq0us"), SubResource("Resource_d7365"), SubResource("Resource_7vn0o"), SubResource("Resource_dgqpk"), SubResource("Resource_kqhmf"), SubResource("Resource_71kye")])

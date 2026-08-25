@@ -40,21 +40,21 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("8_f1h3p")
 character_name = "Gordo RamE"
 portrait = ExtResource("10_yjrkl")
-paragraphs = "The joke is so dry now. The game took too long to develop, that the joke became old."
+paragraphs = "Lad this joke has mould on it. The game took too long to develop."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_ev42o"]
 script = ExtResource("8_f1h3p")
 character_name = "Bok Choi"
 portrait = ExtResource("9_lu4uu")
-paragraphs = "Well, do want some bok choy, fatty?"
+paragraphs = "Well, do you want some bok choy, fatty?"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_7m7ge"]
 script = ExtResource("8_f1h3p")
 character_name = "Gordo RamE"
 portrait = ExtResource("10_yjrkl")
-paragraphs = "It's a curse"
+paragraphs = "It's a curse."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="bok_choi" type="Node2D" unique_id=1916832371]
