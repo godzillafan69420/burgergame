@@ -47,7 +47,7 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("8_32mrs")
 character_name = "Gordo RamE"
 portrait = ExtResource("10_ju3dn")
-paragraphs = "Yeah. So bring you here"
+paragraphs = "Yeah. So what bring you here"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_6b7v6"]
@@ -55,7 +55,9 @@ script = ExtResource("8_32mrs")
 character_name = "Dr Mango123"
 portrait = ExtResource("9_xxe6l")
 paragraphs = "Can I have the burger guy?
-I want to give it a cool hat. 
+We have something special for it.
+
+A burger bun
 "
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
@@ -63,7 +65,7 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("8_32mrs")
 character_name = "Dr Mango123"
 portrait = ExtResource("9_xxe6l")
-paragraphs = "But since I am literally homeless and in debt. I am chargin 100 pound hehe"
+paragraphs = "But since I am literally homeless and in debt. I am charging 100 pound for it."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_msjty"]
