@@ -46,7 +46,7 @@ theme_override_styles/pressed = ExtResource("4_8ln24")
 theme_override_styles/hover = ExtResource("4_8ln24")
 text = "Continue"
 
-[node name="Button4" type="Button" parent="CanvasLayer" unique_id=151820136]
+[node name="new game" type="Button" parent="CanvasLayer" unique_id=151820136]
 offset_left = 59.0
 offset_top = 322.0
 offset_right = 446.8069
@@ -81,7 +81,7 @@ wait_time = 9.0
 autostart = true
 
 [connection signal="pressed" from="CanvasLayer/continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button4" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/new game" to="." method="_on_button_pressed"]
 [connection signal="button_down" from="CanvasLayer/Button2" to="." method="_on_button_2_button_down"]
 [connection signal="button_down" from="CanvasLayer/Button3" to="." method="_on_button_3_button_down"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

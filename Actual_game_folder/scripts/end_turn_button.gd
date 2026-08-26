@@ -1,5 +1,7 @@
 extends Button
 
+var animation_playing: bool = false
+
 var enemy_id_turn: int
 @onready var card_in_hand: Control
 var battle_logic_script: Node
@@ -12,11 +14,20 @@ func _ready() -> void:
 	enemy_list = $"../../enemies"
 	total_enemies = enemy_list.get_child_count() -1
 	enemy_id_turn = total_enemies
+	Events.connect("damaged_player", playing_animation)
+	Events.connect("players_turn", stop_animation)
 	$"../You won".visible = false
-	
+func playing_animation():
+	animation_playing = true
+
+func stop_animation():
+	animation_playing = false
+
 
 func _on_button_down() -> void:
 	if battle_logic_script.current_state != battle_logic_script.States.players_turn:
+		return
+	if animation_playing:
 		return
 	var children = enemy_list.get_children()
 	

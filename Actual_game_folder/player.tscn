@@ -881,8 +881,6 @@ visible = false
 position = Vector2(23.999996, 13.000008)
 scale = Vector2(1.5078125, 1.5078125)
 sprite_frames = SubResource("SpriteFrames_op7ga")
-animation = &"heart"
-frame = 5
-frame_progress = 1.0
+animation = &"tickle"
 
 [connection signal="animation_finished" from="animations" to="player_stats" method="_on_animations_animation_finished"]

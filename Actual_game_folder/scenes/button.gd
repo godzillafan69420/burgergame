@@ -18,6 +18,7 @@ func _ready() -> void:
 func _on_button_pressed() -> void:
 	PlayerStats.attacks = []
 	PlayerStats.upgrades = []
+	Globals.level = 1
 	TransitionManager.play_transition("res://cutscene/begining_cutscene.tscn")
 
 

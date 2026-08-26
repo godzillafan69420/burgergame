@@ -16,14 +16,18 @@ var can_attack: bool = false
 
 var damage_multiplier: float = 1
 
+var playing_animation = false
+
 func _ready() -> void:
+	Events.connect("players_turn",allow_attack)
 	Events.connect("enemies_turn",_attacked_player)
 	Events.connect("give_side_effects_to_enemies", _add_status)
 	Events.connect("id_effect_chosen", _add_status_id)
 	
 	for i in attacks_name:
 		attacks.append(EnemyAttacks.get(i))
-
+func allow_attack():
+	playing_animation = false
 func _add_status_id(targeted_id: int,status:String):
 	if targeted_id != id:
 		return
@@ -42,6 +46,9 @@ func _add_status(status:String):
 	$status.add_child(type, true)
 	
 func _attacked_player(attack_id):
+	if playing_animation == true:
+		return
+	playing_animation = true
 	if current_attack_choice  >= attacks.size() -1:
 		current_attack_choice = 0
 	else:

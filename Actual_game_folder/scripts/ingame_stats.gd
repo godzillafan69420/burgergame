@@ -19,7 +19,7 @@ var incoming_damage: float = 0
 func _ready() -> void:
 	$HP.max_value = PlayerStats.player_hitpoint
 	$HP.value = PlayerStats.player_hitpoint
-	$Label.text = str(int($HP.value)) + "/" +str(int($HP.max_value))
+	$Label.text = str(snapped($HP.value, 0.01)) + "/" +str(int($HP.max_value))
 	Events.connect("damaged_player", _take_damage)
 	
 
