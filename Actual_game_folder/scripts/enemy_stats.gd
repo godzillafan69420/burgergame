@@ -33,6 +33,7 @@ func _damage_yourself(id: int ,damage: int) -> void:
 	$Label.text = str(snapped($HP.value, 0.01)) + "/" +str(int($HP.max_value))
 	if $HP.value <= 0:
 		Explosions.spawn(get_parent().global_position)
+		AudioManager.play_oneshot(get_parent().enemy_dying)
 		get_parent().queue_free()
 		Events.emit_signal("check_victory_conditions")
 
@@ -43,7 +44,7 @@ func _take_damage(damage: int) -> void:
 	$HP.value -= damage * player_damge_multiplier * def * PlayerStats.player_damage * PlayerStats.player_aoe_damage
 	$Label.text = str(int($HP.value)) + "/" +str(int($HP.max_value))
 	if $HP.value <= 0:
-		Explosions.spawn(get_parent().global_position)
+		Explosions.spawn(get_parent().global_position, null, get_parent().death_particle)
 		get_parent().queue_free()
 		Events.emit_signal("check_victory_conditions")
 		

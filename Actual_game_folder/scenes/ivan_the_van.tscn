@@ -30,6 +30,7 @@ animations = [{
 [sub_resource type="Resource" id="Resource_ygmip"]
 script = ExtResource("8_phlpe")
 character_name = "Ivan the Van"
+portrait = ExtResource("9_cwcg3")
 paragraphs = "Is this another kid wanting candy? Business is going down hill after I got famous"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
@@ -94,6 +95,7 @@ position = Vector2(829, 368)
 
 [node name="Ivan the van" parent="enemies" unique_id=1564538628 instance=ExtResource("7_fg2du")]
 position = Vector2(104, -16)
+death_particle = "boom"
 enemy_dying = ExtResource("6_ygmip")
 attacks_name = Array[String](["block", "van", "giga_punch", "ragebait"])
 setted_HP = 250.0

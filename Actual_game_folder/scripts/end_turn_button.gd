@@ -12,6 +12,8 @@ func _ready() -> void:
 	enemy_list = $"../../enemies"
 	total_enemies = enemy_list.get_child_count() -1
 	enemy_id_turn = total_enemies
+	$"../You won".visible = false
+	
 
 func _on_button_down() -> void:
 	if battle_logic_script.current_state != battle_logic_script.States.players_turn:
@@ -36,3 +38,7 @@ func _on_next_button_down() -> void:
 func _on_play_testing_purpose_button_down() -> void:
 	for i in enemy_list.get_children():
 		i.queue_free()
+
+
+func _on_ending_cutscene_button_down() -> void:
+	get_tree().change_scene_to_file("res://cutscene/ending_cutscene.tscn")

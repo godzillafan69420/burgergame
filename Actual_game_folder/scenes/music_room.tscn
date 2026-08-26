@@ -91,7 +91,7 @@ music_name = "Kevin"
 
 [node name="Button14" parent="CanvasLayer/ScrollContainer/VBoxContainer" unique_id=1214159816 instance=ExtResource("2_qt6lu")]
 layout_mode = 2
-text = "Homeless mango 
+text = "Mango kinda phonk less
 "
 music_name = "FinalBossPleaseGiveInput"
 

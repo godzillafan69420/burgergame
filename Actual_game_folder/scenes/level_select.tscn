@@ -227,6 +227,17 @@ theme_override_styles/pressed = ExtResource("5_4nqmc")
 theme_override_styles/hover = ExtResource("5_4nqmc")
 text = "Play"
 
+[node name="go back button" type="Button" parent="." unique_id=1381075873]
+layout_mode = 0
+offset_left = 1154.0
+offset_top = 638.0
+offset_right = 1259.8654
+offset_bottom = 701.0
+theme_override_styles/normal = ExtResource("6_r77uv")
+theme_override_styles/pressed = ExtResource("5_4nqmc")
+theme_override_styles/hover = ExtResource("5_4nqmc")
+text = "Menu"
+
 [node name="LevelInfoPanel" type="Control" parent="." unique_id=450355882]
 anchors_preset = 0
 offset_right = 40.0
@@ -244,3 +255,5 @@ stretch_mode = 5
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+
+[connection signal="button_down" from="go back button" to="." method="_on_go_back_button_button_down"]

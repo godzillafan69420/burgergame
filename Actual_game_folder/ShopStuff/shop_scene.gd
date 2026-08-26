@@ -10,7 +10,7 @@ extends Control
 @onready var reroll_button = $MarginContainer/ActionMenu/Reroll
 @onready var next_stage_button = $MarginContainer/ActionMenu/NextStage
 
-var reroll_cost: int = 5
+var reroll_cost: int = 2
 
 # --- UPGRADE POOL ---
 var upgrade_pool = [
@@ -19,7 +19,7 @@ var upgrade_pool = [
 	{"display_name": "cheese","id": "cheese", "type": "upgrade", "effect": "stamina regeneration by 4", "icon": preload("res://Art/cheese.png")},
 	{"display_name": "Bacon","id": "bacon", "type": "joker", "effect": "HP rengeneration by 5", "icon": preload("res://Art/bacon.png")},
 	{"display_name": "pickle","id": "pickle", "type": "relic", "effect": "damage multiplier 5%, +15HP", "icon": preload("res://Art/pickle.png")},
-	{"display_name": "Fried Chicken","id": "chicken", "type": "relic", "effect": "Increase stamina by 10, Increase stamina rengeneration by 2", "icon": preload("res://Art/fried_chicken.png")},
+	{"display_name": "Fried Chicken","id": "chicken", "type": "relic", "effect": "Increase stamina by 10, Increase stamina rengeneration by 3", "icon": preload("res://Art/fried_chicken.png")},
 	{"display_name": "Four Leaf Clover","id": "clover", "type": "relic", "effect": "Increase luck by 10 and money gained", "icon": preload("res://Art/clover.png")},
 	{"display_name": "fish","id": "fish", "type": "relic", "effect": "Increase Aoe damage by 20%", "icon": preload("res://Art/fish.png")},
 	{"display_name": "Nuts","id": "nuts", "type": "relic", "effect": "Increase single damage by 20%", "icon": preload("res://Art/peanut.png")}
@@ -28,19 +28,19 @@ var upgrade_pool = [
 # --- REGULAR ITEM POOL --- A
 # NOTE: "effect" is what shows up in the hover tooltip in the shop.
 var regular_item_pool = [
-	{"display_name": "tin foil","id": "iron_shield", "price": 4, "type": "defense", "effect": "Blocks 75% incoming damage", "icon": preload("res://Art/Tinfoil(card).png")},
-	{"display_name": "Frying Pan","id": "frying_pan", "price": 6, "type": "attack", "effect": "Deals 20 AOE damage", "icon": preload("res://Art/Frying_pan(_card).png")},
-	{"display_name": "Heal","id": "health_potion", "price": 3, "type": "utility", "effect": "Restores 20 HP", "icon": preload("res://Art/Heal(card).png")},
-	{"display_name": "Corn Ball","id": "corn_ball", "price": 8, "type": "buff", "effect": "Deals 15 AOE and burns", "icon": preload("res://Art/Cornball(no_card).png")},
-	{"display_name": "Aura Farm","id": "we_see_the_fit", "price": 5, "type": "passive", "effect": "weakens the enemies but can get punished", "icon": preload("res://Art/WeSeeTheFit.png")},
-	{"display_name": "Hot Sauce","id": "hot_sauce", "price": 8, "type": "buff", "effect": "Boosts your damage", "icon": preload("res://Art/Hot_Sauce(card).png")},
-	{"display_name": "Knife","id": "knife", "price": 4, "type": "buff", "effect": "single attack 7 damage plus bleed", "icon": preload("res://Art/knifeBase.png")},
+	{"display_name": "tin foil","id": "iron_shield", "price": 3, "type": "defense", "effect": "Blocks 75% incoming damage", "icon": preload("res://Art/Tinfoil(card).png")},
+	{"display_name": "Frying Pan","id": "frying_pan", "price": 5, "type": "attack", "effect": "Deals 13 AOE damage", "icon": preload("res://Art/Frying_pan(_card).png")},
+	{"display_name": "Heal","id": "health_potion", "price": 2, "type": "utility", "effect": "Restores 20 HP", "icon": preload("res://Art/Heal(card).png")},
+	{"display_name": "Corn Ball","id": "corn_ball", "price": 6, "type": "buff", "effect": "Deals 20 AOE and burns", "icon": preload("res://Art/Cornball(no_card).png")},
+	{"display_name": "Aura Farm","id": "we_see_the_fit", "price": 4, "type": "passive", "effect": "weakens the enemies but can get punished", "icon": preload("res://Art/WeSeeTheFit.png")},
+	{"display_name": "Hot Sauce","id": "hot_sauce", "price": 3, "type": "buff", "effect": "Boosts your damage", "icon": preload("res://Art/Hot_Sauce(card).png")},
+	{"display_name": "Knife","id": "knife", "price": 3, "type": "buff", "effect": "single attack 7 damage plus bleed", "icon": preload("res://Art/knifeBase.png")},
 	{"display_name": "Black Flash","id": "black_flash", "price": 15, "type": "attack", "effect": "High energy. Nail the rhythm timing for a massive hit -- miss it and it barely scratches.", "icon": preload("res://Art/BlackFlash(card).png")},
-	{"display_name": "Hot Oil","id": "oil", "price": 4, "type": "buff", "effect": "35 single damage with risks involve", "icon": preload("res://Art/Hot_Oil.png")},
+	{"display_name": "Hot Oil","id": "oil", "price": 6, "type": "buff", "effect": "35 single damage with risks involve", "icon": preload("res://Art/Hot_Oil.png")},
 ]
 
 var pack_pool = [
-	{"display_name": "Buffoon Pack", "id": "Buffoon Pack", "price": 6, "type": "pack", "effect": "Opens 3 random upgrades -- pick 1 to keep"}
+	{"display_name": "Buffoon Pack", "id": "Buffoon Pack", "price": 5, "type": "pack", "effect": "Opens 3 random upgrades -- pick 1 to keep"}
 ]
 
 func _ready() -> void:

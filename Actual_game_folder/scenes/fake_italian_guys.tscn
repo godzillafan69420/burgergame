@@ -172,6 +172,7 @@ position = Vector2(913, 273)
 
 [node name="Furry King" parent="enemies" unique_id=708042470 instance=ExtResource("7_gb7h5")]
 position = Vector2(-240, 0)
+death_particle = "boom"
 attacks_name = Array[String](["harmful_words", "nuclear_pizza"])
 setted_HP = 180.0
 
@@ -182,6 +183,7 @@ sprite_frames = SubResource("SpriteFrames_x76d4")
 
 [node name="Tickletism" parent="enemies" unique_id=439974142 instance=ExtResource("7_gb7h5")]
 position = Vector2(-1, 2)
+death_particle = "boom"
 attacks_name = Array[String](["tickle", "smelly_pasta"])
 setted_HP = 200.0
 

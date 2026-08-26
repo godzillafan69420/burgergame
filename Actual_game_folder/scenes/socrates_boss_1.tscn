@@ -59,7 +59,6 @@ script = ExtResource("10_bkkef")
 character_name = "Gordo RamE"
 portrait = ExtResource("11_sj4lc")
 paragraphs = "This is utterly a faff. Beat this gentleman up."
-speak_speed = 10.0
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_1wpc6"]
