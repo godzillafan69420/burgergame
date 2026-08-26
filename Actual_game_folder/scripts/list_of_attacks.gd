@@ -153,16 +153,16 @@ var lock_in = {
 	"name": "serious what",
 	"damage": 35,
 	"status_effects": [],
-	"buff": ["heal"],
+	"buff": [],
 	"animation": "punch",
 	
 }
 
 var serious_chicken = {
 	"name": "serious chicken",
-	"damage": 50,
+	"damage": 40,
 	"status_effects": [],
-	"buff": ["heal"],
+	"buff": [],
 	"animation": "punch"
 }
 
@@ -229,7 +229,7 @@ var eat_bok_choy= {
 
 var super_normal_attack = {
 	"name": "super normal attack",
-	"damage": 80,
+	"damage": 70,
 	"status_effects": [],
 	"buff": [],
 	"animation": "punch"
@@ -237,7 +237,7 @@ var super_normal_attack = {
 
 var add_status_effect = {
 	"name": "add status effects",
-	"damage": 20,
+	"damage": 0,
 	"status_effects": ["bleed","burn","radiation","weaken","fatigue"],
 	"buff": ["weaken"],
 	"animation": "slash"

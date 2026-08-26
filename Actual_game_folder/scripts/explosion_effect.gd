@@ -1,4 +1,5 @@
 extends Node
+@export var particle_list:Array[GPUParticles2D] = []
 ## explosion_manager.gd  (autoload: "Explosions")
 ##
 ## Global entry point for the death-explosion VFX. Call this from anywhere
@@ -12,13 +13,9 @@ extends Node
 
 const ExplosionEffectScene := preload("res://scenes/explosion_effect.tscn")
 
-func spawn(pos: Vector2, target_parent: Node = null) -> void:
-	var parent: Node = target_parent
-	if parent == null:
-		parent = get_tree().current_scene
-	if parent == null:
-		return
-
-	var fx := ExplosionEffectScene.instantiate()
-	parent.add_child(fx)
-	fx.global_position = pos
+func _ready() -> void:
+	for i in particle_list:
+		i.emitting = true
+		
+func _on_sparks_finished() -> void:
+	queue_free()

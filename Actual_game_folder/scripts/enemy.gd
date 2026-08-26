@@ -1,5 +1,7 @@
 extends Node2D
 class_name enemy
+
+@export var death_particle: String = "blood"
 @export var enemy_dying: AudioStream
 
 @export var id: int = 0

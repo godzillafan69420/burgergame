@@ -33,7 +33,7 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("8_32mrs")
 character_name = "Gordo RamE"
 portrait = ExtResource("10_ju3dn")
-paragraphs = "THEY KEPT MAKING FUN OF MY WEIGHT. THEREFORE WE SLIMED THEM OUT."
+paragraphs = "We butchered them since they called me fat."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_6b1qv"]
@@ -47,23 +47,30 @@ metadata/_custom_type_script = "uid://buclel82cppmv"
 script = ExtResource("8_32mrs")
 character_name = "Gordo RamE"
 portrait = ExtResource("10_ju3dn")
-paragraphs = "Mate, I will do this many times over if they keep making fun of me."
+paragraphs = "Yeah. So bring you here"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_6b7v6"]
 script = ExtResource("8_32mrs")
 character_name = "Dr Mango123"
 portrait = ExtResource("9_xxe6l")
-paragraphs = "Can I have the burger guy then.
+paragraphs = "Can I have the burger guy?
+I want to give it a cool hat. 
+"
+metadata/_custom_type_script = "uid://buclel82cppmv"
 
-We won't do evil experiment on it."
+[sub_resource type="Resource" id="Resource_1wbyy"]
+script = ExtResource("8_32mrs")
+character_name = "Dr Mango123"
+portrait = ExtResource("9_xxe6l")
+paragraphs = "But since I am literally homeless and in debt. I am chargin 100 pound hehe"
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [sub_resource type="Resource" id="Resource_msjty"]
 script = ExtResource("8_32mrs")
 character_name = "Gordo RamE"
 portrait = ExtResource("10_ju3dn")
-paragraphs = "Nah"
+paragraphs = "Honestly how did that me67 guy steal our money even after we kill him. You know what we're robbing you."
 metadata/_custom_type_script = "uid://buclel82cppmv"
 
 [node name="mango" type="Node2D" unique_id=1916832371]
@@ -78,6 +85,7 @@ texture = ExtResource("1_vf3a0")
 [node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
 script = ExtResource("3_6b1qv")
 music_name = "FinalBossPleaseGiveInput"
+ending_of_story = true
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("4_1rxmq")]
 position = Vector2(232, 291)
@@ -101,4 +109,4 @@ sprite_frames = SubResource("SpriteFrames_30t23")
 [node name="Dialogue" type="Node" parent="." unique_id=276630500]
 script = ExtResource("7_1wbyy")
 at_when = 1
-dialogues = Array[ExtResource("8_32mrs")]([SubResource("Resource_vf3a0"), SubResource("Resource_30t23"), SubResource("Resource_6b1qv"), SubResource("Resource_1rxmq"), SubResource("Resource_6b7v6"), SubResource("Resource_msjty")])
+dialogues = Array[ExtResource("8_32mrs")]([SubResource("Resource_vf3a0"), SubResource("Resource_30t23"), SubResource("Resource_6b1qv"), SubResource("Resource_1rxmq"), SubResource("Resource_6b7v6"), SubResource("Resource_1wbyy"), SubResource("Resource_msjty")])

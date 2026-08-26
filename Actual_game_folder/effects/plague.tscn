@@ -6,5 +6,4 @@
 script = ExtResource("1_ynrjv")
 effect_name = "virus"
 damage = 10.0
-duration = 2
-discription = "does 10 damage over 2 turns"
+discription = "does 10 damage over 5 turns"

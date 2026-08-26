@@ -5,7 +5,7 @@ var current_turn: int = 0
 var enemy_id_turn: int = 0
 @export var music_name: String
 @export var total_enemies:int = 1
-
+@export var ending_of_story: bool = false
 @export var victory_gold: int = 10
 const MAX_CARDS = 6
 
@@ -24,6 +24,8 @@ var enemy_list: Node2D
 var victory_panel: Panel
 var victory: bool = false
 
+var ending: Panel
+
 var card_choice: int = 0
 
 func _ready() -> void:
@@ -40,6 +42,7 @@ func _ready() -> void:
 		children[index].id = index
 	current_state = States.players_turn
 	victory_panel = get_parent().get_node("UI").get_node("victory")
+	ending = get_parent().get_node("UI").get_node("You won")
 	victory_panel.hide()
 	Events.connect("players_turn", _players_turn)
 	Events.connect("enemies_turn", _enemies_turn)
@@ -94,7 +97,7 @@ func _process(_delta: float) -> void:
 	
 	_check_victory()
 func _check_victory():
-	if enemy_list.get_child_count()  == 0 and !victory:
+	if enemy_list.get_child_count()  == 0 and !victory and !ending_of_story:
 		victory = true
 		Globals.level += 1
 		victory_gold += int(PlayerStats.luck/5)
@@ -102,6 +105,9 @@ func _check_victory():
 		victory_panel.show()
 		victory_panel.get_node("stuff you gain").text = "Gain: " + str(victory_gold) + " gold" + "
 		Total gold: " + str(PlayerStats.player_gold)  
-		
+	elif enemy_list.get_child_count()  == 0 and !victory and ending_of_story:
+		victory = true
+		Globals.level += 1
+		ending.show()
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.

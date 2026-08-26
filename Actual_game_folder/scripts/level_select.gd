@@ -202,3 +202,7 @@ func _on_play_button_pressed():
 		
 	if dest_scene != "":
 		TransitionManager.play_transition(dest_scene)
+
+
+func _on_go_back_button_button_down() -> void:
+	TransitionManager.play_transition("res://scenes/main_menu.tscn")

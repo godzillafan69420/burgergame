@@ -16,6 +16,8 @@ func _ready() -> void:
 
 
 func _on_button_pressed() -> void:
+	PlayerStats.attacks = []
+	PlayerStats.upgrades = []
 	TransitionManager.play_transition("res://cutscene/begining_cutscene.tscn")
 
 
@@ -87,3 +89,7 @@ func _on_button_2_button_down() -> void:
 
 func _on_button_3_button_down() -> void:
 	get_tree().change_scene_to_file("res://scenes/music_room.tscn")
+
+
+func _on_continue_pressed() -> void:
+	TransitionManager.play_transition("res://scenes/level_select.tscn")

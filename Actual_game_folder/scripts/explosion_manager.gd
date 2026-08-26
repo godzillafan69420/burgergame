@@ -10,15 +10,17 @@ extends Node
 ## the current scene (or a parent you pass in), and the effect frees itself
 ## once it's done playing -- no cleanup needed on your end.
 
-const ExplosionEffectScene := preload("res://scenes/explosion_effect.tscn")
+const boom := preload("res://scenes/explosion_effect.tscn")
+const blood := preload("res://scenes/BloodExplosion.tscn")
 
-func spawn(pos: Vector2, target_parent: Node = null) -> void:
+
+func spawn(pos: Vector2, target_parent: Node = null, explosion_type: String ="boom") -> void:
 	var parent: Node = target_parent
 	if parent == null:
 		parent = get_tree().current_scene
 	if parent == null:
 		return
-
-	var fx := ExplosionEffectScene.instantiate()
+	
+	var fx : Node2D = self.get(explosion_type).instantiate()
 	parent.add_child(fx)
 	fx.global_position = pos
