@@ -95,7 +95,6 @@ func _enemies_turn():
 	
 	num_of_cards = card_list.get_child_count()
 func _process(_delta: float) -> void:
-	
 	_check_victory()
 func _check_victory():
 	if enemy_list.get_child_count()  == 0 and !victory and !ending_of_story:

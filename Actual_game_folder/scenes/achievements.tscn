@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dyr2uykw6m7ji"]
+
+[ext_resource type="PackedScene" uid="uid://cvilox2r6qpf4" path="res://scenes/achievement_icon.tscn" id="1_5e7lm"]
+[ext_resource type="Script" uid="uid://b0ncgr6t2nb6j" path="res://scenes/achievements.gd" id="1_jqgop"]
+[ext_resource type="StyleBox" uid="uid://dk0m455vrnwhn" path="res://cool_colours.tres" id="2_2q86a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5e7lm"]
+size = Vector2(90, 89)
+
+[node name="achievements" type="Node2D" unique_id=1364556289]
+script = ExtResource("1_jqgop")
+
+[node name="background" type="Sprite2D" parent="." unique_id=1074743516]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2111139367]
+
+[node name="achievement_icon" parent="CanvasLayer" unique_id=1251500302 instance=ExtResource("1_5e7lm")]
+discripttion = "Get killed by John"
+display_title = "How do you lose to him"
+achievement_name = "john"
+
+[node name="Icon" type="Sprite2D" parent="CanvasLayer/achievement_icon" unique_id=1786357707]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/achievement_icon" unique_id=648722206]
+position = Vector2(97, 88)
+shape = SubResource("RectangleShape2D_5e7lm")
+
+[node name="achievement_viewer" type="Panel" parent="." unique_id=845350667]
+offset_left = 9.0
+offset_top = 377.0
+offset_right = 1273.0
+offset_bottom = 741.0
+theme_override_styles/panel = ExtResource("2_2q86a")
+
+[node name="discription" type="Label" parent="achievement_viewer" unique_id=844368894]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 63.0
+offset_right = 1276.0
+offset_bottom = 324.0
+autowrap_mode = 3
+
+[node name="title" type="Label" parent="achievement_viewer" unique_id=51738136]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 19.0
+offset_right = 1263.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 31
+text = "test"

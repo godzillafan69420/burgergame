@@ -94,3 +94,7 @@ func _on_button_3_button_down() -> void:
 
 func _on_continue_pressed() -> void:
 	TransitionManager.play_transition("res://scenes/level_select.tscn")
+
+
+func _on_achievements_pressed() -> void:
+	TransitionManager.play_transition("res://scenes/achievements.tscn")

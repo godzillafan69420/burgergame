@@ -28,10 +28,10 @@ theme_override_font_sizes/normal_font_size = 100
 text = "you won"
 
 [node name="TextureButton" type="Button" parent="." unique_id=428308920]
-offset_left = 429.0
-offset_top = 418.0
-offset_right = 847.0
-offset_bottom = 546.0
+offset_left = 410.0
+offset_top = 315.0
+offset_right = 828.0
+offset_bottom = 443.0
 theme_override_fonts/font = ExtResource("4_6n54h")
 theme_override_font_sizes/font_size = 39
 theme_override_styles/normal = ExtResource("5_t3j2o")
@@ -39,19 +39,5 @@ theme_override_styles/pressed = ExtResource("6_46vdu")
 theme_override_styles/hover = ExtResource("6_46vdu")
 text = "Main Menu"
 
-[node name="replay" type="Button" parent="." unique_id=1135953285]
-offset_left = 435.0
-offset_top = 254.0
-offset_right = 853.0
-offset_bottom = 382.0
-theme_override_fonts/font = ExtResource("4_6n54h")
-theme_override_font_sizes/font_size = 39
-theme_override_styles/normal = ExtResource("5_t3j2o")
-theme_override_styles/pressed = ExtResource("6_46vdu")
-theme_override_styles/hover = ExtResource("6_46vdu")
-text = "Continue?"
-
 [connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="button_down" from="replay" to="." method="_on_replay_button_down"]
-[connection signal="pressed" from="replay" to="." method="_on_replay_pressed"]

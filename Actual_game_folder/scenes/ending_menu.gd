@@ -1,8 +1,23 @@
 extends Node2D
 
+var not_vegan = ["beef_patty","cheese","bacon","chicken","fish"]
+var vegan = ["lettuce","pickle","clover","nuts"]
+var vegan_teacher_unimpress: bool = true
+var vegan_teacher_impress: bool = false
 
-
-
+func _ready() -> void:
+	for i in PlayerStats.upgrades:
+		if i["id"] not in not_vegan:
+			vegan_teacher_unimpress = false
+			break
+	for i in PlayerStats.upgrades:
+		if i["id"] not in vegan:
+			vegan_teacher_impress = true
+			break
+			
+	Globals.achievements["meat_eater"] = vegan_teacher_unimpress
+	Globals.achievements["vegan"] = vegan_teacher_impress
+			
 func _on_texture_button_button_down() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	PlayerStats.player_gold =20
