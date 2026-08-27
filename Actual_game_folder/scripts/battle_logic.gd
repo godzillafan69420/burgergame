@@ -59,6 +59,7 @@ func _spawn_attack_choice():
 	var choice = _spawn_attack_choice
 
 func _players_turn():
+	current_state = States.players_turn
 	current_turn += 1
 	num_of_cards = card_list.get_child_count()
 	for i in card_list.get_children():
@@ -77,7 +78,7 @@ func _players_turn():
 			card_list.add_child(new_card)
 		
 		# Update all IDs sequentially now that the hand is full
-	current_state = States.players_turn
+	
 	
 	get_parent().get_node("player").get_node("player_stats").get_node("HP").value += PlayerStats.player_hitpoint_recovery
 	get_parent().get_node("player").get_node("player_stats").get_node("Label").text = str(int(get_parent().get_node("player").get_node("player_stats").get_node("HP").value)) + "/" +str(int(get_parent().get_node("player").get_node("player_stats").get_node("HP").max_value))
@@ -94,7 +95,6 @@ func _enemies_turn():
 	
 	num_of_cards = card_list.get_child_count()
 func _process(_delta: float) -> void:
-	
 	_check_victory()
 func _check_victory():
 	if enemy_list.get_child_count()  == 0 and !victory and !ending_of_story:
