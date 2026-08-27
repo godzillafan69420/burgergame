@@ -5,7 +5,9 @@
 [ext_resource type="StyleBox" uid="uid://dk0m455vrnwhn" path="res://cool_colours.tres" id="2_2q86a"]
 [ext_resource type="Texture2D" uid="uid://bdvkceitu16m7" path="res://Art/john vs socrates.png" id="3_wf1mw"]
 [ext_resource type="Texture2D" uid="uid://ch2uj8uek7s5e" path="res://Art/pickle.png" id="4_gq3ih"]
+[ext_resource type="Texture2D" uid="uid://ck6b3edsml0js" path="res://Art/veganteacherhappy.png" id="4_svwer"]
 [ext_resource type="Texture2D" uid="uid://bpp8nf463r3ow" path="res://Art/burger buns.png" id="5_jnbt2"]
+[ext_resource type="Texture2D" uid="uid://cgq5juax45dja" path="res://Art/veganteacherUnaprove.png" id="5_u6gvo"]
 [ext_resource type="Texture2D" uid="uid://u0cggeql8v8u" path="res://Art/osage.png" id="6_gq3ih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5e7lm"]
@@ -53,7 +55,9 @@ display_title = "Vegan teacher approves"
 achievement_name = "vegan"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/achievements2/achievement_icon3" unique_id=125030906]
-position = Vector2(0, 1)
+position = Vector2(2.5, 5.25)
+scale = Vector2(0.194, 0.194)
+texture = ExtResource("4_svwer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/achievements2/achievement_icon3" unique_id=819815821]
 position = Vector2(2.5, 5.25)
@@ -71,7 +75,9 @@ display_title = "Vegan teacher unimpress"
 achievement_name = "meat_eater"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/achievements3/achievement_icon3" unique_id=1808478748]
-position = Vector2(0, 1)
+position = Vector2(2.625011, 4.624989)
+scale = Vector2(0.19350003, 0.19350003)
+texture = ExtResource("5_u6gvo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/achievements3/achievement_icon3" unique_id=640001803]
 position = Vector2(2.5, 5.25)
