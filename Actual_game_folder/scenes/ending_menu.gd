@@ -3,18 +3,30 @@ extends Node2D
 var not_vegan = ["beef_patty","cheese","bacon","chicken","fish"]
 var vegan = ["lettuce","pickle","clover","nuts"]
 var vegan_teacher_unimpress: bool = true
-var vegan_teacher_impress: bool = false
+var vegan_teacher_impress: bool = true
+var pickle:bool = true
+var no_upgrades: bool = false
 
 func _ready() -> void:
-	for i in PlayerStats.upgrades:
-		if i["id"] not in not_vegan:
-			vegan_teacher_unimpress = false
-			break
-	for i in PlayerStats.upgrades:
-		if i["id"] not in vegan:
-			vegan_teacher_impress = true
-			break
-			
+	if PlayerStats.upgrades == []:
+		no_upgrades = true
+		vegan_teacher_unimpress = false
+		vegan_teacher_impress = false
+		pickle = false
+	else:
+		for i in PlayerStats.upgrades:
+			if i["id"] not in not_vegan:
+				vegan_teacher_unimpress = false
+				break
+		for i in PlayerStats.upgrades:
+			if i["id"] not in vegan:
+				vegan_teacher_impress = false
+				break
+		for i in PlayerStats.upgrades:
+			if i["id"] != "pickle":
+				pickle = false
+				break
+	Globals.achievements["nothing_burger"] = no_upgrades
 	Globals.achievements["meat_eater"] = vegan_teacher_unimpress
 	Globals.achievements["vegan"] = vegan_teacher_impress
 			

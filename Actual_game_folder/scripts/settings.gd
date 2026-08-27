@@ -8,5 +8,7 @@ var achievements = {
 	"vegan": false,
 	"meat_eater": false,
 	"pickle": false,
+	"nothing_burger": false,
+	"lagtrain": false
 	
 }

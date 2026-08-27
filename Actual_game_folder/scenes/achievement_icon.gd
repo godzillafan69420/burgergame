@@ -20,7 +20,7 @@ func _ready() -> void:
 		Is_achieved = true
 		
 	Icon = get_node("Icon")
-	panel= get_parent().get_parent().find_child("achievement_viewer")
+	panel= get_parent().get_parent().get_parent().find_child("achievement_viewer")
 	discription_text = panel.find_child("discription")
 	title_name = panel.find_child("title")
 	if !Is_achieved:

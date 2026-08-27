@@ -73,7 +73,7 @@ func _attacked_player(attack_id):
 	if get_tree() == null:
 		return
 	Events.emit_signal("update_display", sentence)
-	Events.emit_signal("damaged_player", damage, attacks[current_attack_choice].get("animation"))
+	Events.emit_signal("damaged_player", damage, attacks[current_attack_choice].get("animation"), name)
 	
 
 

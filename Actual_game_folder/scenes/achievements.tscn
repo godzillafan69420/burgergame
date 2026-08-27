@@ -3,33 +3,147 @@
 [ext_resource type="PackedScene" uid="uid://cvilox2r6qpf4" path="res://scenes/achievement_icon.tscn" id="1_5e7lm"]
 [ext_resource type="Script" uid="uid://b0ncgr6t2nb6j" path="res://scenes/achievements.gd" id="1_jqgop"]
 [ext_resource type="StyleBox" uid="uid://dk0m455vrnwhn" path="res://cool_colours.tres" id="2_2q86a"]
+[ext_resource type="Texture2D" uid="uid://bdvkceitu16m7" path="res://Art/john vs socrates.png" id="3_wf1mw"]
+[ext_resource type="Texture2D" uid="uid://ch2uj8uek7s5e" path="res://Art/pickle.png" id="4_gq3ih"]
+[ext_resource type="Texture2D" uid="uid://bpp8nf463r3ow" path="res://Art/burger buns.png" id="5_jnbt2"]
+[ext_resource type="Texture2D" uid="uid://u0cggeql8v8u" path="res://Art/osage.png" id="6_gq3ih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5e7lm"]
-size = Vector2(90, 89)
+size = Vector2(97, 97.5)
 
 [node name="achievements" type="Node2D" unique_id=1364556289]
 script = ExtResource("1_jqgop")
 
-[node name="background" type="Sprite2D" parent="." unique_id=1074743516]
+[node name="CanvasLayer" type="HFlowContainer" parent="." unique_id=2067014758]
+offset_right = 1268.0
+offset_bottom = 361.0
+size_flags_horizontal = 3
+mouse_filter = 2
+last_wrap_alignment = 1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2111139367]
+[node name="achievements" type="Control" parent="CanvasLayer" unique_id=1203938232]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
 
-[node name="achievement_icon" parent="CanvasLayer" unique_id=1251500302 instance=ExtResource("1_5e7lm")]
+[node name="achievement_icon3" parent="CanvasLayer/achievements" unique_id=504085499 instance=ExtResource("1_5e7lm")]
+position = Vector2(47, 45)
 discripttion = "Get killed by John"
 display_title = "How do you lose to him"
 achievement_name = "john"
 
-[node name="Icon" type="Sprite2D" parent="CanvasLayer/achievement_icon" unique_id=1786357707]
+[node name="Icon" type="Sprite2D" parent="CanvasLayer/achievements/achievement_icon3" unique_id=1062374155]
+position = Vector2(2.4999976, 5.499998)
+scale = Vector2(0.07734375, 0.1375)
+texture = ExtResource("3_wf1mw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/achievement_icon" unique_id=648722206]
-position = Vector2(97, 88)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/achievements/achievement_icon3" unique_id=1126216862]
+position = Vector2(2.5, 5.25)
+shape = SubResource("RectangleShape2D_5e7lm")
+
+[node name="achievements2" type="Control" parent="CanvasLayer" unique_id=1123187710]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="achievement_icon3" parent="CanvasLayer/achievements2" unique_id=1251500302 instance=ExtResource("1_5e7lm")]
+position = Vector2(47, 45)
+discripttion = "Using vegan upgrades"
+display_title = "Vegan teacher approves"
+achievement_name = "vegan"
+
+[node name="Icon" type="Sprite2D" parent="CanvasLayer/achievements2/achievement_icon3" unique_id=125030906]
+position = Vector2(0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/achievements2/achievement_icon3" unique_id=819815821]
+position = Vector2(2.5, 5.25)
+shape = SubResource("RectangleShape2D_5e7lm")
+
+[node name="achievements3" type="Control" parent="CanvasLayer" unique_id=1404442208]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="achievement_icon3" parent="CanvasLayer/achievements3" unique_id=2044755662 instance=ExtResource("1_5e7lm")]
+position = Vector2(47, 45)
+discripttion = "Don't use vegan products"
+display_title = "Vegan teacher unimpress"
+achievement_name = "meat_eater"
+
+[node name="Icon" type="Sprite2D" parent="CanvasLayer/achievements3/achievement_icon3" unique_id=1808478748]
+position = Vector2(0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/achievements3/achievement_icon3" unique_id=640001803]
+position = Vector2(2.5, 5.25)
+shape = SubResource("RectangleShape2D_5e7lm")
+
+[node name="achievements4" type="Control" parent="CanvasLayer" unique_id=1364541547]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="achievement_icon3" parent="CanvasLayer/achievements4" unique_id=1797729996 instance=ExtResource("1_5e7lm")]
+position = Vector2(47, 45)
+discripttion = "Only pickle upgrade"
+display_title = "Pickle Main"
+achievement_name = "pickle"
+
+[node name="Icon" type="Sprite2D" parent="CanvasLayer/achievements4/achievement_icon3" unique_id=749052119]
+position = Vector2(3.5000067, 6)
+scale = Vector2(0.7734374, 0.765625)
+texture = ExtResource("4_gq3ih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/achievements4/achievement_icon3" unique_id=685791703]
+position = Vector2(2.5, 5.25)
+shape = SubResource("RectangleShape2D_5e7lm")
+
+[node name="achievements5" type="Control" parent="CanvasLayer" unique_id=1376165246]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="achievement_icon3" parent="CanvasLayer/achievements5" unique_id=730910899 instance=ExtResource("1_5e7lm")]
+position = Vector2(47, 45)
+discripttion = "No upgrades"
+display_title = "A nothing burger"
+achievement_name = "nothing_burger"
+
+[node name="Icon" type="Sprite2D" parent="CanvasLayer/achievements5/achievement_icon3" unique_id=1416523156]
+position = Vector2(2.5000038, 5.500003)
+scale = Vector2(0.75781244, 0.7734375)
+texture = ExtResource("5_jnbt2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/achievements5/achievement_icon3" unique_id=1758957131]
+position = Vector2(2.5, 5.25)
+shape = SubResource("RectangleShape2D_5e7lm")
+
+[node name="achievements6" type="Control" parent="CanvasLayer" unique_id=756888541]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="achievement_icon3" parent="CanvasLayer/achievements6" unique_id=637044953 instance=ExtResource("1_5e7lm")]
+position = Vector2(47, 45)
+discripttion = "Get killed by pearto.
+wait this isn't a teto song
+Issacglazer is such a larp larp sahur"
+display_title = "ran over by lag train"
+achievement_name = "lagtrain"
+
+[node name="Icon" type="Sprite2D" parent="CanvasLayer/achievements6/achievement_icon3" unique_id=1848861742]
+position = Vector2(2.4999695, 5.5000033)
+scale = Vector2(0.19399998, 0.19399999)
+texture = ExtResource("6_gq3ih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/achievements6/achievement_icon3" unique_id=1928376968]
+position = Vector2(2.5, 5.25)
 shape = SubResource("RectangleShape2D_5e7lm")
 
 [node name="achievement_viewer" type="Panel" parent="." unique_id=845350667]
 offset_left = 9.0
 offset_top = 377.0
 offset_right = 1273.0
-offset_bottom = 741.0
+offset_bottom = 707.0
 theme_override_styles/panel = ExtResource("2_2q86a")
 
 [node name="discription" type="Label" parent="achievement_viewer" unique_id=844368894]
@@ -48,3 +162,12 @@ offset_right = 1263.0
 offset_bottom = 64.0
 theme_override_font_sizes/font_size = 31
 text = "test"
+
+[node name="Button" type="Button" parent="." unique_id=1720478471]
+offset_left = 1068.0
+offset_top = 591.0
+offset_right = 1252.0
+offset_bottom = 703.0
+text = "Go back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
