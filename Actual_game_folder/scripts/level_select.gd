@@ -206,3 +206,7 @@ func _on_play_button_pressed():
 
 func _on_go_back_button_button_down() -> void:
 	TransitionManager.play_transition("res://scenes/main_menu.tscn")
+
+
+func _on_shop_pressed() -> void:
+	TransitionManager.play_transition("res://ShopStuff/shop_scene.tscn")
