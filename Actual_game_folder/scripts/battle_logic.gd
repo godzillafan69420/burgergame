@@ -7,6 +7,7 @@ var enemy_id_turn: int = 0
 @export var total_enemies:int = 1
 @export var ending_of_story: bool = false
 @export var victory_gold: int = 10
+@export var achievement_will_gain:String = ""
 const MAX_CARDS = 6
 
 var num_of_enemies: int = 0
@@ -97,7 +98,9 @@ func _enemies_turn():
 func _process(_delta: float) -> void:
 	_check_victory()
 func _check_victory():
+	
 	if enemy_list.get_child_count()  == 0 and !victory and !ending_of_story:
+		Globals.achievements[achievement_will_gain] = true
 		victory = true
 		Globals.level += 1
 		victory_gold += int(PlayerStats.luck/5)
@@ -106,6 +109,7 @@ func _check_victory():
 		victory_panel.get_node("stuff you gain").text = "Gain: " + str(victory_gold) + " gold" + "
 		Total gold: " + str(PlayerStats.player_gold)  
 	elif enemy_list.get_child_count()  == 0 and !victory and ending_of_story:
+		Globals.achievements[achievement_will_gain] = true
 		victory = true
 		Globals.level += 1
 		ending.show()

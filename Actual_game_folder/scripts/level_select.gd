@@ -107,9 +107,9 @@ func _player_stats_change():
 		if i["id"] == "clover":
 			PlayerStats.luck += 10
 		if i["id"] == "fish":
-			PlayerStats.player_aoe_damage += 0.2
+			PlayerStats.player_aoe_damage += 0.15
 		if i["id"] == "nuts":
-			PlayerStats.player_single_damage += 0.2
+			PlayerStats.player_single_damage += 0.15
 func _ready():
 	_player_stats_change()
 	AudioManager.play("LevelSelect")

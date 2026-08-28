@@ -4,6 +4,9 @@ class_name enemy
 @export var death_particle: String = "blood"
 @export var enemy_dying: AudioStream
 
+
+@export var achievement_will_gain:String = ""
+
 @export var id: int = 0
 
 @export var attacks_name:Array[String] = []

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://62lcsabllf16"]
 
 [ext_resource type="Script" uid="uid://currldxd28o8y" path="res://credits.gd" id="1_2ckv8"]
-[ext_resource type="Texture2D" uid="uid://u0cggeql8v8u" path="res://Art/osage.png" id="2_2ckv8"]
+[ext_resource type="Texture2D" uid="uid://wjsvlggd0qgq" path="res://Art/furry king mainmenu.png" id="2_2ckv8"]
 
 [node name="credits" type="Node2D" unique_id=789137669]
 script = ExtResource("1_2ckv8")

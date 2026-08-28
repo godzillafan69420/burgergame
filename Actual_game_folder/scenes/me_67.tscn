@@ -100,6 +100,7 @@ texture = ExtResource("1_ayegc")
 script = ExtResource("3_gk2jk")
 music_name = "Kevin"
 victory_gold = -100
+achievement_will_gain = "me67"
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("4_8xagh")]
 position = Vector2(232, 291)

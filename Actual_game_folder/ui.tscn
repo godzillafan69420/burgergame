@@ -152,7 +152,7 @@ offset_right = 344.0
 offset_bottom = 514.0
 theme_override_fonts/font = ExtResource("6_y4yjw")
 theme_override_font_sizes/font_size = 32
-text = "Shop"
+text = "Level select"
 
 [node name="You won" type="Panel" parent="." unique_id=788358738]
 offset_left = 387.0

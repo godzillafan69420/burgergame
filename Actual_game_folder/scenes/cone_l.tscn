@@ -79,6 +79,7 @@ script = ExtResource("2_ofqtu")
 music_name = "Lastminutechange"
 total_enemies = 3
 victory_gold = 30
+achievement_will_gain = "ConeL"
 
 [node name="UI" parent="." unique_id=890284133 instance=ExtResource("3_k213a")]
 
