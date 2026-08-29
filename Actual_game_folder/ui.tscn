@@ -72,6 +72,7 @@ text = "end turn"
 script = ExtResource("1_nltto")
 
 [node name="play_testing_purpose" type="Button" parent="." unique_id=12553282]
+visible = false
 offset_left = 1097.0
 offset_top = 30.0
 offset_right = 1263.0
