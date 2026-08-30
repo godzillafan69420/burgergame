@@ -99,7 +99,7 @@ position = Vector2(835, 394)
 [node name="Mango Mustard" parent="enemies" unique_id=708042470 instance=ExtResource("5_6b7v6")]
 position = Vector2(126, -92)
 attacks_name = Array[String](["evil_scientist_attack", "punch", "flat_earth", "kick", "nuclear_pizza"])
-setted_HP = 1500.0
+setted_HP = 1234.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemies/Mango Mustard" unique_id=1450351235]
 position = Vector2(14, -24)

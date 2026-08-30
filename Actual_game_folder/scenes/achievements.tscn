@@ -373,7 +373,7 @@ mouse_filter = 2
 [node name="achievement_icon3" parent="CanvasLayer/big_wang" unique_id=746901227 instance=ExtResource("1_5e7lm")]
 position = Vector2(47, 45)
 discripttion = "beat that jjs fraud guy"
-display_title = "Fired worst maid ever"
+display_title = "worst maid ever"
 achievement_name = "kallum_wang"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/big_wang/achievement_icon3" unique_id=614803986]
