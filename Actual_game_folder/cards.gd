@@ -52,9 +52,12 @@ func _input(event: InputEvent) -> void:
 			_drop(target_id)
 			Events.emit_signal("update_id")
 			if lucky and chance > luck:
-				print(luck)
-				print(PlayerStats.luck)
+				Globals.failure_counter += 1
 				Events.emit_signal("give_side_effects", "lucky_debuff")
+				if Globals.failure_counter == 3:
+					Globals.achievements["oil_up"] = true
+			else:
+				Globals.failure_counter =0
 		else:
 			selected_card = false
 

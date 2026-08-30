@@ -123,6 +123,7 @@ script = ExtResource("3_6kh1l")
 music_name = "zemonke"
 total_enemies = 3
 victory_gold = 30
+achievement_will_gain = "Rack"
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("4_fyow1")]
 position = Vector2(136, 377)

@@ -72,6 +72,7 @@ text = "end turn"
 script = ExtResource("1_nltto")
 
 [node name="play_testing_purpose" type="Button" parent="." unique_id=12553282]
+visible = false
 offset_left = 1097.0
 offset_top = 30.0
 offset_right = 1263.0
@@ -152,7 +153,7 @@ offset_right = 344.0
 offset_bottom = 514.0
 theme_override_fonts/font = ExtResource("6_y4yjw")
 theme_override_font_sizes/font_size = 32
-text = "Shop"
+text = "Level select"
 
 [node name="You won" type="Panel" parent="." unique_id=788358738]
 offset_left = 387.0

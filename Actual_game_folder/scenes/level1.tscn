@@ -104,6 +104,7 @@ script = ExtResource("5_14jow")
 music_name = "LevelSelect"
 total_enemies = 3
 victory_gold = 20
+achievement_will_gain = "pears"
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("6_mvsps")]
 position = Vector2(192, 308)

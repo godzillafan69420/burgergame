@@ -89,6 +89,7 @@ script = ExtResource("4_n5ufe")
 music_name = "Boss1"
 total_enemies = 3
 victory_gold = 30
+achievement_will_gain = "socrates"
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("5_u7jqu")]
 position = Vector2(136, 377)
@@ -98,6 +99,7 @@ position = Vector2(969, 315)
 
 [node name="Socrates" parent="enemies" unique_id=708042470 instance=ExtResource("6_1wpc6")]
 position = Vector2(162, 57)
+achievement_will_gain = "socrates"
 attacks_name = Array[String](["poison", "ragebait", "kick", "ragebait", "kick"])
 setted_HP = 200.0
 

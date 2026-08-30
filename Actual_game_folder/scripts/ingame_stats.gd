@@ -10,6 +10,8 @@ var enemy_thats_attacking: String
 var def_stats: float = 0
 const MAX_DEF: float = 20
 
+var attack_name: String = ""
+
 var damage_multiplier: float = 1
 var damage_sfx: AudioStream = preload("res://sfx/player dmagae.mp3")
 
@@ -22,6 +24,10 @@ func _is_player_killed_achievements(killer:String):
 		Globals.achievements["john"] = true
 	if Globals.level == 2 and killer == "Pearto":
 		Globals.achievements["lagtrain"] = true
+		
+	if Globals.level == 7 and attack_name == "banana_nuke":
+		Globals.achievements["nuked"] = true
+		
 		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -46,6 +52,7 @@ func _on_animations_animation_finished() -> void:
 func _take_damage(damage: float, animation: String, enemy_name:String) -> void:
 	if damage > 0 :
 		AudioManager.play_oneshot(damage_sfx)
+	attack_name = animation
 	incoming_damage = damage
 	animation_player.visible = true
 	enemy_thats_attacking = enemy_name

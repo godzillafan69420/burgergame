@@ -90,6 +90,7 @@ texture = ExtResource("1_ti0og")
 [node name="BattleLogic" type="Node" parent="." unique_id=1136221329]
 script = ExtResource("1_r5l0u")
 music_name = "Battle"
+achievement_will_gain = "tutorial_completed"
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("1_fw8re")]
 position = Vector2(252, 232)
@@ -100,6 +101,7 @@ position = Vector2(835, 394)
 [node name="John Smith" parent="enemies" unique_id=708042470 instance=ExtResource("6_irjls")]
 position = Vector2(56, -172)
 death_particle = "boom"
+achievement_will_gain = "tutorial_completed"
 attacks_name = Array[String](["punch", "punch", "kick"])
 setted_HP = 75.0
 

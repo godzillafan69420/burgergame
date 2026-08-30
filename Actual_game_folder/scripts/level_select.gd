@@ -107,9 +107,9 @@ func _player_stats_change():
 		if i["id"] == "clover":
 			PlayerStats.luck += 10
 		if i["id"] == "fish":
-			PlayerStats.player_aoe_damage += 0.2
+			PlayerStats.player_aoe_damage += 0.15
 		if i["id"] == "nuts":
-			PlayerStats.player_single_damage += 0.2
+			PlayerStats.player_single_damage += 0.15
 func _ready():
 	_player_stats_change()
 	AudioManager.play("LevelSelect")
@@ -206,3 +206,7 @@ func _on_play_button_pressed():
 
 func _on_go_back_button_button_down() -> void:
 	TransitionManager.play_transition("res://scenes/main_menu.tscn")
+
+
+func _on_shop_pressed() -> void:
+	TransitionManager.play_transition("res://ShopStuff/shop_scene.tscn")

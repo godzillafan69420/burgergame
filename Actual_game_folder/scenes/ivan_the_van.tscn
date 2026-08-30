@@ -84,6 +84,7 @@ script = ExtResource("5_ik4my")
 music_name = "FreeCandy"
 total_enemies = 3
 victory_gold = 20
+achievement_will_gain = "Ivan"
 
 [node name="UI" parent="." unique_id=890284133 instance=ExtResource("2_y4j1f")]
 

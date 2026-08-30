@@ -88,6 +88,7 @@ texture = ExtResource("1_vf3a0")
 script = ExtResource("3_6b1qv")
 music_name = "FinalBossPleaseGiveInput"
 ending_of_story = true
+achievement_will_gain = "mango"
 
 [node name="player" parent="." unique_id=294404824 instance=ExtResource("4_1rxmq")]
 position = Vector2(232, 291)
