@@ -58,6 +58,7 @@ display_title = "How do you lose to him"
 achievement_name = "john"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/achievements/achievement_icon3" unique_id=1062374155]
+texture_filter = 3
 position = Vector2(2.4999976, 5.499998)
 scale = Vector2(0.07734375, 0.1375)
 texture = ExtResource("3_wf1mw")
@@ -78,6 +79,7 @@ display_title = "Vegan teacher approves"
 achievement_name = "vegan"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/achievements2/achievement_icon3" unique_id=125030906]
+texture_filter = 3
 position = Vector2(2.5, 5.25)
 scale = Vector2(0.194, 0.194)
 texture = ExtResource("4_svwer")
@@ -98,6 +100,7 @@ display_title = "Vegan teacher unimpress"
 achievement_name = "meat_eater"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/achievements3/achievement_icon3" unique_id=1808478748]
+texture_filter = 3
 position = Vector2(2.625011, 4.624989)
 scale = Vector2(0.19350003, 0.19350003)
 texture = ExtResource("5_u6gvo")
@@ -118,6 +121,7 @@ display_title = "Pickle Main"
 achievement_name = "pickle"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/achievements4/achievement_icon3" unique_id=749052119]
+texture_filter = 3
 position = Vector2(3.5000067, 6)
 scale = Vector2(0.7734374, 0.765625)
 texture = ExtResource("4_gq3ih")
@@ -138,6 +142,7 @@ display_title = "A nothing burger"
 achievement_name = "nothing_burger"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/achievements5/achievement_icon3" unique_id=1416523156]
+texture_filter = 3
 position = Vector2(2.5000038, 5.500003)
 scale = Vector2(0.75781244, 0.7734375)
 texture = ExtResource("5_jnbt2")
@@ -160,6 +165,7 @@ display_title = "ran over by lag train"
 achievement_name = "lagtrain"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/achievements6/achievement_icon3" unique_id=1848861742]
+texture_filter = 3
 position = Vector2(2.4999695, 5.5000033)
 scale = Vector2(0.19399998, 0.19399999)
 texture = ExtResource("6_gq3ih")
@@ -180,6 +186,7 @@ display_title = "The best animation ever"
 achievement_name = "nuked"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/achievements7/achievement_icon3" unique_id=989193834]
+texture_filter = 3
 position = Vector2(2.4999695, 5.5000033)
 scale = Vector2(0.19399998, 0.19399999)
 texture = ExtResource("9_u6gvo")
@@ -200,6 +207,7 @@ display_title = "John is a real fraud"
 achievement_name = "tutorial_completed"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/Beat John/achievement_icon3" unique_id=56513902]
+texture_filter = 3
 position = Vector2(2.4999695, 5.5000033)
 scale = Vector2(0.19399998, 0.19399999)
 texture = ExtResource("10_j7pb0")
@@ -220,6 +228,7 @@ display_title = "beat John again"
 achievement_name = "pears"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/real pear/achievement_icon3" unique_id=1048051272]
+texture_filter = 3
 position = Vector2(1.999979, 4.5000057)
 scale = Vector2(0.13333322, 0.091666676)
 texture = ExtResource("11_6xs2c")
@@ -240,6 +249,7 @@ display_title = "My technique has not use?!!"
 achievement_name = "socrates"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/socrates/achievement_icon3" unique_id=2078116283]
+texture_filter = 3
 position = Vector2(2.4999676, 4.5300035)
 scale = Vector2(0.25260416, 0.19026922)
 texture = ExtResource("12_vwjy8")
@@ -260,6 +270,7 @@ display_title = "Unable to kidnap people anymore"
 achievement_name = "Ivan"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/Ivan/achievement_icon3" unique_id=324459992]
+texture_filter = 3
 position = Vector2(1.9999952, 6.500008)
 scale = Vector2(0.20416687, 0.26944447)
 texture = ExtResource("13_yspdk")
@@ -282,6 +293,7 @@ display_title = "Wait why did we help furryking?"
 achievement_name = "Italian"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/Italian/achievement_icon3" unique_id=1002023494]
+texture_filter = 3
 position = Vector2(2.999958, 5.499999)
 scale = Vector2(0.25753412, 0.17733091)
 texture = ExtResource("14_fvdao")
@@ -302,6 +314,7 @@ display_title = "What's 17 more years "
 achievement_name = "ConeL"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/ConeL/achievement_icon3" unique_id=658441580]
+texture_filter = 3
 position = Vector2(2.0000021, 5.000005)
 scale = Vector2(0.17657658, 0.17721519)
 texture = ExtResource("15_divsn")
@@ -322,6 +335,7 @@ display_title = "dodging nukes"
 achievement_name = "Rack"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/Rack/achievement_icon3" unique_id=923949361]
+texture_filter = 3
 position = Vector2(2.000001, 5.499999)
 scale = Vector2(0.13279133, 0.23913047)
 texture = ExtResource("16_s4x2u")
@@ -342,6 +356,7 @@ display_title = "free Bok choy"
 achievement_name = "Choi"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/Choi/achievement_icon3" unique_id=1327500982]
+texture_filter = 3
 position = Vector2(3.000011, 5.5000033)
 scale = Vector2(0.16134453, 0.19399999)
 texture = ExtResource("17_vwjy8")
@@ -362,6 +377,7 @@ display_title = "Fired worst maid ever"
 achievement_name = "kallum_wang"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/big_wang/achievement_icon3" unique_id=614803986]
+texture_filter = 3
 position = Vector2(2.500019, 4.999995)
 scale = Vector2(0.35144937, 0.41702133)
 texture = ExtResource("18_yspdk")
@@ -382,6 +398,7 @@ display_title = "He still robbed you"
 achievement_name = "me67"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/me67/achievement_icon3" unique_id=224382993]
+texture_filter = 3
 position = Vector2(2.5000134, 6.000005)
 scale = Vector2(0.48499995, 0.49)
 texture = ExtResource("19_yspdk")
@@ -402,6 +419,7 @@ display_title = "Should of just gave it."
 achievement_name = "mango"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/mango/achievement_icon3" unique_id=658967820]
+texture_filter = 3
 position = Vector2(2.9999666, 4.999998)
 scale = Vector2(0.17328517, 0.17689529)
 texture = ExtResource("20_divsn")
@@ -422,6 +440,7 @@ display_title = "Fih"
 achievement_name = "fih"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/fih/achievement_icon3" unique_id=1212258005]
+texture_filter = 3
 position = Vector2(1.4999866, 5)
 scale = Vector2(0.75781244, 0.74999994)
 texture = ExtResource("21_s4x2u")
@@ -442,6 +461,7 @@ display_title = "less than helpful"
 achievement_name = "oil_up"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/oil/achievement_icon3" unique_id=1564107382]
+texture_filter = 3
 position = Vector2(2.0000048, 5.000005)
 scale = Vector2(0.49000007, 0.48999995)
 texture = ExtResource("22_ofnci")
@@ -462,6 +482,7 @@ display_title = "Deez "
 achievement_name = "nuts"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/nuts/achievement_icon3" unique_id=1143407822]
+texture_filter = 3
 position = Vector2(1.9999714, 5)
 scale = Vector2(0.734374, 0.765625)
 texture = ExtResource("23_ocxot")
