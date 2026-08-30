@@ -257,7 +257,7 @@ var low_iq = {
 var evil_scientist_attack = {
 	"name": "science",
 	"damage": 10,
-	"status_effects": ["radiation","weaken","poison","virus"],
+	"status_effects": ["radiation","fatigue","poison","virus","virus"],
 	"buff": [],
 	"animation": "poison"
 }
@@ -265,7 +265,7 @@ var evil_scientist_attack = {
 var flat_earth = {
 	"name": "yap",
 	"damage": 30,
-	"status_effects": ["radiation","fatigue","virus"],
+	"status_effects": ["fatigue","virus"],
 	"buff": ["block","heal","heal"],
 	"animation": "harmful_words"
 }

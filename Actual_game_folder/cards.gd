@@ -45,8 +45,8 @@ func _input(event: InputEvent) -> void:
 
 		if in_attack_area and can_attack and (valid_single_target or valid_aoe_target):
 			var chance = randf_range(0, 100)
-			if PlayerStats.luck > 80:
-				luck = 80
+			if PlayerStats.luck > 95:
+				luck = 95
 			else:
 				luck = PlayerStats.luck
 			_drop(target_id)

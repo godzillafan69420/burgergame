@@ -21,8 +21,8 @@ var upgrade_pool = [
 	{"display_name": "pickle","id": "pickle", "type": "relic", "effect": "damage multiplier 5%, +15HP", "icon": preload("res://Art/pickle.png")},
 	{"display_name": "Fried Chicken","id": "chicken", "type": "relic", "effect": "Increase stamina by 10, Increase stamina rengeneration by 3", "icon": preload("res://Art/fried_chicken.png")},
 	{"display_name": "Four Leaf Clover","id": "clover", "type": "relic", "effect": "Increase luck by 10 and money gained", "icon": preload("res://Art/clover.png")},
-	{"display_name": "fish","id": "fish", "type": "relic", "effect": "Increase Aoe damage by 15%", "icon": preload("res://Art/fish.png")},
-	{"display_name": "Nuts","id": "nuts", "type": "relic", "effect": "Increase single damage by 15%", "icon": preload("res://Art/peanut.png")}
+	{"display_name": "fish","id": "fish", "type": "relic", "effect": "Increase Aoe damage by 12.5%", "icon": preload("res://Art/fish.png")},
+	{"display_name": "Nuts","id": "nuts", "type": "relic", "effect": "Increase single damage by 12.5%", "icon": preload("res://Art/peanut.png")}
 ]
 
 # --- REGULAR ITEM POOL --- A
@@ -31,7 +31,7 @@ var regular_item_pool = [
 	{"display_name": "tin foil","id": "iron_shield", "price": 3, "type": "defense", "effect": "Blocks 75% incoming damage", "icon": preload("res://Art/Tinfoil(card).png")},
 	{"display_name": "Frying Pan","id": "frying_pan", "price": 5, "type": "attack", "effect": "Deals 13 AOE damage", "icon": preload("res://Art/Frying_pan(_card).png")},
 	{"display_name": "Heal","id": "health_potion", "price": 2, "type": "utility", "effect": "Restores 20 HP", "icon": preload("res://Art/Heal(card).png")},
-	{"display_name": "Corn Ball","id": "corn_ball", "price": 6, "type": "buff", "effect": "Deals 20 AOE and burns", "icon": preload("res://Art/Cornball(no_card).png")},
+	{"display_name": "Corn Ball","id": "corn_ball", "price": 6, "type": "buff", "effect": "Deals 15 AOE and burns", "icon": preload("res://Art/Cornball(no_card).png")},
 	{"display_name": "Aura Farm","id": "we_see_the_fit", "price": 4, "type": "passive", "effect": "weakens the enemies but can get punished", "icon": preload("res://Art/WeSeeTheFit.png")},
 	{"display_name": "Hot Sauce","id": "hot_sauce", "price": 3, "type": "buff", "effect": "Boosts your damage", "icon": preload("res://Art/Hot_Sauce(card).png")},
 	{"display_name": "Knife","id": "knife", "price": 3, "type": "buff", "effect": "single attack 7 damage plus bleed", "icon": preload("res://Art/knifeBase.png")},

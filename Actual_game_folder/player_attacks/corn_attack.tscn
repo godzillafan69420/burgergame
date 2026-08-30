@@ -14,7 +14,7 @@ texture = ExtResource("1_q548j")
 script = ExtResource("2_q548j")
 card_name = "corn attack"
 discription = ""
-damage = 20.0
+damage = 15.0
 effects_for_enemies = Array[String](["burn"])
 AOE = true
 
@@ -41,7 +41,7 @@ offset_top = 183.92857
 offset_right = 234.42857
 offset_bottom = 310.9286
 text = "applies burn 
-and does 20 Aoe
+and does 15 Aoe
 "
 
 [node name="Label" type="Label" parent="." unique_id=1843147056]
